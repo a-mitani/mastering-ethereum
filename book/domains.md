@@ -8,7 +8,7 @@ The process to add a custom domain to you book is easy.
 
 1. Add your domain name in your book settings.
 
-Then, To use your own domain, you will need to make changes with your domain registrar:
+In order to use your own domain, you will need to make changes with your domain registrar:
 
 1. Log in to your domain registrar and find the section that allows you to add/edit host records, often found in a settings menu called 'Edit DNS', 'Host Records' or 'Zone File Control'.
 
@@ -17,4 +17,4 @@ Then, To use your own domain, you will need to make changes with your domain reg
 3. To redirect the naked domain (`yourdomain.com`) to `www.yourdomain.com`, find the option to forward your domain. This can usually be found under 'Forwarding', 'URL Forwarding' or 'URL Redirect'.
 
 
-It may take a few hours for the changes you to propagate. To check it's ready and to setup your custom domain with Typify, enter your domain name (including the www) below:
+It may take a few hours for domain changes to propagate. To check if it's ready or to setup your custom domain with Typify, enter your domain name (including the www) below:
