@@ -21,3 +21,9 @@ $ git push https://push.gitbook.io/{{UserName}}/{{Book}}.git
 ```
 
 It will prompt for your username (username or email) and your password (password or api token).
+
+### What next?
+
+Once you pushed content to GitBook.io, you need to check the state of your build.
+
+[Read more](./build.md)

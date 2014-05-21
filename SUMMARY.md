@@ -1,8 +1,8 @@
 # Summary
 
 * [What is GitBook?](what/README.md)
-* [Managing your Book](book/README.md)
-    * [Pushing Content](book/push.md)
-    * [Custom Domains](book/domains.md)
+* [Pushing Content](book/push.md)
+* [Build](book/build.md)
+* [Custom Domains](book/domains.md)
 * [Editor](editor/README.md)
 
