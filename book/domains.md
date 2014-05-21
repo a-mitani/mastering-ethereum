@@ -17,4 +17,4 @@ In order to use your own domain, you will need to make changes with your domain 
 3. To redirect the naked domain (`yourdomain.com`) to `www.yourdomain.com`, find the option to forward your domain. This can usually be found under 'Forwarding', 'URL Forwarding' or 'URL Redirect'.
 
 
-It may take a few hours for domain changes to propagate. To check if it's ready or to setup your custom domain with Typify, enter your domain name (including the www) below:
+It may take a few hours for domain changes to propagate. To check if it's ready or to setup your custom domain with GitBook, enter your domain name (including the www) below:
