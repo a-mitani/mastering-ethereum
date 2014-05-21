@@ -1,7 +1,7 @@
 # Summary
 
-* [What is GitBook?](what/README.md)
 * [Editor](editor/README.md)
+* [Format](book/format.md)
 * [Pushing Content](book/push.md)
 * [Build](book/build.md)
 * [Common Errors](book/errors.md)
