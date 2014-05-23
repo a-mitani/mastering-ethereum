@@ -7,5 +7,6 @@
 * [Common Errors](book/errors.md)
 * [Cover](book/cover.md)
 * [Custom Domains](book/domains.md)
+* [Visibility](book/visibility.md)
 * [Exercices and Quizzes](book/exercises.md)
 
