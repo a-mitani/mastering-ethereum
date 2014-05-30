@@ -2,7 +2,7 @@
 
 An  editor is available for desktop. It is open source and the source code is available on [GitHub](https://github.com/GitbookIO/editor).
 
-![Screenshot](https://raw.githubusercontent.com/GitbookIO/editor/master/preview.png)
+![Screenshot](../assets/editor.png)
 
 ### Download
 
