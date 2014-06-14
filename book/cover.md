@@ -17,3 +17,11 @@ A cover is specified by a **cover.jpg** file, a **cover_small.jpg** can also exi
 A GitBook plugin (`autocover`) can also be used to generate a cover file for you, or just generate the `cover_small.jpg` from your big cover.
 
 [Read more about autocover](https://github.com/GitbookIO/plugin-autocover).
+
+### Guidelines
+
+A good cover respect the following guidelines:
+
+* No border
+* Clear visible book title
+* The important text should be visible in the small version
