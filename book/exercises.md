@@ -1,4 +1,4 @@
-# Exercises and Quiz
+# Exercises and Quizzes
 
 #### Exercises
 
