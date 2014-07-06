@@ -15,6 +15,6 @@ The editor is available to [download](https://www.gitbook.io/editor/download) fo
 
 ### Connect your GitBook.io account
 
-You can connect easily your GitBook.io account by entering your username and password in the auth dialog:
+You can easily connect your GitBook.io account by entering your username and password in the auth dialog:
 
 ![Auth](../assets/login.png)

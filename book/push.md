@@ -24,6 +24,6 @@ It will prompt for your username (username or email) and your password (password
 
 ### What next?
 
-Once you pushed content to GitBook.io, you need to check the state of your build.
+Once you have pushed content to GitBook.io, you need to check the state of your build.
 
 [Read more](./build.md)

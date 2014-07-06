@@ -2,7 +2,7 @@
 
 #### Public/Private
 
-Your book can be **public** or **private**. Public books are visibile by everybody but only collaborators can update it. Private books are visible only by the collaborators.
+Your book can be **public** or **private**. Public books are visible to everybody but only collaborators can update it. Private books are visible only by the collaborators.
 
 You can switch your book from public to private and the inverse.
 
