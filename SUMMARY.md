@@ -8,6 +8,6 @@
 * [Cover](book/cover.md)
 * [Custom Domains](book/domains.md)
 * [Visibility](book/visibility.md)
-* [Exercices and Quizzes](book/exercises.md)
+* [Exercises and Quizzes](book/exercises.md)
 * [Google Authorship](user/google.md)
 

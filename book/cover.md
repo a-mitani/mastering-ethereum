@@ -2,14 +2,14 @@
 
 To make your book more elegant on GitBook.io, you can specify a cover.
 
-A cover is specified by a **cover.jpg** file, a **cover_small.jpg** can also exists as a smaller version of the cover. The cover should be a **JPEG** file.
+A cover is specified by a **cover.jpg** file, a **cover_small.jpg** can also exist as a smaller version of the cover. The cover should be a **JPEG** file.
 
 ### Best Sizes
 
 |  | Big | Small |
 | -- | -- | -- |
 | **File** | `cover.jpg` | `cover_small.jpg` |
-| **Size** | 1800x2360 | 200x262 |
+| **Size(in pixels)** | 1800x2360 | 200x262 |
 
 
 ### Autocover
@@ -20,8 +20,8 @@ A GitBook plugin (`autocover`) can also be used to generate a cover file for you
 
 ### Guidelines
 
-A good cover respect the following guidelines:
+A good cover respects the following guidelines:
 
 * No border
-* Clear visible book title
-* The important text should be visible in the small version
+* Clearly visible book title
+* Any important text should be visible in the small version
