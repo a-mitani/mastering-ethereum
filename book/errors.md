@@ -8,7 +8,7 @@ Here is a list of common build errors and thier associated fixes.
 Error loading plugins: plugin1, ...
 ```
 
-This error happens because Gitbook can't resolve a plugin (or the plugin is invalid).
+This error happens because GitBook can't resolve a plugin (or the plugin is invalid).
 External plugins need to be specified in the `dependencies` field of a node.js `package.json` file. [Learn more about the package.json format](https://www.npmjs.org/doc/json.html).
 
 For example, if your book depend on the **Autocover** plugin, you need a `package.json` file with the following content:
