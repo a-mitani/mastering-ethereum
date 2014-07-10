@@ -37,7 +37,7 @@ Need to install ebook-convert from Calibre
 
 This error was logged as [Convert of PDF - Need to install ebook-convert from Calibre #333 on GitHub](https://github.com/GitbookIO/gitbook/issues/333).
 
-To get around the error while trying to build your project as a PDF, ePub or mobi ebook, you must have the [Calibre](http://calibre-ebook.com) eBook reader/manager install _AND_ the command-line tools installed.
+To get around the error while trying to build your project as a PDF, ePub or mobi ebook, you must have the [Calibre](http://calibre-ebook.com) eBook reader/manager installed _AND_ the command-line tools installed.
 
 To install the Calibre command-line tools from the Mac version, from the menu select: **calibre - Preferences - Miscellaneous - Install command line tools**
 
