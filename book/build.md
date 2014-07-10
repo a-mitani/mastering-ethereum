@@ -15,7 +15,7 @@ The **Activity** tab on your book let you follow the evolution of your builds.
 
 ### Details for a build
 
-When clicking the link "logs" for a build, you can access a details page for it. This page will let you see the output of the build process.
+When clicking the link "logs" for a build, you can access a detailed page for it. This page will let you see the output of the build process.
 
 ![Activity tab](../assets/build.png)
 
