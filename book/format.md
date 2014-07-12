@@ -26,7 +26,7 @@ This is the summary of my book.
     * [example 1](section2/example1.md)
 ```
 
-Files that are not included in SUMMARY.md will not be processed by gitbook.
+Files that are not included in SUMMARY.md will not be processed by GitBook.
 
 
 #### Multi-Languages
