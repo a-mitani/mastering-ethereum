@@ -1,6 +1,7 @@
 # Summary
 
 * [Editor](editor/README.md)
+* [Markdown](markdown/README.md)
 * [Format](book/format.md)
 * [Pushing Content](book/push.md)
 * [Build](book/build.md)
