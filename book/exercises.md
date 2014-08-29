@@ -1,5 +1,13 @@
 # Exercises and Quizzes
 
+Exercises and quizzes can be activated using the **plugins** configuration in your `book.json`. Example of book.json:
+
+```js
+{
+    "plugins": [ "exercises", "quizzes" ]
+}
+```
+
 #### Exercises
 
 A book can contain interactive exercises (currently only in Javascript). An exercise is a code challenge provided to the reader, which is given a code editor to write a solution which is checked against the book author's validation code.
