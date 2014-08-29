@@ -10,5 +10,4 @@
 * [Custom Domains](book/domains.md)
 * [Visibility](book/visibility.md)
 * [Exercises and Quizzes](book/exercises.md)
-* [Google Authorship](user/google.md)
 
