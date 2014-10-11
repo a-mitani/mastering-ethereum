@@ -1,8 +1,8 @@
 # Custom Domains
 
-All books on **Gitbook.io** are accessible via the url **http://{{author}}.gitbooks.io/{book}/**.
+All books on **Gitbook.io** are accessible via the url **http://{{author}}.gitbooks.io/{book}/**, and content is accessible at **http://{{author}}.gitbooks.io/{book}/content/**.
 
-But you can configure your book to use a custom domain name (a free feature on GitBook.io).
+But you can configure your book to use a custom domain name (a free feature on GitBook.io). Domain name can be use for the homepage and the content (or both).
 
 The process to add a custom domain to your book is easy.
 
@@ -17,4 +17,4 @@ In order to use your own domain, you will need to make changes with your domain 
 3. To redirect the naked domain (`yourdomain.com`) to `www.yourdomain.com`, find the option to forward your domain. This can usually be found under 'Forwarding', 'URL Forwarding' or 'URL Redirect'.
 
 
-It may take a few hours for domain changes to propagate. 
+It may take a few hours for domain changes to propagate.
