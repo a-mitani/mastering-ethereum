@@ -9,5 +9,6 @@
 * [Cover](book/cover.md)
 * [Custom Domains](book/domains.md)
 * [Visibility](book/visibility.md)
+* [Themes](book/themes.md)
 * [Exercises and Quizzes](book/exercises.md)
 
