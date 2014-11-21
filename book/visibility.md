@@ -12,4 +12,4 @@ Paid books can only be **public**.
 
 #### Home/Explore pages
 
-Home and Explore pages only list books that are already successfully builded. It is advised to set a cover picture.
+Home and Explore pages only list books that are already successfully built. It is advised to set a cover picture.
