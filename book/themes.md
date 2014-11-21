@@ -1,10 +1,10 @@
 # Themes
 
-Themes can be use to customize your book homepage using preddefined or custom HTML template. A list of all published themes can be found at [www.gitbook.io/themes](https://www.gitbook.io/themes).
+Themes can be used to customize your book homepage using predefined or custom HTML template. A list of all published themes can be found at [www.gitbook.io/themes](https://www.gitbook.io/themes).
 
 ### Format
 
-Themes on GitBook are using the [SWIG](http://paularmstrong.github.io/swig/docs/) syntax.
+Themes on GitBook use the [SWIG](http://paularmstrong.github.io/swig/docs/) syntax.
 
 #### Variables for book homepage
 
@@ -24,8 +24,8 @@ Themes on GitBook are using the [SWIG](http://paularmstrong.github.io/swig/docs/
 | `price` | `number` | Price of the book (0 equals free) |
 | `githubId` | `string` | ID of the book on GitHub (ex: `Username/Test`) |
 | `categories` | `array[string]` | List of tags associated with this book |
-| `author` | `<user>` |User you created the book |
-| `collaborators` | `array[<user>]` | Array of collaborators to the book (excluding the author) |
+| `author` | `<user>` |User that created the book |
+| `collaborators` | `array[<user>]` | Array of collaborators of the book (excluding the author) |
 | `cover.small` | `string` | Url of the cover (size small) |
 | `cover.large` | `string` | Url of the cover (size large) |
 | `urls.access` | `string` | Url to access the book homepage |
@@ -33,9 +33,9 @@ Themes on GitBook are using the [SWIG](http://paularmstrong.github.io/swig/docs/
 | `urls.read` | `string` | Url to read the book |
 | `urls.reviews` | `string` | Url to the reviews page |
 | `urls.subscribe` | `string` | Url to submit email subscriptions |
-| `urls.download.epub` | `string` | Url download ebook (as EPUB) |
-| `urls.download.mobi` | `string` | Url download ebook (as Mobi) |
-| `urls.download.pdf` | `string` | Url download ebook (as PDF) |
+| `urls.download.epub` | `string` | Url to download ebook (as EPUB) |
+| `urls.download.mobi` | `string` | Url to download ebook (as Mobi) |
+| `urls.download.pdf` | `string` | Url to download ebook (as PDF) |
 
 #### User Representation
 
@@ -44,6 +44,6 @@ Themes on GitBook are using the [SWIG](http://paularmstrong.github.io/swig/docs/
 | `username` | `string` | Username of the user |
 | `name` | `string` | Name of the user |
 | `urls.profile` | `string` | Url to access the profile homepage |
-| `urls.avatar` | `string` | Url to the avatar |
+| `urls.avatar` | `string` | Url of avatar |
 | `accounts.twitter` | `string` | Username on Twitter (if linked) |
 | `accounts.github` | `string` | Username on GitHub (if linked) |
