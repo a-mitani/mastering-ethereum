@@ -14,7 +14,7 @@ You can use the menu `Book > Publish` to update your book content.
 
 ### Using git
 
-You can use Git to push update of your book.
+You can use Git to push an update of your book.
 
 ```
 $ git push https://push.gitbook.io/{{UserName}}/{{Book}}.git
