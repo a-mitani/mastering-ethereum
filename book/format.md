@@ -12,7 +12,7 @@ Typically, this should be the introduction for your book. It will be automatical
 
 #### SUMMARY.md
 
-The SUMMARY.md defines your book's structure. It should contain a list of chapters, linking to their respective pages.
+The SUMMARY.md defines your book's structure. It should contain a list of chapters and sub-chapters, linking to their respective pages.
 
 Example:
 
