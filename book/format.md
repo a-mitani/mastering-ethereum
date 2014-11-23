@@ -1,5 +1,7 @@
 # Format
 
+The format's main focus is simplicity and readability.
+
 GitBook uses a convention on top of markdown files.
 
 A book is a Git repository containing at least 2 files: README.md and SUMMARY.md.
