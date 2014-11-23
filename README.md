@@ -9,7 +9,7 @@ The GitBook toolchain is open source and completely free, the source code of the
 
 ### Need help?
 
-We're always happy to help out with your books or any other questions you might have. You can ask a question or signal an issue on the following issues trackers or contact us by email at [contact@gitbook.io](mailto:contact@gitbook.io).
+We're always happy to help out with your books or any other questions you might have. You can ask a question or signal an issue on the following issues trackers or contact us by email at [contact@gitbook.com](mailto:contact@gitbook.com).
 
 * [GitBook Toolchain](https://github.com/GitbookIO/gitbook/issues?state=open)
 * [Platform and Marketplaces](https://github.com/GitbookIO/gitbook.io/issues?state=open)
