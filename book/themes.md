@@ -1,6 +1,6 @@
 # Themes
 
-Themes can be used to customize your book homepage using predefined or custom HTML template. A list of all published themes can be found at [www.gitbook.io/themes](https://www.gitbook.io/themes).
+Themes can be used to customize your book's homepage using predefined or custom HTML template. A list of all published themes can be found at [www.gitbook.io/themes](https://www.gitbook.io/themes).
 
 ### Format
 
