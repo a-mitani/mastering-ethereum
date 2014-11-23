@@ -2,7 +2,7 @@
     "plugins": [ "exercises", "quizzes" ],
     "links": {
         "sidebar": {
-            "Contact us": "mailto:contact@gitbook.io"
+            "Contact us": "mailto:contact@gitbook.com"
         }
     }
 }
