@@ -1,29 +1,39 @@
-# Pushing Content
+# Update your book using GIT
 
-When your book is created on **gitbook.io**, you need to push some content to it.
+When your book is created on **gitbook.com**, you need to push some content to it. To do so, you can use the web editor or the command line.
 
-### Using the Editor
+If you want to update your book from the command line, you can use [GIT](http://git-scm.com) to push your content:
 
-If you don't have the editor yet, [install it for free](../editor/README.md).
+### GIT Url
 
-After connecting your GitBook.io Account to the editor.
-You can use the menu `Book > Publish` to update your book content.
+Each book is associated with a Git HTTPS url. The ssh protocol is not yet supported on the GitBook's git server.
 
-![Publish book](../assets/publish.png)
-
-
-### Using git
-
-You can use Git to push an update of your book.
+The format for the git url is:
 
 ```
-$ git push https://push.gitbook.io/{{UserName}}/{{Book}}.git
+https://git.gitbook.com/{{UserName}}/{{Book}}.git
 ```
 
-It will prompt for your username (username or email) and your password (password or api token).
+### Authentication
 
-### What next?
+The git server is using your basic GitBook login to authenticate you. When prompted enter your GitBook username and your password (you can also use your API token).
 
-Once you have pushed content to GitBook.io, you need to check the state of your build.
+### Create a new repository on the command line
 
-[Read more](./build.md)
+```
+touch README.md SUMMARY.md
+git init
+git add README.md SUMMARY.md
+git commit -m "first commit"
+git remote add gitbook https://git.gitbook.com/{{UserName}}/{{Book}}.git
+git push -u gitbook master
+```
+
+### Push an existing repository
+
+```
+git remote add gitbook https://git.gitbook.com/{{UserName}}/{{Book}}.git
+git push -u gitbook master
+```
+
+

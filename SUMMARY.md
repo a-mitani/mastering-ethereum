@@ -1,9 +1,10 @@
 # Summary
 
+* [Introduction](README.md)
 * [Editor](editor/README.md)
 * [Markdown](markdown/README.md)
 * [Format](book/format.md)
-* [Pushing Content](book/push.md)
+* [Update with GIT](book/push.md)
 * [Build](book/build.md)
 * [Common Errors](book/errors.md)
 * [Cover](book/cover.md)
