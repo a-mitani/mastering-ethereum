@@ -1,6 +1,6 @@
 # Cover
 
-To make your book more elegant on GitBook.io, you can specify a cover.
+To make your book more elegant on GitBook, you can specify a cover.
 
 A cover is specified by a **cover.jpg** file, a **cover_small.jpg** can also exist as a smaller version of the cover. The cover should be a **JPEG** file.
 
