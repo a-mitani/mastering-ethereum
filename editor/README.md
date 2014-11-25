@@ -1,6 +1,6 @@
 # Editor
 
-An  editor is available online to edit your books. A new build will be started each time you save a file. Refer to the section "Draft Workflow" if you want to write a draft of the book without build it.
+An  [editor is available online](https://www.gitbook.com) to edit your books. A new build will be started each time you save a file. Refer to the section "Draft Workflow" if you want to write a draft of the book without build it.
 
 ### Draft Workflow
 
