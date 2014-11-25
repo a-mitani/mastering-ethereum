@@ -1,20 +1,20 @@
-# Desktop Editor
+# Editor
 
-An  editor is available for desktop. It is open source and the source code is available on [GitHub](https://github.com/GitbookIO/editor).
+An  editor is available online to edit your books. A new build will be started each time you save a file. Refer to the section "Draft Workflow" if you want to write a draft of the book without build it.
 
-![Screenshot](../assets/editor.png)
+### Draft Workflow
 
-### Download
+The GitBook Editor will trigger a new build each time you save a file (or when you edit the glossary or the summary).
 
-The editor is available to [download](https://www.gitbook.io/editor/download) for these platforms:
+But using the correct workflow, it's possible to work on a draft of your book then build it once it's finished.
 
-* [Windows](https://www.gitbook.io/editor/download/win)
-* [Mac OS](https://www.gitbook.io/editor/download/mac)
-* [Linux 32bits](https://www.gitbook.io/editor/download/linux32)
-* [Linux 64bits](https://www.gitbook.io/editor/download/linux64)
+1. Create a new branch from the branches menu
+    1. Enter a name that describe your modification, for example: "firstdraft"
+    2. Select "master" as the origin branch
+2. Your active branch should now be the branch that you just created
+3. Edit your book like usual
+4. When your draft is finish, open the branches menu and click on "Merge branches"
+5. Merge your draft branch into the master branch
+6. Delete your old draft branch
+7. Done!
 
-### Connect your GitBook.io account
-
-You can easily connect your GitBook.io account by entering your username and password in the auth dialog:
-
-![Auth](../assets/login.png)
