@@ -1,23 +1,19 @@
 # Build
 
-After you pushed content using **git** or the **editor**, GitBook.io will start different builds:
+After you pushed content using **git** or the **editor**, GitBook will start different builds:
 
 - **website**: it will generate the website
-- **json**: il will extract metadata about the book (summary, introduction, ...)
+- **json**: il will extract metadata about the book (summary, introduction, etc)
 - **epub**: it will generate the epub download
 - **pdf**: it will generate the pdf download
 
 ### List builds
 
-The **Activity** tab on your book let you follow the evolution of your builds.
-
-![Activity tab](../assets/activity.png)
+The **History** tab on your book let you follow the evolution of your builds.
 
 ### Details for a build
 
-When clicking the link "logs" for a build, you can access a detailed page for it. This page will let you see the output of the build process.
-
-![Activity tab](../assets/build.png)
+When clicking the button associated with a build, you can access a detailed page for it. This page will let you see the output of the build process.
 
 ### Fixing errors
 
