@@ -14,7 +14,7 @@ A cover is specified by a **cover.jpg** file, a **cover_small.jpg** can also exi
 
 ### Autocover
 
-A GitBook plugin (`autocover`) can also be used to generate a cover file for you, or just generate the `cover_small.jpg` from your big cover.
+A GitBook plugin (`autocover`) can also be used to generate a cover file for you, or just generate the `cover_small.jpg` from your big cover. This plugin is added by default on hostd books.
 
 [Read more about autocover](https://github.com/GitbookIO/plugin-autocover).
 
