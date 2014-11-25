@@ -18,7 +18,7 @@ But using the correct workflow, it's possible to work on a draft of your book th
     2. Select "master" as the origin branch
 2. Your active branch should now be the branch that you just created
 3. Edit your book like usual
-4. When your draft is finish, open the branches menu and click on "Merge branches"
+4. When your draft is finish, open the branches menu and click on "Merge Branches"
 5. Merge your draft branch into the master branch
 6. Delete your old draft branch
 7. Done!
