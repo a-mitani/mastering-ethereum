@@ -8,7 +8,7 @@ The process to add a custom domain to your book is easy.
 
 1. Add your domain name in your book settings.
 
-In order to use your own domain, you will need to make changes with your domain registrar:
+In order to use your own domain, you will need to make a few changes with your domain registrar:
 
 1. Log in to your domain registrar and find the section that allows you to add/edit host records, often found in a settings menu called 'Edit DNS', 'Host Records' or 'Zone File Control'.
 
