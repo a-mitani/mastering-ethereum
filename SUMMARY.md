@@ -12,5 +12,5 @@
 * [Visibility](book/visibility.md)
 * [Themes](book/themes.md)
 * [Exercises and Quizzes](book/exercises.md)
-* [Chapters and Subchapters](chapters/README.md)
+* [Chapters and Subchapters](book/chapters.md)
 
