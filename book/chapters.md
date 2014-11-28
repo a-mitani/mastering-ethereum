@@ -28,3 +28,8 @@ Subchapters are defined simply by adding a nested list to a parent chapter.
     * [We love feedback](part2/feedback_please.md)
     * [Better tools for authors](part2/better_tools.md)
 ```
+
+## Adding chapters from the editor
+
+You can add chapters from the desktop or web editor simply by **right clicking** on a chapter
+ and selecting `Add section`.
