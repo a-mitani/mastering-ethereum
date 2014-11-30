@@ -1,7 +1,7 @@
 Documentation
 =============
 
-This book contains the entire documentation for **GitBook** and **GitBook.io**. You can contribute to improve this documentation on [GitHub](https://github.com/GitbookIO/documentation).
+This book contains the entire documentation for **GitBook** (platform and toolchain). You can contribute to improve this documentation on [GitHub](https://github.com/GitbookIO/documentation).
 
 GitBook is a tool for building beautiful books markdown. It can generate your book in multiple formats: **PDF**, **ePub**, **mobi** or as a **wesbite**.
 
