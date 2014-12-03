@@ -3,7 +3,7 @@ Documentation
 
 This book contains the entire documentation for **GitBook** (platform and toolchain). You can contribute to improve this documentation on [GitHub](https://github.com/GitbookIO/documentation).
 
-GitBook is a tool for building beautiful books markdown. It can generate your book in multiple formats: **PDF**, **ePub**, **mobi** or as a **wesbite**.
+GitBook is a tool for building beautiful books using Git and Markdown. It can generate your book in multiple formats: **PDF**, **ePub**, **mobi** or as a **wesbite**.
 
 The GitBook toolchain is open source and completely free, the source code of the tool is available on [GitHub](https://github.com/GitbookIO/gitbook).
 
