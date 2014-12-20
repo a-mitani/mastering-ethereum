@@ -7,7 +7,6 @@
    * [Markdown](markdown/README.md)
    * [Cover](book/cover.md)
    * [Exercises and Quizzes](book/exercises.md)
-* [Search](platform/search.md)
 * Books
    * [Update with GIT](book/push.md)
    * [Build](book/build.md)
@@ -16,4 +15,5 @@
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
    * test
+* [Search](platform/search.md)
 
