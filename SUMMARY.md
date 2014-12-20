@@ -13,5 +13,5 @@
 * [Visibility](book/visibility.md)
 * [Themes](book/themes.md)
 * [Exercises and Quizzes](book/exercises.md)
-* Search
+* [Search](platform/search.md)
 
