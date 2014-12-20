@@ -2,7 +2,7 @@
 
 An  [editor is available online](https://www.gitbook.com) to edit your books. A new build will be started each time you save a file. Refer to the section "Draft Workflow" if you want to write a draft of the book without build it.
 
-![Preview of the editor](https://sm3lir.cloudimage.io/s/cdn/x/https://www.gitbook.com/assets/images/backgrounds/preview_editor.png?rversion=3.0.9)
+![Preview of the editor](https://www.gitbook.com/assets/images/backgrounds/preview_editor.png)
 
 ### How to access the editor?
 
