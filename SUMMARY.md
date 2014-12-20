@@ -9,11 +9,11 @@
    * [Exercises and Quizzes](book/exercises.md)
 * [Search](platform/search.md)
 * Books
+   * [Update with GIT](book/push.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-   * [Update with GIT](book/push.md)
    * test
 
