@@ -7,13 +7,13 @@
    * [Markdown](markdown/README.md)
    * [Cover](book/cover.md)
    * [Exercises and Quizzes](book/exercises.md)
-* [Build](book/build.md)
 * [Common Errors](book/errors.md)
 * [Custom Domains](book/domains.md)
 * [Visibility](book/visibility.md)
 * [Themes](book/themes.md)
 * [Search](platform/search.md)
 * Books
+   * [Build](book/build.md)
    * [Update with GIT](book/push.md)
    * test
 
