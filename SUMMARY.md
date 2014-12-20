@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [Editor](editor/README.md)
 * [Format](book/format.md)
    * [Chapters and Subchapters](book/chapters.md)
    * [Markdown](markdown/README.md)
@@ -14,5 +13,8 @@
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-* [Search](platform/search.md)
+* Platform
+   * [Editor](platform/editor.md)
+   * [Search](platform/search.md)
+   * [Audit Logs](platform/audit_logs.md)
 

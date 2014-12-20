@@ -2,6 +2,10 @@
 
 Themes can be used to customize your book's homepage using predefined or custom HTML template.
 
+### Predefined themes
+
+GitBook predefined themes are open source and available on [GitHub](https://github.com/GitbookIO/themes).
+
 ### Format
 
 Themes on GitBook use the [SWIG](http://paularmstrong.github.io/swig/docs/) syntax.
