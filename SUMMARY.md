@@ -15,4 +15,5 @@
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
 * [Search](platform/search.md)
+* Platform
 
