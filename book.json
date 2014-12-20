@@ -1,8 +1,11 @@
 {
-    "plugins": [ "exercises", "quizzes" ],
+    "plugins": [
+        "quizzes"
+    ],
     "links": {
         "sidebar": {
             "Contact us": "mailto:contact@gitbook.com"
         }
-    }
+    },
+    "pluginsConfig": {}
 }
