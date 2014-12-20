@@ -14,7 +14,7 @@
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-* [Search](platform/search.md)
 * Platform
+   * [Search](platform/search.md)
    * Audit Logs
 
