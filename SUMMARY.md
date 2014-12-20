@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Editor](editor/README.md)
-* [Format](book/format.md)
+* Format
    * [Chapters and Subchapters](book/chapters.md)
    * [Markdown](markdown/README.md)
    * [Cover](book/cover.md)
