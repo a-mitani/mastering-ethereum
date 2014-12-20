@@ -7,6 +7,7 @@ An  [editor is available online](https://www.gitbook.com) to edit your books. A 
 ### How to access the editor?
 
 The editor is accessible on each of your books. From the book's dashboard, click on the "edit" icon, it will open a new tab with the editor.
+
 The editor is compatible with all modern web browsers: Google Chrome, Safari, Firefox and Internet Explore; check that you're using the latest version of your web browser.
 
 ### Draft Workflow
