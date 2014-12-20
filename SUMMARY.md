@@ -14,6 +14,5 @@
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-   * test
 * [Search](platform/search.md)
 
