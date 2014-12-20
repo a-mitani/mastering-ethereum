@@ -16,5 +16,5 @@
    * [Custom Domains](book/domains.md)
 * Platform
    * [Search](platform/search.md)
-   * Audit Logs
+   * [Audit Logs](platform/audit_logs.md)
 
