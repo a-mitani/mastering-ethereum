@@ -15,4 +15,5 @@
 * [Themes](book/themes.md)
 * [Search](platform/search.md)
 * Books
+   * test
 
