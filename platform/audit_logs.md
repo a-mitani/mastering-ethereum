@@ -30,5 +30,3 @@ You can search the audit log for a wide variety of actions.
 | `book.remove` | Remove a book |
 | `book.transfer` | Transfer a book |
 | `book.publish` | Publish a new version of the book |
-
-`<string>method` |
