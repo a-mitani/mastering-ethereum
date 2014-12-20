@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [Editor](editor/README.md)
-* [Markdown](markdown/README.md)
 * [Format](book/format.md)
    * [Chapters and Subchapters](book/chapters.md)
+   * [Markdown](markdown/README.md)
    * [Cover](book/cover.md)
    * [Exercises and Quizzes](book/exercises.md)
 * [Update with GIT](book/push.md)
