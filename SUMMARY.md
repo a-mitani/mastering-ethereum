@@ -7,7 +7,6 @@
    * [Markdown](markdown/README.md)
    * [Cover](book/cover.md)
    * [Exercises and Quizzes](book/exercises.md)
-* [Update with GIT](book/push.md)
 * [Build](book/build.md)
 * [Common Errors](book/errors.md)
 * [Custom Domains](book/domains.md)
@@ -15,5 +14,6 @@
 * [Themes](book/themes.md)
 * [Search](platform/search.md)
 * Books
+   * [Update with GIT](book/push.md)
    * test
 
