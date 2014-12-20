@@ -12,13 +12,13 @@ You can search the audit log for a wide variety of actions.
 | `user.failed_login` | An user/visitor faield to logged in |
 | `user.signup` | Signup of an user |
 | `user.remove` | User removed his account |
-| `user.email.change` | user changed his email |
-| `user.token.change` | user reset his api token |
-| `user.password.change` | user changed his password |
-| `user.forgot_password` | user reset his password |
-| `user.verification.send` | user requested a verification email |
-| `user.verification.done` | user verified his email |
-| `user.forgot_password` | user reset his password |
+| `user.email.change` | User changed his email |
+| `user.token.change` | User reset his api token |
+| `user.password.change` | User changed his password |
+| `user.forgot_password` | User reset his password |
+| `user.verification.send` | User requested a verification email |
+| `user.verification.done` | User verified his email |
+| `user.forgot_password` | User reset his password |
 | `staff.login.fake` | A site admin signed into an user account |
 | `payment.card.change` | Connect a credit card |
 | `payment.card.remove` | Remove a credit card |
