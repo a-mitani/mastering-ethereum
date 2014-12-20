@@ -7,6 +7,9 @@ When searching GitBook, you can construct queries that match specific numbers an
 
 ### Search by text
 
+By default, GitBook search books associated with the keywords from the query. For example `javascript angular` will return all the books that contain the word "javascript" and "angular"
+
+
 
 
 
