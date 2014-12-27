@@ -17,3 +17,11 @@ We know this can get a bit confusing, so let's break it down by form:
 
 Remember: It's possible you won't receive either of these forms, so check out the above criteria.
 
+### When will I be receiving my 1099?
+
+We send out 1099s via USPS by the end of January. You can also download it right from the History section in the Driver Portal. (Note: If you don't see a 1099 available for download, it means you didn't meet the above thresholds and therefore won't be receiving one.)
+
+### What if I didn't receive any 1099 forms?
+
+In some cases, you may not receive a form at all. There are situations where authors won't receive a form, depending on amount earned, payout methods used, and the tax information submitted. If you didn't but were expecting one, please [send us an email](https://www.gitbook.com/contact) and we'll get it sorted out.
+
