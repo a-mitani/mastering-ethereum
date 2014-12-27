@@ -25,3 +25,7 @@ We send out 1099s via USPS by the end of January. You can also download it right
 
 In some cases, you may not receive a form at all. There are situations where authors won't receive a form, depending on amount earned, payout methods used, and the tax information submitted. If you didn't but were expecting one, please [send us an email](https://www.gitbook.com/contact) and we'll get it sorted out.
 
+### Do I need GitBook's EIN for my tax return?
+
+Since you are not an employee of GitBook, you are not required to provide GitBook's EIN (Employer Identification Number) on your tax return.
+
