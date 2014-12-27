@@ -17,4 +17,5 @@
    * [Editor](platform/editor.md)
    * [Search](platform/search.md)
    * [Audit Logs](platform/audit_logs.md)
+   * [Taxes](platform/taxes.md)
 
