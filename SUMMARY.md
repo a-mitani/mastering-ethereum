@@ -18,6 +18,6 @@
    * [Search](platform/search.md)
    * [Audit Logs](platform/audit_logs.md)
    * [Taxes](platform/taxes.md)
-   * Organizations
+   * [Organizations](platform/organizations/README.md)
        * [Convert an user](platform/organizations/convert.md)
 
