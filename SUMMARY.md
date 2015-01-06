@@ -20,4 +20,5 @@
    * [Taxes](platform/taxes.md)
    * [Organizations](platform/organizations/README.md)
        * [Convert an user](platform/organizations/convert.md)
+       * Differences with users
 
