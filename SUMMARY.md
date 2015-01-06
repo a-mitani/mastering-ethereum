@@ -19,6 +19,6 @@
    * [Audit Logs](platform/audit_logs.md)
    * [Taxes](platform/taxes.md)
    * [Organizations](platform/organizations/README.md)
-       * [Convert an user](platform/organizations/convert.md)
        * Differences with users
+       * [Convert an user](platform/organizations/convert.md)
 
