@@ -19,9 +19,8 @@ If the user you're converting is already a member of other organizations, you mu
 #### 3. Convert the account into an organization
 
 * Open your [account settings](https://www.gitbook.com/settings).
-
 * Under "Transform account", enter the username of your new personnal account (see section 1.), click `Turn into an organization`.
 
-4. Sign in to the organization
+#### 4. Sign in to the organization
 
 If you added your secondary personal account as the new owner in the last step of the conversion process, sign in to that account, and in the account context switcher, you'll be able to access your new organization!
