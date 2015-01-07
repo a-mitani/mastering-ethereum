@@ -21,5 +21,5 @@
    * [Organizations](platform/organizations/README.md)
        * [Differences with users](platform/organizations/differences.md)
        * [Convert an user](platform/organizations/convert.md)
-       * Transferring ownership
+       * [Transferring ownership](platform/organizations/ownership.md)
 
