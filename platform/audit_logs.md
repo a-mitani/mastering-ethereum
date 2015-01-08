@@ -19,6 +19,9 @@ You can search the audit log for a wide variety of actions.
 | `user.verification.send` | User requested a verification email |
 | `user.verification.done` | User verified his email |
 | `user.forgot_password` | User reset his password |
+| `org.create` | User created an organization |
+| `org.remove` | User removed an organization |
+| `org.transform` | User transformed a personal account into an organization |
 | `staff.login.fake` | A site admin signed into an user account |
 | `payment.card.change` | Connect a credit card |
 | `payment.card.remove` | Remove a credit card |
