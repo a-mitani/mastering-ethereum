@@ -11,6 +11,7 @@ GitBook is a tool for building beautiful books using Git and Markdown. It can ge
 - [General informations about the format](./book/format.md)
 - [Chapters and Subchapters](./book/chapters.md)
 - [Cover Picture](./book/cover.md)
+- [Add exercises ans quizzes to book](./book/exercises.md)
 
 ### User Account
 
