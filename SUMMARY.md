@@ -1,12 +1,12 @@
 # Summary
 
 * [Introduction](README.md)
-* [Format](book/format.md)
-   * [Chapters and Subchapters](book/chapters.md)
-   * [Markdown](book/markdown.md)
-   * [Cover](book/cover.md)
-   * [Exercises and Quizzes](book/exercises.md)
 * Books
+   * [Format](book/format.md)
+       * [Chapters and Subchapters](book/chapters.md)
+       * [Markdown](book/markdown.md)
+       * [Cover](book/cover.md)
+       * [Exercises and Quizzes](book/exercises.md)
    * [Update with GIT](book/push.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
