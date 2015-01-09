@@ -1,4 +1,4 @@
-Documentation
+GitBook Documentation
 =============
 
 This book contains the entire documentation for **GitBook** (platform and toolchain).
