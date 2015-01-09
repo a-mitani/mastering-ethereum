@@ -1,6 +1,4 @@
-# Summary
 
-* [Introduction](README.md)
 * Books
    * [Format](book/format.md)
        * [Chapters and Subchapters](book/chapters.md)
