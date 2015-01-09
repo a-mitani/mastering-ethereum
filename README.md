@@ -15,10 +15,11 @@ GitBook is a tool for building beautiful books using Git and Markdown. It can ge
 - [Cover Picture](./book/cover.md)
 - [Add exercises ans quizzes to book](./book/exercises.md)
 
-### User Account
+### Platform
 
 - [Audit and Security Logs](./platform/audit_logs.md)
 - [Payout and Taxes](./platform/taxes.md)
+- [Search](./platform/search.md)
 
 ### Organizations
 
