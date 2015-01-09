@@ -6,6 +6,9 @@ This book contains the entire documentation for **GitBook** (platform and toolch
 GitBook is a tool for building beautiful books using Git and Markdown. It can generate your book in multiple formats: **PDF**, **ePub**, **mobi** or as a **website**.
 
 
+### User Account
+
+- [Audit and Security Logs](./platform/audit_logs.md)
 
 ### Organizations
 
