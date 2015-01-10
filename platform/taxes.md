@@ -17,13 +17,13 @@ It depends on several factors, but here's a quick breakdown:
 
 We know this can get a bit confusing, so let's break it down by form:
 * **1099-K**: If you receive a 1099-K from us, the dollar amount you see in Box 1 consists of all earnings collected in the previous year (after we deduct our admin fee).
-* **1099-MISC**: If you receive a 1099-MISC, the dollar amount in Box 2 is all income not related to royalties earnings.
+* **1099-MISC**: If you receive a 1099-MISC, the dollar amount in Box 3 is all income from GitBook royalties.
 
 Remember: It's possible you won't receive either of these forms, so check out the above criteria.
 
 ### When will I be receiving my 1099?
 
-We send out 1099s via USPS by the end of January. You can also download it right from the History section in the Driver Portal. (Note: If you don't see a 1099 available for download, it means you didn't meet the above thresholds and therefore won't be receiving one.)
+We send out 1099s via USPS by the end of January. You will also receive this form by email in January. (Note: If you don't receive a 1099, it means you didn't meet the above thresholds and therefore won't be receiving one.)
 
 ### What if I didn't receive any 1099 forms?
 
