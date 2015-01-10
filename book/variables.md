@@ -24,3 +24,7 @@ For example to show the variable from the book.json (`myVariable`):
 # This is a test: {{ myVariable }}
 
 ```
+
+### Import files
+
+In the same way, files
