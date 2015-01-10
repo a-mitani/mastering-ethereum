@@ -13,3 +13,14 @@ Variables are defined in the `book.json` file:
     }
 }
 ```
+
+### Import variables
+
+Variables can be imported in all markdown files using `{{ }}`.
+
+For example to show the variable from the book.json (`myVariable`):
+
+```
+# This is a test: {{ myVariable }}
+
+```
