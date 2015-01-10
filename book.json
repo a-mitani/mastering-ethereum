@@ -2,7 +2,7 @@
     "plugins": [],
     "links": {
         "sidebar": {
-            "Contact us": "mailto:contact@gitbook.com"
+            "Contact us / Support": "https://www.gitbook.com/contact"
         }
     },
     "pluginsConfig": {}
