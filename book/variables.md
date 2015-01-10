@@ -27,4 +27,10 @@ For example to show the variable from the book.json (`myVariable`):
 
 ### Import files
 
-In the same way, files
+In the same way, files can be imported:
+
+```
+# This is a test:
+
+{{ ./file.md }}
+```
