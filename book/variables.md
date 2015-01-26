@@ -30,7 +30,7 @@ This looks up `myVariable` from the book variables and displays it. Variable nam
 ```
 
 If a value is undefined, nothing is displayed. The following all output nothing if `foo` is undefined: `{{ foo }}`, `{{ foo.bar }}`, `{{ foo.bar.baz }}`.
-```
+
 
 ### Context variables
 
