@@ -36,6 +36,10 @@ If a value is undefined, nothing is displayed. The following all output nothing 
 
 Some variables are also available to get informations about the current file or the GitBook instance:
 
+| Name | Description |
+| ---- | ----------- |
+| `file.path` | Path of the file relative to the book |
+| `file.mtime` | |
 
 
 
