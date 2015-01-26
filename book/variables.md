@@ -1,6 +1,6 @@
-# Variables and Import
+# Variables
 
-Some macros can be used in the markdown source to import files or variables.
+A variable looks up a value from the book context.
 
 ### Define variables
 
@@ -16,21 +16,18 @@ Variables are defined in the `book.json` file:
 
 ### Import variables
 
-Variables can be imported in all markdown files using `{{ }}`.
-
-For example to show the variable from the book.json (`myVariable`):
+If you wanted to simply display a variable, you would do:
 
 ```
-# This is a test: {{ myVariable }}
-
+{{ book.myVariable }}
 ```
 
-### Import files
-
-In the same way, files can be imported:
+This looks up `myVariable` from the book variables and displays it. Variable names can have dots in them which lookup properties. You can also use the square bracket syntax.
 
 ```
-# This is a test:
+{{ book.foo.bar }}
+{{ book["bar"] }}
+```
 
-{{ ./file.md }}
+If a value is undefined, nothing is displayed. The following all output nothing if `foo` is undefined: `{{ foo }}`, `{{ foo.bar }}`, `{{ foo.bar.baz }}`.
 ```
