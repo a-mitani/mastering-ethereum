@@ -15,7 +15,7 @@
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Themes](book/themes.md)
-       * Homepage
+       * [Homepage](book/styling/homepage.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
 * Platform
