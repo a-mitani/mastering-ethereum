@@ -9,6 +9,7 @@
        * [Cover](book/cover.md)
        * [Exercises and Quizzes](book/exercises.md)
        * [Templating](book/templating.md)
+       * Content References
    * [Update with GIT](book/push.md)
    * [Plugins](book/plugins.md)
    * [Build](book/build.md)
