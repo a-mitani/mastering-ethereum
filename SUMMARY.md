@@ -8,6 +8,7 @@
        * [Cover](book/cover.md)
        * [Exercises and Quizzes](book/exercises.md)
        * [Variables](book/variables.md)
+       * Readme and Introduction
    * [Update with GIT](book/push.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
