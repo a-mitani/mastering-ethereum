@@ -3,12 +3,12 @@
 * [Introduction](README.md)
 * Books
    * [Format](book/format.md)
+       * Readme and Introduction
        * [Chapters and Subchapters](book/chapters.md)
        * [Markdown](book/markdown.md)
        * [Cover](book/cover.md)
        * [Exercises and Quizzes](book/exercises.md)
        * [Variables](book/variables.md)
-       * Readme and Introduction
    * [Update with GIT](book/push.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
