@@ -70,7 +70,31 @@ You can specify alternate conditions with elif and else:
 {% endif %}
 ```
 
+#### for
 
+**for** iterates over arrays and dictionaries.
+
+Let's consider your variables in the `book.json`: 
+```
+{
+    "variables": {
+        "authors": [
+            { "name": "Samy" },
+            { "name": "Aaron" }
+        ]
+    }
+}
+```
+
+```
+# Authors
+
+
+{% for author in authors %}
+  <li>{{ item.title }}</li>
+{% endfor %}
+</ul>
+The above example lists all the posts using the title attribute of each item in the items array as the display value.
 
 
 
