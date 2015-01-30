@@ -10,12 +10,12 @@
        * [Exercises and Quizzes](book/exercises.md)
        * [Variables](book/variables.md)
    * [Update with GIT](book/push.md)
+   * Plugins
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-   * Plugins
 * Platform
    * [Editor](platform/editor.md)
    * [Search](platform/search.md)
