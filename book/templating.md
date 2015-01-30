@@ -91,10 +91,11 @@ Let's consider your variables in the `book.json`:
 
 
 {% for author in authors %}
-  <li>{{ item.title }}</li>
+  - {{ author.name }}
 {% endfor %}
-</ul>
-The above example lists all the posts using the title attribute of each item in the items array as the display value.
+```
+
+The above example lists all the authors using the `name` attribute of each item in the `authors` array as the display value.
 
 
 
