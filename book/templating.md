@@ -97,6 +97,8 @@ Let's consider your variables in the `book.json`:
 
 The above example lists all the authors using the `name` attribute of each item in the `authors` array as the display value.
 
+#### include
 
+Include is detailed in the [Content References](./conrefs.md) article.
 
 
