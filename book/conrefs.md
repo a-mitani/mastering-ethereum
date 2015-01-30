@@ -30,7 +30,9 @@ The `commit-ish` can be any tag, sha, or branch which can be supplied as an argu
 
 ### Inheritance
 
-An other way to reference content is to inherit from an another file:
+Template inheritance is a way to make it easy to reuse templates. When writing a template, you can define "blocks" that child templates can override. The inheritance chain can be as long as you like.
+
+`block` defines a section on the template and identifies it with a name. Base templates can specify blocks and child templates can override them with new content.
 
 ```
 {% extends "./mypage.md" %}
