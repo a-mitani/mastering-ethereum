@@ -14,7 +14,7 @@
    * [Plugins](book/plugins.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
-   * [Themes](book/themes.md)
+   * [Styling](book/styling.md)
        * [Homepage](book/styling/homepage.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
