@@ -42,6 +42,33 @@ Some variables are also available to get informations about the current file or 
 | `file.mtime` | |
 
 
+### Tags
+
+Tags are special blocks that perform operations on sections of the template.
+
+#### If
+
+**if** tests a condition and lets you selectively display content. It behaves exactly as a programming language's if behaves.
+
+````
+{% if variable %}
+  It is true
+{% endif %}
+```
+
+If `variable` is defined and evaluates to true, "It is true" will be displayed. Otherwise, nothing will be.
+
+You can specify alternate conditions with elif and else:
+
+```
+{% if hungry %}
+  I am hungry
+{% elif tired %}
+  I am tired
+{% else %}
+  I am good!
+{% endif %}
+```
 
 
 
