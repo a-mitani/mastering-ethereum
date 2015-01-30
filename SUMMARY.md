@@ -15,6 +15,7 @@
    * [Themes](book/themes.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
+   * Plugins
 * Platform
    * [Editor](platform/editor.md)
    * [Search](platform/search.md)
