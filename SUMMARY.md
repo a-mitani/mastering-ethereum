@@ -10,7 +10,7 @@
        * [Exercises and Quizzes](book/exercises.md)
        * [Variables](book/variables.md)
    * [Update with GIT](book/push.md)
-   * Plugins
+   * [Plugins](book/plugins.md)
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Themes](book/themes.md)
