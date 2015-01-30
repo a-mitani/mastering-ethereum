@@ -8,7 +8,7 @@
        * [Markdown](book/markdown.md)
        * [Cover](book/cover.md)
        * [Exercises and Quizzes](book/exercises.md)
-       * [Variables](book/variables.md)
+       * [Templating](book/variables.md)
    * [Update with GIT](book/push.md)
    * [Plugins](book/plugins.md)
    * [Build](book/build.md)
