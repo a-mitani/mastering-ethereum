@@ -27,3 +27,8 @@ git+https://user@hostname/project/blah.git/file#commit-ish
 The real git url part should finish with `.git`, the filename to import is extracted after the `.git` till the fragment of the url.
 
 The `commit-ish` can be any tag, sha, or branch which can be supplied as an argument to `git checkout`. The default is `master`.
+
+### Inheritance
+
+An other way to reference content is to inherit from an another file:
+
