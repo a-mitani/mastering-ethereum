@@ -52,7 +52,3 @@ This is the default content
 {% import "./LICENSE" %}
 ```
 
-
-
-
-
