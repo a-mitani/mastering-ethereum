@@ -32,3 +32,27 @@ The `commit-ish` can be any tag, sha, or branch which can be supplied as an argu
 
 An other way to reference content is to inherit from an another file:
 
+```
+{% extends "./mypage.md" %}
+
+{% block pageContent %}
+# This is my page content
+{% endblock %}
+```
+
+In the file `mypage.md`, you should specify the blocks that can be extent:
+
+```
+{% block pageContent %}
+This is the default content
+{% endblock %}
+
+# License
+
+{% import "./LICENSE" %}
+```
+
+
+
+
+
