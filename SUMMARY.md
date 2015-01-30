@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * Books
    * [Format](book/format.md)
-       * Readme and Introduction
+       * [Readme and Introduction](book/introduction.md)
        * [Chapters and Subchapters](book/chapters.md)
        * [Markdown](book/markdown.md)
        * [Cover](book/cover.md)
