@@ -1,4 +1,4 @@
-# Variables
+# Templating
 
 A variable looks up a value from the book context.
 
