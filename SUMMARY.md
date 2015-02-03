@@ -7,7 +7,6 @@
        * [Chapters and Subchapters](book/chapters.md)
        * [Markdown](book/markdown.md)
        * [Cover](book/cover.md)
-       * [Exercises and Quizzes](book/exercises.md)
        * [Templating](book/templating.md)
        * [Content References](book/conrefs.md)
    * [Update with GIT](book/push.md)
