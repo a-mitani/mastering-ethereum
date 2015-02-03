@@ -12,6 +12,7 @@
    * [Update with GIT](book/push.md)
    * [Plugins](book/plugins.md)
        * Create a plugin
+       * Extend blocks
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Styling](book/styling/README.md)
