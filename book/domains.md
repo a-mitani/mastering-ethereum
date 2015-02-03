@@ -1,6 +1,6 @@
 # Custom Domains
 
-All books on **Gitbook.io** are accessible via the url **http://{{author}}.gitbooks.io/{book}/**, and content is accessible at **http://{{author}}.gitbooks.io/{book}/content/**.
+All books on **Gitbook.com** are accessible via the url **http://{{author}}.gitbooks.io/{book}/**, and content is accessible at **http://{{author}}.gitbooks.io/{book}/content/**.
 
 But you can configure your book to use a custom domain name (a free feature on GitBook). Domain name can be use for the homepage and the content (or both).
 
