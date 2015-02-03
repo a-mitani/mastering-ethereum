@@ -17,7 +17,7 @@
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
 * [Plugins](plugins/README.md)
-   * Create a plugin
+   * [Create a plugin](plugins/create.md)
    * Extend blocks
    * Extend filters
 * Platform
