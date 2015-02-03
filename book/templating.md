@@ -41,7 +41,7 @@ Some variables are also available to get informations about the current file or 
 | Name | Description |
 | ---- | ----------- |
 | `file.path` | Path of the file relative to the book |
-| `file.mtime` | |
+| `file.mtime` |Last modified date of the file |
 
 
 ### Tags
