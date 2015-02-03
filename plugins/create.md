@@ -17,6 +17,6 @@ The `package.json` contains general informations about your plugin (name, versio
 }
 ```
 
-
+You can learn more about `package.json` from the [NPM documentation](https://docs.npmjs.com/files/package.json).
 
 
