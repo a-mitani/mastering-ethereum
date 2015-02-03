@@ -20,6 +20,7 @@
    * [Create a plugin](plugins/create.md)
    * Extend blocks
    * Extend filters
+   * Extend Assets
 * Platform
    * [Editor](platform/editor.md)
    * [Search](platform/search.md)
