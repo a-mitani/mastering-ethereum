@@ -10,16 +10,16 @@
        * [Templating](book/templating.md)
        * [Content References](book/conrefs.md)
    * [Update with GIT](book/push.md)
-   * [Plugins](book/plugins.md)
-       * Create a plugin
-       * Extend blocks
-       * Extend filters
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Styling](book/styling/README.md)
        * [Homepage](book/styling/homepage.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
+* [Plugins](book/plugins.md)
+   * Create a plugin
+   * Extend blocks
+   * Extend filters
 * Platform
    * [Editor](platform/editor.md)
    * [Search](platform/search.md)
