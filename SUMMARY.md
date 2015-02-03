@@ -1,33 +1,32 @@
 # Summary
 
 * [Introduction](README.md)
-* Books
-   * [Format](book/format.md)
-       * [Readme and Introduction](book/introduction.md)
-       * [Chapters and Subchapters](book/chapters.md)
-       * [Markdown](book/markdown.md)
-       * [Cover](book/cover.md)
-       * [Templating](book/templating.md)
-       * [Content References](book/conrefs.md)
-   * [Update with GIT](book/push.md)
-   * [Build](book/build.md)
-   * [Common Errors](book/errors.md)
-   * [Styling](book/styling/README.md)
-       * [Homepage](book/styling/homepage.md)
-   * [Visibility](book/visibility.md)
-   * [Custom Domains](book/domains.md)
+* [Format](format/README.md)
+  * [Readme and Introduction](format/introduction.md)
+  * [Chapters and Subchapters](format/chapters.md)
+  * [Markdown](format/markdown.md)
+  * [Cover](format/cover.md)
+  * [Templating](format/templating.md)
+  * [Content References](format/conrefs.md)
+* [Build](build/README.md)
+  * [Update with GIT](build/push.md)
+  * [Common Errors](build/errors.md)
 * [Plugins](plugins/README.md)
-   * [Create a plugin](plugins/create.md)
-   * Extend blocks
-   * Extend filters
-   * Extend Assets
+  * [Create a plugin](plugins/create.md)
+  * Extend blocks
+  * Extend filters
+  * Extend Assets
+* [Styling](book/styling/README.md)
+  * [Homepage](book/styling/homepage.md)
 * Platform
-   * [Editor](platform/editor.md)
-   * [Search](platform/search.md)
-   * [Audit Logs](platform/audit_logs.md)
-   * [Taxes](platform/taxes.md)
-   * [Organizations](platform/organizations/README.md)
-       * [Differences with users](platform/organizations/differences.md)
-       * [Convert an user](platform/organizations/convert.md)
-       * [Transferring ownership](platform/organizations/ownership.md)
+  * [Editor](platform/editor.md)
+  * [Search](platform/search.md)
+  * [Audit Logs](platform/audit_logs.md)
+  * [Taxes](platform/taxes.md)
+  * [Visibility](platform/visibility.md)
+  * [Custom Domains](platform/domains.md)
+  * [Organizations](platform/organizations/README.md)
+    * [Differences with users](platform/organizations/differences.md)
+    * [Convert an user](platform/organizations/convert.md)
+    * [Transferring ownership](platform/organizations/ownership.md)
 

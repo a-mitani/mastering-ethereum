@@ -2,7 +2,7 @@
 
 The first page of your book is extracted from the README.md. If the file is not present in the SUMMARY, it will be added as a first entry.
 
-### Use an other file than README.md
+### Use another file than README.md
 
 Some books hosted on GitHub prefer to keep the README.md as a project introduction instead of a book introduction.
 
