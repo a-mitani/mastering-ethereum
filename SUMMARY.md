@@ -16,7 +16,7 @@
        * [Homepage](book/styling/homepage.md)
    * [Visibility](book/visibility.md)
    * [Custom Domains](book/domains.md)
-* [Plugins](book/plugins.md)
+* [Plugins](plugins/README.md)
    * Create a plugin
    * Extend blocks
    * Extend filters
