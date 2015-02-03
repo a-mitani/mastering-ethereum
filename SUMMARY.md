@@ -11,6 +11,7 @@
        * [Content References](book/conrefs.md)
    * [Update with GIT](book/push.md)
    * [Plugins](book/plugins.md)
+       * Create a plugin
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Styling](book/styling/README.md)
