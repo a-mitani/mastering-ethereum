@@ -11,7 +11,7 @@ Importing an other file's content is really easy using the `include` tag:
 {% include "./test.md" %}
 ```
 
-### Importing file from an other book
+### Importing file from another book
 
 GitBook can also resolve the include path by using git:
 
