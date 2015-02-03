@@ -13,6 +13,7 @@
    * [Plugins](book/plugins.md)
        * Create a plugin
        * Extend blocks
+       * Extend filters
    * [Build](book/build.md)
    * [Common Errors](book/errors.md)
    * [Styling](book/styling/README.md)
