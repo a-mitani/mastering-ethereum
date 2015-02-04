@@ -1,6 +1,6 @@
 # Build
 
-After you pushed content using **git** or the **editor**, GitBook will start different builds:
+After you [pushed content using **git** or the **editor**](./push.md), GitBook will start different builds:
 
 - **website**: it will generate the website
 - **json**: il will extract metadata about the book (summary, introduction, etc)
