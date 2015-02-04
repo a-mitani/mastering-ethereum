@@ -13,7 +13,7 @@
   * [Common Errors](build/errors.md)
 * [Plugins](plugins/README.md)
   * [Create a plugin](plugins/create.md)
-  * Extend blocks
+  * [Extend blocks](plugins/blocks.md)
   * Extend filters
   * Extend Assets
 * [Styling](book/styling/README.md)
