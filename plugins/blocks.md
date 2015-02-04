@@ -46,3 +46,19 @@ module.exports = {
     }
 };
 ```
+
+### Handling sub-blocks
+
+A defined block can be parsed into different sub-blocks, for example let's consider the source:
+
+```
+{% myTag %}
+    Main body
+    {% subblock1 %}
+    Body of sub-block 1
+    {% subblock 2 %}
+    Body of sub-block 1
+{% endmyTag %}
+```
+
+
