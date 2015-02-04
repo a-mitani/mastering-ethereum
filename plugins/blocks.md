@@ -1,14 +1,15 @@
+{% raw %}
 # Extend blocks
 
 Extending templating blocks is the best way to provide extra functionnalities to authors.
 
 The most common usage is to process the content within some tags at runtime. It's like [filters](./filters.md), but on steroids because you aren't confined to a single expression.
 
-### Define a new block
+### Defining a new block
 
 Blocks are defined by the plugin, blocks is a map of name associated with a block descriptor. The block descriptor needs to contain at least a `process` method.
 
-```
+```js
 module.exports = {
     blocks: {
         tag1: {
@@ -34,7 +35,7 @@ This is the body of the block.
 
 And arguments are easily accessible in the `process` method:
 
-```
+```js
 module.exports = {
     blocks: {
         tag1: {
@@ -62,3 +63,4 @@ A defined block can be parsed into different sub-blocks, for example let's consi
 ```
 
 
+{% endraw %}

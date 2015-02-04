@@ -9,7 +9,7 @@ You can search the audit log for a wide variety of actions.
 | Name | Description |
 | ---- | ----------- |
 | `user.login` | Login of an user |
-| `user.failed_login` | An user/visitor faield to logged in |
+| `user.failed_login` | An user/visitor failed to logged in |
 | `user.signup` | Signup of an user |
 | `user.remove` | User removed his account |
 | `user.email.change` | User changed his email |
