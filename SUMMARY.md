@@ -8,7 +8,7 @@
    * [AsciiDoc](format/asciidoc.md)
    * [Cover](format/cover.md)
    * [Multi-Languages](format/languages.md)
-   * Glossary
+   * [Glossary](format/glossary.md)
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
 * [Build](build/README.md)
