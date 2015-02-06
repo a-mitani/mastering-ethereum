@@ -29,8 +29,3 @@ Subchapters are defined simply by adding a nested list to a parent chapter.
     * [Better tools for authors](part2/better_tools.md)
 ```
 
-## Adding chapters from the editor
-
-You can add chapters from the editor simply by **right clicking** on a chapter
- and selecting `Add section`. Chapter and subchapters can be reorganized by dragging and dropping.
- 
