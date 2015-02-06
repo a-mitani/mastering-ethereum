@@ -30,19 +30,6 @@ This is the summary of my book.
 
 Files that are not included in SUMMARY.md will not be processed by GitBook.
 
-
-#### Multi-Languages
-
-GitBook supports building books written in multiple languages. Each language should be a sub-directory following the normal GitBook format, and a file named `LANGS.md` should be present at the root of the repository with the following format:
-
-```
-* [English](en/)
-* [French](fr/)
-* [Español](es/)
-```
-
-You can see a complete example with the [Learn Git](https://github.com/GitbookIO/git) book.
-
 #### Glossary
 
 Allows you to specify terms and their respective definitions to be displayed in the glossary. Based on those terms, gitbook will automatically build an index and highlight those terms in pages.
