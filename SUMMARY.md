@@ -8,9 +8,9 @@
    * [AsciiDoc](format/asciidoc.md)
    * [Cover](format/cover.md)
    * Multi-Languages
+   * Glossary
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
-   * Glossary
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
