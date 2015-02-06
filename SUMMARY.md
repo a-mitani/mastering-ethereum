@@ -10,6 +10,7 @@
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
    * Multi-Languages
+   * Glossary
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
