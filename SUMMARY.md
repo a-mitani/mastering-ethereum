@@ -11,7 +11,7 @@
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
-* GitHub Integration
+* [GitHub Integration](github.md)
 * [Styling](styling/README.md)
    * [Homepage](styling/homepage.md)
 * [Editor](editor/README.md)
