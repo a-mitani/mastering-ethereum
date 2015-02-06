@@ -32,5 +32,18 @@ Subchapters are defined simply by adding a nested list to a parent chapter.
 
 ### LANGS.adoc
 
+For [Multi-Languages](./languages.md) books, this file is used to define the different supported languages and translations.
+
+This file is following the same syntax as the `SUMMARY.adoc`:
+
+```
+= Languages
+
+. link:en/[English]
+. link:fr/[French]
+```
+
+### GLOSSARY.adoc
+
 
 
