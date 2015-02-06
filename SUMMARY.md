@@ -7,9 +7,9 @@
    * [Markdown](format/markdown.md)
    * [AsciiDoc](format/asciidoc.md)
    * [Cover](format/cover.md)
+   * Multi-Languages
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
-   * Multi-Languages
    * Glossary
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
