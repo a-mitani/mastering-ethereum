@@ -11,6 +11,7 @@
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
+* GitHub Integration
 * [Styling](styling/README.md)
    * [Homepage](styling/homepage.md)
 * [Editor](editor/README.md)
@@ -29,5 +30,4 @@
    * [Extend blocks](plugins/blocks.md)
    * Extend filters
    * Extend Assets
-* GitHub Integration
 
