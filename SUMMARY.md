@@ -5,10 +5,10 @@
    * [Readme and Introduction](format/introduction.md)
    * [Chapters and Subchapters](format/chapters.md)
    * [Markdown](format/markdown.md)
+   * AsciiDoc
    * [Cover](format/cover.md)
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
-   * AsciiDoc
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
