@@ -5,7 +5,7 @@
    * [Readme and Introduction](format/introduction.md)
    * [Chapters and Subchapters](format/chapters.md)
    * [Markdown](format/markdown.md)
-   * AsciiDoc
+   * [AsciiDoc](format/asciidoc.md)
    * [Cover](format/cover.md)
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
