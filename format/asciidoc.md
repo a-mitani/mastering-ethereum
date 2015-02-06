@@ -8,3 +8,8 @@ Just like for markdown, GitBook is using some special files to extract structure
 
 ### README.adoc
 
+This is the main entry of your book: the introduction. This file is **non optional**.
+
+### SUMMARY.adoc
+
+This file defines the list of chapters and subchapters. Just like [for markdown](./chapters.md)
