@@ -2,7 +2,7 @@
 
 The format's main focus is simplicity and readability.
 
-GitBook uses a convention on top some files:
+GitBook uses a convention on top of markup files:
 
 * [**README**](./readme.md): Introduction of the book
 * [**SUMMARY**](./chapters.md): Chapters Structure
