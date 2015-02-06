@@ -30,20 +30,6 @@ This is the summary of my book.
 
 Files that are not included in SUMMARY.md will not be processed by GitBook.
 
-#### Glossary
-
-Allows you to specify terms and their respective definitions to be displayed in the glossary. Based on those terms, gitbook will automatically build an index and highlight those terms in pages.
-
-The GLOSSARY.md format is very simple :
-
-````
-# term
-Definition for this term
-
-# Another term
-With it's definition, this can contain bold text and all other kinds of inline markup ...
-```
-
 #### Ignoring files & folders
 
 GitBook will read the `.gitignore`, `.bookignore` and `.ignore` files to get a list of files and folders to skip. (The format inside those files, follows the same convention as `.gitignore`)
