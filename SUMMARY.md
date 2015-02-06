@@ -11,7 +11,7 @@
    * [Glossary](format/glossary.md)
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
-   * Ignoring files
+   * [Ignoring files](format/ignore.md)
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
