@@ -20,7 +20,7 @@
    * [Homepage](styling/homepage.md)
 * [Editor](editor/README.md)
    * [Draft Workflow](editor/draft.md)
-   * Chapters
+   * [Chapters](editor/chapters.md)
 * [Search](platform/search.md)
 * [Audit Logs](platform/audit_logs.md)
 * [Taxes](platform/taxes.md)
