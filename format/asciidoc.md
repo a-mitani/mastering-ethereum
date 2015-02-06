@@ -12,4 +12,25 @@ This is the main entry of your book: the introduction. This file is **non option
 
 ### SUMMARY.adoc
 
-This file defines the list of chapters and subchapters. Just like [for markdown](./chapters.md)
+This file defines the list of chapters and subchapters. Just like [for markdown](./chapters.md), the `SUMMARY.adoc`'s format is simply a list of links, the name of the link is used as the chapter's name, and the target is a path to that chapter's file.
+
+Subchapters are defined simply by adding a nested list to a parent chapter.
+
+```
+= Summary
+
+. link:chapter-1/README.adoc[Chapter 1]
+.. link:chapter-1/ARTICLE1.adoc[Article 1]
+.. link:chapter-1/ARTICLE2.adoc[Article 2]
+... link:chapter-1/ARTICLE-1-2-1.adoc[Article 1.2.1]
+. link:chapter-2/README.adoc[Chapter 2]
+. link:chapter-3/README.adoc[Chapter 3]
+. link:chapter-4/README.adoc[Chapter 4]
+.. Unfinished article
+. Unfinished Chapter
+```
+
+### LANGS.adoc
+
+
+
