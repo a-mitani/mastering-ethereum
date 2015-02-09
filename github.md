@@ -35,3 +35,17 @@ When your GitHub account is correctly linked to your GitBook account, linking a 
 
 You can now edit your GitHub repository from the web editor (if you have authorized the correct permissions), and your commit on GitHub will trigger builds on GitBook
 
+## Common Errors:
+
+##### My Book is not being updated / No build is triggered
+
+If you linked your GitHub repository to a GitBook but no build is triggered when editing content.
+Verify that the webhook has been correctly added to your GitHub repository (in your GitHub repository settings -> Webhook). If the webhook is not present or invalid, add it back fom yoru GitBook book settings.
+
+##### Change of book owner
+
+If you transferred your book to a new owner, the webhook is now invalid, you need to add it back.
+
+
+
+
