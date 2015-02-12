@@ -26,7 +26,7 @@
 * [Taxes](platform/taxes.md)
 * [Visibility](platform/visibility.md)
 * [Custom Domains](platform/domains.md)
-* Messaging
+* [Messaging](platform/messaging.md)
 * [Organizations](platform/organizations/README.md)
    * [Differences with users](platform/organizations/differences.md)
    * [Convert an user](platform/organizations/convert.md)
