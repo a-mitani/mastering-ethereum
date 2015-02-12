@@ -20,6 +20,8 @@ There is two types of messages: **Notifications** and **Newsletter messages**.
 
 When creating a new message from your mailing dashboard, you can choose the type of message.
 
+Messages are sent in your name, so that readers can respond to it to contact you. But you can configure the **reply-to** email and set a **bcc** email.
+
 #### Newsletter message
 
 Email notifications to subscribers will not sent immediately. All messages are sent at once, periodically (midnight PST).
