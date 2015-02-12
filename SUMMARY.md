@@ -35,4 +35,5 @@
    * [Extend blocks](plugins/blocks.md)
    * Extend filters
    * Extend Assets
+* Messaging
 
