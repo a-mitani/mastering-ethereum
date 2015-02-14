@@ -85,6 +85,14 @@ Some text to show that the reference links can follow later.
 [link text itself]: http://www.reddit.com
 ```
 
+## Footnotes
+The default footnote-style links that Markdown uses do not display on the page. Sometimes it is useful to include a non-hyperlink footnote that will be visible to the reader. GitBook supports a simple syntax for such footnotes.
+
+```markdown
+Text prior to footnote reference.[^2]
+[^2] Comment to include in footnote.
+```
+
 ## Images
 
 ```markdown
