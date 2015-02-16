@@ -1,3 +1,4 @@
+{% raw %}
 # Update your book using GIT
 
 When your book is created on **gitbook.com**, you need to push some content to it. To do so, you can use the web editor or the command line.
@@ -35,5 +36,4 @@ git push -u gitbook master
 git remote add gitbook https://git.gitbook.com/{{UserName}}/{{Book}}.git
 git push -u gitbook master
 ```
-
-
+{% endraw %}

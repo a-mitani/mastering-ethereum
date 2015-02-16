@@ -12,7 +12,7 @@ Variables are defined in the `book.json` file:
 ```json
 {
     "variables": {
-        "myVariable": "Hello World"   
+        "myVariable": "Hello World"
     }
 }
 ```
@@ -76,7 +76,7 @@ You can specify alternate conditions with elif and else:
 
 **for** iterates over arrays and dictionaries.
 
-Let's consider your variables in the `book.json`: 
+Let's consider your variables in the `book.json`:
 ```
 {
     "variables": {
@@ -103,4 +103,3 @@ The above example lists all the authors using the `name` attribute of each item 
 
 Include is detailed in the [Content References](./conrefs.md) article.
 {% endraw %}
-
