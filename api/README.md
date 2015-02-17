@@ -16,3 +16,5 @@ There is currently only one way to authenticate through GitBook API. Requests th
 ```
 $ curl -u "username:token" https://www.gitbook.com/api/books/
 ```
+
+
