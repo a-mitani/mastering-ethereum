@@ -38,4 +38,5 @@
    * Extend Assets
 * [API](api/README.md)
    * [Books](api/books.md)
+   * OPDS
 
