@@ -13,7 +13,7 @@ GET /books/
 You can include only books created by the authenticated user:
 
 ```
-GET /books/author/
+GET /books/author
 ```
 
 #### List all public books
