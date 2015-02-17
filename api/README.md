@@ -17,4 +17,13 @@ There is currently only one way to authenticate through GitBook API. Requests th
 $ curl -u "username:token" https://www.gitbook.com/api/books/
 ```
 
+#### Error Format
 
+Error are returned as JSON: 
+
+```js
+{
+    "error": "Not found",
+    "code": 404
+}
+```
