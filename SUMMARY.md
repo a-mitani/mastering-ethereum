@@ -37,5 +37,5 @@
    * Extend filters
    * Extend Assets
 * API
-   * Books
+   * [Books](api/books.md)
 
