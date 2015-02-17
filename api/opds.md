@@ -5,4 +5,3 @@ The Open Publication Distribution System (**OPDS**) is an application of the Ato
 GitBook is providing an OPDS catalog at: ```https://www.gitbook.com/api/opds/catalog.atom```
 
 
-
