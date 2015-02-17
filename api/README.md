@@ -27,3 +27,24 @@ Error are returned as JSON:
     "code": 404
 }
 ```
+
+#### Pagination
+
+###### Parameters
+
+| Name | Type | Description |
+| ---- | ---- |------------ |
+| skip | int | Number of items to skip |
+| limit | int | Number of items to list |
+
+###### Return
+
+```js
+{
+    list: [],
+    skip: 0,
+    limit: 100,
+    total: 0
+}
+```
+
