@@ -37,4 +37,5 @@
    * Extend filters
    * Extend Assets
 * API
+   * Books
 
