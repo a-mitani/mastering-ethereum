@@ -16,7 +16,7 @@
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
 * [GitHub Integration](github.md)
-   * Transferring content to GitHub
+   * [Transferring content to GitHub](github/transferring_to_github.md)
 * [Styling](styling/README.md)
    * [Homepage](styling/homepage.md)
 * [Editor](editor/README.md)
