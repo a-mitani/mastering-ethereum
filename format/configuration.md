@@ -37,3 +37,16 @@ On **gitbook.com**, this value is defined from the description entered on the pl
 
 This option defines the ISBN associated with your book 
 
+#### language
+
+```
+{ "language": "fr" }
+```
+
+This option defines the language of your book, by default value is `en`.
+
+This option is used for internationalization and localization, it changes the text from the website.
+
+On **gitbook.com**, this value is defined from the language detected in the content or specified in the settings.
+
+
