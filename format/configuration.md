@@ -9,6 +9,15 @@ All fields are optionals or default to some extracted values.
 
 ## Fields
 
+#### gitbook
+
+```
+{ "gitbook": ">=2.0.0" }
+```
+
+This option is used to detect which version of GitBook will be use to generate the book.
+The format is a [SEMVER](http://semver.org) condition.
+
 #### title
 
 ```
@@ -49,4 +58,12 @@ This option is used for internationalization and localization, it changes the te
 
 On **gitbook.com**, this value is defined from the language detected in the content or specified in the settings.
 
+#### direction
+
+```
+{ "direction": "rtl" }
+```
+
+This option is used to override the text direction from the language.
+It is recommended to set the `language` field to a language with the correct text direction instead.
 
