@@ -85,6 +85,29 @@ Example:
 }
 ```
 
+#### plugins
+
+```js
+{ "plugins": ["mathjax"] }
+```
+
+The list of plugins being used by a book is defined in the `book.json` configuration.
+
+#### pluginsConfig
+
+```js
+{
+    "plugins": ["myplugin"],
+    "pluginsConfig": {
+        "myPlugin": {
+            "message": "Hello World"
+        }
+    }
+}
+```
+
+This option contains all plugins specific configurations.
+
 #### structure
 
 This option is used to override files paths used by GitBook.
@@ -100,5 +123,17 @@ For example if you want to use `INTRO.md` instead of `README.md`:
 ```
 
 Structure types are `readme`, `langs`, `summary` and `glossary`.
+
+#### variables
+
+```js
+{
+    "variables": {
+        "myTest": "Hello World"
+    }
+}
+```
+
+This option defines the variables values being used in [templating](./templating.md).
 
 
