@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Format](format/README.md)
-   * Output
+   * [Output](format/output.md)
    * [Readme and Introduction](format/introduction.md)
    * [Chapters and Subchapters](format/chapters.md)
    * [Markdown](format/markdown.md)
