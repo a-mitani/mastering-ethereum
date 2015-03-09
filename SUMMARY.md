@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Format](format/README.md)
+   * Output
    * [Readme and Introduction](format/introduction.md)
    * [Chapters and Subchapters](format/chapters.md)
    * [Markdown](format/markdown.md)
@@ -12,7 +13,6 @@
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
    * [Ignoring files & folders](format/ignore.md)
-   * Output
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
