@@ -11,7 +11,7 @@ All fields are optionals or default to some extracted values.
 
 #### gitbook
 
-```
+```js
 { "gitbook": ">=2.0.0" }
 ```
 
@@ -20,7 +20,7 @@ The format is a [SEMVER](http://semver.org) condition.
 
 #### title
 
-```
+```js
 { "title": "My Awesome Book" }
 ```
 
@@ -30,7 +30,7 @@ On **gitbook.com**, this value is defined from the title entered on the platform
 
 #### description
 
-```
+```js
 { "description": "This is such a great book!" }
 ```
 
@@ -40,7 +40,7 @@ On **gitbook.com**, this value is defined from the description entered on the pl
 
 #### isbn
 
-```
+```js
 { "isbn": "978-3-16-148410-0" }
 ```
 
@@ -48,7 +48,7 @@ This option defines the ISBN associated with your book
 
 #### language
 
-```
+```js
 { "language": "fr" }
 ```
 
@@ -60,12 +60,30 @@ On **gitbook.com**, this value is defined from the language detected in the cont
 
 #### direction
 
-```
+```js
 { "direction": "rtl" }
 ```
 
 This option is used to override the text direction from the language.
 It is recommended to set the `language` field to a language with the correct text direction instead.
+
+#### styles
+
+This option is used to add custom css to your book.
+
+Example:
+
+```js
+{
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    }
+}
+```
 
 #### structure
 
@@ -73,7 +91,7 @@ This option is used to override files paths used by GitBook.
 
 For example if you want to use `INTRO.md` instead of `README.md`:
 
-```
+```js
 {
     "structure": {
         "readme": "INTRO.md"
