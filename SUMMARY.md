@@ -13,7 +13,7 @@
    * [Templating](format/templating.md)
    * [Content References](format/conrefs.md)
    * [Ignoring files & folders](format/ignore.md)
-   * Configuration
+   * [Configuration](format/configuration.md)
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
