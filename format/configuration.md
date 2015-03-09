@@ -67,3 +67,20 @@ On **gitbook.com**, this value is defined from the language detected in the cont
 This option is used to override the text direction from the language.
 It is recommended to set the `language` field to a language with the correct text direction instead.
 
+#### structure
+
+This option is used to override files paths used by GitBook.
+
+For example if you want to use `INTRO.md` instead of `README.md`:
+
+```
+{
+    "structure": {
+        "readme": "INTRO.md"
+    }
+}
+```
+
+Structure types are `readme`, `langs`, `summary` and `glossary`.
+
+
