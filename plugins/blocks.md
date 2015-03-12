@@ -1,4 +1,3 @@
-{% raw %}
 # Extend blocks
 
 Extending templating blocks is the best way to provide extra functionnalities to authors.
@@ -61,6 +60,3 @@ A defined block can be parsed into different sub-blocks, for example let's consi
     Body of sub-block 1
 {% endmyTag %}
 ```
-
-
-{% endraw %}
