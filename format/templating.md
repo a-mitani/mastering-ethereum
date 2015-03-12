@@ -1,4 +1,3 @@
-{% raw %}
 # Templating
 
 This is an overview of the templating features available in GitBook. GitBook uses the Nunjucks and Jinga2 syntax.
@@ -102,4 +101,3 @@ The above example lists all the authors using the `name` attribute of each item 
 #### include
 
 Include is detailed in the [Content References](./conrefs.md) article.
-{% endraw %}
