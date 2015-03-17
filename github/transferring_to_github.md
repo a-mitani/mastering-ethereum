@@ -8,4 +8,4 @@ If you started writing your book on GitBook and you now want to host its source 
 4. Enter your GitBook credentials (you can use your API token instead of your password) when prompted.
 5. Done!
 
-When your content as been transferred to GitHub, you can now setup the integration so taht GitBook can still build your book from GitHub: [GitHub Integration](./README.md)
+When your content as been transferred to GitHub, you can now setup the integration so that GitBook can still build your book from GitHub: [GitHub Integration](./README.md)
