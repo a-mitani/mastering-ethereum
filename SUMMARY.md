@@ -30,6 +30,8 @@
 * [Visibility](platform/visibility.md)
 * [Custom Domains](platform/domains.md)
 * [Mailing](platform/mailing.md)
+* [Account](account/README.md)
+   * [Duplicate](account/duplicate.md)
 * [Organizations](platform/organizations/README.md)
    * [Differences with users](platform/organizations/differences.md)
    * [Convert an user](platform/organizations/convert.md)
@@ -42,6 +44,4 @@
 * [API](api/README.md)
    * [Books](api/books.md)
    * [OPDS](api/opds.md)
-* [Account](account/README.md)
-   * [Duplicate](account/duplicate.md)
 
