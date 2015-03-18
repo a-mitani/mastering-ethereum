@@ -43,4 +43,5 @@
    * [Books](api/books.md)
    * [OPDS](api/opds.md)
 * Account
+   * Duplicate
 
