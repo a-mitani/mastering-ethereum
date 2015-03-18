@@ -42,6 +42,6 @@
 * [API](api/README.md)
    * [Books](api/books.md)
    * [OPDS](api/opds.md)
-* Account
+* [Account](account/README.md)
    * [Duplicate](account/duplicate.md)
 
