@@ -1,6 +1,6 @@
 # Duplicate Account
 
-It occurs that you sign-up with a Social Account (Facebook, Twitter, GitHub or Google), then signup again using the form.
+It occurs that you registered with a Social Account (Facebook, Twitter, GitHub or Google), then registered again using the form.
 
 In this case, you created two distinct accounts (one associated with your email, and another with your Social Account).
 
