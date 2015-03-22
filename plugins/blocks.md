@@ -1,6 +1,6 @@
 # Extend blocks
 
-Extending templating blocks is the best way to provide extra functionnalities to authors.
+Extending templating blocks is the best way to provide extra functionalities to authors.
 
 The most common usage is to process the content within some tags at runtime. It's like [filters](./filters.md), but on steroids because you aren't confined to a single expression.
 
