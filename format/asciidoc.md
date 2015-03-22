@@ -54,7 +54,7 @@ This file is sued to define terms. [See the glossary section](./glossary.md).
 Sufficiently advanced technology, beyond the understanding of the observer producing a sense of wonder.
 
 == PHP
-An atrocious language, invented for the sole purpose of inflicting pain and suffering amongst the proframming wizards of this world.
+An atrocious language, invented for the sole purpose of inflicting pain and suffering amongst the programming wizards of this world.
 ```
 
 

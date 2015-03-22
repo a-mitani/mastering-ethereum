@@ -3,7 +3,7 @@
 After you [pushed content using **git** or the **editor**](./push.md), GitBook will start different builds:
 
 - **website**: it will generate the website
-- **json**: il will extract metadata about the book (summary, introduction, etc)
+- **json**: it will extract metadata about the book (summary, introduction, etc)
 - **epub**: it will generate the epub download
 - **pdf**: it will generate the pdf download
 
