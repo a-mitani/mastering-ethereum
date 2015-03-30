@@ -21,7 +21,7 @@
    * [Transferring content to GitHub](github/transferring_to_github.md)
 * [Styling](styling/README.md)
    * [Homepage](styling/homepage.md)
-   * Book
+   * [Book](styling/book.md)
 * [Editor](editor/README.md)
    * [Draft Workflow](editor/draft.md)
    * [Chapters](editor/chapters.md)
