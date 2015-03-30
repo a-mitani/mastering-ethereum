@@ -18,4 +18,4 @@ ePubs are supported by Apple and Google devices.
 
 #### Mobi (Mobipocket)
 
-The Mobipocket e-book format is based on the Open eBook standard using XHTML and can include JavaScript and frames. It is supported by Amaaon devices (Kindle).
+The Mobipocket e-book format is based on the Open eBook standard using XHTML and can include JavaScript and frames. It is supported by Amazon devices (Kindle).

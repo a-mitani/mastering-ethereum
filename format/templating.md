@@ -1,6 +1,6 @@
 # Templating
 
-This is an overview of the templating features available in GitBook. GitBook uses the Nunjucks and Jinga2 syntax.
+This is an overview of the templating features available in GitBook. GitBook uses the [Nunjucks](https://mozilla.github.io/nunjucks/) and [Jinja2](http://jinja.pocoo.org/) syntax.
 
 ### Variables
 
