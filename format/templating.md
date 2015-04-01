@@ -2,6 +2,16 @@
 
 This is an overview of the templating features available in GitBook. GitBook uses the [Nunjucks](https://mozilla.github.io/nunjucks/) and [Jinja2](http://jinja.pocoo.org/) syntax.
 
+### Escaping
+
+If you want to output any of the special nunjucks tags like `{{`, you can use raw and anything inside of it will be output as plain text.
+
+```
+{% raw %}
+  this will {{ not be processed }}
+{％ endraw %}
+```
+
 ### Variables
 
 A variable looks up a value from the book context.
