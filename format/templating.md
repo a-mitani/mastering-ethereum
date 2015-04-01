@@ -6,11 +6,13 @@ This is an overview of the templating features available in GitBook. GitBook use
 
 If you want to output any of the special nunjucks tags like `{{`, you can use raw and anything inside of it will be output as plain text.
 
-```
+{% raw %}
+<pre><code>
 {% raw %}
   this will {{ not be processed }}
 {％ endraw %}
-```
+</code></pre>
+{% endraw %}
 
 ### Variables
 
