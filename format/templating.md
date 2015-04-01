@@ -4,7 +4,7 @@ This is an overview of the templating features available in GitBook. GitBook use
 
 ### Escaping
 
-If you want to output any of the special nunjucks tags like `{{`, you can use raw and anything inside of it will be output as plain text.
+If you want to output any of the special templating tags, you can use raw and anything inside of it will be output as plain text.
 
 {% raw %}
 <pre><code>
