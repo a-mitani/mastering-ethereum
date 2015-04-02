@@ -21,9 +21,30 @@ Hooks is a method of augmenting or altering the behavior of the process, with cu
 | `page:before` | Called before running the templating engine on the page | Page Object |
 | `page` | Called before outputting and indexing the page. | Page Object |
 
-Page Hooks can transform the page:
+##### Page Object
 
-#### Example to escape the all page from templating
+```js
+{
+    // Parser named
+    "type": "markdown",
+    
+    // File Path relative to book root
+    "path": "page.md",
+    
+    // Absolute file path
+    "rawpath": "/usr/...",
+    
+    // Progress of the page in summary
+    "progress": {
+        ...
+    },
+    
+    // Page Content
+    "content": "# Hello"
+}
+```
+
+##### Example to escape the all page from templating
 
 ```js
 {
@@ -34,7 +55,7 @@ Page Hooks can transform the page:
 }
 ```
 
-#### Example to replace some html
+##### Example to replace some html
 
 ```js
 {
