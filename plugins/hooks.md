@@ -39,17 +39,25 @@ Hooks is a method of augmenting or altering the behavior of the process, with cu
         ...
     },
     
-    // Page Content
-    "content": "# Hello"
+    // Page Content (available in "page:before")
+    "content": "# Hello",
+    
+    // Page Content splited in sections (available in "page")
+    "sections": [
+        {
+            "content": "<h1>Hello</h1>",
+            "type": "normal"
+        }
+    ]
 }
 ```
 
-##### Example to escape the all page from templating
+##### Example to add a title
 
 ```js
 {
     "page:before": function(page) {
-        page.content = "{% raw %}"+page.content+"{% endraw %}";
+        page.content = "# Title\n" +page.content;
         return page;
     }
 }
@@ -60,7 +68,7 @@ Hooks is a method of augmenting or altering the behavior of the process, with cu
 ```js
 {
     "page": function(page) {
-        page.content = page.content.replace("<b>", "<strong>")
+        page.sections[0].content = page.sections[0].content.replace("<b>", "<strong>")
             .replace("</b>", "</strong>");
         return page;
     }
