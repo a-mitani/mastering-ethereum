@@ -6,7 +6,8 @@ Hooks is a method of augmenting or altering the behavior of the process, with cu
 
 | Name | Description | Arguments |
 | ---- | ----------- | --------- |
-| `init` | 
+| `init` | Called after parsing the book, before generating output and pages | None |
+| `finish:before` | | | |
 
 
 
