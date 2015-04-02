@@ -42,7 +42,7 @@
    * [Extend blocks](plugins/blocks.md)
    * Extend filters
    * Extend Assets
-   * Hooks
+   * [Hooks](plugins/hooks.md)
 * [API](api/README.md)
    * [Books](api/books.md)
    * [OPDS](api/opds.md)
