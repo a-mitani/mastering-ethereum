@@ -6,6 +6,8 @@ Hooks is a method of augmenting or altering the behavior of the process, with cu
 
 ### Relative to the global pipeline
 
+> It is recommended using [blocks](./blocks.md) to extend page parsing.
+
 | Name | Description | Arguments |
 | ---- | ----------- | --------- |
 | `init` | Called after parsing the book, before generating output and pages. | None |
