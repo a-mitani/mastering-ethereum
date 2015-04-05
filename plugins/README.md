@@ -18,7 +18,7 @@ Once you find a plugin that you want to install, you need to add it to your `boo
 
 You can also specify a specific version using: `"myPlugin@0.3.1"`, this is usefull when you're using an outdated version of GitBook.
 
-If you're building your book locally, download an prepare plugins simply by running: `gitbook install`.
+If you're building your book locally, download and prepare plugins simply by running: `gitbook install`.
 
 
 
