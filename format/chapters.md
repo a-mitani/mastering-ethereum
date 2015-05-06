@@ -1,6 +1,6 @@
 # Chapters and Subchapters
 
-GitBook uses a `SUMMARY.md` file to define the structure of chapters and subchapters.
+GitBook uses a `SUMMARY.md` file to define the structure of chapters and subchapters of the book. The `SUMMARY.md` file is  used to generate the book's table of contents.
 
 The `SUMMARY.md`'s format is simply a list of links, the name of the link is used as the chapter's name, and the target is a path to that chapter's file.
 
