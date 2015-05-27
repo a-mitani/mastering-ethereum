@@ -46,4 +46,5 @@
 * [API](api/README.md)
    * [Books](api/books.md)
    * [OPDS](api/opds.md)
+   * [Rousseau](api/rousseau.md)
 

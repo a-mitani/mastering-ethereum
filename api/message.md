@@ -1,2 +1,2 @@
-> Warning: The GitBook API is not release and is meant to change.
+> Warning: The GitBook API has not been released and is meant to change.
 
