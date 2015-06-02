@@ -17,6 +17,7 @@
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
+   * ebook-convert
 * [GitHub Integration](github/README.md)
    * [Transferring content to GitHub](github/transferring_to_github.md)
 * [Styling](styling/README.md)
