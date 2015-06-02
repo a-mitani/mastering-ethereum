@@ -9,7 +9,7 @@ If you want to output any of the special templating tags, you can use raw and an
 ```
 {% raw %}
   this will {{ not be processed }}
-{％ endraw %}
+{% endraw %}
 ```
 
 ### Variables
