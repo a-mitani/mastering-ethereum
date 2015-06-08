@@ -45,7 +45,7 @@ This file is following the same syntax as the `SUMMARY.adoc`:
 
 ### GLOSSARY.adoc
 
-This file is sued to define terms. [See the glossary section](./glossary.md).
+This file is used to define terms. [See the glossary section](./glossary.md).
 
 ```
 = Glossary
