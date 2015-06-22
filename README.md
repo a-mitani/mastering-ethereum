@@ -1,9 +1,13 @@
-GitBook Documentation
+ビットコイン入門
 =============
 
-This book contains the entire documentation for **GitBook** (gitbook.com and toolchain).
+本書はO'Reillyから出版され「CC BY-SA 4.0」のライセンスで公開されている、“Mastering Bitcoin”（Andreas M. Antonopoulos著）の邦訳版です。
 
-### Open Source Toolchain
+### ライセンス
+ビットコイン入門（Andreas M. Antonopoulos著、a-mitani翻訳）は、[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)の元で公開されています。
+
+###リポジトリ
+本書のソースコードは https://github.com/a-mitani/mastering-bitcoin-jp で公開されています。
 
 The toolchain (GitBook) is a tool for building beautiful books using Git and Markdown. It can generate your book in many formats: **PDF**, **ePub**, **mobi** or as a **website**.
 
