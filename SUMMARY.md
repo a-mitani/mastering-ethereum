@@ -27,7 +27,6 @@
    * [Draft Workflow](editor/draft.md)
    * [Chapters](editor/chapters.md)
 * [Search](platform/search.md)
-* [Audit Logs](platform/audit_logs.md)
 * [Taxes](platform/taxes.md)
 * [Visibility](platform/visibility.md)
 * [Custom Domains](platform/domains.md)
