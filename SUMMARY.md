@@ -14,6 +14,7 @@
    * [Content References](format/conrefs.md)
    * [Ignoring files & folders](format/ignore.md)
    * [Configuration](format/configuration.md)
+   * [Plugins](format/plugins.md)
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
@@ -37,10 +38,4 @@
    * [Differences with users](platform/organizations/differences.md)
    * [Convert an user](platform/organizations/convert.md)
    * [Transferring ownership](platform/organizations/ownership.md)
-* [Plugins](plugins/README.md)
-   * [Create a plugin](plugins/create.md)
-   * [Extend blocks](plugins/blocks.md)
-   * Extend filters
-   * Extend Assets
-   * [Hooks](plugins/hooks.md)
 
