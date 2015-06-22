@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
    * [ビットコインとは？](introduction/what_is_bitcoin.md)
+   * [ビットコイン以前のデジタル通貨](introduction/c_digital_currency_before_bc.md)
 
 * [Format](format/README.md)
    * [Output](format/output.md)
