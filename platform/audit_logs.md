@@ -23,6 +23,9 @@ You can search the audit log for a wide variety of actions.
 | `org.remove` | User removed an organization |
 | `org.transform` | User transformed a personal account into an organization |
 | `staff.login.fake` | A site admin signed into an user account |
+| `staff.user.verify` | A site admin verified an user account |
+| `staff.user.suspend` | A site admin locked an user account |
+| `staff.user.unsuspend` | A site admin unlocked an user account |
 | `payment.card.change` | Connect a credit card |
 | `payment.card.remove` | Remove a credit card |
 | `payment.plan.change` | Changed his plan |
