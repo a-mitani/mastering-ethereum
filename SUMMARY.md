@@ -14,7 +14,7 @@
    * [Content References](format/conrefs.md)
    * [Ignoring files & folders](format/ignore.md)
    * [Configuration](format/configuration.md)
-   * Plugins
+   * [Plugins](format/plugins.md)
 * [Build](build/README.md)
    * [Update with GIT](build/push.md)
    * [Common Errors](build/errors.md)
