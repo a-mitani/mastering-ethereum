@@ -1,6 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
+   * [ビットコインとは？](introduction/what_is_bitcoin.md)
+
 * [Format](format/README.md)
    * [Output](format/output.md)
    * [Readme and Introduction](format/introduction.md)
