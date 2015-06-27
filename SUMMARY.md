@@ -8,7 +8,7 @@
    
 
 * [Format](format/README.md)
-   * [Outpuあt](format/output.md)
+   * [Output](format/output.md)
    * [Readme and Introduction](format/introduction.md)
    * [Chapters and Subchapters](format/chapters.md)
    * [Markdown](format/markdown.md)
