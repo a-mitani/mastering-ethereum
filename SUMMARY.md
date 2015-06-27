@@ -1,7 +1,7 @@
 # Summary
 * [Preface](README.md)
-   * [用語]()
+   * [glossary]()
 
 
-* [はじめに](introduction/README.md)
+* [introduction](introduction/README.md)
 * 
