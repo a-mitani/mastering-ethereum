@@ -106,8 +106,8 @@ Aliceは、この新しいテクノロジーに多くのリスクをかけるこ
   市場情報サイト。
     
 
-!["zeroblockの一画面"](00_images/msbt_0103.png)
-ZeroBlock：ビットコインの市場情報を提供してくれるAndoroid/iOSアプリ
+!["zeroblockの一画面"](00_images/msbt_0103.png "
+ZeroBlock：ビットコインの市場情報を提供してくれるAndoroid/iOSアプリ")
 
 
 上記に挙げたアプリやWebサイトをチェックしてJoeは交換レートを、1 bitcoin辺り100ドルと決めます。このレートの場合、Aliceから渡された10ドルは0.10 bitocoin（100 millibitともいう）に相当します。
