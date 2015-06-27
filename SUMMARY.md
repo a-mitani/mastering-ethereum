@@ -11,4 +11,9 @@
    * [ビットコインとは？](introduction/what_is_bitcoin.md)
 
 
+* [はじめに](introduction/README.md)
+   * [ビットコインとは？](introduction/what_is_bitcoin.md)
+
+
+
    
