@@ -3,4 +3,4 @@
 * [本書について](README.md)
    * [用語]()
 * [はじめに](introduction/README.md)
-   * [ビットコインとは？]()
+   * [ビットコインとは？](introduction/what_is_bitcoin.md)
