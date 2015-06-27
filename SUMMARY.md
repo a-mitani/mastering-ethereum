@@ -1,5 +1,5 @@
 # Summary
 
-* [はじめに](README.md)
+* [本書について](README.md)
    * [用語]()
-* [introduction](introduction/README.md)
+* [はじめに](introduction/README.md)
