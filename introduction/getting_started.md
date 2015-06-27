@@ -24,7 +24,7 @@
 
 #### クイックスタート
 
-「<<user-stories>>の節の中で紹介したAliceについて見ていきましょう。彼女は技術者でなく、最近友達からビットコインについて聞きビットコインを知りました。彼女は((("bitcoin.org"))) ビットコインの公式サイトである  http://www.bitcoin.org[bitcoin.org]に訪問し、数種類のビットコインのクライアントがあることを知ります。そこで彼女はサイトのアドバイスに従い、軽量クライアントである((("Multibit client"))) Multibitを選びました。
+「[ビットコインは誰がどのように使うのか](../introduction/bitcoin_uses.md)の節の中で紹介したAliceについて見ていきましょう。彼女は技術者でなく、最近友達からビットコインについて聞きビットコインを知りました。彼女は((("bitcoin.org"))) ビットコインの公式サイトである  http://www.bitcoin.org[bitcoin.org]に訪問し、数種類のビットコインのクライアントがあることを知ります。そこで彼女はサイトのアドバイスに従い、軽量クライアントである((("Multibit client"))) Multibitを選びました。
 
 #### gain_hober
 Aliceは bitcoin.org サイトからリンクをた[gain_hober][]どりMultibitをダウンロードし彼女のデスクトップPCにインストールします。MultibitはWindows、MAC OS、LinuxのデスクトップPCで利用可能なクライアントです。
