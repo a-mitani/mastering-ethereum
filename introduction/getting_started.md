@@ -61,8 +61,11 @@ Multibitは自動的にアリスのためにビットコイン・アドレスと
 
 現在のところ、ビットコインは銀行や外貨両替所で買うことは出来ず、2014年時点ではまだかなりの国でビットコインを手に入れることは難しい状態です。ただ、例えば以下のような各国の通貨でビットコインが売買可能なウェブサービスは数多く存在します。
 
-http://bitstamp.net[Bitstamp]:: 電信送金により、ユーロ（EUR）や米ドル（USD）を含む幾つかの通貨をサポートするヨーロッパのビットコイン市場です。((("Bitstamp currency market")))
-http://www.coinbase.com[Coinbase]:: 米国に拠点がある、ビットコインで商品が売買可能なプラットフォームを持つビットコイン・ウォレットです。ACHシステムを通じた当座預金口座にアクセスを可能にすることでビットコインの売買が容易になっています。((("Coinbase.com")))
+###### [Bitstamp](http://bitstamp.net) 
+電信送金により、ユーロ（EUR）や米ドル（USD）を含む幾つかの通貨をサポートするヨーロッパのビットコイン市場です。
+
+######[Coinbase](http://www.coinbase.com) 
+米国に拠点がある、ビットコインで商品が売買可能なプラットフォームを持つビットコイン・ウォレットです。ACHシステムを通じた当座預金口座にアクセスを可能にすることでビットコインの売買が容易になっています。
 
 これらの暗号通貨両替所は国の通貨と暗号通貨の両替を行います。この場合、国または国際的な規制に従う必要があるため、これらのサービスは、しばしば特定の国または地域のみを専門に扱います。 通貨取引所はあなたの国の司法権が及ぶ範囲の通貨に限定されます。Your choice of currency exchange will be specific to the national currency you use and limited to the exchanges that operate within the legal jurisdiction of your country. 銀行で口座を開設のと同様、これらのサービスに口座を解説するのは、KYC (know your customer) and AML (anti-money laundering) というような規制に従い、様々な本人確認を行う必要があるため、数日から数週間ほどの時間がかかります。ただし、ビットコイン取引所口座の開設が完了すると、外貨取引口座での外貨取引同様、ビットコインを素早く売買することが可能になります。
 
