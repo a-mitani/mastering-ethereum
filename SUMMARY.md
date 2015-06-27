@@ -1,4 +1,4 @@
 # Summary
 
 * [Preface](README.md)
-   * [glossary]()
+   * [用語]()
