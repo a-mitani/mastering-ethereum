@@ -1,4 +1,4 @@
 # Summary
 
-[Preface](README.md)
+*[Preface](README.md)
    * [glossary]()
