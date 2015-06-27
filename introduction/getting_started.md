@@ -24,9 +24,9 @@
 
 #### クイックスタート
 
-[ビットコインは誰がどのように使うのか](../introduction/bitcoin_uses.md)の節の中で紹介したAliceについて見ていきましょう。彼女は技術者でなく、最近友達からビットコインについて聞きビットコインを知りました。彼女はビットコインの公式サイトである  [bitcoin.org](http://www.bitcoin.org) に訪問し、数種類のビットコインのクライアントがあることを知ります。そこで彼女はサイトのアドバイスに従い、軽量クライアントであるMultibitを選びました。
+[ビットコインは誰がどのように使うのか](../introduction/bitcoin_uses.md)の節の中で紹介したAliceについて見ていきましょう。彼女は技術者でなく、最近友達からビットコインについて聞きビットコインを知りました。彼女はビットコインの公式サイトである [bitcoin.org](http://www.bitcoin.org) に訪問し、数種類のビットコインのクライアントがあることを知ります。そこで彼女はサイトのアドバイスに従い、軽量クライアントであるMultibitを選びました。
 
-Aliceは bitcoin.org サイトからリンクをた[gain_hober][]どりMultibitをダウンロードし彼女のデスクトップPCにインストールします。MultibitはWindows、MAC OS、LinuxのデスクトップPCで利用可能なクライアントです。
+Aliceは bitcoin.orgサイトからリンクをたどりMultibitをダウンロードし彼女のデスクトップPCにインストールします。MultibitはWindows、MAC OS、LinuxのデスクトップPCで利用可能なクライアントです。
 
 [WARNING]
 ====
