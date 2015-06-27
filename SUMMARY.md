@@ -1,4 +1,4 @@
 # Summary
 
-* [Preface](README.md)
+* [はじめに](README.md)
    * [用語]()
