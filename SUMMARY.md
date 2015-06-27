@@ -8,4 +8,6 @@
    * [ビットコインの歴史](introduction/history_of_bitcoin.md)
    * [ビットコインは誰がどのように使うのか？](introduction/bitcoin_uses.md)
    * [ビットコインをはじめよう](introduction/getting_started.md)
+
+
    
