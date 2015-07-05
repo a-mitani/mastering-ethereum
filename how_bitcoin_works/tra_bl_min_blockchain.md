@@ -33,4 +33,13 @@
 支払依頼QRコード（ヒント：実際にスキャンしてみよう！）
 
 支払依頼QRコードはBIP0021にて定義された下記のURLをエンコードしたものです。
+```
+bitcoin:1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA?amount=0.015&label=Bob%27s%20Cafe&message=Purchase%20at%20Bob%27s%20Cafe
+
+URLの内容:
+支払先のビットコイン・アドレス: "1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA"
+支払額："0.015"
+支払先アドレスのラベル："Bob's Cafe"
+支払品目: "Purchase at Bob's Cafe"
+```
 
