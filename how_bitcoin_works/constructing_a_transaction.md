@@ -30,3 +30,9 @@ $ curl https://blockchain.info/unspent?active=1Cdid9KFAaatwczBwBttQcwXYCpvK8h7FK
 ```
 
 例2-2のレスポンス結果には、Aliceのアドレス（`1Cdid9KFAaatwczBwBttQcwXYCpvK8h7FK`）がオーナーの１つのUTXOがあります。またそのアウトプットが生まれたJoeからの支払いに関するトランザクションの情報も含まれ、支払額の 0.10 bitcoin が satoshiの単位で記載されています（1,000万 satoshi）。この情報をもとにAliceのウォレット・アプリケーションは新しいオーナーへビットコインを送金するためのトランザクションを構築することになります。
+
+---
+**【TIP】**
+JoeからAliceへのトランザクション情報は[こちら](http://bit.ly/1tAeeGr) で参照可能。
+
+---
