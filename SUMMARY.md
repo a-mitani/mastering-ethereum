@@ -11,3 +11,4 @@
    * [ビットコインのトランザクション](how_bitcoin_works/bitcoin_transactions.md)
    * [トランザクションの構築](how_bitcoin_works/constructing_a_transaction.md)
    * [ビットコインの採掘](how_bitcoin_works/bitcoin_mining.md)
+   * [トランザクションのブロックへの組み込み](how_bitcoin_works/mining_transactions_in_blocks.md)
