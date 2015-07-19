@@ -10,3 +10,4 @@
    * [トランザクション、ブロック、採掘、そしてブロックチェーン](how_bitcoin_works/tra_bl_min_blockchain.md)
    * [ビットコインのトランザクション](how_bitcoin_works/bitcoin_transactions.md)
    * [トランザクションの構築](how_bitcoin_works/constructing_a_transaction.md)
+   * [ビットコインの採掘](how_bitcoin_works/bitcoin_mining.md)
