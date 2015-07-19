@@ -1,4 +1,4 @@
-ビットコイン入門
+ビットコインの内側
 =============
 
 本書はO'Reillyから出版され「CC BY-SA 4.0」のライセンスで公開されている、“Mastering Bitcoin”（Andreas M. Antonopoulos著）の邦訳版です。
