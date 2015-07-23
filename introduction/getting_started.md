@@ -67,7 +67,7 @@ Multibitは自動的にアリスのためにビットコイン・アドレスと
 ######[Coinbase](http://www.coinbase.com) 
 米国に拠点がある、ビットコインで商品が売買可能なプラットフォームを持つビットコイン・ウォレットです。ACHシステムを通じた当座預金口座にアクセスを可能にすることでビットコインの売買が容易になっています。
 
-これらの暗号通貨両替所は国の通貨と暗号通貨の両替を行います。この場合、国または国際的な規制に従う必要があるため、これらのサービスは、しばしば特定の国または地域のみを専門に扱います。 通貨取引所はあなたの国の司法権が及ぶ範囲の通貨に限定されます。Your choice of currency exchange will be specific to the national currency you use and limited to the exchanges that operate within the legal jurisdiction of your country. 銀行で口座を開設のと同様、これらのサービスに口座を解説するのは、KYC (know your customer) and AML (anti-money laundering) というような規制に従い、様々な本人確認を行う必要があるため、数日から数週間ほどの時間がかかります。ただし、ビットコイン取引所口座の開設が完了すると、外貨取引口座での外貨取引同様、ビットコインを素早く売買することが可能になります。
+銀行で口座を開設のと同様、これらのサービスに口座を開設するのは、KYC (know your customer) and AML (anti-money laundering) というような規制に従い、様々な本人確認を行う必要があるため、数日から数週間ほどの時間がかかります。ただし、ビットコイン取引所口座の開設が完了すると、外貨取引口座での外貨取引同様、ビットコインを素早く売買することが可能になります。
 
 より詳細な取引所のリストは [bitcoin charts](http://bitcoincharts.com/markets) を参照するとよいでしょう。ここでは様々なビットコイン通貨取引所での相場情報・マーケット情報が掲載されています。
 
