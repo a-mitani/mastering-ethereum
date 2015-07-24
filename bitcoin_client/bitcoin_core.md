@@ -20,3 +20,9 @@
 Bitcoin Core は2009年にビットコインが生まれた時点からの全てのトランザクション情報である、トランザクション元帳（ブロックチェーン）を保持します。2013年末時点でブロックチェーンのサイズは数十ギガバイトの大きさになっており、Bitocoin Core は数日かけてこれをダウンロードします。クライアントがブロックチェーンのダウンロードを完了するまで、トランザクション処理やアカウントの残高の更新はできません。最初の起動時には、ディスク空き容量やネットワーク帯域、そして時間の余裕等に気をつけるようにしてください。
 
 ---
+
+#### Bitcoin Core をソースコードからコンパイルする
+
+もしあなたが開発者であれば、GitHub上の[公式アカウントページのサイドバー](https://github.com/bitcoin/bitcoin)からZIPファイルのソース・コードをダウンロード、またはgitコマンドでcloneし、ソース・コードをコンパイルすることも可能です。
+ [GitHub bitcoin page], select Download ZIP from the sidebar. Alternatively, use the git command line to create a local copy of the source code on your system. In the following example, we are cloning the source code from a Unix-like command line, in Linux or Mac OS:
+し、
