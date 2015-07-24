@@ -36,6 +36,12 @@ Resolving deltas: 100% (24480/24480), done.
 $
 ```
 
+---
+**【TIP】**
+
+ここで示す実行結果などはソフトウェアのバージョンの際により若干異なる場合があります。ダウンロードしたバージョンのドキュメントの指示に従ってインストール等の作業を進めてください。ここで示した実行結果の内容と異なったからといって慌てる必要はありません。
+
+---
 
  [GitHub bitcoin page], select Download ZIP from the sidebar. Alternatively, use the git command line to create a local copy of the source code on your system. In the following example, we are cloning the source code from a Unix-like command line, in Linux or Mac OS:
 し、
