@@ -43,5 +43,5 @@ $
 
 ---
 
- [GitHub bitcoin page], select Download ZIP from the sidebar. Alternatively, use the git command line to create a local copy of the source code on your system. In the following example, we are cloning the source code from a Unix-like command line, in Linux or Mac OS:
-し、
+gitのcloneが完了すると、*bitcoin*ディレクトリが作成され、そこにソースコードがコピーされているので ``cd bitcoin``コマンドでディレクトリを移動します。
+
