@@ -23,6 +23,19 @@ Bitcoin Core は2009年にビットコインが生まれた時点からの全て
 
 #### Bitcoin Core をソースコードからコンパイルする
 
-もしあなたが開発者であれば、GitHub上の[公式アカウントページのサイドバー](https://github.com/bitcoin/bitcoin)からZIPファイルのソース・コードをダウンロード、またはgitコマンドでcloneし、ソース・コードをコンパイルすることも可能です。
+もしあなたが開発者であれば、GitHub上の[公式アカウントページ](https://github.com/bitcoin/bitcoin)のサイドバーからZIPファイルのソース・コードをダウンロード、またはgitコマンドでcloneし、それをコンパイルすることも可能です。以下の例ではUnixライクなシステム（LinuやMac OS）上でgitコマンドによりソースコードをローカルにcloneを実行した例を示します。
+
+```
+$ git clone https://github.com/bitcoin/bitcoin.git
+Cloning into 'bitcoin'...
+remote: Counting objects: 31864, done.
+remote: Compressing objects: 100% (12007/12007), done.
+remote: Total 31864 (delta 24480), reused 26530 (delta 19621)
+Receiving objects: 100% (31864/31864), 18.47 MiB | 119 KiB/s, done.
+Resolving deltas: 100% (24480/24480), done.
+$
+```
+
+
  [GitHub bitcoin page], select Download ZIP from the sidebar. Alternatively, use the git command line to create a local copy of the source code on your system. In the following example, we are cloning the source code from a Unix-like command line, in Linux or Mac OS:
 し、
