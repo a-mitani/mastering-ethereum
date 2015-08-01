@@ -15,5 +15,4 @@ Ethereumプロジェクトは現在、Proof of Conceptの段階（PoC第9フェ�
 https://github.com/a-mitani/mastering-ethereum で公開されています。
 
 ###Issue & Pull request
-本書はオープンなプロジェクトであり、協力してくれる方を広く求めています。
-本書の不備などありましたら、上記[GitHub上のレポジトリ](https://github.com/a-mitani/mastering-ethereum)にIssueの発行、またはPull requestをお願いいたします。
+本書はオープンなプロジェクトであり、協力してくれる方を広く求めています。本書の不備などありましたら、上記[GitHub上のレポジトリ](https://github.com/a-mitani/mastering-ethereum)にIssueの発行、またはPull requestをお願いいたします。
