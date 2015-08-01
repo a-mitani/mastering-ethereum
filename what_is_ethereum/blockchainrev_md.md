@@ -2,4 +2,6 @@
 
 ### 中央機関の存在しない通貨：ビットコイン
 
-2009年にNakamoto氏による論文「Bitcoin: A Peer-to-Peer Electronic Cash System」が発表されて以来、ビットコインは通貨という
+ビットコインは2008年にNakamoto氏の論文「Bitcoin: A Peer-to-Peer Electronic Cash System」と、その後の有志によるビットコインの開発は通貨の世界に革新を起こしました。
+
+ビットコインは「ビットコイン:P2P電子マネーシステム」というナカモトサトシ名義による論文の発表と共に、2008年に発明されました。
