@@ -2,6 +2,6 @@
 
 * [本書について](README.md)
 * [Ethereumとは何か？](what_is_ethereum/README.md)
-   * [ブロックチェーン革命](what_is_ethereum/blockchain_rev.md)
+   * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
    * [分散アプリケーションプラットフォーム：Ethereum](what_is_ethereum/ethereum_as_dapp_platform.md)
 
