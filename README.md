@@ -1,22 +1,19 @@
 Ethereum入門
 =============
 
-本書は分散アプリケーションプラットフォームであるEthereumの入門書です。
+本書は分散アプリケーションプラットフォームであるEthereumの技術入門書です。
 
-Ethereumプロジェクトは現在、Proof of Conceptの段階（PoC第9フェーズ：Frontier）であり、今後仕様が変更になる場合があります。仕様変更に伴い本書も逐次内容を変更されます。
+Ethereumの動作原理と、Ethereumを用いてどのように分散アプリケーションを開発していくか、について解説していきます。
+
+Ethereumプロジェクトは現在、Proof of Conceptの段階（PoC第9フェーズ：Frontier）であり、今後仕様が変更になる場合があります。仕様変更に伴い本書も逐次内容を変更していきます。
 
 ### ライセンス
 「Ethereum入門」は、[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)の元で公開されています。
 
 ###リポジトリ
-本書のソースコードはGitHub
+本書のソースコードは
 https://github.com/a-mitani/mastering-ethereum で公開されています。
 
-###翻訳元
-翻訳元のソースコードは
-https://github.com/aantonop/bitcoinbook
-にて、文書及びカバーを含む図版が、本版と同じく[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)の元で公開されています。
-
-###閲覧
-本書は、以下のURLから **PDF**、 **ePub**、 **mobi** または、**website**形式で閲覧が可能です。
-((TODO))
+###Issue & Pull request
+本書はオープンなプロジェクトであり、協力してくれる方を広く求めています。
+本書の不備などありましたら、上記[GitHub上のレポジトリ](https://github.com/a-mitani/mastering-ethereum)にIssueの発行、またはPull requestをお願いいたします。
