@@ -92,8 +92,7 @@ GOROOT=/usr/lib/go
 ```
 $ geth help
 ```
-のコマンドを実行してみましょう。
-インストールされたgethのヘルプ
+のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
 
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
