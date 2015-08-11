@@ -7,5 +7,4 @@
 * [Ethereumを使ってみる](first_use/README.md)
   * [Gethのインストール](first_use/installing_geth.md)
 * [さらに詳しく知るために](further_reading/README.md)
-  * [Gethのインストール](first_use/installing_geth.md)
 
