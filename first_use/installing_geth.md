@@ -95,7 +95,7 @@ $ geth help
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
 ### Windows へのGethのインストール
-
+Windows環境へのインストールはLinuxやOS X へのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
 
 
