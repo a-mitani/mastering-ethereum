@@ -16,5 +16,5 @@ Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参�
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
 
 ### Linux（Ubuntu）
-
+ここでは、UbuntuへのGethのインストール手順を解説します。Gethが対応しているUbuntuは、Ubuntu以下のとおり
 
