@@ -57,12 +57,44 @@ Supported modules:
 ```
 
 Ethereumはまだテスト段階であり、非常に不安定である旨の警告が表示され、それを理解したうえでインストールを望むか、と質問されるので、
-「Y」とコンソールに入力すると、実行環境の
+「Y」とコンソールに入力すると、以下のように、実行環境に合わせたインストールが開始されます。
+また、sudoコマンドの実行のためにパスワードが求められる場合があるので、その場合はパスワードを入力します。
 
-この章では、Linux（Ubuntu）、Windows、Mac、それぞれでのGethのインストール方法を解説します。
+```
+==> Installing ethereum
+==> Installing common software properties
+$ sudo apt-get install -q -y software-properties-common
+Reading package lists...
+Building dependency tree...
+Reading state information...
+
+（中略）
+
+==> Verifying installation
+ ✓  Found geth: /usr/bin/geth
+Geth
+Version: 1.0.1
+Protocol Versions: [61 60]
+Network Id: 1
+Go Version: go1.4.2
+OS: linux
+GOPATH=
+GOROOT=/usr/lib/go
+
+==> Installation successful!
+==> Next steps
+==> Run `geth help` to get started.
+```
+
+「Install successful!」のように、インストールが成功した旨が表示されれば、インストール完了です。
+
+実際にgethがインストールされたかを確認するために、
+```
+$ geth help
+```
+のコマンドを実行してみましょう。
+インストールされたgethのヘルプ
+
 
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
-
-### Linux（Ubuntu）
-ここでは、UbuntuへのGethのインストール手順を解説します。Gethが対応しているUbuntuは、Ubuntu以下のとおり
 
