@@ -5,5 +5,5 @@
   * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
   * [Ethereumとは](what_is_ethereum/ethereum_as_dapp_platform.md)
 * [Ethereumを使ってみる](first_use/README.md)
-  * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
+  * [gethのインストール](first_use/installing_geth.md)
 
