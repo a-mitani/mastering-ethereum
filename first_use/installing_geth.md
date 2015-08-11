@@ -2,7 +2,7 @@
 
 Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参加する必要があります。ネットワークへの参加はEthereumクライアントをインストールし起動することで参加が可能になります。
 
-現在Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが[^1]、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装された、CUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
+Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが[^1]、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装されたCUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
 * etherの採掘
 * etherの送金
 * スマート・コントラクトの生成
@@ -15,7 +15,7 @@ Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参�
 
 ### Ubuntu、Debian、Mac OS X へのGethのインストール
 
-Mac OS X、Ubuntu、Debian のOSを使用している場合、Gethのインストールは極めて容易です。
+Unix系である、Ubuntu、Debian、Mac OS X のOSを使用している場合、Gethのインストールは極めて容易です。
 コンソールを立ち上げ、
 ```
 $ bash <(curl -L https://install-geth.ethereum.org)
@@ -97,7 +97,7 @@ $ geth help
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
 ### Windows へのGethのインストール
-Windows環境へのインストールはLinuxやOS X へのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
+Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
 
 
