@@ -48,24 +48,11 @@ EOAは、我々ユーザーにより生成されコントロールされるア�
 [^1] ここで先頭の「0x」は16進数を表わすプレフィックスです。
 
 #### トランザクション
-Ethereumでは「トランザクション」が各アカウントの状態が変化していく起点[^1] となります。トランザクションはEOAが生成し、Ethereumネットワーク内に送信します。それを採掘者が受信し、トランザクションの内容に基づいてアカウントの状態を更新、それをブロックチェーンに書き込むことで、トランザクションの発生と各アカウントの状態について、Ethereumネットワーク内での改ざん不可な合意が形成されていきます。
-
-実際には「トランザクション」は生成者の署名付きデータパッケージであり、主に以下の情報が含まれます。
- 
-The recipient of the message
-A signature identifying the sender
-The amount of ether to transfer from the sender to the recipient
-An optional data field
-A STARTGAS value, representing the maximum number of computational steps the transaction execution is allowed to take
-A GASPRICE value, representing the fee the sender pays per computational step
-The first three are standard fields expected in any cryptocurrency. The data field has no function by default, but the virtual machine has an opcode using which a contract can access the data; as an example use case, if a contract is functioning as an on-blockchain domain registration service, then it may wish to interpret the data being passed to it as containing two "fields", the first field being a domain to register and the second field being the IP address to register it to.<!-- トランザクションを介して状態が変わること --＞
+<!-- トランザクションを介して状態が変わること --＞
 <!-- トランザクションは４つのフィールドを持っていること。 --＞
 <!-- データフィールどの簡単な説明 -->
 <!-- StartGasとGasPriceの簡単な説明 -->
-
-[^1] 状態が変化する起点となるものに、「メッセージ」もありますが、ここでは説明を簡略にするために、省略します。「トランザクション」はEOAが生成するものである一方、「メッセージ」とはCAがコードの実行時に呼び出す物です。
-
-##### 処理の流れ
+##### トランザクションの流れ
 <!-- トランザクションがどのようにアカウントの状態を変更していくのかを見ていこう。 -->
 <!-- 具体的な例を示してみていく。 -->
 
