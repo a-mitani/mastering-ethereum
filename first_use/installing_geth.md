@@ -11,6 +11,8 @@ Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参�
 
 といった動作が可能になります。
 
+本節では、Gethのインストール手順を解説します。
+
 ### Ubuntu、Debian、Mac OS X へのGethのインストール
 
 Mac OS X、Ubuntu、Debian のOSを使用している場合、Gethのインストールは極めて容易です。
