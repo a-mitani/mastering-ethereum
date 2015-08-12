@@ -17,6 +17,18 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 * `--logfile "/home/test_u/geth_01.log"`：ログファイルの指定。
 * `console`：Gethは採掘やトランザクションの生成をインタラクティブに行うためのコンソールが用意されている。`console`サブ・コマンドを指定することで、Gethをインタラクティブ・モードで起動できる。なお、`console`サブ・コマンドを付加せず起動したGethプロセスに対して後からコンソールを起動する事も可能です（下記TIP参照）。
 
+上記コマンドを実行すると、下記のように、幾つかの情報の表示の後に「>」のプロンプトが表示され、コンソールが起動されます。次の節ではこのコンソール上で、Ethereumのアカウント（EOA）を生成します。
+
+```
+instance: Geth/v1.0.1/linux/go1.4.2
+ datadir: /home/mitani/eth_testnet_10
+coinbase: null
+at block: 0 (1970-01-01 09:00:00)
+ modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
+>
+
+```
+
 
 ###### ■■ TIP ■■
 今後Gethを使用していくなかで、採掘等のためにGethをバックグラウンドで常時起動しておき、必要に応じてそのGethプロセスに対してインタラクティブなコンソールで操作をしたいといった場合が発生します。その際は、下記のように`attach`サブ・コマンドを利用することで、既に起動されたGethプロセスのコンソールを起動することが可能です。
@@ -31,6 +43,11 @@ $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ�
 $ geth attach ipc:/home/mitani/eth_testnet_10/geth.ipc
 
 ```
+
+
+### アカウントの作成
+
+
 
 
 多く発生する。バックグラウンドで起動差せておき、
