@@ -46,9 +46,21 @@ $ geth attach ipc:/home/mitani/eth_testnet_10/geth.ipc
 
 
 ### アカウントの作成
+Gethのコンソール上で新規のアカウントを作成します。Ethereumには２種類のアカウントが存在します。一つはEOA（Externally Owned Account)、もう一つはContractです。
 
+EOAは私たちユーザーによりコントロールされるアカウントであり、我々ユーザーによる任意のタイミングで、EOAがトランザクションを発生させ、他のアカウントへのetherの送金、コントラクト・コードの実行などを行います。また、etherの採掘もこのEOAアカウントにより行われます。
 
+まずはEOAを新規作成してみましょう。
+前節の手順に従い、Gethが起動されGethのコンソールが表示された状態を前提とします。
 
+まず、このノードに登録されたアカウントを表示させてみましょう。`personal.listAccounts`コマンドは
+
+```
+> personal.listAccounts
+[ ]
+```
+
+プロンプトに従い
 
 多く発生する。バックグラウンドで起動差せておき、
 
