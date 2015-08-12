@@ -12,7 +12,29 @@ $ mkdir /home/test_u/eth_data
 $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/geth_01.log" console 2>> /home/test_u/geth_e01.log
 ```
 ここで、各オプションの意味は以下のとおりです。
-* --networkid ：
-* 
+* `--networkid "10"` ：`--networkid`オプションで任意の正の整数のIDを指定することで、個人用テストネットを立ち上げることが可能です（ここでは10を指定）。Frontier（PoC-9）から、Ethereumの本番ネットワークの稼働が開始されましたが、個人的な試験などを行うにはテストネットを立ち上げると非常に便利です。参加者が自分だけのネットワークなので、採掘なども非常に短時間で可能です。
+* `--datadir "/home/test_u/eth_data"`：データ用ディレクトリとして、事前に作成しておいたディレクトリのパスをしています。データ用ディレクトリにブロックチェーン情報やノード情報など各種データが保存されます。
+* `--logfile "/home/test_u/geth_01.log"`：ログファイルの指定。
+* `console`：Gethは採掘やトランザクションの生成をインタラクティブに行うためのコンソールが用意されている。`console`サブ・コマンドを指定することで、Gethをインタラクティブ・モードで起動できる。なお、`console`サブ・コマンドを付加せず起動したGethプロセスに対して後からコンソールを起動する事も可能です（下記TIP参照）。
+
+
+###### ■■ TIP ■■
+今後Gethを使用していくなかで、採掘等のためにGethをバックグラウンドで常時起動しておき、必要に応じてそのGethプロセスに対してインタラクティブなコンソールで操作をしたいといった場合が発生します。その際は、下記のように`attach`サブ・コマンドを利用することで、既に起動されたGethプロセスのコンソールを起動することが可能です。
+
+```
+$ # gethプロセスをconsoleサブ・コマンドを付加せず、バックグラウンドで起動。
+$ # この場合、起動時にはコンソールは立ち上がらない。
+$ geth --networkid "10" --datadir "/home/mitani/eth_testnet_10" --logfile "/home/mitani/eth_testnet_10/geth_01.log" 2>> /home/miti/eth_testnet_10/geth_e01.log &
+$
+$ # attachサブ・コマンドを用いて先に立ち上げたプロセスのコンソールを立ち上げる。
+$ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下の.ipc拡張子のファイル（実際はソケット）のパスを指定する。
+$ geth attach ipc:/home/mitani/eth_testnet_10/geth.ipc
+
+```
+
+
+多く発生する。バックグラウンドで起動差せておき、
+
+の発生を"/home/mitani/eth_testnet_10"Geth起動時に
 
 Ethereumでトランザクションの処理を行うためにはトランザクション手数料を採掘者に支払う必要があります。
