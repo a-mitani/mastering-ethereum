@@ -137,10 +137,8 @@ true
 
 
 
-#### 採掘したブロックの内容を見てみる
-
 ### 脚注
-[^1] ビットコインから踏襲されたcoinbaseという名称からethereumに固有のetherbaseという名称にしてい議論がなされていますが、完全には統一されていないのが実情です（[参考](https://github.com/ethereum/go-ethereum/issues/1420)）。
+[^1] ビットコインから踏襲されたcoinbaseという名称からEthereumに固有のetherbaseという名称にしていく[議論](https://github.com/ethereum/go-ethereum/issues/1420)がなされていますが、完全には統一されていないのが実情です。
 
 [^2] 採掘を高速化するために、自身のノードの環境に応じてこの値を変えてチューニングを行うことが可能です。環境のメモリ量やCPUコア数に依存し最適な値は環境により異なります。
 
