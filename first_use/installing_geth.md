@@ -74,7 +74,7 @@ Reading state information...
 （中略）
 
 ==> Verifying installation
- ✓  Found geth: /usr/bin/geth
+ Found geth: /usr/bin/geth
 Geth
 Version: 1.0.1
 Protocol Versions: [61 60]
