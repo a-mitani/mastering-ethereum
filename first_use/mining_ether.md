@@ -1,6 +1,6 @@
 ## etherを採掘してみる
 
-前節で、Ethereumの代表的なクライアントであるGethをインストールし、テストネットへの接続、対話型のコンソールの立ち上げ方法を解説しました。
+前節で、Ethereumの代表的なクライアントであるGethをインストールし、テストネットへの接続、対話型のコンソールの立ち上げ方法を解説しました。Ethereumは内部通貨etherが規定されており、Ethereumでトランザクションを発生させるためにはetherの手数料が必要になります。この節ではetherを採掘する手順を追っていきます。
 
 ### アカウントの作成
 Gethのコンソール上で新規のアカウントを作成します。Ethereumには２種類のアカウントが存在します。一つはEOA（Externally Owned Account)、もう一つはContractです。
@@ -53,5 +53,9 @@ etherbaseはデフォルトではプライマリーのアカウント（`eth.acc
 > eth.coinbase
 '0x59c444d6c4f4187d1dd1875ad74a558a2a3e20b6'
 ```
+
+### etherの採掘
+
+
 
 [^1] ビットコインから踏襲されたcoinbaseという名称からethereumに固有のetherbaseという名称にしてい議論がなされていますが、完全には統一されていないのが実情です（[参考](https://github.com/ethereum/go-ethereum/issues/1420)）。
