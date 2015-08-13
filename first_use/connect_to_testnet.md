@@ -40,10 +40,10 @@ at block: 0 (1970-01-01 09:00:00)
 ```
 $ # gethプロセスをconsoleサブ・コマンドを付加せず、バックグラウンドで起動します。
 $ # この場合、起動時にはコンソールは立ち上がりません。
-$ geth --networkid "10" --datadir "/home/mitani/eth_testnet_10" --logfile "/home/mitani/eth_testnet_10/geth_01.log" 2>> /home/miti/eth_testnet_10/geth_e01.log &
+$ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/eth_data/geth_01.log" 2>> /home/test_u/eth_data/geth_e01.log &
 $
 $ # attachサブ・コマンドを用いて先に立ち上げたプロセスのコンソールを立ち上げます。
 $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下のgeth.ipcファイル（実際はソケット）のパスを指定します。
-$ geth attach ipc:/home/mitani/eth_testnet_10/geth.ipc
+$ geth --datadir "/home/test_u/eth_data" attach ipc:/home/test_u/eth_data/geth.ipc
 
 ```
