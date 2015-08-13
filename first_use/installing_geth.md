@@ -97,7 +97,7 @@ $ geth help
 ```
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
-### Windows へのGethのインストール
+#### Windows へのGethのインストール
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
 ### Gethの起動
@@ -144,6 +144,6 @@ $ geth attach ipc:/home/mitani/eth_testnet_10/geth.ipc
 
 ```
 
-
+### 脚注
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
 
