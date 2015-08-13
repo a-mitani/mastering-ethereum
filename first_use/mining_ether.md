@@ -55,11 +55,23 @@ etherbaseはデフォルトではプライマリーのアカウント（`eth.acc
 ```
 
 ### etherの採掘
-作成したEOAのアドレスがetherbaseとしてセットされていれば、etherの採掘が可能になります。
-etherの採掘は以下のコマンド開始します。
+作成したEOAのアドレスがetherbaseとしてセットされていれば、etherの採掘が可能です。
+etherの採掘は`miner.start(thread_num)`コマンドで開始します。ここでthread_numは採掘を何本のスレッドで同時実行するかの指定することが可能です[^1]。指定しない場合は、デフォルトの以下のコマンド開始します。
+```
+> miner.start()
+true
 
+```
 
 #### 採掘したブロックの内容を見てみる
 
-
+### 脚注
 [^1] ビットコインから踏襲されたcoinbaseという名称からethereumに固有のetherbaseという名称にしてい議論がなされていますが、完全には統一されていないのが実情です（[参考](https://github.com/ethereum/go-ethereum/issues/1420)）。
+
+[^2] 採掘を高速化するために、自身のノードの環境に応じてこの値を変えてチューニングを行うことが可能です。環境のメモリ量やCPUコア数に依存し最適な値は環境により異なります。
+
+
+> miner.start()
+true
+> miner.hashrate
+115774
