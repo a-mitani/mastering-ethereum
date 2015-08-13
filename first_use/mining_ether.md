@@ -56,10 +56,10 @@ EOAは私たちユーザーによりコントロールされるアカウント�
 前節の手順に従い、Gethが起動されコンソールが表示された状態を前提とします。
 
 <!-- [TODO] listAccountsコマンドはEOAのみを表示する？Contractは表示しない？他のノードの情報は表示する？ -->
-まず、このノードに登録されたアカウントを表示させてみましょう。`personal.listAccounts`コマンドはこのノード内で作成されたアカウントのリストを表示するものです。現時点ではアカウントを作成していないため、下記のように実行しても空のリストが表示されるのみです。
+まず、このノードに登録されたアカウントを表示させてみましょう。`eth.accounts`コマンドはこのノード内で作成されたアカウントのリストを表示するものです。現時点ではアカウントを作成していないため、下記のように実行しても空のリストが表示されるのみです。
 
 ```
-> personal.listAccounts
+> eth.accounts
 [ ]
 ```
 
@@ -69,22 +69,32 @@ EOAの作成は`personal.newAccount("passwd")`コマンドで行います。こ�
 > personal.newAccount("hogehoge01")
 '0x24afe6c0c64821349bc1bfa73110512b33fa18e1'
 
-> personal.listAccounts
-['0x24afe6c0c64821349bc1bfa73110512b33fa18e1' ]
+> eth.accounts
+['0x24afe6c0c64821349bc1bfa73110512b33fa18e1']
 ```
 
 後ほど利用するために、ここで、もう一つアカウントを作成しましょう。
 ```
 > personal.newAccount("hogehoge02")
 '0x59c444d6c4f4187d1dd1875ad74a558a2a3e20b6'
-> personal.listAccounts
+
+> eth.accounts
 ['0x24afe6c0c64821349bc1bfa73110512b33fa18e1', '0x59c444d6c4f4187d1dd1875ad74a558a2a3e20b6' ]
 ```
 
-##### etherbase 
-ここで、`eth.coinbase`コマンドを実行してみます。すると下記のとおり実行結果に、先ほど作成した2つのEOAのうちの一つが表示されます。このコマンドはetherbase（coinbaseとも呼ばれます[^1]）を表示するコマンドです。etherbaseとは、各ノードで採掘を行う際に、その報酬を紐づけるEOAのアドレスを示します。
-
-
 【注意】パスワードを忘れると復元する手段は**ありません**。絶対にパスワードは忘れないようにしてください。また、上記の例では簡易なパスワードを用いましたが、実際には、セキュリティの観点から半角英数記号を含む長い複雑なパスワードを設定するようにしてください。
 
-[^1]ビットコインから踏襲されたcoinbaseという名称からethereumに固有のetherbaseという名称にしてい議論がなされていますが、完全には統一されていないのが実情です（[参考](https://github.com/ethereum/go-ethereum/issues/1420)）。
+##### etherbase 
+ここで、`eth.coinbase`コマンドを実行してみます。すると下記のとおり実行結果には先ほど作成した2つのEOAのうちの一つが表示されます。このコマンドはetherbase（coinbaseとも呼ばれます[^1]）を表示するコマンドで、etherbaseとは、各ノードで採掘を行う際にその報酬を紐づけるEOAのアドレスを示します。
+```
+> eth.coinbase
+'0x24afe6c0c64821349bc1bfa73110512b33fa18e1'
+```
+etherbaseはデフォルトではプライマリーのアカウント（`eth.accounts[0]`コマンドを実行して表示されるアドレスのEOA）が設定されますが、下記のように`miner.setEtherbase(new_adress)`コマンドで変更することも可能です。
+```
+> miner.setEtherbase(eth.accounts[1])
+> eth.coinbase
+'0x59c444d6c4f4187d1dd1875ad74a558a2a3e20b6'
+```
+
+[^1] ビットコインから踏襲されたcoinbaseという名称からethereumに固有のetherbaseという名称にしてい議論がなされていますが、完全には統一されていないのが実情です（[参考](https://github.com/ethereum/go-ethereum/issues/1420)）。
