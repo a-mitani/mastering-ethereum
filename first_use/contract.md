@@ -26,14 +26,14 @@ Contractのコードは、Ethereumネットワーク上では「Ethereum Virtual
 ### Solidityコンパイラ（solc）の導入
 まずは、Gethにsolcが導入されているかを確認するために、Gethのコンソール上で、Gethにリンクされているコンパイラのリストを表示する`eth.getCompilers()`コマンドを実行してみましょう。
 solc等のコンパイラがリンクされていない場合は、以下のような結果になります。（Solcがリンクされていると結果に、`['Solidity' ]`と表示されます。）
-```
+```javascript
 > eth.getCompilers()
 ['' ]
 ```
 #### solcのインストール
 Gethにsolcが導入されていないことが分かれば、まずはシステムへsolcのインストールを行います。solcのインストールは、Gethのコンソールから抜けてそれぞれのプラットフォーム（OS）のコンソール上で行います。
 
-#####Ubuntuへのインストール
+##### Ubuntuへのインストール
 以下のコマンドを実行してください。
 
 ```bash
@@ -41,7 +41,29 @@ $ sudo add-apt-repository ppa:ethereum/ethereum
 $ sudo apt-get update
 $ sudo apt-get install solc
 ```
-以下のコマンドでsolcへのパスが表示されれば、問題なくインストールされています。
+以下のコマンドでsolcのバージョン情報が表示されれば問題なくインストールされています。
+```bash
+$ solc --version
+```
+また、以下のコマンドを実行し、その結果のパスをメモしておいてください。Gethとsolcをリンクさせるために、後ほど利用します。
 ```bash
 $ which solc
 ```
+##### Mac OS Xへのインストール
+以下のコマンドを実行してください。Mac OS Xへのインストールには、[Homebrew](http://brew.sh/) が事前にインストールされている必要があります。
+```bash
+$ brew install cpp-ethereum
+$ brew linkapps cpp-ethereum
+```
+以下のコマンドでsolcのバージョン情報が表示されれば問題なくインストールされています。
+```bash
+$ solc --version
+```
+また、以下のコマンドを実行し、その結果のパスをメモしておいてください。Gethとsolcをリンクさせるために、後ほど利用します。
+```bash
+$ which solc
+```
+##### Windowsへのインストール
+[このページ](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)の手順を参考にcpp-ethereumをインストールしてください。
+
+#### Gethへsolcをリンクする
