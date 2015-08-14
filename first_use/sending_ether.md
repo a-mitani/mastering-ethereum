@@ -38,11 +38,41 @@
 ```
 > eth.getBalance(eth.accounts[1]),"ether" //保有額を確認。最初に送金された 5 ether を保有している。
 '5000000000000000000'
-> // 3 ether を'0x24afe...'に送金。
+> 
+> eth.sendTransaction({from: eth.accounts[1], to: eth.accounts[0], value: web3.toWei(3, "ether")}) // 3 ether を'0x24afe...'に送金。
+'0x5fd0bdcccb379a8b4034668464ad9a499a8a6b7801ed66ac23e4df3d67ec64a5'
+>
+> eth.getBalance(eth.accounts[1]) // 送金後の保有額を確認。 5 - 3 = 2 ether のはずが・・・・
+'1998825500779091000'
 ```
 
-### ブロックへの
-> eth.getBlock(928)
+5 ether 保有していた状態から、3 ether 送金したため、'0x59c44...' のアカウントの ether保有額は 2 ether と予想されるのですが、実際には 2etherよりも小さい額になっています。
+
+実は、この送金額以上に引かれた差額のether（1,174,499,220,909,000 wei)がトランザクションを生成した際に採掘者に対して支払うトランザクション手数料となっており、採掘者の報酬に加えられます。
+
+
+### トランザクション情報を調べる。
+ここで、トランザクションについてもう少し詳しく調べてみましょう。トランザクションの情報は`eth.getTransaction(tx_id)`コマンドで調べることができます。下記に、'0x59c44...'のアドレスから 3 ether 送金した際のトランザクションの情報を見てみましょう。パラメーター、tx_idには、送金実行時に返されたトランザクションIDを指定します。
+```
+> eth.getTransaction('0x5fd0bdcccb379a8b4034668464ad9a499a8a6b7801ed66ac23e4df3d67ec64a5')
+{
+  blockHash: '0xeef0f74bc51ecb9f3d64099fa4f3c1651af36a632380d41dd987e8e7064a5276',
+  blockNumber: 11076,
+  from: '0x868d840e872df5134a3be6f7b68e52cb680fe3ac',
+  gas: 90000,
+  gasPrice: '55928534329',
+  hash: '0x5fd0bdcccb379a8b4034668464ad9a499a8a6b7801ed66ac23e4df3d67ec64a5',
+  input: '0x',
+  nonce: 0,
+  to: '0x2efbdc840746c862b63077643e5b7dd8bebb8448',
+  transactionIndex: 0,
+  value: '3000000000000000000'
+}
+
+```
+
+
+
 {
   difficulty: '1510834',
   extraData: '0x476574682f76312e302e312f6c696e75782f676f312e342e32',
