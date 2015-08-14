@@ -50,7 +50,7 @@ $ solc --version
 $ which solc
 ```
 ##### Mac OS Xへのインストール
-以下のコマンドを実行してください。Mac OS Xへのインストールには、[Homebrew](http://brew.sh/) が事前にインストールされている必要があります。
+以下のコマンドを実行し、cpp-ethereumをインストールしてください[^1] 。Mac OS Xへのインストールには、[Homebrew](http://brew.sh/) が事前にインストールされている必要があります。
 ```bash
 $ brew install cpp-ethereum
 $ brew linkapps cpp-ethereum
@@ -65,5 +65,9 @@ $ which solc
 ```
 ##### Windowsへのインストール
 [このページ](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)の手順を参考にcpp-ethereumをインストールしてください。
+<!-- [TODO]もうすこし詳しく記述 -->
 
 #### Gethへsolcをリンクする
+
+#### 脚注
+[^1] cpp-ethereumはC++で実装されたEthereumのフル・クライアントであり、その一部にsolcが含まれています。
