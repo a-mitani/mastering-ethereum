@@ -83,8 +83,14 @@ Gethのコンソールを開き[^2]、以下のコマンドを実行します。
 Solidity Compiler: /usr/bin/solc
 '
 ```
+確認として、Gethにリンクされているコンパイラのリストを表示してみましょう。下記ののようにSolidityが表示されれば、正しくリンクされています。
+```bash
+> eth.getCompilers()
+['Solidity' ]
+```
 
-あ
+
+
 #### 脚注
 [^1] cpp-ethereumはC++で実装されたEthereumのフル・クライアントであり、その一部にsolcが含まれています。
 
