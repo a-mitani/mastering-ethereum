@@ -21,6 +21,27 @@ Contractのコードは、Ethereumネットワーク上では「Ethereum Virtual
 
 その代表的なものとして「Solidity」が挙げられます。Solidityは Java Script に似た構文をもつ言語です。
 
-ここでは、ContractをこのSolidityを使って開発していくものとして、まずは、Solidityのコンパイラを準備しましょう。
+ここでは、ContractをこのSolidityを使って開発していくものとして、まずは、Solidityのコンパイラである「solc」を準備しましょう。
 
-### Solidityコンパイラ（Solc）の導入
+### Solidityコンパイラ（solc）の導入
+まずは、Gethにsolcが導入されているかを確認するために、Gethのコンソール上で、Gethにリンクされているコンパイラのリストを表示する`eth.getCompilers()`コマンドを実行してみましょう。
+solc等のコンパイラがリンクされていない場合は、以下のような結果になります。（Solcがリンクされていると結果に、`['Solidity' ]`と表示されます。）
+```
+> eth.getCompilers()
+['' ]
+```
+#### solcのインストール
+Gethにsolcが導入されていないことが分かれば、まずはシステムへsolcのインストールを行います。solcのインストールは、Gethのコンソールから抜けてそれぞれのプラットフォーム（OS）のコンソール上で行います。
+
+#####Ubuntuへのインストール
+以下のコマンドを実行してください。
+
+```bash
+$ sudo add-apt-repository ppa:ethereum/ethereum
+$ sudo apt-get update
+$ sudo apt-get install solc
+```
+以下のコマンドでsolcへのパスが表示されれば、問題なくインストールされています。
+```bash
+$ which solc
+```
