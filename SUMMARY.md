@@ -8,7 +8,7 @@
   * [Gethをインストールしてみる](first_use/installing_geth.md)
   * [テスト・ネットに接続してみる](first_use/connect_to_testnet.md)
   * [etherを採掘してみる](first_use/mining_ether.md)
-  * [トランザクションを発生させてみる](first_use/send_ether.md)
+  * [etherを送金してみる](first_use/send_ether.md)
   * [コントラクトを作成してみる](first_use/contract.md)
   * [分散アプリケーションを作ってみる](first_use/dapp.md)
   * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
