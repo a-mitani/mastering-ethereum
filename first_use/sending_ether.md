@@ -15,11 +15,10 @@
 ```
 アドレスが'0x24afe...'のアカウントは、725 ether を保有している一方で、もう一方の'0x59c44...'のアカウントはetherを保有していません。
 
-この状態で'0x24afe...'から、'0x59c44...'へ、5 ether を送金します。送金は以下のコマンドを用います。fromに送金元アドレス、toに送金先アドレス、valueに送金額を指定します。
+この状態で'0x24afe...'から、'0x59c44...'へ、5 ether を送金します。送金は以下のコマンドを用います。fromに送金元アドレス、toに送金先アドレス、valueに送金額を指定します。なお、送金時に送金元のアカウントのパスワードが求められるので指示に従い入力します。
 
 ```
-> eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(5, "ether")}) //送金の実行。実行結果としてトランザクションIDが返される。
-> eth.sendTransaction({from: eth.accounts[1], to: eth.accounts[0], value: web3.toWei(3, "ether")})
+> eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(5, "ether")}) //送金の実行。アカウントのパスワードの入力を求められるので従う。実行結果としてトランザクションIDが返される。
 Please unlock account 24afe6c0c64821349bc1bfa73110512b33fa18e1.
 Passphrase:
 Account is now unlocked for this session.
@@ -79,11 +78,6 @@ Account is now unlocked for this session.
 
 ##### TIP
 上記のようにトランザクション情報の中の`gas`は、トランザクションの処理時に許容する「最大」gas使用量を示していました。では、実際に今回のトランザクションにどれだけののgasを使用したのかを知るためにはどうしたらよいのでしょうか？今回のトランザクションの手数料は先に書いたとおり、1,174,499,220,909,000 wei でした。またトランザクションの情報から1 gas 当たりの手数料`gasPrice`は 55,928,534,329 wei と分かるので、実際に今回のトランザクションで使用したgasの量は、(1,174,499,220,909,000 / 55,928,534,329) = 21,000 となり、 21,000 gas が使用されたことがわかります。
-
-
-
-
-
 
 
 ### 脚注
