@@ -2,9 +2,6 @@
 
 先の節で、採掘の報酬としてEthereumの内部通貨であるetherを取得することができました [^1]。この節では、採掘で得たetherを他のEOAへ送金する方法と、その際に発生するトランザクションとその手数料について見ていきます。
 
-### アカウントのアンロック
-<!-- [TODO] アンロックについて書く。 -->
-
 ### etherの送金
 まず最初に再度、今回作成したアカウントのetherの持ち高を確認しておきましょう。
 
@@ -22,6 +19,10 @@
 
 ```
 > eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(5, "ether")}) //送金の実行。実行結果としてトランザクションIDが返される。
+> eth.sendTransaction({from: eth.accounts[1], to: eth.accounts[0], value: web3.toWei(3, "ether")})
+Please unlock account 24afe6c0c64821349bc1bfa73110512b33fa18e1.
+Passphrase:
+Account is now unlocked for this session.
 '0xc86c2a5bdf651f54095eca87e487d4f68f12030dd559f0377e9e7bf1566b9b28'
 ```
 送金額はweiの単位での指定のため、単位変換関数であるweb.toWeiを用いています。このコマンドを実行すると、実行結果としてトランザクションIDが返されます。コマンド実行後、しばらくして送金先のether保有額を確認すると、下記のように、問題なく5 ether ($$=$$ 5 × 10[^18] wei） が送金されていることが分かります。
