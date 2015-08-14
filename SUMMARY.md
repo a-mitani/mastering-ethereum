@@ -13,6 +13,6 @@
   * [分散アプリケーションを作ってみる](first_use/dapp.md)
   * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
   * [バックアップと復元](first_use/backup_restore.md)
-* [コントラクト・プログラミング言語：Solidity](solidity/README.md)
 * [Ethereumの内部](inside_ethereum/READ.me)
+* [コントラクト・プログラミング言語：Solidity](solidity/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
