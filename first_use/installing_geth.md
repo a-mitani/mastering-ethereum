@@ -1,4 +1,4 @@
-## Gethのインストール
+## Gethをインストールして起動してみる
 
 Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参加する必要があります。ネットワークへの参加はEthereumクライアントをインストールし起動することで参加が可能になります。
 
@@ -73,7 +73,7 @@ Reading state information...
 （中略）
 
 ==> Verifying installation
- ✓  Found geth: /usr/bin/geth
+ Found geth: /usr/bin/geth
 Geth
 Version: 1.0.1
 Protocol Versions: [61 60]
@@ -100,6 +100,6 @@ $ geth help
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
 
-
+### 脚注
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
 
