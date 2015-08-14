@@ -60,7 +60,7 @@ $ brew linkapps cpp-ethereum
 $ solc --version
 ```
 また、以下のコマンドを実行し、その結果のパスをメモしておいてください。Gethとsolcをリンクさせるために、後ほど利用します。
-```d
+```bash
 $ which solc
 ```
 ##### Windowsへのインストール
