@@ -20,11 +20,8 @@ Contractのコードは、Ethereumネットワーク上では「Ethereum Virtual
 
 幸いにもEthereumにはより可読性と生産性が高く、かつ、Contractのコードを記述するのに特化した高等言語と、それを EVM Code に翻訳するためのコンパイラが、幾つか開発されています。
 
-その代表的なものとして「Solidity」が挙げられます。Solidityは Java Script に似た構文の言語です[^1]。
+その代表的なものとして「Solidity」が挙げられます。Solidityは Java Script に似た構文の言語です。
 
 ここでは、ContractをこのSolidityを使って開発していくものとして、まずは、Solidityのコンパイラを準備しましょう。
 
 ### Solidityコンパイラ（Solc）の導入
-
-
-[^1] Solidityのほかに、C言語の構文に似た言語のようなもの
