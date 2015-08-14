@@ -77,9 +77,14 @@ Gethのコンソールを開き[^2]、以下のコマンドを実行します。
 ```
 
 以下にUbuntu環境での実行結果を表示します。
+```bash
+> admin.setSolc("/usr/bin/solc")
+'solc v0.1.1
+Solidity Compiler: /usr/bin/solc
+'
 ```
 
-
+あ
 #### 脚注
 [^1] cpp-ethereumはC++で実装されたEthereumのフル・クライアントであり、その一部にsolcが含まれています。
 
