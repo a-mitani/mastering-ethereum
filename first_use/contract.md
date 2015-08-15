@@ -214,13 +214,19 @@ eth.contract(ABI_DEF).at(ADDRESS);
 ```
 var cnt = contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
 ```
-このオブジェクトを用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成してアクセスし、Contractに
+このオブジェクトを用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成することでアクセスします。このトランザクションは採掘者によりブロックチェーンに登録されることで、トランザクションの発生と、それによるContractの状態の変化についてEthereumネットワーク内で合意形成されることになります。
 
+Contractの登録値を「6」に変更するトランザクションは以下のコマンドで送信できます。ここで`set`はContract内で定義した登録値更新の関数名です。実行した時の戻り値はトランザクションIDです。
+```
+> cnt.set.sendTransaction(6,{from:eth.accounts[0]})
+'0x979c4e413a647673632d74a6c8b7f5b25a3260f3fefa4abea2dc265d61215939'
+```
+このトランザクションとその結果の状態が採掘者によりブロックチェーンに登録されると、
 
 #### 脚注
 [^1] cpp-ethereumはC++で実装されたEthereumのフル・クライアントであり、その一部にsolcが含まれています。
 
-[^2] コマンドは[テスト・ネットへ接続してみる]章を参照してください。
+[^2] コマンドは[テスト・ネットへ接続してみる]章<!--[REF]-->を参照してください。
 
 [^3] あまり役に立たないコントラクトですが、例えば整数値が会員IDで、
 
