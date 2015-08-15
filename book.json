@@ -1,7 +1,7 @@
 {
     "gitbook": ">=2.0.0",
-    "title": "Ethereum入門"
-    "description": "This is such a great book!"
+    "title": "Ethereum入門",
+    "description": "Ethereumの技術入門書",
     "plugins": [],
     "links": {
         "sidebar": {
