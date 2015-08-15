@@ -90,16 +90,16 @@ Solidity Compiler: /usr/bin/solc
 ```
 
 ### Contractの作成から利用までの流れ
-コンパイラの導入が完了し、最初のContractを作成する準備が整いました。Contractを作成し、それを利用する流れは次のようになります。
+コンパイラの導入が完了し、最初のContractを作成する準備が整いました。Contractを作成し、それにアクセスして利用するまでの流れは次のようになります。
 1. Contractの作成
     1. Contractコードのプログラミングをする。
     2. solcを使ってコードをコンパイルする。
 2. Contractの登録 
     3. コンパイル結果を含んだContract生成トランザクションを、Ethereumネットワークに送信する。
     4. 採掘者がトランザクションをブロックチェーンに登録する（＝Contractをブロックチェーンに登録する）。この時、Contractのアドレスが発行される。
-2. Contractの利用
-    1. Contractのアドレスを宛先としたトランザクションを生成する。
-    2. 採掘者はトランザクションをブロックチェーンに登録する。この時、ContractCodeを実行し、その結果の状態もブロックチェーンに登録する。
+2. Contractへアクセス
+    1. Contractへのアクセス情報の取得する。
+    2. Contractへアクセス
 
 以上の手順を、最も単純なContractを用いて実際に行って行きましょう。
 
@@ -177,16 +177,44 @@ EOAからトランザクションを生成し送信することで、このContr
 ```
 のように、contractのアドレス（'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'）が付加されています。これで、作成したContractがEthereumネットワーク上に登録されたことになります。
 
-### Contractの利用
+### Contractにアクセス
 登録されたContractにアクセスしてみましょう。今回作成したContractは
 1つの整数値を登録・更新できるものでした。作成者であるあなたは、このContractを他のユーザーにも利用してもらいたいと考えたとき、どのようにすればよいのでしょうか。
 
-Contractを他のユーザーが利用するためには、以下の2種類の情報を他のユーザーに伝える必要があります。
+Contractを他のユーザーに利用してもらうために、以下の2種類の情報を他のユーザーに伝える必要があります。
+
 ###### Contractのアドレス：
 ContractにアクセスするためにそのContractのアドレスが必要となります。今回のContractでは'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'が付加されていました。
 ######ContractのABI (Application Binary Interface) ：
-ABIとはContractの取り扱い説明書のようなものです。例えば、このContractがどのような名前の関数が定義されているか、それぞれの関数にアクセスするために、どのような型のパラメータを渡す必要があるか、関数の実行結果はどのような型のデータが返るか、などの情報が含まれたものです。今回のContractでは、Contract登録時に`contractAbiDefinition`の変数に格納した情報です[^5]。
+ABIとはContractの取り扱い説明書のようなものです。例えば、このContractがどのような名前の関数が定義されているか、それぞれの関数にアクセスするために、どのような型のパラメータを渡す必要があるか、関数の実行結果はどのような型のデータが返るか、などの情報が含まれたものです。今回のContractでは、Contract登録時に`contractAbiDefinition`の変数に格納した情報です。実際にcontractAbiDefinitionの内容を表示してみると以下のとおりです（表示の都合上、一部整形しています）。Contract内に定義された関数の引数や戻り値などの情報が記述されているのが見て取れます。
+```
+> contractAbiDefinition
+[{
+  constant: false,
+  inputs: [{name: 'x', type: 'uint256'}],
+  name: 'set',
+  outputs: [ ],
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [ ],
+  name: 'get',
+  outputs: [{name: 'retVal', type: 'uint256'} ],
+  type: 'function'
+} ]
 
+```
+
+この、ContractのアドレスとABIの２つの情報があれば、他のユーザーは、あなたの作ったContractにアクセスができます。Contractへアクセスするオブジェクトは以下の書式で生成できます。
+```
+eth.contract(ABI_DEF).at(ADDRESS);
+```
+ここで、ABI_DEF、ADDRESSを今回のContractのものに置きかえ、変数`cnt`に代入します。ABIは改行を取り除いたものを入れます。
+
+```
+var cnt = contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
+```
+このオブジェクトを用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成してアクセスし、Contractに
 
 
 #### 脚注
