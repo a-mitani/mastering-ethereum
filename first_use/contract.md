@@ -137,10 +137,22 @@ Gethコンソール上で以下のコマンドを実行し上記のソースコ�
 > var source = "contract OneStringRegister { string registeredString; function set(string x) { registeredString = x; } function get() constant returns (string retVal) { return registeredString; } }"
 > var sourceCompiled = eth.compile.solidity(source) //ソースファイルをコンパイル
 ```
-これで、sourceCompiledにコンパイルされたContract情報が格納されました。
+これで、sourceCompiledという変数にコンパイルされたContract情報が格納されました。
 
 ####Contractの登録 
-Contractコードをコンパイルが完了しましたが、これをGethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
+Contractコードをコンパイルが完了しましたが、これをEthereumネットワークに送信しブロックチェーンに登録されてはじめて他のユーザーがこのContractにアクセスすることができるようになります。
+
+EOAからトランザクションを生成し送信することで、このContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
+
+```javascript
+> var sourceCompiledContract = eth.contract(sourceCompiled.OneStringRegister.info.abiDefinition) //Contractオブジェクトの生成
+> var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.OneStringRegister.code})
+```
+詳細は、「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->
+ません。
+
+
+利用したContractGethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
 
 が、コンパイルのためには、ソースコードから改行を抜く必要[^3]があるため、以下のように整形します。
 ```
