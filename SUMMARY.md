@@ -14,5 +14,5 @@
   * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
   * [バックアップと復元](first_use/backup_restore.md)
 * [コントラクト・プログラミング言語：Solidity](solidity/README.md)
-* [Ethereumの内部](inside_ethereum/READ.me)
+* [Ethereumの内部](inside_ethereum/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
