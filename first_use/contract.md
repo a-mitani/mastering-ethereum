@@ -103,10 +103,54 @@ Solidity Compiler: /usr/bin/solc
 
 以上の手順を、最も単純なContractを用いて実際に行って行きましょう。
 
-####
+####Contractの作成
+#####最も単純なContract（OneStringRegister）
+最初のContractとして1つの文字列を登録・管理するContractを作成してみましょう。ある利用者が"Hello World! "という文字列を登録すると、他の利用者が登録情報を参照した時に、"Hello World!"が表示され、また別の利用者がその文字列を"Good morning Japan!"と更新すれば、他の利用者が登録情報を参照した時に"Hello World! "でなく、"Good moring Japan!"と表示されるものです。
+
+非常にシンプルなものですが、このような機能もこれまでは何らかの中央で登録情報を管理する機関やシステムが必要でした。Ethereumはこのような本来中央管理が必要だったアプリケーションをP2Pのシステムで行う事を可能にするのです。
+
+#####Contractのコード
+さて、上記のようなContract（名前をOneStringRegisterと名付けます）は、Solidity言語を使って記述すると、以下のコードになります。
+```javascript
+contract OneStringRegister {
+    string registeredString;
+    function set(string x) {
+        registeredString = x;
+    }
+    function get() constant returns (string retVal) {
+        return registeredString;
+    }
+}
+```
+Solidityの言語仕様の詳細は後の「コントラクト・プログラミング言語：Solidity」の章で解説します。そのため、このコードの意味を全て把握する必要はありませんが、コードを眺めると大きく以下の特徴があることが見て取れると思います。
+
+* Contractの名前は「OneStringRegister」であること。
+* registeredStringという文字列型の変数が定義されており、この変数に登録文字列が格納されること。
+* setとgetの２つの関数が定義されていること。
+    * setという名前の関数は、引き渡されたパラメータの内容で、registeredString変数が更新すること。
+    * getという名前の関数は、登録されているregisteredString変数の内容を返却すること。
+
+#####solcによるコンパイル
+Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
+
+```
+> var source = "contract OneStringRegister { string registeredString; function set(string x) { registeredString = x; } function get() constant returns (string retVal) { return registeredString; } }"
+> var sourceCompiled = eth.compile.solidity(source) //ソースファイルをコンパイル
+```
+これで、sourceCompiledにコンパイルされたContract情報が格納されました。
+
+####Contractの登録 
+Contractコードをコンパイルが完了しましたが、これをGethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
+
+が、コンパイルのためには、ソースコードから改行を抜く必要[^3]があるため、以下のように整形します。
+```
+contract OneStringRegister { string registeredString; function set(string x) { registeredString = x; } function get() constant returns (string retVal) { return registeredString; } }```
+
 
 
 #### 脚注
 [^1] cpp-ethereumはC++で実装されたEthereumのフル・クライアントであり、その一部にsolcが含まれています。
 
 [^2] コマンドは[テスト・ネットへ接続してみる]章を参照してください。
+
+[^3]javascriptの文字列変数に格納するための制限に起因するものです。
