@@ -148,9 +148,28 @@ EOAからトランザクションを生成し送信することで、このContr
 > var sourceCompiledContract = eth.contract(sourceCompiled.OneStringRegister.info.abiDefinition) //Contractオブジェクトの生成
 > var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.OneStringRegister.code})
 ```
-詳細は、「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->
-ません。
+詳細は「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->で解説しますが、上記のコマンドの1行目でContractのオブジェクトを生成し、2行目で、そのオブジェクト情報を含んだトランザクションをEthereumネットワークに送信しています。
 
+採掘者はこのトランザクションを受信し、このContractを登録したブロックの採掘を行います。その際にこのContractのアドレスが付加されます。アドレスは、上記でトランザクションを送信した際の戻り値を格納した変数`cntract`に格納されています。
+
+採掘者が採掘を終える前の`contract`の内容を表示してみると、
+```
+> contract
+{
+  address: undefined,
+  transactionHash: '0xc393f9fa1a95bc9e6a5e7344e88d7fc8d13b3672433273fee71f3e6c633b3c9b'
+}
+
+```
+のように、contractのアドレスが未定になっています。ここで、transactionHashは今回のトランザクションのIDです。しばらくして採掘が成功すると、
+```
+
+```
+
+には、
+
+
+一定時間が経過し採掘が完了した状態で
 
 利用したContractGethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
 
