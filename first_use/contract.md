@@ -104,40 +104,42 @@ Solidity Compiler: /usr/bin/solc
 以上の手順を、最も単純なContractを用いて実際に行って行きましょう。
 
 ####Contractの作成
-#####最も単純なContract（OneStringRegister）
-最初のContractとして1つの文字列を登録・管理するContractを作成してみましょう。ある利用者が"Hello World! "という文字列を登録すると、他の利用者が登録情報を参照した時に、"Hello World!"が表示され、また別の利用者がその文字列を"Good morning Japan!"と更新すれば、他の利用者が登録情報を参照した時に"Hello World! "でなく、"Good moring Japan!"と表示されるものです。
+#####最も単純なContract（OneNumRegister）
+<!--最初のContractとして1つの文字列を登録・管理するContractを作成してみましょう。ある利用者が"Hello World! "という文字列を登録すると、他の利用者が登録情報を参照した時に、"Hello World!"が表示され、また別の利用者がその文字列を"Good morning Japan!"と更新すれば、他の利用者が登録情報を参照した時に"Hello World! "でなく、"Good moring Japan!"と表示されるものです。
+-->
+最初のContractとして１つの整数値を登録・管理するContractを作成してみましょう。ある利用者が「3」を登録すると、他の利用者が登録情報を参照した時には「3」が表示され、また別の利用者がその整数値を「10」と更新すれば、他の利用者が登録情報を参照した時には新しい登録内容の「10」が表示されるものです[^3]。
 
-非常にシンプルなものですが、このような機能もこれまでは何らかの中央で登録情報を管理する機関やシステムが必要でした。Ethereumはこのような本来中央管理が必要だったアプリケーションをP2Pのシステムで行う事を可能にするのです。
+非常にシンプルな機能ですが、このようなものも以前までは何らかの登録情報を管理する中央機関やシステムが必要でした。Ethereumはこのように従来ではデータの整合性を保つために中央管理が必要だったアプリケーションをP2Pのシステムで行う事を可能にするのです。
 
 #####Contractのコード
-さて、上記のようなContract（名前をOneStringRegisterと名付けます）は、Solidity言語を使って記述すると、以下のコードになります。
+さて、上記のようなContract（SingleNumRegisterと名付けます）は、Solidity言語を使って記述すると以下のコードになります。
 ```javascript
-contract OneStringRegister {
-    string registeredString;
-    function set(string x) {
-        registeredString = x;
+contract SingleNumRegister {
+    uint storedData;
+    function set(uint x) {
+        storedData = x;
     }
-    function get() constant returns (string retVal) {
-        return registeredString;
+    function get() constant returns (uint retVal) {
+    return storedData;
     }
 }
 ```
 Solidityの言語仕様の詳細は後の「コントラクト・プログラミング言語：Solidity」の章で解説します。そのため、このコードの意味を全て把握する必要はありませんが、コードを眺めると大きく以下の特徴があることが見て取れると思います。
 
-* Contractの名前は「OneStringRegister」であること。
-* registeredStringという文字列型の変数が定義されており、この変数に登録文字列が格納されること。
+* Contractの名前は「SingleNumRegister」であること。
+* storedDataというuint型の変数が定義されており、この変数に登録数値が格納されること。
 * setとgetの２つの関数が定義されていること。
-    * setという名前の関数は、引き渡されたパラメータの内容で、registeredString変数が更新すること。
-    * getという名前の関数は、登録されているregisteredString変数の内容を返却すること。
+    * setという名前の関数は、引き渡されたパラメータの内容で、storedData変数が更新すること。
+    * getという名前の関数は、登録されているstoredData変数の内容を返却すること。
 
 #####solcによるコンパイル
 Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
 
 ```
-> var source = "contract OneStringRegister { string registeredString; function set(string x) { registeredString = x; } function get() constant returns (string retVal) { return registeredString; } }"
-> var sourceCompiled = eth.compile.solidity(source) //ソースファイルをコンパイル
+> var source = "contract SingleNumRegister { uint storedData; function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; }}"
+> var sourceCompiled = eth.compile.solidity(source)//ソースファイルをコンパイル
 ```
-これで、sourceCompiledという変数にコンパイルされたContract情報が格納されました。
+これで、sourceCompiledという変数にコンパイル済みのContract情報が格納されました。
 
 ####Contractの登録 
 Contractコードをコンパイルが完了しましたが、これをEthereumネットワークに送信しブロックチェーンに登録されてはじめて他のユーザーがこのContractにアクセスすることができるようになります。
@@ -145,37 +147,45 @@ Contractコードをコンパイルが完了しましたが、これをEthereum�
 EOAからトランザクションを生成し送信することで、このContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
 
 ```javascript
-> var sourceCompiledContract = eth.contract(sourceCompiled.OneStringRegister.info.abiDefinition) //Contractオブジェクトの生成
-> var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.OneStringRegister.code})
+> var contractAbiDefinition = sourceCompiled.SingleNumRegister.info.abiDefinition
+> var sourceCompiledContract = eth.contract(contractAbiDefinition)
+> var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.SingleNumRegister.code})
 ```
+
 詳細は「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->で解説しますが、上記のコマンドの1行目でContractのオブジェクトを生成し、2行目で、そのオブジェクト情報を含んだトランザクションをEthereumネットワークに送信しています。
 
-採掘者はこのトランザクションを受信し、このContractを登録したブロックの採掘を行います。その際にこのContractのアドレスが付加されます。アドレスは、上記でトランザクションを送信した際の戻り値を格納した変数`cntract`に格納されています。
+採掘者はこのトランザクションを受信し、このContractを登録したブロックの採掘を行います。その際にContractのアドレスが付加されます。アドレスは、上記でトランザクションを送信した際の戻り値を格納した変数`contract`に格納さます。
 
 採掘者が採掘を終える前の`contract`の内容を表示してみると、
 ```
 > contract
 {
   address: undefined,
-  transactionHash: '0xc393f9fa1a95bc9e6a5e7344e88d7fc8d13b3672433273fee71f3e6c633b3c9b'
+  transactionHash: '0xeb76caefdfe5a9aa10b11743d317cf15f881d3b2e52ba3251dcf8e0718ed5b33'
 }
-
 ```
 のように、contractのアドレスが未定になっています。ここで、transactionHashは今回のトランザクションのIDです。しばらくして採掘が成功すると、
 ```
-
+> contract
+{
+  address: '0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb',
+  transactionHash: '0xeb76caefdfe5a9aa10b11743d317cf15f881d3b2e52ba3251dcf8e0718ed5b33',
+  allEvents: function (),
+  get: function (),
+  set: function ()
+}
 ```
+のように、contractのアドレス（'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'）が付加されています。これで、作成したContractがEthereumネットワーク上に登録されたことになります。
 
-には、
+### Contractの利用
+登録されたContractにアクセスしてみましょう。今回作成したContractは
+1つの整数値を登録・更新できるものでした。作成者であるあなたは、このContractを他のユーザーにも利用してもらいたいと考えたとき、どのようにすればよいのでしょうか。
 
-
-一定時間が経過し採掘が完了した状態で
-
-利用したContractGethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
-
-が、コンパイルのためには、ソースコードから改行を抜く必要[^3]があるため、以下のように整形します。
-```
-contract OneStringRegister { string registeredString; function set(string x) { registeredString = x; } function get() constant returns (string retVal) { return registeredString; } }```
+Contractを他のユーザーが利用するためには、以下の2種類の情報を他のユーザーに伝える必要があります。
+###### Contractのアドレス：
+ContractにアクセスするためにそのContractのアドレスが必要となります。今回のContractでは'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'が付加されていました。
+######ContractのABI (Application Binary Interface) ：
+ABIとはContractの取り扱い説明書のようなものです。例えば、このContractがどのような名前の関数が定義されているか、それぞれの関数にアクセスするために、どのような型のパラメータを渡す必要があるか、関数の実行結果はどのような型のデータが返るか、などの情報が含まれたものです。今回のContractでは、Contract登録時に`contractAbiDefinition`の変数に格納した情報です[^5]。
 
 
 
@@ -184,4 +194,10 @@ contract OneStringRegister { string registeredString; function set(string x) { r
 
 [^2] コマンドは[テスト・ネットへ接続してみる]章を参照してください。
 
-[^3]javascriptの文字列変数に格納するための制限に起因するものです。
+[^3] あまり役に立たないコントラクトですが、例えば整数値が会員IDで、
+
+[^4]javascriptの文字列変数に格納するための制限に起因するものです。
+
+[^5]実際にcontractAbiDefinitionの内容を表示してみるとよいでしょう。Contract内に定義された関数の引数や戻り値などの情報が記述されているのが見て取れます。
+
+[
