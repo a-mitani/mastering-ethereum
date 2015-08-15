@@ -1,9 +1,5 @@
 {
-    "gitbook": ">=2.0.0",
-    "title": "Ethereum入門",
-    "description": "Ethereumの技術入門書です。Ethereumの動作原理と分散アプリケーションの開発方法について解説していきます。",
     "plugins": [],
-    "language": "ja",
     "links": {
         "sidebar": {
             "Contact us / Support": "https://www.gitbook.com/contact"
