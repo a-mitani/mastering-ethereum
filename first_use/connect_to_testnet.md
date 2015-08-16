@@ -10,7 +10,7 @@ Frontier（PoC-9）から、Ethereumの本番ネットワーク（ライブ・�
 事前に任意の場所にGethのデータ用のディレクトリを準備します。
 ここでは、ログイン・ユーザー（今回の例ではtest_u）のhomeディレクトリ直下に作成します。
 
-```bash
+```javascript
 $ mkdir /home/test_u/eth_data
 ```
 データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
