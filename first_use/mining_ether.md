@@ -162,12 +162,10 @@ true
 > eth.getBalance(eth.accounts[1])
 '0'
 ```
-先に解説したとおり、coinbaseに紐づいたアカウントに採掘の報酬が与えられているのがわかります。`eth.accounts[address]`は「wei」の単位[^4] で持ち高が表示されます。以下の変換用のコマンドを使うことでetherの単位で表示することも可能です。
+先に解説したとおり、coinbaseに紐づいたアカウントに採掘の報酬が与えられているのがわかります。`eth.getBalance(address)`は「wei」の単位[^4] で持ち高が表示されます。以下の変換用のコマンドを使うことでetherの単位で表示することも可能です。
 ```
 > web3.fromWei(eth.getBalance(eth.accounts[0]),"ether")
 '515'
-> eth.getBalance(eth.accounts[1])
-'0'
 ```
 
 <!-- [TODO] 報酬のトランザクションを調べる-->
