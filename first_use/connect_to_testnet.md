@@ -49,6 +49,12 @@ $ # attachサブ・コマンドを用いて先に立ち上げたプロセスの�
 $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下のgeth.ipcファイル（実際はソケット）のパスを指定します。
 $ geth --datadir "/home/test_u/eth_data" attach ipc:/home/test_u/eth_data/geth.ipc
 
+instance: Geth/v1.0.1/linux/go1.4.2
+（実行結果 中略）
+modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
+> 
+
+
 ```
 
 
