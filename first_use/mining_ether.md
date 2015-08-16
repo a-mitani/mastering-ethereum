@@ -56,7 +56,7 @@ etherbaseはデフォルトではプライマリーのアカウント（`eth.acc
 
 ### etherの採掘
 作成したEOAのアドレスがetherbaseとしてセットされていれば、etherの採掘が可能です。
-etherの採掘は`miner.start(thread_num)`コマンドで開始します。ここでthread_numは採掘を何本のスレッドで同時実行するかの指定することが可能です[^2]。指定しない場合は動作環境でのCPUコア数に設定されます。ここではthread_numは指定せず、以下のコマンドで採掘を開始します。
+etherの採掘は`miner.start(thread_num)`コマンドで開始します。ここでthread_num は採掘を何本のスレッドで同時実行するかを指定するパラメータです[^2]。指定しない場合は動作環境でのCPUコア数に設定されます。ここではthread_numは指定せず、以下のコマンドで採掘を開始します。
 ```
 > miner.start()
 true
@@ -79,7 +79,7 @@ true
 > miner.start()
 true
 > miner.hashrate  //採掘処理実行時
-145445
+445445
 > miner.stop()
 true
 > miner.hashrate  //採掘処理が行われていない場合、ハッシュ・レートは0となる。
