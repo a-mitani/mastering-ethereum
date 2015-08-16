@@ -14,7 +14,7 @@ Frontier（PoC-9）から、Ethereumの本番ネットワーク（ライブ・�
 $ mkdir /home/test_u/eth_data
 ```
 データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
-```
+```plain
 $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/geth_01.log" --olympic console 2>> /home/test_u/geth_e01.log
 ```
 ここで各オプションの意味は以下のとおりです。
