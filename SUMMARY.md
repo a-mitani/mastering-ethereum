@@ -4,7 +4,7 @@
 * [Ethereumとは何か？](what_is_ethereum/README.md)
    * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
    * [Ethereum とは](what_is_ethereum/ethereum_as_dapp_platform.md)
-* [Ethereum 事始め](first_use/README.md)
+* [まずは Ethereum に触れてみる](first_use/README.md)
    * [Gethをインストールしてみる](first_use/installing_geth.md)
    * [テスト・ネットに接続してみる](first_use/connect_to_testnet.md)
    * [etherを採掘してみる](first_use/mining_ether.md)
