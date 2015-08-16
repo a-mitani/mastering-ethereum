@@ -15,7 +15,7 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 ### Ubuntu、Debian、Mac OS X へのGethのインストール
 
-Unix系である、Ubuntu、Debian、Mac OS X のOSを使用している場合、Gethのインストールは極めて容易です。
+Unix系であるUbuntu、Debian、Mac OS X のOSを使用している場合、Gethのインストールは極めて容易です。
 コンソールを立ち上げ、
 ```
 $ bash <(curl -L https://install-geth.ethereum.org)
