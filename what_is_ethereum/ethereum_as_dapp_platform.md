@@ -104,6 +104,6 @@ Ethereum では、採掘が成功すると、
 
 [^1] ここで先頭の「0x」は16進数を表わすプレフィックスです。
 
-[^2] [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper) では「Contract Account」という呼び方をしていますが、最近は単に「Contract」と呼ぶことが多いようです（例えば、[このTutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) など）。
+[^2] [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper) では「Contract Account」という呼び方をしていますが、例えば[このTutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) などのように、最近は単に「Contract」と呼ぶことが多いようです。
 
 [^3] 実際には、状態の遷移はトランザクションだけでなく、「メッセージ」によっても遷移が行われますがここでは説明を省きます。「トランザクション」はEOAにより生成/送信されるのに対して「メッセージ」はCAにより生成/送信されます。
