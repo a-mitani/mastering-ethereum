@@ -6,7 +6,7 @@ Ethereumがどのように動作するのか、Ethereumを用いてどのよう�
 
 Ethereumプロジェクトは現在、Proof of Conceptの段階（PoC第9フェーズ：Frontier）であり、今後仕様が変更になる場合があります。仕様変更に伴い本書も逐次内容を変更していきます。
 
-本ドキュメントはオープンなプロジェクトであり、協力者を広く求めています。本書のソースコードは[GitHub上](https://github.com/a-mitani/mastering-ethereum)で公開されています。
+本ドキュメントはオープンなプロジェクトであり、また書きかけのものです。そのため協力者を広く求めています。本書のソースコードは[GitHub上](https://github.com/a-mitani/mastering-ethereum)で公開されています。
 
 本書への追記や修正などありましたら、上記[GitHub上のレポジトリ](https://github.com/a-mitani/mastering-ethereum)にIssueの発行、またはPull requestをお願いいたします。
 
