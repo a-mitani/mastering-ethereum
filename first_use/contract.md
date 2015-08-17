@@ -130,7 +130,7 @@ Solidityの言語仕様の詳細は後の「コントラクト・プログラミ
     * getという名前の関数は、登録されているstoredData変数の内容を返却すること。
 
 #####solcによるコンパイル
-Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^3]。
+Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^4]。
 
 ```
 > var source = "contract SingleNumRegister { uint storedData; function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; }}"
