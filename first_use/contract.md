@@ -206,14 +206,14 @@ ABIとはContractの取り扱い説明書のようなものです。例えば、
 ```
 eth.contract(ABI_DEF).at(ADDRESS);
 ```
-ここで、ABI_DEF、ADDRESSを今回のContractのものに置きかえ、変数`cnt`に代入します。ABIは改行を取り除いたものを入れます。
+ここで、`ABI_DEF`、`ADDRESS`を今回のContractのものに置きかえ、変数`cnt`に代入します。ABIは改行を取り除いたものを入れます。
 
 ```
 var cnt = contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
 ```
-このオブジェクトを用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成することでアクセスします。このトランザクションは採掘者によりブロックチェーンに登録されることで、トランザクションの発生と、それによるContractの状態の変化についてEthereumネットワーク内で合意形成されることになります。
+このオブジェクト`cnt`を用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成することでアクセスします。このトランザクションは採掘者によりブロックチェーンに登録されることで、トランザクションの発生と、それによるContractの状態の変化についてEthereumネットワーク内で合意形成されることになります。
 
-Contractの登録値を「6」に変更するトランザクションは以下のコマンドで送信できます。ここで`set`はContract内で定義した登録値更新の関数名です。実行した時の戻り値はトランザクションIDです。
+Contractの登録値を「6」に変更するトランザクションは以下のコマンドで送信できます。ここで`set`はコントラクト・コード内で定義した登録値を更新する関数の関数名です。このコマンドを実行した際の戻り値はトランザクションIDです。
 ```
 > cnt.set.sendTransaction(6,{from:eth.accounts[0]})
 '0x979c4e413a647673632d74a6c8b7f5b25a3260f3fefa4abea2dc265d61215939'
