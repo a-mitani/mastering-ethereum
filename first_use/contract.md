@@ -139,9 +139,9 @@ Gethコンソール上で以下のコマンドを実行し上記のソースコ�
 これで、sourceCompiledという変数にコンパイル済みのContract情報が格納されました。
 
 #### Contractのブロックチェーンへの登録
-Contractコードをコンパイルが完了しましたが、これをEthereumネットワークに送信しブロックチェーンに登録されてはじめて他のユーザーがこのContractにアクセスすることができるようになります。
+コントラクト・コードのコンパイルは完了しましたが、コンパイルしたコードはContract作成者のノード上にあるだけで、まだEthereumネットワーク内の誰もこのContractにアクセスできません。このコンパイル済みコードをEthereumネットワークに送信し、採掘者によってブロックチェーンに登録してもらって初めて他のユーザーがこのContractにアクセス出来るようになります。
 
-EOAからトランザクションを生成し送信することで、このContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
+EOAからトランザクションを生成し送信することで、作成したContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
 
 ```javascript
 > var contractAbiDefinition = sourceCompiled.SingleNumRegister.info.abiDefinition
@@ -172,18 +172,18 @@ EOAからトランザクションを生成し送信することで、このContr
   set: function ()
 }
 ```
-のように、contractのアドレス（'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'）が付加されています。これで、作成したContractがEthereumネットワーク上に登録されたことになります。
+のように、contractのアドレス（`'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'`）が付加されています。これで、作成したContractがEthereumネットワーク上にアドレス`'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'`のContractとして登録されたことになります。
 
 ### Contractにアクセス
 登録されたContractにアクセスしてみましょう。今回作成したContractは
-1つの整数値を登録・更新できるものでした。作成者であるあなたは、このContractを他のユーザーにも利用してもらいたいと考えたとき、どのようにすればよいのでしょうか。
+1つの整数値を任意のユーザーが登録・更新できるものでした。作成者であるあなたは、このContractを他のユーザーにも利用してもらいたいと考えたとき、どのようにすればよいのでしょうか。
 
-Contractを他のユーザーに利用してもらうために、以下の2種類の情報を他のユーザーに伝える必要があります。
+他のユーザーに自身の作成したContractを利用してもらうためには、以下の2種類の情報を他のユーザーに伝える必要があります。
 
 ###### Contractのアドレス：
 ContractにアクセスするためにそのContractのアドレスが必要となります。今回のContractでは'0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb'が付加されていました。
 ######ContractのABI (Application Binary Interface) ：
-ABIとはContractの取り扱い説明書のようなものです。例えば、このContractがどのような名前の関数が定義されているか、それぞれの関数にアクセスするために、どのような型のパラメータを渡す必要があるか、関数の実行結果はどのような型のデータが返るか、などの情報が含まれたものです。今回のContractでは、Contract登録時に`contractAbiDefinition`の変数に格納した情報です。実際にcontractAbiDefinitionの内容を表示してみると以下のとおりです（表示の都合上、一部整形しています）。Contract内に定義された関数の引数や戻り値などの情報が記述されているのが見て取れます。
+ABIとはContractの取り扱い説明書のようなものです。例えば、このContractがどのような名前の関数が定義されているか、それぞれの関数にアクセスするために、どのような型のパラメータを渡す必要があるか、関数の実行結果はどのような型のデータが返るか、などの情報が含まれたものです。今回のContractでは、Contract登録時に`contractAbiDefinition`の変数に格納した情報です。実際にcontractAbiDefinitionの内容を表示してみると以下のとおりです[^5]。Contract内に定義された関数の引数や戻り値などの情報が記述されているのが見て取れます。
 ```
 > contractAbiDefinition
 [{
@@ -235,6 +235,4 @@ Contractの状態を参照する際は、状態を変更しそれをEthereumネ�
 
 [^4]javascriptの文字列変数に格納するための制限に起因するものです。
 
-[^5]実際にcontractAbiDefinitionの内容を表示してみるとよいでしょう。Contract内に定義された関数の引数や戻り値などの情報が記述されているのが見て取れます。
-
-[
+[^5]表示の都合上、一部整形しています。
