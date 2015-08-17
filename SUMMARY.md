@@ -9,7 +9,7 @@
    * [テスト・ネットに接続してみる](first_use/connect_to_testnet.md)
    * [etherを採掘してみる](first_use/mining_ether.md)
    * [etherを送金してみる](first_use/sending_ether.md)
-   * [コントラクトを作成してみる](first_use/contract.md)
+   * [Contracdtを作成してみる](first_use/contract.md)
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
    * [バックアップと復元](first_use/backup_restore.md)
 * [コントラクト・プログラミング言語：Solidity](solidity/README.md)
