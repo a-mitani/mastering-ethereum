@@ -4,7 +4,7 @@
 
 ###ライブネットへの接続
 以下のコマンドを実行してライブ・ネットに接続します。
-```bash
+```plain
 $ geth --datadir "/home/mitani/eth_livenet" --logfile "/home/mitani/eth_livenet/geth_01.log" 2>> /home/mitani/eth_livenet/e01.log &
 ```
 テスト・ネットに接続した際のコマンドとの違いは、
