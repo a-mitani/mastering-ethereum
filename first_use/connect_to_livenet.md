@@ -19,7 +19,7 @@ $ geth --datadir "/home/test_u/livenet_data" --logfile "/home/test_u/livenet_dat
 > net.peerCount
 25
 ```
-また、実際に接続されているノードの情報は
+また、実際に接続されているノードの情報は`admin.peers`のコマンドで確認することが出来ます。
 ```plain
 > admin.peers
 [{
