@@ -100,6 +100,14 @@ $ geth help
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
 
+### Gethのアップデート
+Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。
+Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
 ### 脚注
 [^1] C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
 
