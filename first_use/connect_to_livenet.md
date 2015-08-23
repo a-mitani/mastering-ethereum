@@ -14,6 +14,8 @@ $ geth --datadir "/home/test_u/livenet_data" --logfile "/home/test_u/livenet_dat
 テスト・ネットに接続した際のコマンドとの違いは、`--networkid "10"` と `--olympic` のオプションを付加していないことになります。
 
 ### 接続状況を確認する
-ライブ・ネットへ接続すると、Ethereumネットワーク内の他のノードと接続されます。Gethのコンソールを立上げ
+ライブ・ネットへ接続すると、Ethereumネットワーク内の他のノードと接続されます。Gethのコンソールを立上げ`net.peerCount`コマンドを実行すると、自分のノードが他のいくつのノードと接続されているかを表示することが出来ます。
 ```
+> net.peerCount
+25
 ```
