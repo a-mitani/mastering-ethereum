@@ -13,10 +13,10 @@
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
 <!--   * [バックアップと復元](first_use/backup_restore.md) -->
 * [コントラクト・プログラミング言語：Solidity](solidity/README.md)
-   * [基本的な記法](first_use/basic.md)
-   * [変数とデータ型](first_use/var_and_data_type.md)
-   * [演算子](first_use/operators.md)
-   * [制御命令](first_use/control_commands.md)
+   * [基本的な記法](solidity/basic.md)
+   * [変数とデータ型](solidity/var_and_data_type.md)
+   * [演算子](solidity/operators.md)
+   * [制御命令](solidity/control_commands.md)
 * [Ethereumの内部](inside_ethereum/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
 
