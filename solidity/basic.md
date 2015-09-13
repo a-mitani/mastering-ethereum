@@ -11,11 +11,11 @@ contract HelloWorld {
    }
 }
 ```
-このContractは、呼び出されたら固定の"Hello World!!"という文字列を返すというものです。
+このContractは、呼び出されたら固定の"Hello World!!"という固定の文字列を返すというものです。
 
 ### Contract
 
-上記のようにSolidityでは、`contract`命令で宣言されるContractが基本の構成要素であり、スマート・コントラクトの開発者は、このContractの処理の内容を内容を記述していくことになります。
+上記のようにSolidityでは、`contract`命令で宣言されるContractが基本の構成要素であり、スマート・コントラクトの開発者は、このContractの処理の内容を記述していくことになります。
 
 ContractはJavaやPythonなどオブジェクト指向言語での「クラス」に似たものであり、それぞれのContractは、各自にクラス変数に相当するような、内部状態を保持するストレージ部分と、メソッドに相当するような関数を持ちます。
 
