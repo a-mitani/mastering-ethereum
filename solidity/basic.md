@@ -1,7 +1,7 @@
 ## 基本的な記法
 
 ### Hello world
-下記にSolidityで記述された最も簡単なスマート・コントラクトのコードの例（HelloWorld)を示します。
+下記にSolidityで記述された最も単純なスマート・コントラクトのコードの例（HelloWorld)を示します。
 
 ``` plain
 // Simple contract that returns constant string "Hello World"
