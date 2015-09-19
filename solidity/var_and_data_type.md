@@ -20,6 +20,10 @@ int x = 10;
 
 | タイプ | データ型  | 概要  |
 | ------ | ----------|-----|
-| 基本型 | 真偽型 | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | int△ | 符号付整数型。|
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
