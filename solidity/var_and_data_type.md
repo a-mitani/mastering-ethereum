@@ -22,7 +22,7 @@ int x = 10;
 | ------ | ----------|-----|
 | 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
 | 基本型 | int△ | 符号付整数型。a
-| 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
+| 基本型 | int△ | 符号付整数型。真偽型。true（真）またはfalse（偽）。 |
 | 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
 | 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
 | 基本型 | bool | 真偽型。true（真）またはfalse（偽）。 |
