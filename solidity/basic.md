@@ -27,10 +27,10 @@ contract Contract名 {
 
 HelloWorldの例では`get()`関数が定義され、その中では文字列`Hello World`を返す処理が定義されていました。
 
-1つのソースファイル上に複数のContractを定義することも可能です。
+なお、1つのソースファイル上に複数のContractを定義することも可能です。
 
 ### 小文字・大文字の区別
-Solidityでは、Contract名や関数名、変数名などは大文字と小文字が区別されます。例えば上記の例のコントラクトHelloWorldは「helloworld」の名前で呼ぶことはできません。「HelloWorld」と「helloworld」は別のものと解釈されます。
+Solidityでは、Contract名や関数名、変数名などは大文字と小文字が区別されます。例えば上述のContractのHelloWorldは「helloworld」の名前で呼ぶことはできません。「HelloWorld」と「helloworld」は別のものと解釈されます。
 
 ### 文（Statement）最後にはセミコロンをつける
 Solidityで記述されたコードは一般的に１つ以上の文（Statement）から構成されます。例えば上記のコードの例では、`return "Hello World!!";`は1つの文であり、Solidityでは文の最後にセミコロンを付ける必要があります。
