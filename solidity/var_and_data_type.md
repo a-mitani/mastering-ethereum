@@ -39,7 +39,7 @@ contract VarTypeTest {
     uint[2] y = x; //(3)
     y[0] = 500; // (4)
     y[1] = 600; // (4)
-    return x; // Execution result shows 10 !
+    return x; // Execution result shows [500, 600] !
   }
 }
 ```
