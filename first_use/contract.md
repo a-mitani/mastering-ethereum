@@ -209,7 +209,7 @@ eth.contract(ABI_DEF).at(ADDRESS);
 ここで、`ABI_DEF`、`ADDRESS`を今回のContractのものに置きかえ、変数`cnt`に代入します。ABIは改行を取り除いたものを入れます。
 
 ```
-var cnt = contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
+var cnt = eth.contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
 ```
 このオブジェクト`cnt`を用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成することでアクセスします。このトランザクションは採掘者によりブロックチェーンに登録されることで、トランザクションの発生と、それによるContractの状態の変化についてEthereumネットワーク内で合意形成されることになります。
 
