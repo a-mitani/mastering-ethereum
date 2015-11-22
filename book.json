@@ -1,5 +1,5 @@
 {
-    "plugins": [],
+    "plugins": [-search"],
     "links": {
         "sidebar": {
             "Contact": "https://github.com/a-mitani"
