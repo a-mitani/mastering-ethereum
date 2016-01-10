@@ -113,7 +113,7 @@ Solidityでは、固定長、可変長のどちらの配列型も扱うことが
 
 以下に、配列を扱うSolidityコードの例を示します。
 
-```
+``` plain
 contract arrayTest {
     uint8[5] uintArray;
     string[3] stArray;
