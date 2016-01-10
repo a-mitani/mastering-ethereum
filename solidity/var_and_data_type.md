@@ -113,7 +113,7 @@ Solidityでは、固定長、可変長のどちらの配列型も扱うことが
 
 以下に、配列を扱うSolidityコードの例を示します。
 
-``` plain
+```
 contract arrayTest {
     uint8[5] uintArray;
     string[3] stArray;
@@ -132,25 +132,24 @@ contract arrayTest {
         stArray[2] = "Pineapple";
     }
     
-    function getUintArray() constant returns (uint8[5]) 
+    //uint型配列全体を取り出す。
+    function getUintArray() constant returns (uint8[5])
     {
     	return uintArray;
     }
 
+    //uint型配列の特定の要素（x番目の要素）を取り出す。
     function getUintValue(uint8 x) constant returns (uint8)
     {
     	return uintArray[x];
     }
 
+    //string型配列の特定の要素（x番目の要素）を取り出す。
     function getStArrayValue(uint8 x) constant returns (string)
     {
     	return stArray[x];
     }
 /*
-    // 【注意】以下のように関数の引数または返り値に文字列の配列型を指定することは
-    // 現バージョンのコンパイラはサポートしていない。
-    // これは文字列が内部ではバイトの配列型であり、現バージョンでは、
-    // ネストされた配列を関数の引数または返り値に指定することをサポートしていないことによる。
     function getStArray() constant returns (string[3])
     {
     	return stArray;
@@ -159,7 +158,32 @@ contract arrayTest {
 }
 ```
 
-上記のコードを
+上記のContractコードをコンパイルし、ブロックチェーン上に登録（arraytest）しContractの関数を呼び出すと下記のようになります。
+
+```
+> arraytest.getUintArray()
+[100, 99, 98, 97, 96]
+> arraytest.getUintArrayValue()
+TypeError: 'getUintArrayValue' is not a function
+    at <anonymous>:1:1
+
+> arraytest.getUintArrayValue(1)
+TypeError: 'getUintArrayValue' is not a function
+    at <anonymous>:1:1
+
+> arraytest.getUintValue()
+100
+> arraytest.getUintValue(1)
+99
+> arraytest.getStArrayValue(1)
+"Orange"
+```
+
+    // 【注意】以下のように関数の引数または返り値に文字列の配列型を指定することは
+    // 現バージョンのコンパイラはサポートしていない。
+    // これは文字列が内部ではバイトの配列型であり、現バージョンでは、
+    // ネストされた配列を関数の引数または返り値に指定することをサポートしていないことによる。
+
 
 An array of fixed size k and element type T is written as T[k], an array of dynamic size as T[]. As an example, an array of 5 dynamic arrays of uint is uint[][5] (note that the notation is reversed when compared to some other languages). To access the second uint in the third dynamic array, you use x[2][1] (indices are zero-based and access works in the opposite way of the declaration, i.e. x[2] shaves off one level in the type from the right).
 
