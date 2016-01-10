@@ -145,11 +145,12 @@ contract arrayTest {
     }
 
     //string型配列の特定の要素（x番目の要素）を取り出す。
-    function getStArrayValue(uint8 x) constant returns (string)
+    function getStValue(uint8 x) constant returns (string)
     {
     	return stArray[x];
     }
 /*
+    //string型配列全体を取り出す。（Not Supported）
     function getStArray() constant returns (string[3])
     {
     	return stArray;
@@ -158,31 +159,18 @@ contract arrayTest {
 }
 ```
 
-上記のContractコードをコンパイルし、ブロックチェーン上に登録（arraytest）しContractの関数を呼び出すと下記のようになります。
+上記のContractコードをコンパイルし、ブロックチェーン上に登録（arraytest）しContractの関数を呼び出すと下記のような実行結果になります。
 
 ```
 > arraytest.getUintArray()
 [100, 99, 98, 97, 96]
-> arraytest.getUintArrayValue()
-TypeError: 'getUintArrayValue' is not a function
-    at <anonymous>:1:1
-
-> arraytest.getUintArrayValue(1)
-TypeError: 'getUintArrayValue' is not a function
-    at <anonymous>:1:1
-
-> arraytest.getUintValue()
-100
-> arraytest.getUintValue(1)
-99
-> arraytest.getStArrayValue(1)
+> arraytest.getUintValue(2)
+98
+> arraytest.getStValue(1)
 "Orange"
 ```
 
-    // 【注意】以下のように関数の引数または返り値に文字列の配列型を指定することは
-    // 現バージョンのコンパイラはサポートしていない。
-    // これは文字列が内部ではバイトの配列型であり、現バージョンでは、
-    // ネストされた配列を関数の引数または返り値に指定することをサポートしていないことによる。
+また、上記Contractコードでコメントアウトしている関数（getStArray）はstring型の配列全体を返す関数を意図していますが現バージョンのコンパイラでは「Error: Internal type is not allowed for public and external functions.」というエラーになりコンパイルできません。これはuint等とは異なり、文字列型自体がコンパイラ内でバイト配列型として扱われており、「文字列型の配列」はネストされた２次元配列として扱われます。現バージョンコンパイラは、ネストされた配列を関数の引数または返り値に指定することをサポートしておらず、エラーになります。
 
 
 An array of fixed size k and element type T is written as T[k], an array of dynamic size as T[]. As an example, an array of 5 dynamic arrays of uint is uint[][5] (note that the notation is reversed when compared to some other languages). To access the second uint in the third dynamic array, you use x[2][1] (indices are zero-based and access works in the opposite way of the declaration, i.e. x[2] shaves off one level in the type from the right).
