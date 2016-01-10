@@ -118,11 +118,9 @@ contract arrayTest {
     uint8[5] uintArray;
     string[3] stArray;
 
-    function arrayTest() // コンストラクタ
-    {
+    function arrayTest(){ // コンストラクタ
         uint8 x = 0;
-        while(x < 5)
-        {
+        while(x < 5){
         	uintArray[x] = 100 - x;
         	x++;
         }
@@ -133,33 +131,29 @@ contract arrayTest {
     }
     
     //uint型配列全体を取り出す。
-    function getUintArray() constant returns (uint8[5])
-    {
+    function getUintArray() constant returns (uint8[5]){
     	return uintArray;
     }
 
     //uint型配列の特定の要素（x番目の要素）を取り出す。
-    function getUintValue(uint8 x) constant returns (uint8)
-    {
+    function getUintValue(uint8 x) constant returns (uint8){
     	return uintArray[x];
     }
 
     //string型配列の特定の要素（x番目の要素）を取り出す。
-    function getStValue(uint8 x) constant returns (string)
-    {
+    function getStValue(uint8 x) constant returns (string){
     	return stArray[x];
     }
 /*
     //string型配列全体を取り出す。（Not Supported）
-    function getStArray() constant returns (string[3])
-    {
+    function getStArray() constant returns (string[3]){
     	return stArray;
     }
 */
 }
 ```
 
-上記のContractコードをコンパイルし、ブロックチェーン上に登録（arraytest）しContractの関数を呼び出すと下記のような実行結果になります。
+上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractの関数を呼び出すと下記のような実行結果になります。
 
 ```
 > arraytest.getUintArray()
@@ -172,6 +166,7 @@ contract arrayTest {
 
 また、上記Contractコードでコメントアウトしている関数（getStArray）はstring型の配列全体を返す関数を意図していますが現バージョンのコンパイラでは「Error: Internal type is not allowed for public and external functions.」というエラーになりコンパイルできません。これはuint等とは異なり、文字列型自体がコンパイラ内でバイト配列型として扱われており、「文字列型の配列」はネストされた２次元配列として扱われます。現バージョンコンパイラは、ネストされた配列を関数の引数または返り値に指定することをサポートしておらず、エラーになります。
 
+##### 多次元配列
 
 An array of fixed size k and element type T is written as T[k], an array of dynamic size as T[]. As an example, an array of 5 dynamic arrays of uint is uint[][5] (note that the notation is reversed when compared to some other languages). To access the second uint in the third dynamic array, you use x[2][1] (indices are zero-based and access works in the opposite way of the declaration, i.e. x[2] shaves off one level in the type from the right).
 
