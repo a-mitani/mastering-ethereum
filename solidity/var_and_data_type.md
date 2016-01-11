@@ -46,7 +46,7 @@ contract VarTypeTest {
 
 一方で関数`refType()`では参照型である配列の変数を代入した場合の挙動を試験しています。配列の変数は参照型であり、参照型の変数には「値を格納しているメモリ上のアドレス（参照）」が格納されています。そのため(3)で配列`x`を`y`に代入していますが、ここで実際に行われていることは、変数`x`の値を格納しているメモリ上のアドレスを変数`y`にセットしていることになります（**参照渡し**）。そのためこの時点で`x`と`y`は同じ場所を見ていることになり、(4)で`y`の内容を変えると同時に変数`x`の内容も変更されることになります。結果、この関数の実行結果は`[500, 600]`が示されます。
 
-以下の表はSolidityで規定されているデータ型の分類です。
+以下の表はSolidityで規定されている主なデータ型の分類です。
 ![データ型分類](00_images/dataTypeTable.png)
 
 以下でSolidityで規定されている基本型と参照型のそれぞれのデータ型について見ていきます。
@@ -106,9 +106,8 @@ contract Test {
 
 #### 配列
 Solidityでは、固定長、可変長のどちらの配列型も扱うことが可能です。配列要素の型はストレージ変数の場合は任意のデータ型の配列を定義することが可能です。
-<!-- ストレージ型、メモリ型の説明要 -->
+<!-- [TODO] ストレージ型、メモリ型の説明要 -->
 
-##### 1次元配列
 固定長配列は、データ型`T`、長さ`k`の配列は`T[k]`で宣言します。一方可変長配列の場合は`T[]`とします。
 
 以下に、配列を扱うSolidityコードの例を示します。
@@ -166,10 +165,6 @@ contract arrayTest {
 
 また、上記Contractコードでコメントアウトしている関数（getStArray）はstring型の配列全体を返す関数を意図していますが現バージョンのコンパイラでは「Error: Internal type is not allowed for public and external functions.」というエラーになりコンパイルできません。これはuint等とは異なり、文字列型自体がコンパイラ内でバイト配列型として扱われており、「文字列型の配列」はネストされた２次元配列として扱われます。現バージョンコンパイラは、ネストされた配列を関数の引数または返り値に指定することをサポートしておらず、エラーになります。
 
-##### 多次元配列
+##### length属性
 
-An array of fixed size k and element type T is written as T[k], an array of dynamic size as T[]. As an example, an array of 5 dynamic arrays of uint is uint[][5] (note that the notation is reversed when compared to some other languages). To access the second uint in the third dynamic array, you use x[2][1] (indices are zero-based and access works in the opposite way of the declaration, i.e. x[2] shaves off one level in the type from the right).
-
-Variables of type bytes and string are special arrays. A bytes is similar to byte[], but it is packed tightly in calldata. string is equal to bytes but does not allow length or index access (for now).
-
-So bytes should always be preferred over byte[] because it is cheaper.
+配列には配列長さを示す`length`属性が規定されています。可変長配列では下記の例のようにlength属性を指定することで配列要素を削除することも可能です。
