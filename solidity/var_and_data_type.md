@@ -79,14 +79,14 @@ uint d = -10; //【コンパイルエラー】uint型に負値は格納不可。
 address a = 0xabc;  // "0x0000000000000000000000000000000000000abc"のアドレス値が格納される。
 address b; //デフォルト値は"0x0000000000000000000000000000000000000000"
 ```
-##### balance属性
+##### ■ balance属性
 アドレス型には`balance`属性が規定されています。例えば下記の例の用にbalance属性を用いると指定のアドレスが保有するetherの量が取得可能です。
 
 ```plain
 address a = 0xa; //アドレス型変数aに0xaのアドレスを格納。
 uint b = a.balance; //アドレス"0xa"の持つetherの量をbに格納。
 ```
-##### send()関数
+##### ■ send()関数
 アドレス型には`send`関数が規定されています。`<address>.send(x);`により指定のアドレス`<address>`に`x`weiのetherを送金することができます。以下に実際に送金を行う簡単なコントラクトのコードを示します。
 ```plain
 contract Test {
@@ -110,7 +110,7 @@ Solidityでは、固定長、可変長のどちらの配列型も扱うことが
 
 固定長配列は、データ型`T`、長さ`k`の配列は`T[k]`で宣言します。一方可変長配列の場合は`T[]`とします。
 
-以下に、配列を扱うSolidityコードの例を示します。
+以下に、固定長配列を扱うSolidityコードの例を示します。
 
 ``` plain
 contract arrayTest {
@@ -152,7 +152,7 @@ contract arrayTest {
 }
 ```
 
-上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractの関数を呼び出すと下記のような実行結果になります。
+上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractのそれぞれの関数を呼び出すと下記のような実行結果になります。
 
 ```
 > arraytest.getUintArray()
@@ -199,19 +199,19 @@ contract pushLengthTest {
     }
 }
 ```
-上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractの関数を呼び出すと下記のような実行結果になります。
+上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractのそれぞれの関数を呼び出すと下記のような実行結果になります。
 
 ```
 > pushlengthtest.getArray()
 [10, 11, 12, 13, 14]
 > pushlengthtest.getLength()
 5
-> pushlengthtest.setLength.sendTransaction(2, {from:eth.coinbase}) //Contractの状態変数を更新するためsendTransaction関数を呼び出す。
+> pushlengthtest.setLength.sendTransaction(2, {from:eth.coinbase}) //Contractの状態変数を更新するためsendTransaction関数を使用する必要があることに注意。
 "0x4a2b2cb6954b0cdd9dbae869f758d425334194736d0fb7f1c4913f4b75c17acb"
 >
 （トランザクションが採掘された後、再度getArray()関数を呼出す。）
 > pushlengthtest.getArray()
-[10, 11]  ← lengthが2と指定されたため、indexが2以上の要素は削除される。
+[10, 11]  ← 先にlengthが2と指定されたため、indexが2以上の要素は削除される。
 
 
 ```
