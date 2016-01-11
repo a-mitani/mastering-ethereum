@@ -165,6 +165,53 @@ contract arrayTest {
 
 また、上記Contractコードでコメントアウトしている関数（getStArray）はstring型の配列全体を返す関数を意図していますが現バージョンのコンパイラでは「Error: Internal type is not allowed for public and external functions.」というエラーになりコンパイルできません。これはuint等とは異なり、文字列型自体がコンパイラ内でバイト配列型として扱われており、「文字列型の配列」はネストされた２次元配列として扱われます。現バージョンコンパイラは、ネストされた配列を関数の引数または返り値に指定することをサポートしておらず、エラーになります。
 
-##### length属性
+##### ■ length属性、push関数
 
 配列には配列長さを示す`length`属性が規定されています。可変長配列では下記の例のようにlength属性を指定することで配列要素を削除することも可能です。
+
+また可変長配列の最後に要素を追加するpush関数が用意されています。使い方の例を以下に示します。
+
+``` plain
+contract pushLengthTest {
+    uint8 arraylength = 5;
+    uint[] uintArray;
+
+    function pushLengthTest(){ 
+        uint8 i = 0;
+        uint8 basenum = 10;
+        while(i < arraylength){
+            uintArray.push(basenum + i);
+            i++;
+        }
+    }
+
+    function getArray() constant returns (uint[]){
+    	return uintArray;
+    }
+
+    function getLength() constant returns (uint){
+    	return uintArray.length;
+    }
+
+    function setLength(uint x) returns (uint[]){
+        uintArray.length = x;
+        return uintArray;
+    }
+}
+```
+上記のContractコードをコンパイルし、ブロックチェーン上に登録しContractの関数を呼び出すと下記のような実行結果になります。
+
+```
+> pushlengthtest.getArray()
+[10, 11, 12, 13, 14]
+> pushlengthtest.getLength()
+5
+> pushlengthtest.setLength.sendTransaction(2, {from:eth.coinbase}) //Contractの状態変数を更新するためsendTransaction関数を呼び出す。
+"0x4a2b2cb6954b0cdd9dbae869f758d425334194736d0fb7f1c4913f4b75c17acb"
+>
+（トランザクションが採掘された後、再度getArray()関数を呼出す。）
+> pushlengthtest.getArray()
+[10, 11]  ← lengthが2と指定されたため、indexが2以上の要素は削除される。
+
+
+```
