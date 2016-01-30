@@ -17,7 +17,7 @@
    * [変数とデータ型](solidity/var_and_data_type.md)
    * [演算子](solidity/operators.md)
    * [制御命令](solidity/control_commands.md)
-* [MeteorでÐapp開発](meteor_dapp/README.md)
+* [Meteorで分散アプリケーション開発](meteor_dapp/README.md)
    * [Meteorとは](meteor_dapp/what_is_meteor.md)
    * [Meteorとは](meteor_dapp/what_is_meteor.md)
 * [Ethereumの内部](inside_ethereum/README.md)
