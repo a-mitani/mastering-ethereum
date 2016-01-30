@@ -12,7 +12,7 @@
    * [Contractを作成してみる](first_use/contract.md)
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
 <!--   * [バックアップと復元](first_use/backup_restore.md) -->
-* [コントラクト・プログラミング言語：Solidity](solidity/README.md)
+* [コントラクト指向言語：Solidity](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
    * [変数とデータ型](solidity/var_and_data_type.md)
    * [演算子](solidity/operators.md)
