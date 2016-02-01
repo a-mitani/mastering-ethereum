@@ -11,7 +11,6 @@
    * [etherを送金してみる](first_use/sending_ether.md)
    * [Contractを作成してみる](first_use/contract.md)
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
-   * [開発環境を活用する](first_use/dev_env.md)
 <!--   * [バックアップと復元](first_use/backup_restore.md) -->
 * [コントラクト指向言語：Solidity](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
