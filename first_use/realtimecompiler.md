@@ -15,7 +15,7 @@
 
 が可能です。
 
-## browser-solidityの利用方法
+## browser-solidityへアクセス
 browser-solidityを利用するには、
 * [「browser-solidity」サイト](https://chriseth.github.io/browser-solidity/)にアクセスする。
 * 
