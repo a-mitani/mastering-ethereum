@@ -16,9 +16,9 @@
 が可能です。
 
 ## browser-solidityへアクセス
-browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です。
-* [「browser-solidity」サイト](https://chriseth.github.io/browser-solidity/)にアクセスする。
-* 
-* 
+browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
+
+
+
 
 
