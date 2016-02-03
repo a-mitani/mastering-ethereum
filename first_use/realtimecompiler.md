@@ -22,7 +22,7 @@ browser-solidity[はGithubから最新バージョンのzipファイル](https:/
 
 画面は大きく左右２つに分かれています。左側でSolidity言語でContractを記述し、右側にはそのContractの情報が表示されたり、さらにContractの実行等を行うことが可能です。
 
-実際にXX節で作成した以下のContractを画面左側に入力してみましょう。
+実際に「Contractを作成してみる」<!--[REF]-->節で作成した以下のContractを画面左側に入力してみましょう。
 
 
 #### 脚注
