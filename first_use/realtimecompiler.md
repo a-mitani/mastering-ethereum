@@ -22,8 +22,8 @@ browser-solidity[はGithubから最新バージョンのzipファイル](https:/
 
 ![Browser Solidity画面](00_images/browser_solidity_initial_screen.png)
 
-実際に「Contractを作成してみる」<!--[REF]-->節で作成した以下のContractを画面左側に入力してみましょう。
+デフォルトでは左側に「Ballot」というサンプルのContractが表示されていますが、ここに「Contractを作成してみる」<!--[REF]-->節で作成した「」以下のContractを画面左側に入力してみましょう。
 
 
 #### 脚注
-[^1] gitに慣れている方はもちろんcloneしてもいいですし、browser-solidityのサイトも公開されているのでそこにアクセスして利用することも可能です。
+[^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
