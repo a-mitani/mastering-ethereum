@@ -6,7 +6,7 @@
 
 そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[browser-solidity](https://github.com/chriseth/browser-solidity)」の使い方を解説します。
 
-[browser-solidity](https://github.com/chriseth/browser-solidity)は[chriseth](https://github.com/chriseth)により開発されているSolidity言語用Contract開発環境であり、Webブラウザ上で
+[browser-solidity](https://github.com/chriseth/browser-solidity)はSolidity言語の開発者の一人である[chriseth](https://github.com/chriseth)により開発されているSolidity言語用Contract開発環境であり、Webブラウザ上で
 * Contractのコーディング
 * コンパイル
 * 実行
