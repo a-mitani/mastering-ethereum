@@ -18,9 +18,7 @@
 ## browser-solidityのダウンロードと起動
 browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
 
-実際にindex.htmlをブラウザで開いた画面を下図に示します。
-
-画面は大きく左右２つに分かれています。左側でSolidity言語でContractを記述し、右側にはそのContractの情報が表示されたり、さらにContractの実行等を行うことが可能です。
+実際にindex.htmlをブラウザで開いた画面を下図に示します。画面は大きく左右２つに分かれています。左側でSolidity言語でContractを記述し、右側にはそのContractの情報が表示されたり、さらにContractの実行等を行うことが可能です。
 
 実際に「Contractを作成してみる」<!--[REF]-->節で作成した以下のContractを画面左側に入力してみましょう。
 
