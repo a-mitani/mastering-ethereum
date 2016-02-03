@@ -22,7 +22,16 @@ browser-solidity[はGithubから最新バージョンのzipファイル](https:/
 
 ![Browser Solidity画面](00_images/browser_solidity_initial_screen.png)
 
-デフォルトでは左側に「Ballot」というサンプルのContractが表示されていますが、ここに「Contractを作成してみる」<!--[REF]-->節で作成した「」以下のContractを画面左側に入力してみましょう。
+browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。
+* **ブラウザ上での疑似実行**： 実際のEthereumノードには接続せず、ブラウザ上のJavascript VM 上でContractの関数を疑似的に実行。
+* **Blockchain上での実行**：実際のEthereumノードに接続し作成したContractをブロックチェーン上に登録した上でContractの関数を実行。
+
+これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます。
+
+## ブラウザ上での疑似実行
+
+まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
+
 
 
 #### 脚注
