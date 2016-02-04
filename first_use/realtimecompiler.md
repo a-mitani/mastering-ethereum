@@ -57,6 +57,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 ![](00_images/bs_simplenum_web3_with_edit.png)
 
+### Contractをブロックチェーンに
 
 まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
 
@@ -66,10 +67,9 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 ![](00_images/bs_simplenum_create_with_edit.png)
 
-<!--
-## そのほかの機能
-コントラクタの引数
-AtAddress botann 
+## Browser Solidity そのほかの機能
+<!-- コントラクタの引数
+AtAddress botann -->
 
 -->
 
