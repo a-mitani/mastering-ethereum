@@ -10,7 +10,7 @@
    * [etherを採掘してみる](first_use/mining_ether.md)
    * [etherを送金してみる](first_use/sending_ether.md)
    * [Contractを作成してみる](first_use/contract.md)
-   * [より便利な開発環境の活用](first_use/realtimecompiler.md)
+   * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
 * [コントラクト指向言語：Solidity](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
