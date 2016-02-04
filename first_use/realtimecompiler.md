@@ -35,6 +35,11 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 browser solidityから実際のBlockchainに作成したContractを登録したりBlockchain上のContractを実行したりするために、まずはbrowser solidityとEthereumノードを接続する必要があります。
 
 ### gethの起動
+これまでのようにgethを起動しテストネットに接続します。下記のコマンドを実行します。
+
+
+
+
 
 まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
 
