@@ -36,7 +36,7 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 
 先述のとおり箱型のタブを押下して現れる「Java Script VM」のラジオボタンを選択した状態にしておきます。
 
-ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。その後右下の「Create」ボタンを押下すると、Contractがメモリ上で疑似的に
+ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。その後右下の「Create」ボタンを押下すると、Contractがコンパイルされメモリ上の疑似的なブロックチェーン上に登録されます[^2]。
 
 ![](00_images/bs_simplenum_create_with_edit.png)
 
@@ -49,3 +49,5 @@ AtAddress botann
 
 #### 脚注
 [^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
+
+[^2]ここでは、"0x692a70d2e424a56d2c6c27aa97d1a86395877b3a"という疑似アドレスに登録されたことが画面の表示から見て取れます。(memory)
