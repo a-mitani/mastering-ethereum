@@ -38,18 +38,17 @@ browser solidityから実際のBlockchainに作成したContractを登録した�
 これまでのようにgethを起動しテストネットに接続します。下記のコマンドを実行します。
 
 ```
-$ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/eth_data/geth_01.log" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97e7 --rpc --rpcaddr "160.16.80.199" --rpcport "8545" --rpccorsdomain "*" --olympic console 2>> /home/mitani/eth_testnet_1201/geth_e01.log
+$ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/eth_data/geth_01.log" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97e7 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" --olympic console 2>> /home/mitani/eth_testnet_1201/geth_e01.log
 ```
 
-ここで、幾つか新しいコマンドオプションが出てきました。browser solidityとノードの接続には、gethのRPC（Remote Procedure Call）のAPIを利用するのでその設定をコマンドオプションで行っています。
-* `--rpc`：gethのRPCサーバとしてのAPIを有効かするオプション
-* 
-
+ここで、幾つか新しいコマンドオプションが出てきました。browser solidityとノードの接続には、gethのRPC（Remote Procedure Call）のAPI機能を利用するのでその設定をコマンドオプションで行っています。
+* `--rpc`：gethのRPCサーバとしてのAPIを有効化します。
+* `--rpcaddr "192.168.5.6"`:gethノードのIPアドレスを指定します。browser solidityとgethを同じPC上で利用するなら "127.0.0.1"か"localhost"を指定します。
 
 
 browser
 * `--mine`：gethの起動と同時に採掘を開始するオプション
-* 
+* `--rpcaddr "192.168.5.6"`:gethノードのIPアドレスを指定します。browser-solidityからノードを
 
 
 
