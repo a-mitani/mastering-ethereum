@@ -48,9 +48,8 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 * `--rpccorsdomain "*"`： クロスドメインアクセスを許可するドメイン。ここでは任意のドメインを許可しています。
 
 また、今回の接続には直接の関係はないですが、利便性のために以下のオプションも加えています。
-browser
 * `--mine`：gethの起動と同時に採掘を開始するオプション
-* `--rpcaddr "192.168.5.6"`:gethノードのIPアドレスを指定します。browser-solidityからノードを
+* `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスの
 
 
 
