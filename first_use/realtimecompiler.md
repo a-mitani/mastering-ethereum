@@ -1,4 +1,4 @@
-# より便利なContract開発環境の活用
+# Contract開発環境（IDE）の活用
 
 前節までで、gethを用いてコマンドライン上でSolidity言語によるContractの作成からコンパイル、そして実行までを行う手順を見てきました。しかしこれらは見てきたように煩雑な操作が必要で、Solidity言語を用いてContractを実際に試行錯誤でコーディングしていくには不適です。そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[browser-solidity](https://github.com/chriseth/browser-solidity)」の使い方を解説します。
 
@@ -51,7 +51,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 ### browser solidityからノードに接続
 前述のようにダウンロードしたbrowser solidityのindex.htmlをブラウザで開きます。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力しておきます。今後このContractをブロックチェーン上に登録し実行を起こっていきます。
 
-Contractを入力した後、画面右側の箱形のアイコンのタブを選択し「Web3 Provider」のラジオボタンを選択します。また「Web3 Provider Endpoint」のテキストボックスにはgethの起動時に指定したrpcaddrとrpcportを組み合わせて「http://rpcaddr:rpcport 」の形式で指定します。（ここの例ではhttp://192.168.5.6:8545）
+下図のように、Contractを入力した後画面右側の箱形のアイコンのタブを選択し「Web3 Provider」のラジオボタンを選択します。また「Web3 Provider Endpoint」のテキストボックスにはgethの起動時に指定したrpcaddrとrpcportを組み合わせて「http://rpcaddr:rpcport 」の形式で指定します。（ここの例ではhttp://192.168.5.6:8545）
 
 
 ![](00_images/bs_simplenum_web3_with_edit.png)
