@@ -27,11 +27,14 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 * **ブラウザ上での疑似実行**： 実際のEthereumノードには接続せず、ブラウザ上のJavascript VM 上でContractの関数を疑似的に実行。
 * **Blockchain上での実行**：実際のEthereumノードに接続し作成したContractをブロックチェーン上に登録した上でContractの関数を実行。
 
-次の節から後者の「Blockchain上での実行」を実際に「browser solidity」上でどのように行うのかを見ていきます。
+次の節から後者の「Blockchain上での実行」についてどのように行うのかを見ていきます。
 
 ![切り替え](00_images/browser_solidity_box_tab.png)
 
-## ブラウザ上での疑似実行
+## Browser SolidityとEthereumノードを接続する。
+browser solidityから実際のBlockchainに作成したContractを登録したりBlockchain上のContractを実行したりするために、まずはbrowser solidityとEthereumノードを接続する必要があります。
+
+### gethの起動
 
 まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
 
