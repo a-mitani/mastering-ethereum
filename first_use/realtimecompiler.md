@@ -36,9 +36,9 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 
 先述のとおり箱型のタブを押下して現れる「Java Script VM」のラジオボタンを選択した状態にしておきます。
 
-ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。その後
+ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。その後右下の「Create」ボタンを押下すると、Contractがメモリ上で疑似的に
 
-
+![](00_images/bs_simplenum_create_with_edit.png)
 
 <!--
 ## そのほかの機能
