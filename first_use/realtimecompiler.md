@@ -22,11 +22,12 @@ browser-solidity[はGithubから最新バージョンのzipファイル](https:/
 
 ![Browser Solidity画面](00_images/browser_solidity_initial_screen.png)
 
-browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。
+browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます（下図）。
+
 * **ブラウザ上での疑似実行**： 実際のEthereumノードには接続せず、ブラウザ上のJavascript VM 上でContractの関数を疑似的に実行。
 * **Blockchain上での実行**：実際のEthereumノードに接続し作成したContractをブロックチェーン上に登録した上でContractの関数を実行。
 
-これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます（下図）。
+次の節から後者の「Blockchain上での実行」を実際に「browser solidity」上でどのように行うのかを見ていきます。
 
 ![切り替え](00_images/browser_solidity_box_tab.png)
 
@@ -50,4 +51,4 @@ AtAddress botann
 #### 脚注
 [^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
 
-[^2]ここでは、"0x692a70d2e424a56d2c6c27aa97d1a86395877b3a"という疑似アドレスに登録されたことが画面の表示から見て取れます。(memory)
+[^2]ここでは今回のContractが"0x692a70d2e424a56d2c6c27aa97d1a86395877b3a"というメモリ上の疑似アドレスに登録されたことが画面の表示から見て取れます。
