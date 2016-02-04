@@ -57,7 +57,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 ![](00_images/bs_simplenum_web3_with_edit.png)
 
-### Contractをブロックチェーンに
+### Contractをブロックチェーンに登録する。
 
 まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
 
