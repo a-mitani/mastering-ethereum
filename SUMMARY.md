@@ -11,7 +11,7 @@
    * [etherを送金してみる](first_use/sending_ether.md)
    * [Contractを作成してみる](first_use/contract.md)
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
-* [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
+   * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
 * [コントラクト指向言語：Solidity](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
    * [変数とデータ型](solidity/var_and_data_type.md)
