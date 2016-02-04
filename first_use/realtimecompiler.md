@@ -32,7 +32,7 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 browser solidityから作成したContractを実際のBlockchainに登録したりBlockchain上のContractを実行したりするためには、まずbrowser solidityとEthereumノードを接続する必要があります。
 
 ### gethの起動
-これまでのようにgethを起動しテストネットに接続します。下記のコマンドを実行します。
+これまでのようにコマンドラインからgethを起動しテストネットに接続します[^2]。下記のコマンドを実行します。
 
 ```
 $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/eth_data/geth_01.log" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" --olympic console 2>> /home/mitani/eth_testnet_1201/geth_e01.log
@@ -73,6 +73,6 @@ AtAddress botann -->
 #### 脚注
 [^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
 
-[^2]ここでは今回のContractが"0x692a70d2e424a56d2c6c27aa97d1a86395877b3a"というメモリ上の疑似アドレスに登録されたことが画面の表示から見て取れます。
+[^2]ライブ・ネットに接続することも可能ですが、実験的な作業はテスト・ネットで行うことを推奨します。
 
 [^3] <!-- [TODO] chromeの開発ツールでの確認方法を示す。-->
