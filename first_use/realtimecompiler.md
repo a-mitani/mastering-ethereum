@@ -30,7 +30,9 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 
 ## ブラウザ上での疑似実行
 
-まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。まずは「Contractを作成する」節<!--[REF]-->で使用した「
+まずはブラウザ上のJavascript VM 上でContractの関数を疑似的に実行する方法を見てみましょう。
+
+「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。
 
 
 
