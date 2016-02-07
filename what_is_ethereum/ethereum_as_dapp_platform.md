@@ -109,3 +109,6 @@ Ethereum では、採掘が成功すると、
 [^3] 実際には、状態の遷移はトランザクションだけでなく、「メッセージ」によっても遷移が行われますがここでは説明を省きます。「トランザクション」はEOAにより生成/送信されるのに対して「メッセージ」はContract により生成/送信されます。
 
 [^4] ビットコインの場合、ブロックチェーンにはトランザクションのみが記録されましたが、Ethreumではトランザクションによって変化したアカウントの状態もブロックチェーンに記録されます。
+
+---
+[This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).

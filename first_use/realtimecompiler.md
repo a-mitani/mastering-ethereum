@@ -53,7 +53,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 画面右下などに接続エラー等が表示されなければ、gethとのrpcでの接続が成功しています[^3]。
 
-![](00_images/bs_simplenum_web3_with_edit.png)
+![](00_images/bs_web3_with_edit.png)
 
 ### Contractの作成・ブロックチェーンへの登録・実行
 画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します（下図左）。コードを入力し終えたら右側の赤色のCreateボタンを押下します。browser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。しばらくして（数秒～十数秒）Ethereumネットワーク上[^4]でTransactionが採掘されると今回のContractのブロックチェーン上でのアドレスとContractで規定された関数（ここではgetとsetの関数）が表示されます（下図右）。
@@ -68,7 +68,6 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 コントラクタの引数
 AtAddress botann -->
 
--->
 
 #### 脚注
 [^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
@@ -79,5 +78,7 @@ AtAddress botann -->
 
 [^4]今回の例ではテストネットで単独ノードなので、厳密にはEthereumネットワーク上での採掘ではなく、指定したノード上での採掘になります。
 
+---
+[This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 
