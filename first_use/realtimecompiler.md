@@ -56,7 +56,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 ![](00_images/bs_simplenum_web3_with_edit.png)
 
 ### Contractを作成しブロックチェーンに登録する
-画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。コードを入力し終えたら、右側の赤色のCreateボタンを押下するとbrowser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。Ethereumネットワーク上でTransactionが採掘される[^4]と「」
+画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します（下図左）。コードを入力し終えたら右側の赤色のCreateボタンを押下します。browser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。しばらくして（数秒～十数秒）Ethereumネットワーク上[^4]でTransactionが採掘されると今回のContractのブロックチェーン上でのアドレスとContractで規定された関数が表示されます。
 
 ### Contractを実行する
 (追記予定）
