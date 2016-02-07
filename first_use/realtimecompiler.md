@@ -68,7 +68,6 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 コントラクタの引数
 AtAddress botann -->
 
--->
 
 #### 脚注
 [^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
