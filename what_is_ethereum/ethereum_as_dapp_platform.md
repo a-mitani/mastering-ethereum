@@ -110,3 +110,5 @@ Ethereum では、採掘が成功すると、
 
 [^4] ビットコインの場合、ブロックチェーンにはトランザクションのみが記録されましたが、Ethreumではトランザクションによって変化したアカウントの状態もブロックチェーンに記録されます。
 
+---
+[This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
