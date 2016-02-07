@@ -49,16 +49,14 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 * `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスのアカウントのロックを解除します。読者の環境に合わせて、coinbaseのアドレスを指定してください。（起動時にパスワードが求められます。）
 
 ### browser solidityからノードに接続
-前述のようにダウンロードしたbrowser solidityのindex.htmlをブラウザで開きます。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力しておきます。今後このContractをブロックチェーン上に登録し実行していきます。
-
-下図のように、Contractを入力した後画面右側の箱形のアイコンのタブを選択し「Web3 Provider」のラジオボタンを選択します。また「Web3 Provider Endpoint」のテキストボックスにはgethの起動時に指定したrpcaddrとrpcportを組み合わせて「http://rpcaddr:rpcport 」の形式で指定します。（ここの例ではhttp://192.168.5.6:8545）
+前述のようにダウンロードしたbrowser solidityのindex.htmlをブラウザで開きます。下図のように、Contractを入力した後画面右側の箱形のアイコンのタブを選択し「Web3 Provider」のラジオボタンを選択します。また「Web3 Provider Endpoint」のテキストボックスにはgethの起動時に指定したrpcaddrとrpcportを組み合わせて「http://rpcaddr:rpcport 」の形式で指定します。（ここの例ではhttp://192.168.5.6:8545）
 
 画面右下などに接続エラー等が表示されなければ、gethとのrpcでの接続が成功しています[^3]。
 
 ![](00_images/bs_simplenum_web3_with_edit.png)
 
-### Contractをブロックチェーンに登録する
-(追記予定）
+### Contractを作成しブロックチェーンに登録する
+画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します。コードを入力し終えたら、右側の赤色のCreateボタンを押下するとbrowser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。Ethereumネットワーク上でTransactionが採掘される[^4]と「」
 
 ### Contractを実行する
 (追記予定）
@@ -76,3 +74,5 @@ AtAddress botann -->
 [^2]ライブ・ネットに接続することも可能ですが、実験的な作業はテスト・ネットで行うことを推奨します。
 
 [^3] <!-- [TODO] chromeの開発ツールでの確認方法を示す。-->
+
+[^4]今回の例ではテストネットで単独ノードなので、厳密にはEthereumネットワーク上での採掘ではなく、指定したノード上での採掘になります。
