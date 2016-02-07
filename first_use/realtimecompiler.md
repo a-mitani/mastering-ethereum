@@ -55,17 +55,17 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 ![](00_images/bs_simplenum_web3_with_edit.png)
 
-### Contractを作成しブロックチェーンに登録する
-画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します（下図左）。コードを入力し終えたら右側の赤色のCreateボタンを押下します。browser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。しばらくして（数秒～十数秒）Ethereumネットワーク上[^4]でTransactionが採掘されると今回のContractのブロックチェーン上でのアドレスとContractで規定された関数が表示されます（下図右）。
+### Contractの作成・ブロックチェーンへの登録・実行
+画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します（下図左）。コードを入力し終えたら右側の赤色のCreateボタンを押下します。browser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。しばらくして（数秒～十数秒）Ethereumネットワーク上[^4]でTransactionが採掘されると今回のContractのブロックチェーン上でのアドレスとContractで規定された関数（ここではgetとsetの関数）が表示されます（下図右）。
 
 ![](00_images/bs_simplenum_create_with_edit.png)
 
-### Contractを実行する
-(追記予定）
+実際にset関数のテキスト入力エリアに正の整数値、例えば「136」を入力し赤色のいるset関数実行ボタンを押下するとbrouser-solidityはトランザクションを発行しEthereumネットワーク上で採掘されるとトランザクション実行結果が表示されます。またそのあと青色のget関数ボタンを押下すればset関数で設定した正の整数が表示されることになります。
 
+<!-- 
 ## Browser Solidity そのほかの機能
 (追記予定）
-<!-- コントラクタの引数
+コントラクタの引数
 AtAddress botann -->
 
 -->
@@ -78,3 +78,6 @@ AtAddress botann -->
 [^3] <!-- [TODO] chromeの開発ツールでの確認方法を示す。-->
 
 [^4]今回の例ではテストネットで単独ノードなので、厳密にはEthereumネットワーク上での採掘ではなく、指定したノード上での採掘になります。
+
+
+
