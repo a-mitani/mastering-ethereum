@@ -1,6 +1,6 @@
 # Contract開発環境（IDE）の活用
 
-前節までで、gethを用いてコマンドライン上でSolidity言語によるContractの作成からコンパイル、そして実行までを行う手順を見てきました。しかしこれらは見てきたように煩雑な操作が必要で、Solidity言語を用いてContractを実際に試行錯誤でコーディングしていくには不適です。そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[browser-solidity](https://github.com/chriseth/browser-solidity)」の使い方を解説します。
+前節までで、gethを用いてコマンドライン上でSolidity言語によるContractの作成からコンパイル、そして実行までを行う手順を見てきました。しかしこれらは見てきたように煩雑な操作が必要で、Solidity言語を用いてContractを実際に試行錯誤でコーディングしていくには不適です。そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[Browser Solidity - Solidity realtime compiler and runtime](https://github.com/chriseth/browser-solidity)」（以下browser-solidity）の使い方を解説します。
 
 [browser-solidity](https://github.com/chriseth/browser-solidity)はSolidity言語の開発者の一人である[chriseth](https://github.com/chriseth)により開発されているSolidity言語用Contract開発環境（IDE）であり、Webブラウザ上で
 
@@ -21,10 +21,10 @@ browser-solidity[はGithubから最新バージョンのzipファイル](https:/
 
 browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます（下図）。
 
-* **ブラウザ上での疑似実行**： 実際のEthereumノードには接続せず、ブラウザ上のJavascript VM 上でContractの関数を疑似的に実行。
-* **Blockchain上での実行**：実際のEthereumノードに接続し作成したContractをブロックチェーン上に登録した上でContractの関数を実行。
+* **Java Script VM**： ブラウザ上での疑似実行モード。実際のEthereumノードには接続せず、ブラウザ上のJavascript VM 上でContractの関数を疑似的に実行します。
+* **Web3 Provider**： Blockchain上での実行モード。実際のEthereumノードに接続し、作成したContractをブロックチェーン上に登録した上でContractの関数を実行します。
 
-次の節から後者の「Blockchain上での実行」についてどのように行うのかを見ていきます。
+次の節から後者のWeb3 Providerのモードでの実行手順を見ていきます。
 
 ![切り替え](00_images/browser_solidity_box_tab.png)
 
