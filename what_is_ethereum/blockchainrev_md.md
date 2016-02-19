@@ -86,3 +86,7 @@ Nakamoto氏の発明の本質は、いかなる中央機関も存在しないP2P
 [^1] Aから 10 BTC 送金を受けたトランザクションと、Bから 20 BTC 送金を受けたトランザクションの２つ。
 
 [^2] 技術的には、参照先ブロックのヘッダ・データのHash値。
+
+
+---
+[This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
