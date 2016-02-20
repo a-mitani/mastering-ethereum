@@ -104,7 +104,14 @@ Ethereum では、採掘が成功すると、
 の報酬が採掘者に与えられます。
 
 ###Ethereumを支えるエコシステム
-Ethereumはオープンソース・プロジェクトとしてETHDEVチームとグローバルな有志により開発が進められていることは既に述べました。その開発の中でEthreumを行われています。
+Ethereumはオープンソース・プロジェクトとしてETHDEVチームとグローバルな有志により様々な開発が進められていることは既に述べました。今後Etherumを使って分散アプリケーションを開発していく上で有用なものを中心にいくつか紹介します。
+
+* **[Ethreum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)**： Ethreumのコアの仕組みについて比較的平易に説明された論文です。本書もかなりの部分でこのホワイトペーパーを参考にしています。
+* **[Ethereum Yellow Paper](http://gavwood.com/paper.pdf)**： Gav Woodにより著されたEthreumの公式プロトコル仕様書。現在までに様々な言語でEthereumのノードが開発されていますが、それらはこのYellow paperに従い実装されています。現在も[Github上でメンテナンス](https://github.com/ethereum/yellowpaper)されています。
+* **[ethstats](https://ethstats.net/)**：Ethreumネットワークの状況をモニタするダッシュボードが提供されています。ブロックの採掘状況やその難易度等が確認できます。
+*
+
+
 
 ### 脚注
 
