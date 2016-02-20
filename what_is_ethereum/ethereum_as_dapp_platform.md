@@ -109,7 +109,7 @@ Ethereumはオープンソース・プロジェクトとしてETHDEVチームと
 * **[Ethreum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)**： Ethreumのコアの仕組みについて比較的平易に説明された論文です。本書もかなりの部分でこのホワイトペーパーを参考にしています。
 * **[Ethereum Yellow Paper](http://gavwood.com/paper.pdf)**： Gav Woodにより著されたEthreumの公式プロトコル仕様書。現在までに様々な言語でEthereumのノードが開発されていますが、それらはこのYellow paperに従い実装されています。現在も[Github上でメンテナンス](https://github.com/ethereum/yellowpaper)されています。
 * **[ethstats](https://ethstats.net/)**：Ethreumネットワークの状況をモニタするダッシュボードが提供されています。ブロックの採掘状況やその難易度等が確認できます。
-*
+
 
 
 
