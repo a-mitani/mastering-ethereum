@@ -18,7 +18,7 @@
    * [演算子](solidity/operators.md)
    * [制御命令](solidity/control_commands.md)
 * [Meteorを用いた分散型アプリケーション開発](dapp_using_meteor/README.md)
-   * [Meteorとは](meteor_dapp/what_is_meteor.md)
+   * [Meteorとは](meteor_dapp/about_meteor.md)
 * [Ethereumの内部](inside_ethereum/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
 
