@@ -18,3 +18,4 @@ Meteorには既にEthereumのノードとAPI連携するためのライブラリ
 次節以降で、Meteorを用いた「Ethereumネットワーク上で動作するDappの開発」に主眼を置いて解説していきます。そのためMeteor持つ強力な機能の全てを本書内で解説するこはできません。Meteor自体のより詳細で良質な解説を下記に挙げておきます。
 * **[Meteor公式チュートリアル](https://www.meteor.com/tutorials/blaze/creating-an-app)**： 簡単なTODO管理アプリケーションの開発をチュートリアル形式で解説しています。
 * **[Discover Meteor](https://www.discovermeteor.com/)**： リアルタイムのソーシャル・ニュース・アプリを題材にチュートリアル形式でMeteorとそれを用いた開発を解説した電子書籍です。上記の公式チュートリアルよりもより網羅的です。有料（$29-）でGumroadにより販売されています。また有志による[日本語翻訳版も公開されており](http://ja.discovermeteor.com/)、こちらは無料で閲覧が可能です。
+* **[Meteor Docs](http://docs.meteor.com/#/full/)**： 公式のAPIリファレンスです。
