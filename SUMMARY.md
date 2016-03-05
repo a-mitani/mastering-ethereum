@@ -15,7 +15,7 @@
 * [Meteorを用いた分散型アプリケーション開発](dapp_using_meteor/README.md)
    * [Meteorとは](meteor_dapp/about_meteor.md)
    * [単純なステータスモニターを作ってみる](meteor_dapp/simple_status_monitor.md)
-   * [独自通貨とそのWalleletを作ってみる]()
+   * [独自通貨とそのWalletを作ってみる](meteor_dapp/original_currency_wallet)
 * [コントラクト指向言語Solidity詳解](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
    * [変数とデータ型](solidity/var_and_data_type.md)
