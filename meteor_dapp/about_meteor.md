@@ -41,7 +41,7 @@ myfirstapp.js
 ``` bash
 $ meteor
 ```
-コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
+コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/ 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
 
 
 
