@@ -16,8 +16,7 @@
 browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
 
 実際にindex.htmlをブラウザで開いた画面を下図に示します。画面は大きく左右２つに分かれています。左側はSolidity言語のコードエディタになっており、右側はそのContractの各種情報の表示や実行実行等を行う画面になっています。
-
-![Browser Solidity画面](00_images/browser_solidity_initial_screen.png)
+<img src="00_images/browser_solidity_initial_screen.png" width="600">
 
 browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます（下図）。
 
@@ -26,7 +25,7 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 
 次の節から後者のWeb3 Providerのモードでの実行手順を見ていきます。
 
-![切り替え](00_images/browser_solidity_box_tab.png)
+<img src="00_images/browser_solidity_box_tab.png" width="600">
 
 ## Browser SolidityとEthereumノードを接続する。
 browser solidityから作成したContractを実際のBlockchainに登録したりBlockchain上のContractを実行したりするためには、まずbrowser solidityとEthereumノードを接続する必要があります。
