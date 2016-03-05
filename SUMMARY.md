@@ -13,7 +13,7 @@
    * [ライブ・ネットに接続してみる](first_use/connect_to_livenet.md)
    * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
 * [Meteorを用いた分散型アプリケーション開発](dapp_using_meteor/README.md)
-   * [Meteorとは](meteor_dapp/about_meteor.md)
+   * [Meteorを使ってみる](meteor_dapp/about_meteor.md)
    * [単純なネットワークモニターを作ってみる](meteor_dapp/simple_monitor.md)
    * [独自通貨とそのWalletを作ってみる](meteor_dapp/original_currency_wallet)
 * [コントラクト指向言語Solidity詳解](solidity/README.md)
