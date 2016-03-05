@@ -13,7 +13,12 @@ Meteorのこのような特長に加え、既にEthereumのノードとAPI連携
 
 ## Meteorのインストール
 
-Meteorのインストールは極めて簡単です。
+Meteorのインストールは極めて簡単です。ターミナルを開き
+``` bash
+$ curl https://install.meteor.com | sh
+```
+の１行のコマンドを実行するのみです。
+
 
 
 ## Meteorをさらに知るために
