@@ -43,11 +43,7 @@ $ meteor
 ```
 コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/ 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
 
-<img src="00_img/myfirstapp.png" width="100">
-
-
-<img src="***画像のURL***" width="***サイズ***">
-
+<img src="00_img/myfirstapp.png" width="500">
 
 
 ## Meteorをさらに知るために
