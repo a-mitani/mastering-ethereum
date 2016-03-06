@@ -34,4 +34,5 @@ gethのconsoleを利用せずバックグラウンドでgethを起動してお�
 の手順で行えばよいでしょう。
 
 ### Meteorプロジェクト作成
-実際にMeteorを利用してsimple-eth-monitor
+実際にMeteorを利用してsimple-eth-monitorを作成していきます。
+Meteorをインストールした環境で適当なディレクトリに移動し、
