@@ -16,8 +16,7 @@
 browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
 
 実際にindex.htmlをブラウザで開いた画面を下図に示します。画面は大きく左右２つに分かれています。左側はSolidity言語のコードエディタになっており、右側はそのContractの各種情報の表示や実行実行等を行う画面になっています。
-
-![Browser Solidity画面](00_images/browser_solidity_initial_screen.png)
+<img src="00_images/browser_solidity_initial_screen.png" width="600">
 
 browser-solidityは作成されたContractを２通りの方法方で実行することが可能です。これらの方法は、画面右の箱型のタブを押下して現れるラジオボタン「Java Script VM」と「Web3 Provider」で切り替えることが出来ます（下図）。
 
@@ -26,7 +25,7 @@ browser-solidityは作成されたContractを２通りの方法方で実行す�
 
 次の節から後者のWeb3 Providerのモードでの実行手順を見ていきます。
 
-![切り替え](00_images/browser_solidity_box_tab.png)
+<img src="00_images/browser_solidity_box_tab.png" width="600">
 
 ## Browser SolidityとEthereumノードを接続する。
 browser solidityから作成したContractを実際のBlockchainに登録したりBlockchain上のContractを実行したりするためには、まずbrowser solidityとEthereumノードを接続する必要があります。
@@ -53,12 +52,12 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 
 画面右下などに接続エラー等が表示されなければ、gethとのrpcでの接続が成功しています[^3]。
 
-![](00_images/bs_web3_with_edit.png)
+<img src="00_images/bs_web3_with_edit.png" width="600">
 
 ### Contractの作成・ブロックチェーンへの登録・実行
 画面左側のエディタでContractを作成します。ここでは例として「Contractを作成する」節<!--[REF]-->で使用した「SingleNumRegister」Contractコードを左側のコード・エディタ部分に入力します（下図左）。コードを入力し終えたら右側の赤色のCreateボタンを押下します。browser-solidityは指定されたEthereumノードにアクセスしブロックチェーン上にContractを登録するためのTransactionを発行します。しばらくして（数秒～十数秒）Ethereumネットワーク上[^4]でTransactionが採掘されると今回のContractのブロックチェーン上でのアドレスとContractで規定された関数（ここではgetとsetの関数）が表示されます（下図右）。
 
-![](00_images/bs_simplenum_create_with_edit.png)
+<img src="00_images/bs_simplenum_create_with_edit.png" width="600">
 
 実際にset関数のテキスト入力エリアに正の整数値、例えば「136」を入力し赤色のいるset関数実行ボタンを押下するとbrouser-solidityはトランザクションを発行しEthereumネットワーク上で採掘されるとトランザクション実行結果が表示されます。またそのあと青色のget関数ボタンを押下すればset関数で設定した正の整数が表示されることになります。
 
