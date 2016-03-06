@@ -4,6 +4,7 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 
 ### simple-eth-monitor
 ここでは、ブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすアプリケーションを作成します。
+また、XXXとXXXの項目については、特にユーザーが再読み込み等の操作をする必要なく、Ethereumネットワーク上での
 
 <img src="00_img/myfirstapp.png" width="500">
 
