@@ -8,7 +8,7 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 
 <img src="00_img/simple-eth-monnitor-final.png" width="500">
 
-ここで下準備として今回作るモニターが接続する先のEthereumノードをアプリケーションからの接続を受けるように下記のコマンドでgethを起動しておきます。
+ここで下準備として、今回作るモニターが接続する先のEthereumノードをアプリケーションからの接続を受けるように下記のコマンドでgethを起動しておきます。
 
 
 
