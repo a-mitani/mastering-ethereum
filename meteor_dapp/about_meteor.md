@@ -1,4 +1,4 @@
-# Meteorとは
+## Meteorとは
 
 まずは今回の開発にフレームワークとして利用するMeteorについて説明していきます。
 
@@ -11,9 +11,9 @@ Meteorのこのような特長に加え、既にEthereumのノードとAPI連携
 
 分散型アプリケーションの開発を進めていく準備として、先ずはMeteorインストールしてみましょう。以下特に言及しない場合はubuntu 14.04の環境を前提とします。他のOSの場合には適宜読み替えてください。（Linux OSやMac OSの場合はほぼ同じ操作で進められるでしょう。）
 
-## Meteor事始め
+### Meteor事始め
 
-### Meteorのインストール
+#### Meteorのインストール
 Meteorのインストールは極めて簡単です。ターミナルを開き
 ``` bash
 $ curl https://install.meteor.com | sh
@@ -24,7 +24,7 @@ $ meteor --version
 ```
 と入力してバージョン情報が表示されればインストールが出来ています。
 
-### 最初のアプリケーションを作成する
+#### 最初のアプリケーションを作成する
 Meteorのインストールしたので、実際にMeteorで簡単なアプリケーションを作ってみます。そのために、任意のディレクトリ上で
 ``` bash
 $ meteor create myfirstapp
@@ -54,7 +54,7 @@ $ meteor deploy hogehoge
 ```
 のコマンドを実行するだけです。開発したアプリケーションが自動で公開サーバにアップロード・デプロイされWeb上で公開されます。ここで`hogehoge`の部分で公開する際のURLのサブドメインを指定しています。この場合URL「http://hogehoege.meteor.com 」で開発したアプリケーションにアクセスできるようになります。
 
-## Meteorをさらに知るために
+### Meteorをさらに知るために
 次節以降で、Meteorを用いた「Ethereumネットワーク上で動作するDappの開発」に主眼を置いて解説していきます。そのためMeteor持つ強力な機能の全てを本書内で解説するこはできません。Meteor自体のより詳細で良質な解説を下記に挙げておきます。
 * **[Meteor公式チュートリアル](https://www.meteor.com/tutorials/blaze/creating-an-app)**： 簡単なTODO管理アプリケーションの開発をチュートリアル形式で解説しています。
 * **[Discover Meteor](https://www.discovermeteor.com/)**： リアルタイムのソーシャル・ニュース・アプリを題材にチュートリアル形式でMeteorとそれを用いた開発を解説した電子書籍です。上記の公式チュートリアルよりもより網羅的です。有料（$29-）でGumroadにより販売されています。また有志による[日本語翻訳版も公開されており](http://ja.discovermeteor.com/)、こちらは無料で閲覧が可能です。
