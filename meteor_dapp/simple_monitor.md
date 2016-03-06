@@ -10,6 +10,7 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 
 ここで下準備として、今回作るモニターが接続する先のEthereumノードをアプリケーションからの接続を受けるように下記のコマンドでgethを起動しておきます。
 ``` bash
+$ geth --networkid "1201" --datadir "/home/mitani/eth_testnet_1201" --logfile "/home/mitani/eth_testnet_1201/geth_01.log" --mine --unlock 0xa7595f153f9ead98dc3ad08abfc5314f596f97e7 --rpc --rpcaddr "160.16.80.199" --rpcport "8545" --rpccorsdomain "*"  --olympic 2>> /home/mitani/eth_testnet_1201/^Cth_e01.log
 
 ```
 
