@@ -35,4 +35,12 @@ gethのconsoleを利用せずバックグラウンドでgethを起動してお�
 
 ### Meteorプロジェクト作成
 実際にMeteorを利用してsimple-eth-monitorを作成していきます。
-Meteorをインストールした環境で適当なディレクトリに移動し、
+Meteorをインストールした環境[^1]で適当なディレクトリに
+``` bash
+$ cd ~/eth-meteor-proj # 任意のディレクトリに移動
+$ meteor create simple-eth-monitor # 新しいMeteorプロジェクトを作成
+```
+
+
+###脚注
+[^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
