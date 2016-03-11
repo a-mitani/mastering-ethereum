@@ -113,6 +113,8 @@ EthAccounts.init();
 //EthBlocksの初期化
 EthBlocks.init();
 ```
+この状態でWebアプリケーションを起動してアクセスしてみましょう。
+
 
 > **Note** 
 > Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
