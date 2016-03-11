@@ -73,14 +73,23 @@ $ meteor
 >  また、静的なコンテンツ、例えば画像データやフォントデータ等は`public`ディレクトリに配置されるのが慣習です。
 
 ### Ethereumノードへの接続
-Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。ここではsimple-eth-monitorで必要な以下の４つのパッケージを追加します。
+####パッケージの追加
+Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。Ethereumへの接続も、拡張機能としてパッケージを導入することで容易に可能になります。ここでは今後使用する以下の４つのパッケージを追加します。
 * **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
 * **ethereum:web3**：EthreumノードとRPC接続するためのライブラリが含まれるパッケージ。
 * **ethereum:accounts**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのアカウント関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
 * **ethereum:blocks**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのブロックチェーン関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
 
-MeteorでのPackageの追加は容易で以下の
+simple-ethmonitorのプロジェクト・ディレクトリに移動し下記のコマンドを実行します。
 
- *  
+``` bash
+$ meteor add twbs:bootstrap 
+$ meteor add ethereum:web3
+$ meteor add ethereum:accounts
+$ meteor add ethereum:blocks
+```
+
+
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
