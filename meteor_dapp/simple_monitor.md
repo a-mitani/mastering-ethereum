@@ -74,10 +74,12 @@ $ meteor
 
 ### パッケージの追加
 Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。ここではsimple-eth-monitorで必要なパッケージ
- * **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
- * **ethereum:web3**： 
-ethereum:accounts
-ethereum:blocks
+* **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
+* **ethereum:web3**：EthreumノードとRPC接続するためのライブラリが含まれるパッケージ。
+* **ethereum:accounts**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのアカウント関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
+* **ethereum:blocks**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのブロックチェーン関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
+
+
 
  *  
 ###脚注
