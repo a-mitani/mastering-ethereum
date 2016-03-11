@@ -39,7 +39,7 @@ Meteorをインストールした環境[^1]で適当なディレクトリに、�
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
 $ meteor create simple-eth-monitor # 新しいMeteorプロジェクトを作成
 ```
-「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成されたを`simple-eth-monitor`ディレクトリに移動して
+「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-eth-monitor`ディレクトリ（プロジェクトROOT）に移動して
 ``` bash
 $ meteor
 ```
@@ -47,9 +47,9 @@ $ meteor
 
 <img src="00_img/myfirstapp.png" width="500">
 
-起動して画面が表示されることが確認できたら、Meteorプロジェクトのフォルダ構成を整備します。
+起動して画面が表示されることが確認できたら、次にMeteorプロジェクトのフォルダ構成を整備します。
 
-`meteor create`を実行して作成された`simple-eth-monitor`ディレクトリ直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
+プロジェクトROOT直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
 
 
 > main.js
@@ -88,6 +88,10 @@ $ meteor add ethereum:web3
 $ meteor add ethereum:accounts
 $ meteor add ethereum:blocks
 ```
+> **Note** 
+> プロジェクトに追加されたパッケージは
+> `.meteor`ディレクトリ以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
+
 
 
 
