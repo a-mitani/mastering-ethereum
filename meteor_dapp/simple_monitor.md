@@ -92,7 +92,8 @@ $ meteor add ethereum:blocks
 > プロジェクトに追加されたパッケージは
 > `.meteor`ディレクトリ以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
 
-
+####Ethereumノードへの接続
+今回追加した`ethereum:web3`パッケージを利用しEthereumノードに接続します。
 
 
 ###脚注
