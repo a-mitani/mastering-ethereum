@@ -33,7 +33,7 @@ gethのconsoleを利用せずバックグラウンドでgethを起動してお�
 
 の手順で行えばよいでしょう。
 
-### Meteorプロジェクト作成
+### Meteorプロジェクト作成と整備
 Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-eth-monitorのMeteorプロジェクトを作成します。
 ``` bash
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
@@ -46,9 +46,22 @@ $ meteor
 コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/ 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
 
 <img src="00_img/myfirstapp.png" width="500">
+
+起動して画面が表示されることが確認できたら、Meteorプロジェクトのフォルダ構成を整備します。
+
+`meteor create`を実行して作成された`simple-eth-monitor`ディレクトリ直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコード、`main.js`は空のままにしておきます。
+
+
+> main.js
+
+``` html
+<head>
+  <title>Simple Ethereum Status Monitor</title>
+</head>
+<body>
+  <h1> Hello, world!!</h1>
+</body>
 ```
-
-
 
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
