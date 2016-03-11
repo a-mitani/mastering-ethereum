@@ -24,7 +24,7 @@ $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_
 * `--mine`：gethの起動と同時に採掘を開始するオプション
 * `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスのアカウントのロックを解除します。読者の環境に合わせて、coinbaseのアドレスを指定してください。（起動時にパスワードが求められます。）
 
-##### ■TIPS
+###### ■■ TIP ■■
 gethのconsoleを利用せずバックグラウンドでgethを起動しておくと便利です。その場合は
 1. 上記コマンドの`console`のオプションを外して実行
 2. プロンプト上でパスワードを聞かれたら、入力。
@@ -49,7 +49,7 @@ $ meteor
 
 起動して画面が表示されることが確認できたら、Meteorプロジェクトのフォルダ構成を整備します。
 
-`meteor create`を実行して作成された`simple-eth-monitor`ディレクトリ直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコード、`main.js`は空のままにしておきます。
+`meteor create`を実行して作成された`simple-eth-monitor`ディレクトリ直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
 
 
 > main.js
@@ -63,5 +63,7 @@ $ meteor
 </body>
 ```
 
+
+###### ■■ TIP ■■
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
