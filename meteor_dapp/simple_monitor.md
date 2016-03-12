@@ -139,6 +139,9 @@ EthBlocks.init();
 #### 「Node Status」項目の表示
 これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
 
+まずは、`client/main.html`ファイルを下記のコードに書き換えます。
+
+`client/main.html`は`<head>`、`<body>`、`<template>`
 
 
 ###脚注
