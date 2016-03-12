@@ -225,7 +225,7 @@ Spacebarには主に3種類のタグが規定されています。
   * 今回の `client/main.html` の例では`{{isMining}}`は `client/main.js` の`isMining`メソッドの返り値に置き換わることになります。
 * **block helpersタグ**：`{{#each}}…{{/each}}` や `{{#if}}…{{/if}}`のような構文で用いられるタグで、テンプレート内での処理フローを制御する働きをします。本節では使用せず詳細は次節以降に譲ります。
 * 今回の`client/main.html`の例では`{{> nodeStatusComponent}}`が、`<template name="nodeStatusComponent">`と`</template>`に囲まれた部分の内容に置き換わることになります。
-* 
+
 ##### ■ テンプレートヘルパー
 `client/main.js`にはテンプレートヘルパーが定義されています。Meteorでは表示とロジックを分離する設計がされており、表示はテンプレートが、そして表示のためのデータの取得や加工などのロジックはテンプレートヘルパーがその役割を担います。
 
