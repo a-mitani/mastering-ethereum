@@ -62,7 +62,7 @@ $ meteor
   <h1> Hello, world!!</h1>
 </body>
 ```
->**Tag**  Commit step_001 ⇒ View on GitHub
+>**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
 
 > **Note** 
 > Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
