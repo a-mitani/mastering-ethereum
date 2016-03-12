@@ -220,7 +220,6 @@ Template.nodeStatusComponent.helpers({
 
 Spacebarには主に3種類のタグが規定されています。
 * **Inclusionsタグ**: `{{> xxx }}`の構文で用います。このタグが配置された場所に、`xxx`の部分で指定された名前と同じname属性を持つ`<template>`タグの内容を挿入する働きをします。今回の`client/main.html`では`{{> nodeStatusComponent}}`が、`<template name="nodeStatusComponent">`と`</template>`に囲まれた部分の内容に置き換わることになります。
-
 * **Expressionsタグ**：`{{xxx}}`の構文で
 ##### {{> nodeStatusComponent}}
 
