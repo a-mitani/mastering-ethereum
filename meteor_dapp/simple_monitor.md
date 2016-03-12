@@ -68,7 +68,6 @@ $ meteor
 <img src="00_img/hello-world.png" width="500">
 
 
-
 > **Note** 
 > Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
 > * `server` ディレクトリ以下のファイルは、サーバサイドのみで実行されます。
