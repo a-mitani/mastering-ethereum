@@ -140,6 +140,9 @@ EthBlocks.init();
 これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
 
 まずは、`client/main.html`ファイルを下記のコードに書き換えます。
+
+> client/main.html
+
 ```html
 <head>
   <title>Simple Ethereum Statud Explorer</title>
@@ -193,6 +196,8 @@ EthBlocks.init();
 ```
 `client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
 
+Spacebarには主に3種類のタグが規定されています。
+* **Inclusionsタグ**: `{{> xxx }}`の構文で用います。`xxx`の部分で指定された名前と同じname属性を持つ
 
 ##### {{> nodeStatusComponent}}
 
