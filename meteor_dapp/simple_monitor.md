@@ -215,6 +215,9 @@ Template.nodeStatusComponent.helpers({
 });
 
 ```
+これらのコードを追加することで下図のような、`client/lib/init.js`内で定義したEthereumノードの状態のテーブルが表示されるはずです。
+
+ここでは大きく２つ、「テンプレート」と「テンプレートヘルパー」を用いてEthereumノードの状態の取得から表示までを行いました。少しこれらのコードを詳しく見ていきます。
 
 #####■ テンプレートエンジン：Spacebar
 `client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
