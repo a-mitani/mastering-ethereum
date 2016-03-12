@@ -135,3 +135,83 @@ EthBlocks.init();
 > **Note** 
 > `init.js`ファイルを`client/lib`以下に配置したのは、初期化の処理を今後追加されていくその他の処理よりも先に処理したい理由からです。MeteorではプロジェクトRoot以下のファイルをロードする順序として、`lib`という名称のディレクトリ以下のファイルを最初に読み込むというルールがあるため、今回の`init.js`は例えば`main.html`や`main.js`よりも先にMeteorによりロードされる事になります。Meteorがファイルをロードする順序は[公式ドキュメント（英語）の「File Load Order」節](http://docs.meteor.com/#/full/fileloadorder)に詳細が記載されているので参考にしてください。
 
+###コンポーネントを追加する
+#### 「Node Status」項目の表示
+これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
+
+まずは、`client/main.html`と`client/main.js`ファイルを下記のコードに書き換えます。
+
+> client/main.html
+
+```html
+<head>
+  <title>Simple Ethereum Statud Explorer</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Simple Ethereum Status Explorer</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-8 col-md-offset-2">
+        {{> nodeStatusComponent}}
+      </div>
+    </div>
+  </main>
+</body>
+
+<template name="nodeStatusComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Node Status</h4>
+    </div>
+    <table class="table">
+      <tbody>
+          <tr>
+            <th scope="row">Node</th>
+            <td>{{currentProvider}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Is Mining?</th>
+            <td>{{isMining}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Hashrate</th>
+            <td>{{currentHashrate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Peer Count</th>
+            <td>{{currentPeerCount}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+```
+
+> client/main.js
+
+```javascript
+Template.nodeStatusComponent.helpers({
+//  accounts: accountsData
+  currentProvider: function(){
+    return web3.currentProvider.host;
+  },
+  isMining: function(){
+    return web3.eth.mining;
+  },
+  currentHashrate: function(){
+    return web3.eth.hashrate;
+  },
+  currentPeerCount: function(){
+    return web3.net.peerCount;
+  }
+});
+
+```
