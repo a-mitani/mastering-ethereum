@@ -39,7 +39,7 @@ Meteorをインストールした環境[^1]で適当なディレクトリに、�
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
 $ meteor create simple-eth-monitor # 新しいMeteorプロジェクトを作成
 ```
-「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成されたを`simple-eth-monitor`ディレクトリに移動して
+「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-eth-monitor`ディレクトリ（以下、プロジェクトROOT）に移動して
 ``` bash
 $ meteor
 ```
@@ -47,9 +47,9 @@ $ meteor
 
 <img src="00_img/myfirstapp.png" width="500">
 
-起動して画面が表示されることが確認できたら、Meteorプロジェクトのフォルダ構成を整備します。
+起動して画面が表示されることが確認できたら、次にプロジェクトROOT以下の構成を整備します。
 
-`meteor create`を実行して作成された`simple-eth-monitor`ディレクトリ直下の`main.html`、`main.js`、`main.css`を削除します。また新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
+まず、プロジェクトROOT直下の`main.html`、`main.js`、`main.css`を削除します。また、新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
 
 
 > main.js
@@ -62,7 +62,7 @@ $ meteor
   <h1> Hello, world!!</h1>
 </body>
 ```
->**Tag**  Commit step_001 ⇒ View on GitHub
+>**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
 
 > **Note** 
 > Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
@@ -80,7 +80,7 @@ Meteorには標準の機能以外の拡張機能をパッケージとしてイ�
 * **ethereum:accounts**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのアカウント関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
 * **ethereum:blocks**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのブロックチェーン関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
 
-simple-ethmonitorのプロジェクト・ディレクトリに移動し下記のコマンドを実行します。
+プロジェクトROOTに移動し下記のコマンドを実行します。
 
 ``` bash
 $ meteor add twbs:bootstrap 
@@ -89,13 +89,47 @@ $ meteor add ethereum:accounts
 $ meteor add ethereum:blocks
 ```
 > **Note** 
-> Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
-> * `server` ディレクトリ以下のファイルは、サーバサイドのみで実行されます。
-> * `client` ディレクトリ以下のファイルはクライアントサイド（ex.ブラウザ上）のみで実行されます。
-> * プロジェクト直下のファイル、および、上記以外のディレクトリ以下のファイルはサーバサイドとクライアントサイドの両方で実行されます。
->
->  また、静的なコンテンツ、例えば画像データやフォントデータ等は`public`ディレクトリに配置されるのが慣習です。
+> プロジェクトに追加されたパッケージは
+> `.meteor`ディレクトリ以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
 
+####Ethereumノードへの接続
+今回追加したパッケージを利用しEthereumノードに接続します。
+`client`ディレクトリ以下に`lib`ディレクトリを作成しその下に以下のコードを記述した`init.js`ファイルを配置します。
+
+> client/lib/init.js
+
+``` javascript
+//Web3インスタンスの生成
+web3 = new Web3();
+
+//RPCプロバイダを設定
+//URLの部分は読者の環境に合わせてください。（localhostの部分はIPアドレスにて指定してもかまいません。）
+if(!web3.currentProvider)
+  web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+
+// EthAccounts初期化
+EthAccounts.init();
+
+//EthBlocksの初期化
+EthBlocks.init();
+```
+この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには`init.js`もロードされ処理が実行されているためブラウザ上からEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動し、Ethereumノードに対してアカウントリストを問い合わせる
+
+```javascript
+> web3.eth.accounts;
+```
+のコマンドを実行してみます。
+実行結果として
+```javascript
+["0xa7595f153f9ead98dc3ad08abfc5314f596f97e7", "0xf2057b8aefb9093331faf48f30c1ebeab4ff961d"]
+```
+のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
+
+>**Tag**  Commit step002 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002)
+
+
+> **Note** 
+> `init.js`ファイルを`client/lib`以下に配置したのは、初期化の処理を今後追加されていくその他の処理よりも先に処理したい理由からです。MeteorではプロジェクトRoot以下のファイルをロードする順序として、`lib`という名称のディレクトリ以下のファイルを最初に読み込むというルールがあるため、今回の`init.js`は例えば`main.html`や`main.js`よりも先にMeteorによりロードされる事になります。Meteorがファイルをロードする順序は[公式ドキュメント（英語）の「File Load Order」節](http://docs.meteor.com/#/full/fileloadorder)に詳細が記載されているので参考にしてください。
 
 
 ###脚注
