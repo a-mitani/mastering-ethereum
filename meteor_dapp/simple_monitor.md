@@ -140,8 +140,62 @@ EthBlocks.init();
 これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
 
 まずは、`client/main.html`ファイルを下記のコードに書き換えます。
+```html
+<head>
+  <title>Simple Ethereum Statud Explorer</title>
+</head>
 
-`client/main.html`は`<head>`、`<body>`、`<template>`
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Simple Ethereum Status Explorer</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-8 col-md-offset-2">
+        {{> nodeStatusComponent}}
+      </div>
+    </div>
+  </main>
+</body>
+
+<template name="nodeStatusComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Node Status</h4>
+    </div>
+    <table class="table">
+      <tbody>
+          <tr>
+            <th scope="row">Node</th>
+            <td>{{currentProvider}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Is Mining?</th>
+            <td>{{isMining}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Hashrate</th>
+            <td>{{currentHashrate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Peer Count</th>
+            <td>{{currentPeerCount}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+```
+`client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
+
+
+##### {{> nodeStatusComponent}}
+
 
 
 ###脚注
