@@ -64,7 +64,9 @@ $ meteor
 ```
 >**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
 
-この状態でWebアプリケーションにアクセスすると、「Hello, world!!」が表示されているはずです。
+この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
+
+
 
 > **Note** 
 > Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
