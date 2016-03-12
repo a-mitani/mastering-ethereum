@@ -194,6 +194,28 @@ EthBlocks.init();
   </div>
 </template>
 ```
+
+> client/main.js
+
+```javascript
+Template.nodeStatusComponent.helpers({
+//  accounts: accountsData
+  currentProvider: function(){
+    return web3.currentProvider.host;
+  },
+  isMining: function(){
+    return web3.eth.mining;
+  },
+  currentHashrate: function(){
+    return web3.eth.hashrate;
+  },
+  currentPeerCount: function(){
+    return web3.net.peerCount;
+  }
+});
+
+```
+
 `client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
 
 Spacebarには主に3種類のタグが規定されています。
