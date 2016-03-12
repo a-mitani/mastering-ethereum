@@ -220,4 +220,8 @@ Template.nodeStatusComponent.helpers({
 `client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
 
 Spacebarには主に3種類のタグが規定されています。
-**Inclusionsタグ**: 構文で用います。`{{> xxx}}`
+
+1. **Inclusionsタグ**: `{{> xxx }}`の構文で用います。このタグが配置された場所に、`xxx`の部分で指定された名前と同じname属性を持つ`<template>`タグの内容を挿入する働きをします。今回の`client/main.html`の例では`{{> nodeStatusComponent}}`が、`<template name="nodeStatusComponent">`と`</template>`に囲まれた部分の内容に置き換わることになります。
+2. **Expressionsタグ**：`{{xxx}}`の構文で用います。すぐ後に後述するテンプレートヘルパーのメソッドの戻り値に置き換わる働きをします。今回の `client/main.html` の例では`{{isMining}}`は `client/main.js` の`isMining`メソッドの返り値に置き換わることになります。
+3. **block helpersタグ**：`{{#each}}…{{/each}}` や `{{#if}}…{{/if}}`のような構文で用いられるタグで、テンプレート内での処理フローを制御する働きをします。本節では使用せず詳細は次節以降に譲ります。
+
