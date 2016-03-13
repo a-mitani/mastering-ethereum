@@ -450,6 +450,7 @@ Template.blockStatusComponent.helpers({
 
 また、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーでのaccountsメソッドで取得されるのはアカウントオブジェクトの配列であり、その配列の要素づつ取り出し、それぞれのオブジェクトで`name`や`balance`属性を取得するようにしています。
 
+最後に、`blockStatusComponent`のヘルパ内で、UNIX時間表記で得られる採掘日時を通常の日時表記で表示されるよう`unix2datetime`関数を呼び出しているので、この関数のコードを追加します。
 
 
 
