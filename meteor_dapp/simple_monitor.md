@@ -452,6 +452,24 @@ Template.blockStatusComponent.helpers({
 
 最後に、`blockStatusComponent`のヘルパ内で、UNIX時間表記で得られる採掘日時を通常の日時表記で表示されるよう`unix2datetime`関数を呼び出しているので、この関数のコードを追加します。
 
+> client/lib/unix2datetime.js
+
+```javascript
+//UNIX時間を通常の "yyyymmdd hh:mm:ss"フォーマットの文字列に変換
+unix2datetime = function (unixtime){
+  var date = new Date( unixtime * 1000 );
+  var year  = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day   = date.getDate();
+  var hour  = ( date.getHours()   < 10 ) ? '0' + date.getHours()   : date.getHours();
+  var min   = ( date.getMinutes() < 10 ) ? '0' + date.getMinutes() : date.getMinutes();
+  var sec   = ( date.getSeconds() < 10 ) ? '0' + date.getSeconds() : date.getSeconds();
+  var datetimeString = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec ;
+  return datetimeString;
+};
+```
+
+
 
 
 ###脚注
