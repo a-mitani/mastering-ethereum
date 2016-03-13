@@ -325,7 +325,7 @@ Template.nodeStatusComponent.helpers({
 #### 「Account Status」項目の表示
 次に、ノードに登録されているアカウント情報を表示する「Account Status」コンポーネントを追加します。
 
-まずは`client/main.html`に「Account Status」コンポーネントのテンプレートを呼び出し表示するためにInclusionsタグ`{{> accountStatusComponent}}`を追加します。
+まずは`client/main.html`に「Account Status」コンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
@@ -341,7 +341,48 @@ Template.nodeStatusComponent.helpers({
   </main>
 （後略）
 ```
+さらにテンプレートとテンプレートヘルパーも追加します。ここでテンプレートのidは今回追加したInclusionタグと同じものにします。
 
+> client/templates/account_status_component.html
+
+``` html
+<template name="accountStatusComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Account Status (Reactive)</h4>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each accounts}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+            <td>{{balance}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+```
+
+> client/templates/account_status_component.js
+
+``` javascript
+Template.accountStatusComponent.helpers({
+//  accounts: accountsData
+  accounts: function(){
+    return EthAccounts.find({});
+  }
+});
+```
 
 
 ###脚注
