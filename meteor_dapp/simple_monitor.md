@@ -238,7 +238,20 @@ Spacebarには主に3種類のタグが規定されています。
 
 今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
 
-#### 「Node Status」項目の表示
+>**Tag**  Commit step003 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003)
+
+#### ソースファイルの整理
+この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
+
+たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
+
+今回は次のようなディレクトリとファイル構成にしていきます。
+```
+simple-eth-monitor ─┐
+─
+```
+
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
