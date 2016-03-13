@@ -322,10 +322,10 @@ Template.nodeStatusComponent.helpers({
 ```
 >**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
 
-#### 「Account Status」項目の表示
-次に、ノードに登録されているアカウント情報を表示する「Account Status」コンポーネントを追加します。
+#### 「Account Status」「Block Status」項目の表示
+次に、ノードに登録されているアカウント情報を表示する「Account Status」とEthereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
-まずは`client/main.html`に「Account Status」コンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`を追加します。
+まずは`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> accountStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
@@ -341,6 +341,7 @@ Template.nodeStatusComponent.helpers({
   </main>
 （後略）
 ```
+
 さらにテンプレートとテンプレートヘルパーも追加します。ここでテンプレートのidは今回追加したInclusionタグと同じものにします。
 
 > client/templates/account_status_component.html
@@ -375,15 +376,77 @@ Template.nodeStatusComponent.helpers({
 
 > client/templates/account_status_component.js
 
-
 ``` javascript
 //テンプレート「accountStatusComponent」のヘルパー
 Template.accountStatusComponent.helpers({
+  //アカウント情報の取得
   accounts: function(){
     return EthAccounts.find({});
   }
 });
 ```
+
+> client/templates/block_status_component.html
+
+``` html
+<template name="blockStatusComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Block Status (Reactive)</h4>
+    </div>
+    <table class="table">
+      <tbody>
+          <tr>
+            <th scope="row">Block Number</th>
+            <td>{{latestBlockNum}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Block Hash</th>
+            <td>{{latestBlockHash}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Miner</th>
+            <td>{{latestBlockMiner}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Mined Datetime</th>
+            <td>{{latestBlockDatetime}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+```
+
+> client/templates/block_status_component.js
+
+``` javascript
+//テンプレート「blockStatusComponent」のヘルパー
+Template.blockStatusComponent.helpers({
+
+  //最新のブロック番号の取得
+  latestBlockNum: function(){
+    return EthBlocks.latest.number;
+  },
+
+  //最新ブロックのハッシュ値を取得
+  latestBlockHash: function(){
+    return EthBlocks.latest.hash;
+  },
+
+  //最新ブロックを採掘した採掘者のアドレスを取得
+  latestBlockMiner: function(){
+    return EthBlocks.latest.miner;
+  },
+
+  //最新ブロックの採掘日時を取得
+  latestBlockDatetime: function(){
+    return unix2datetime(EthBlocks.latest.timestamp);
+  }
+});
+```
+
+
 ここで、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーで取得されたaccountsオブジェクト配列を一要素づつ処理するするを取得する
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
