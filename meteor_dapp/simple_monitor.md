@@ -198,24 +198,33 @@ EthBlocks.init();
 > client/main.js
 
 ```javascript
+//テンプレート「nodeStatusComponent」のテンプレートヘルパー
+//web3オブジェクトのプロパティを取得する各種メソッドを定義。
 Template.nodeStatusComponent.helpers({
-//  accounts: accountsData
+
+  //接続先ノードの取得
   currentProvider: function(){
     return web3.currentProvider.host;
   },
+
+  //接続先ノードのマイニング状態の取得
+  //マイニング中であればtrue、そうでなければfalse
   isMining: function(){
     return web3.eth.mining;
   },
+
+  //接続先ノードのマイニングのハッシュレートを取得
   currentHashrate: function(){
     return web3.eth.hashrate;
   },
+
+  //接続先ノードのピア数の取得
   currentPeerCount: function(){
     return web3.net.peerCount;
   }
 });
-
 ```
-これらのコードを追加することで下図のような、`client/lib/init.js`内で定義したEthereumノードの状態のテーブルが表示されるはずです。
+これらのコードを追加することで下図のような、Ethereumノードの状態のテーブルが表示されるはずです。
 
 ここでは大きく２つ、「テンプレート」と「テンプレートヘルパー」を用いてEthereumノードの状態の取得から表示までを行いました。少しこれらのコードを詳しく見ていきます。
 
@@ -245,9 +254,70 @@ Spacebarには主に3種類のタグが規定されています。
 
 たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
 
-慣習的にテンプレート関連のファイルは`client/templates`ディレクトリ以下に配置され、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`ファイルとしてそれぞれ配置されるので、これに倣って以下のように、それぞれ`main.html`と`main.js`記述したコードを分離したファイルを作成します。また`main.html`と`main.js`の当該コード箇所は削除します。
+慣習的にテンプレート関連のファイルは`client/templates`ディレクトリ以下に配置され、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`ファイルとしてそれぞれ配置されます。この慣習に倣って以下のように、それぞれ`main.html`と`main.js`記述したコードを分離したファイルを作成します。また`main.html`と`main.js`の当該コード箇所は削除します。
 
+> client/templates/node_status_component.html
 
+```html
+<template name="nodeStatusComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Node Status</h4>
+    </div>
+    <table class="table">
+      <tbody>
+          <tr>
+            <th scope="row">Node</th>
+            <td>{{currentProvider}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Is Mining?</th>
+            <td>{{isMining}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Hashrate</th>
+            <td>{{currentHashrate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Peer Count</th>
+            <td>{{currentPeerCount}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+```
+
+> client/templates/node_status_component.js
+
+```javascript
+//テンプレート「nodeStatusComponent」のテンプレートヘルパー
+//web3オブジェクトのプロパティを取得する各種メソッドを定義。
+Template.nodeStatusComponent.helpers({
+
+  //接続先ノードの取得
+  currentProvider: function(){
+    return web3.currentProvider.host;
+  },
+
+  //接続先ノードのマイニング状態の取得
+  //マイニング中であればtrue、そうでなければfalse
+  isMining: function(){
+    return web3.eth.mining;
+  },
+
+  //接続先ノードのマイニングのハッシュレートを取得
+  currentHashrate: function(){
+    return web3.eth.hashrate;
+  },
+
+  //接続先ノードのピア数の取得
+  currentPeerCount: function(){
+    return web3.net.peerCount;
+  }
+});
+
+```
 
 
 ###脚注
