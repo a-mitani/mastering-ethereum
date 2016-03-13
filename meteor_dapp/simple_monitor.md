@@ -322,6 +322,27 @@ Template.nodeStatusComponent.helpers({
 ```
 >**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
 
+#### 「Account Status」項目の表示
+次に、ノードに登録されているアカウント情報を表示する「Account Status」コンポーネントを追加します。
+
+まずは`client/main.html`に「Account Status」コンポーネントのテンプレートを呼び出し表示するためにInclusionsタグ`{{> accountStatusComponent}}`を追加します。
+
+> client/main.html （一部抜粋）
+
+```html
+（前略）
+  <main class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-8 col-md-offset-2">
+        {{> nodeStatusComponent}}
+        {{> accountStatusComponent}}
+      </div>
+    </div>
+  </main>
+（後略）
+```
+
+
 
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
