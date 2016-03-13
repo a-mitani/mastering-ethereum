@@ -117,7 +117,7 @@ EthAccounts.init();
 //EthBlocksの初期化
 EthBlocks.init();
 ```
-この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには今回追加したパッケージ及び`init.js`もロードされているためブラウザ上からEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動[^2] し、Ethereumノードに対してアカウントリストを問い合わせる
+この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには今回追加したパッケージ及び`init.js`もロードされているためブラウザからEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動[^2] し、Ethereumノードに対してアカウントリストを問い合わせる
 
 ```javascript
 > web3.eth.accounts;
