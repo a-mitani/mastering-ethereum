@@ -375,6 +375,7 @@ Template.nodeStatusComponent.helpers({
 
 > client/templates/account_status_component.js
 
+
 ``` javascript
 Template.accountStatusComponent.helpers({
 //  accounts: accountsData
