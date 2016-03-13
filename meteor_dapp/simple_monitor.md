@@ -226,6 +226,8 @@ Template.nodeStatusComponent.helpers({
 ```
 これらのコードを追加することで下図のような、Ethereumノードの状態のテーブルが表示されるはずです。
 
+<img src="00_img/node_status_component.png" width="600">
+
 ここでは大きく２つ、「テンプレート」と「テンプレートヘルパー」を用いてEthereumノードの状態の取得から表示までを行いました。少しこれらのコードを詳しく見ていきます。
 
 #####■ テンプレートエンジン：Spacebar
@@ -249,7 +251,7 @@ Spacebarには主に3種類のタグが規定されています。
 
 >**Tag**  Commit step003 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003)
 
-#### ソースファイルの整理
+#### ソースファイルの分離
 この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
 
 たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
@@ -318,6 +320,7 @@ Template.nodeStatusComponent.helpers({
 });
 
 ```
+>**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
 
 
 ###脚注
