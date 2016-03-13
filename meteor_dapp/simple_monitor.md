@@ -256,7 +256,9 @@ Spacebarには主に3種類のタグが規定されています。
 
 たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
 
-慣習的にテンプレート関連のファイルは`client/templates`ディレクトリ以下に配置され、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`というファイル名がつけられます。この慣習に倣ってそれぞれ`main.html`と`main.js`に記述したコードを一部取り出して、以下のファイルを作成します。また`main.html`と`main.js`の当該コード箇所は削除します。
+慣習的にテンプレート関連のファイルは`client/templates`ディレクトリ以下に配置され、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`というファイル名がつけられます。この慣習に倣ってそれぞれ`main.html`と`main.js`に記述したコードを一部取り出して、以下のファイルを作成します。
+
+【※】`main.html`と`main.js`内の当該コード箇所は削除します。
 
 > client/templates/node_status_component.html
 
