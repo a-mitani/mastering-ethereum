@@ -377,15 +377,14 @@ Template.nodeStatusComponent.helpers({
 
 
 ``` javascript
+//テンプレート「accountStatusComponent」のヘルパー
 Template.accountStatusComponent.helpers({
-//  accounts: accountsData
   accounts: function(){
     return EthAccounts.find({});
   }
 });
 ```
-
-
+ここで、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーで取得されたaccountsオブジェクト配列を一要素づつ処理するするを取得する
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
