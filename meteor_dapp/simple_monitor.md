@@ -128,7 +128,8 @@ EthBlocks.init();
 ```
 のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
 
-> **Tag**  Commit step002 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002)
+> **Tag**
+> Commit step002 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002)
 
 
 ###### ■■ Meteor TIP ■■
