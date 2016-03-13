@@ -3,9 +3,9 @@
 ### simple-eth-monitor
 MeteorによるDapp開発の第一歩として、Ethereumのノードに接続しEthereumのネットワークの状態をモニターする単純なアプリケーション「simple-eth-monitor」を作るところから始めましょう。本節で説明するアプリケーションのソースコードはGitHub上に公開しています。
 
-今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また、XXXとXXXの項目については、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また「Account Status」と「Block Status」の項目については、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
-<img src="00_img/simple-eth-monnitor-final.png" width="500">
+<img src="00_img/simple-eth-monitor.png" width="650">
 
 ### gethの起動（RPCの有効化）
 まず下準備として、simple-eth-monitorからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
