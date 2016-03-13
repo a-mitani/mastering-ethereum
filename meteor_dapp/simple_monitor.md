@@ -325,7 +325,7 @@ Template.nodeStatusComponent.helpers({
 >**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
 
 #### 「Account Status」「Block Status」項目の表示
-次に、ノードに登録されているアカウント情報を表示する「Account Status」とEthereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
+次に、ノードに登録されているアカウント情報を表示する「Account Status」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
 まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> accountStatusComponent}}`を追加します。
 
@@ -471,7 +471,7 @@ unix2datetime = function (unixtime){
 };
 ```
 
-これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「」「」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
+これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「Account Status」「Block Status」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
