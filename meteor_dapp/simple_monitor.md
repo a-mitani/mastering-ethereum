@@ -325,7 +325,7 @@ Template.nodeStatusComponent.helpers({
 #### 「Account Status」「Block Status」項目の表示
 次に、ノードに登録されているアカウント情報を表示する「Account Status」とEthereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
-まずは`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> accountStatusComponent}}`を追加します。
+まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> accountStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
@@ -446,8 +446,13 @@ Template.blockStatusComponent.helpers({
 });
 ```
 
+ここで、それぞれのヘルパーは、`nodeStatusComponent`のヘルパとは異なり、情報をweb3オブジェクトから取得するのではなく、そのラッパーである`EthAccounts`や`EthBlocks`から取り出しています。これらのラッパー・オブジェクトを利用することで、状態が変わると自動的に表示が更新されるリアクティブな表示が可能になります。
 
-ここで、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーで取得されたaccountsオブジェクト配列を一要素づつ処理するするを取得する
+また、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーでのaccountsメソッドで取得されるのはアカウントオブジェクトの配列であり、その配列の要素づつ取り出し、それぞれのオブジェクトで`name`や`balance`属性を取得するようにしています。
+
+
+
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
