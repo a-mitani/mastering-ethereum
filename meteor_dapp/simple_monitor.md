@@ -531,6 +531,41 @@ observeNode = function(){
 observeNode();
 ```
 
+上記のコードを追加することで、ノードの最新の値を定期的に問い合わせその結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけで可能です。先述の通り`Session`はリアクティブなデータソースであるため、開発者は特に意識することなくMeteor側で最新の値を自動的に表示してくれるよう制御してくれます。
+
+`client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点は`return`値だけです。）
+
+> client/templates/node_status_component.js
+
+```javascript
+//テンプレート「nodeStatusComponent」のテンプレートヘルパー
+//web3オブジェクトのプロパティを取得する各種メソッドを定義。
+Template.nodeStatusComponent.helpers({
+
+  //接続先ノードの取得
+  currentProvider: function(){
+    return web3.currentProvider.host;
+  },
+
+  //接続先ノードのマイニング状態の取得
+  //マイニング中であればtrue、そうでなければfalse
+  isMining: function(){
+    return Session.get('isMining');
+  },
+
+  //接続先ノードのマイニングのハッシュレートを取得
+  currentHashrate: function(){
+    return Session.get('hashRate');
+  },
+
+  //接続先ノードのピア数の取得
+  currentPeerCount: function(){
+    return Session.get('peerCount');
+  }
+});
+
+```
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
