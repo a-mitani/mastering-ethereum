@@ -70,7 +70,7 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <h4>Step 001</h4>
+    <h5>Step 001</h5>
     <p>Use a method to submit the post.</p>
   </div>
   <div class="actions">
