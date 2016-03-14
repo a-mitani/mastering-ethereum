@@ -5,7 +5,7 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 
 本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-eth-monitor)に公開しています。
 
-今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また「Account Status」と「Block Status」の項目については、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また各項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
@@ -478,6 +478,10 @@ unix2datetime = function (unixtime){
 <img src="00_img/simple-eth-monitor.png" width="650">
 
 >**Tag**  Commit step005 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005)
+
+
+### 「Node Status」項目をリアクティブな動作に
+最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したため特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作で取得可能なパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
 
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
