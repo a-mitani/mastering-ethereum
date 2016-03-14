@@ -566,6 +566,13 @@ Template.nodeStatusComponent.helpers({
 
 ```
 
+以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現しているはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるはずです。
+
+※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
+
+
+
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
