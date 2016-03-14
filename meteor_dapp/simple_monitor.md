@@ -64,6 +64,22 @@ $ meteor
   <h1> Hello, world!!</h1>
 </body>
 ```
+
+TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <h4>Commit 7-6</h4>
+    <p>Use a method to submit the post.</p>
+  </div>
+  <div class="actions">
+    <a class="commit-link" href="https://github.com/DiscoverMeteor/Microscope/commit/chapter7-6" target="_blank">
+      View on GitHub
+    </a>
+   </div>
+</div>
+TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+
 >**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
 
 この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
