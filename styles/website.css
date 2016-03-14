@@ -2,4 +2,8 @@
 .commit:before,.commit:after{content:"";display:table;}
 .commit:after{clear:both}@media screen and (max-width: 50em){.commit{text-align:center;padding:30px 20px}}
 .commit img{display:block;float:left;width:40px;margin:0 15px 0 0}@media screen and (max-width: 50em){.commit img{display:none}}
+.commit .message{float:left}@media screen and (max-width: 50em){.commit .message{display:inline-block;float:none}}
+.commit h4{margin:0;line-height:1}@media screen and (max-width: 50em){.commit h4{text-align:center}}
+.commit p{margin:0}@media screen and (max-width: 50em){.commit p{text-align:center}}@media screen and (max-width: 50em){.commit .actions{padding-top:10px}}@media screen and (min-width: 50em){.commit .actions{float:right;padding-top:4px}}
+.commit a{border-radius:3px;background:#e2e1e4;margin-right:5px;padding:5px 10px;font-size:14px}.commit a:nth-of-type(2n){margin-right:0}.commit a:hover{background:#5e5873}@media screen and (max-width: 50em){.commit a{display:inline-block;font-size:12px}}@media screen and (min-width: 50em){.commit a{display:block;float:left}}
 
