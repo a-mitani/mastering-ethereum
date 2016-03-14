@@ -65,8 +65,6 @@ $ meteor
 </body>
 ```
 
-TEST TEST TEST TEST TEST TEST TEST TEST TEST 
-
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
@@ -75,10 +73,6 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST
     </a></b></p>
    </div>
 </div>
-
-TEST TEST TEST TEST TEST TEST TEST TEST TEST 
-
->**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
 
 この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
 <img src="00_img/hello-world.png" width="500">
@@ -144,8 +138,14 @@ EthBlocks.init();
 ```
 のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
 
-> **Tag**
-> Commit step002 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002" target="_blank">
+      View this Commit On GitHub (Tag:"Step002")
+    </a></b></p>
+   </div>
+</div>
 
 
 ###### ■■ Meteor TIP ■■
@@ -265,7 +265,14 @@ Spacebarには主に3種類のタグが規定されています。
 
 今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
 
->**Tag**  Commit step003 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003" target="_blank">
+      View this Commit On GitHub (Tag:"Step003")
+    </a></b></p>
+   </div>
+</div>
 
 #### ソースファイルの分離
 この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
@@ -338,7 +345,14 @@ Template.nodeStatusComponent.helpers({
 });
 
 ```
->**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
+      View this Commit On GitHub (Tag:"Step005")
+    </a></b></p>
+   </div>
+</div>
 
 #### 「Account Status」「Block Status」項目の表示
 次に、ノードに登録されているアカウント情報を表示する「Account Status」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
@@ -491,7 +505,14 @@ unix2datetime = function (unixtime){
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
->**Tag**  Commit step005 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
+      View this Commit On GitHub (Tag:"Step005")
+    </a></b></p>
+   </div>
+</div>
 
 
 ### 「Node Status」項目をリアクティブな動作にする
@@ -584,7 +605,14 @@ Template.nodeStatusComponent.helpers({
 
 ※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
 
->**Tag**  Commit step006 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step006)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step006" target="_blank">
+      View this Commit On GitHub (Tag:"Step006")
+    </a></b></p>
+   </div>
+</div>
 
 
 
