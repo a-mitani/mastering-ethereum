@@ -480,10 +480,58 @@ unix2datetime = function (unixtime){
 >**Tag**  Commit step005 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005)
 
 
-### 「Node Status」項目をリアクティブな動作に
+### 「Node Status」項目をリアクティブな動作にする
 最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したため特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作で取得可能なパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
 
-基本方針としては、「Is Mining?」「Hashrate」「Peer Count」の項目を
+基本方針としては、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するというものです。
+
+MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザタブ内で）グローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
+
+まずは、定期的にWeb3 APIから値を取得する下記のコードを、新規の`client/lib/observe_node.js`ファイルに追加します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
+
+
+```javascript
+var peerCountIntervalId = null;
+
+// 採掘状況を非同期で取得
+var getIsMining = function(){
+  web3.eth.getMining(function(e, res){
+    if(!e)
+      Session.set('isMining', res);
+  });
+};
+
+// HashRateを非同期で取得
+var getHashRate = function(){
+  web3.eth.getHashrate(function(e, res){
+    if(!e)
+      Session.set('hashRate', res);
+  });
+};
+
+// PeerCountを非同期で取得
+var getPeerCount = function(){
+  web3.net.getPeerCount(function(e, res){
+    if(!e)
+      Session.set('peerCount', res);
+  });
+};
+
+observeNode = function(){
+  Session.setDefault('isMining', false);
+  Session.setDefault('hashRate', 0);
+  Session.setDefault('peerCount', 0);
+  Meteor.clearInterval(peerCountIntervalId);
+  peerCountIntervalId = Meteor.setInterval(function() {
+    getIsMining();
+    getHashRate();
+    getPeerCount();
+  }, 1000);
+};
+
+observeNode();
+```
+
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
