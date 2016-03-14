@@ -481,11 +481,11 @@ unix2datetime = function (unixtime){
 
 
 ### 「Node Status」項目をリアクティブな動作にする
-最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したため特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作で取得可能なパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
+最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したために、特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作サポートするようなパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
 
-基本方針としては、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するというものです。
+基本方針として、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するということを行います。
 
-MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザタブ内で）グローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
+MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内で）グローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
 
 まずは、定期的にWeb3 APIから値を取得する下記のコードを、新規の`client/lib/observe_node.js`ファイルに追加します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
 
@@ -531,9 +531,9 @@ observeNode = function(){
 observeNode();
 ```
 
-上記のコードを追加することで、ノードの最新の値を定期的に問い合わせその結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけで可能です。先述の通り`Session`はリアクティブなデータソースであるため、開発者は特に意識することなくMeteor側で最新の値を自動的に表示してくれるよう制御してくれます。
+上記のコードを追加することで、ノードの最新の値を定期的に問い合わせて結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
 
-`client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点は`return`値だけです。）
+`client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
 
 > client/templates/node_status_component.js
 
@@ -566,7 +566,7 @@ Template.nodeStatusComponent.helpers({
 
 ```
 
-以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現しているはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるはずです。
+以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現していることが確認できるはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるでしょう。
 
 ※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
 
