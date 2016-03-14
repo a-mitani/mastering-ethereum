@@ -570,6 +570,7 @@ Template.nodeStatusComponent.helpers({
 
 ※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
 
+>**Tag**  Commit step006 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step006)
 
 
 
