@@ -70,7 +70,7 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p>Use a method to submit the post.</p>
+    <p><b>Step001</b></p>
   </div>
   <div class="actions">
     <a class="commit-link" href="https://github.com/DiscoverMeteor/Microscope/commit/chapter7-6" target="_blank">
