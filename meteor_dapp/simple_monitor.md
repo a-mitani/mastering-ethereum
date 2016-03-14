@@ -483,6 +483,7 @@ unix2datetime = function (unixtime){
 ### 「Node Status」項目をリアクティブな動作に
 最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したため特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作で取得可能なパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
 
+基本方針としては、「Is Mining?」「Hashrate」「Peer Count」の項目を
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
 
