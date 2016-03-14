@@ -489,7 +489,6 @@ MeteorにおいてSessionオブジェクトは、同一セッション内（同�
 
 まずは、定期的にWeb3 APIから値を取得する下記のコードを、新規の`client/lib/observe_node.js`ファイルに追加します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
 
-
 ```javascript
 var peerCountIntervalId = null;
 
