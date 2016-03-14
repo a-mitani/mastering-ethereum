@@ -1,9 +1,11 @@
 ## 単純なネットワークモニターを作ってみる
 
 ### simple-eth-monitor
-MeteorによるDapp開発の第一歩として、Ethereumのノードに接続しEthereumのネットワークの状態をモニターする単純なアプリケーション「simple-eth-monitor」を作るところから始めましょう。本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-eth-monitor)に公開しています。
+MeteorによるDapp開発の第一歩として、Ethereumのノードに接続しEthereumのネットワークの状態をモニターする単純なアプリケーション「simple-eth-monitor」を作るところから始めましょう。Meteorの使い方とEthereum関連のパッケージの使い方に慣れることが本節の目標です。
 
-今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また「Account Status」と「Block Status」の項目については、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-eth-monitor)に公開しています。
+
+今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また各項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
@@ -62,7 +64,15 @@ $ meteor
   <h1> Hello, world!!</h1>
 </body>
 ```
->**Tag**  Commit step001 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001)
+
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001" target="_blank">
+      View this Commit On GitHub (Tag:"Step001")
+    </a></b></p>
+   </div>
+</div>
 
 この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
 <img src="00_img/hello-world.png" width="500">
@@ -128,8 +138,14 @@ EthBlocks.init();
 ```
 のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
 
-> **Tag**
-> Commit step002 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step002" target="_blank">
+      View this Commit On GitHub (Tag:"Step002")
+    </a></b></p>
+   </div>
+</div>
 
 
 ###### ■■ Meteor TIP ■■
@@ -249,7 +265,14 @@ Spacebarには主に3種類のタグが規定されています。
 
 今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
 
->**Tag**  Commit step003 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003" target="_blank">
+      View this Commit On GitHub (Tag:"Step003")
+    </a></b></p>
+   </div>
+</div>
 
 #### ソースファイルの分離
 この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
@@ -322,7 +345,14 @@ Template.nodeStatusComponent.helpers({
 });
 
 ```
->**Tag**  Commit step004 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
+      View this Commit On GitHub (Tag:"Step005")
+    </a></b></p>
+   </div>
+</div>
 
 #### 「Account Status」「Block Status」項目の表示
 次に、ノードに登録されているアカウント情報を表示する「Account Status」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
@@ -475,7 +505,116 @@ unix2datetime = function (unixtime){
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
->**Tag**  Commit step005 ⇒ [View on GitHub](https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005)
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
+      View this Commit On GitHub (Tag:"Step005")
+    </a></b></p>
+   </div>
+</div>
+
+
+### 「Node Status」項目をリアクティブな動作にする
+最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したために、特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作サポートするようなパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
+
+基本方針として、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するということを行います。
+
+MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内で）グローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
+
+まずは、定期的にWeb3 APIから値を取得する下記のコードを、新規の`client/lib/observe_node.js`ファイルに追加します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
+
+```javascript
+var peerCountIntervalId = null;
+
+// 採掘状況を非同期で取得
+var getIsMining = function(){
+  web3.eth.getMining(function(e, res){
+    if(!e)
+      Session.set('isMining', res);
+  });
+};
+
+// HashRateを非同期で取得
+var getHashRate = function(){
+  web3.eth.getHashrate(function(e, res){
+    if(!e)
+      Session.set('hashRate', res);
+  });
+};
+
+// PeerCountを非同期で取得
+var getPeerCount = function(){
+  web3.net.getPeerCount(function(e, res){
+    if(!e)
+      Session.set('peerCount', res);
+  });
+};
+
+observeNode = function(){
+  Session.setDefault('isMining', false);
+  Session.setDefault('hashRate', 0);
+  Session.setDefault('peerCount', 0);
+  Meteor.clearInterval(peerCountIntervalId);
+  peerCountIntervalId = Meteor.setInterval(function() {
+    getIsMining();
+    getHashRate();
+    getPeerCount();
+  }, 1000);
+};
+
+observeNode();
+```
+
+上記のコードを追加することで、ノードの最新の値を定期的に問い合わせて結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
+
+`client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
+
+> client/templates/node_status_component.js
+
+```javascript
+//テンプレート「nodeStatusComponent」のテンプレートヘルパー
+//web3オブジェクトのプロパティを取得する各種メソッドを定義。
+Template.nodeStatusComponent.helpers({
+
+  //接続先ノードの取得
+  currentProvider: function(){
+    return web3.currentProvider.host;
+  },
+
+  //接続先ノードのマイニング状態の取得
+  //マイニング中であればtrue、そうでなければfalse
+  isMining: function(){
+    return Session.get('isMining');
+  },
+
+  //接続先ノードのマイニングのハッシュレートを取得
+  currentHashrate: function(){
+    return Session.get('hashRate');
+  },
+
+  //接続先ノードのピア数の取得
+  currentPeerCount: function(){
+    return Session.get('peerCount');
+  }
+});
+
+```
+
+以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現していることが確認できるはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるでしょう。
+
+※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
+
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step006" target="_blank">
+      View this Commit On GitHub (Tag:"Step006")
+    </a></b></p>
+   </div>
+</div>
+
+
 
 ###脚注
 [^1] gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
