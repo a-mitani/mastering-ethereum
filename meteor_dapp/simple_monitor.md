@@ -70,7 +70,7 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/DiscoverMeteor/Microscope/commit/chapter7-6" target="_blank">
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001" target="_blank">
       View this Commit On GitHub (Tag:"Step001")
     </a></b></p>
    </div>
