@@ -70,10 +70,10 @@ TEST TEST TEST TEST TEST TEST TEST TEST TEST
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b>Step001 →</b></p>
+    <p><b>Step001 →</b>
     <a href="https://github.com/DiscoverMeteor/Microscope/commit/chapter7-6" target="_blank">
       View this Commit On GitHub
-    </a>
+    </a></p>
    </div>
 </div>
 
