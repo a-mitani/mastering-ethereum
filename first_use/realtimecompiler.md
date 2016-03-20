@@ -34,7 +34,7 @@ browser solidityから作成したContractを実際のBlockchainに登録した�
 これまでのようにコマンドラインからgethを起動しテストネットに接続します[^2]。下記のコマンドを実行します。
 
 ```
-$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_data" --genesis "/home/test_u/eth_private_net/myGenesis.json" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" console 2>> /home/test_u/eth_data/geth_err.log
+$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" console 2>> /home/test_u/eth_private_net/geth_err.log
 ```
 
 ここで、幾つか新しいコマンドオプションが出てきました。browser solidityとノードの接続には、gethのRPC（Remote Procedure Call）のAPI機能を利用するのでその設定をコマンドオプションで行っています。
