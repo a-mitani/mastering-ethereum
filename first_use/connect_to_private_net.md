@@ -23,6 +23,7 @@ $ mkdir /home/test_u/eth_private_net
 
 
 
+
 ### Gethを起動しプライベート・ネットへ接続する
 データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
 ```plain
