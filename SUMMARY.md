@@ -6,7 +6,7 @@
    * [Ethereumとは](what_is_ethereum/ethereum_as_dapp_platform.md)
 * [まずは Ethereum に触れてみる](first_use/README.md)
    * [Gethをインストールしてみる](first_use/installing_geth.md)
-   * [テスト・ネットに接続してみる](first_use/connect_to_testnet.md)
+   * [プライベート・ネットに接続する](first_use/connect_to_private_net.md)
    * [etherを採掘してみる](first_use/mining_ether.md)
    * [etherを送金してみる](first_use/sending_ether.md)
    * [Contractを作成してみる](first_use/contract.md)
