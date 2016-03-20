@@ -1,4 +1,4 @@
-## Contractを作成してみる
+## Contractを作成する
 
 Ethereumは、分散アプリケーション・プラットフォームです。Ethereumにおいて分散アプリケーションは、単一のContract、または複数のContractが連携して実現されるものとなっています。この章では最も単純なContractを作成し、それを動作させる手順を追うことで、Contractとは何か、どのようにContractを作成しデプロイするのか、そしてどのようにContractを利用するのかを見ていきます。
 
