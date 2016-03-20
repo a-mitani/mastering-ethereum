@@ -13,6 +13,10 @@ Gethのインストールが完了したら早速Gethを起動します。
 ``` plain
 $ mkdir /home/test_u/eth_private_net
 ```
+
+次にプライベート・ネット用のGenesisファイルを作成し上記で作成したディレクトリに配置します。
+
+Genesisファイルとは
 データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
 ```plain
 $ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/geth_01.log" --olympic console 2>> /home/test_u/geth_e01.log
