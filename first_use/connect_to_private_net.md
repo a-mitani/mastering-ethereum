@@ -38,22 +38,22 @@ $ mkdir /home/test_u/eth_private_net
 
 データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
 ```plain
-geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" console 2>> /home/test_u/eth_private_net/geth_err.log
+$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" console 2>> /home/test_u/eth_private_net/geth_err.log
 ```
 ここで各オプションの意味は以下のとおりです。
-* `--networkid "10"` ：`--networkid`オプションで任意の正の整数のIDを指定することで、ライブ・ネットとは異なるネットワークを立ち上げることが可能です（ここでは10を指定）。
-* `--nodiscover` ：Gethはデフォルトで自動的に（同じネットワークID）のEthereumネットワークのノード（Peer）を探し接続を試みます。プライベート・ネットではこのオプションで自動Peer探索機能を無効にします。
+* `--networkid "10"` ：本オプションで任意の正の整数のIDを指定することで、ライブ・ネットとは異なるネットワークを立ち上げることが可能です（ここでは10を指定）。
+* `--nodiscover` ：Gethはデフォルトで自動的に（同じネットワークID）のEthereumネットワークのノード（Peer）を探し接続を試みます。プライベート・ネットでは未知のノードとの接続を避けるため、このオプションで自動Peer探索機能を無効にします。
 * `--datadir "/home/test_u/eth_private_net"`：データ用ディレクトリとして、事前に作成しておいたディレクトリのパスを指定しています。データ用ディレクトリにはブロックチェーン情報やノード情報など各種データが保存されます。
 * `console`：Gethには採掘やトランザクションの生成などを対話的に進めることができるコンソールが用意されています。`console`サブ・コマンドを指定することで、Gethの起動時に同時にコンソール立ち上げることが可能です。なお、`console`サブ・コマンドを付加せずに、Gethのプロセスをバックグラウンドで起動させておき、後からそのプロセスのコンソールを起動する事も可能です（下記TIP参照）。
 
 上記コマンドを実行すると、下記の実行結果のように、幾つかの情報の表示の後に「>」のプロンプトが表示され、コンソールが起動されます。今後、特にことわりのない限り、このように起動したGethプロンプト上で作業していく前提で進めていきます。
 
 ```
-instance: Geth/v1.0.1/linux/go1.4.2
- datadir: /home/test_u/eth_testnet_10
+instance: Geth/v1.3.5/linux/go1.5.1
+ datadir: /home/test_u/eth_private_net
 coinbase: null
-at block: 0 (1970-01-01 09:00:00)
- modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
+at block: 0 (Thu, 01 Jan 1970 09:00:00 JST)
+modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
 >
 
 ```
@@ -65,13 +65,13 @@ at block: 0 (1970-01-01 09:00:00)
 ```
 $ # gethプロセスをconsoleサブ・コマンドを付加せず、かつ最後に"&"を付加することで、バックグラウンドで起動します。
 $ # この場合、起動時にはコンソールは立ち上がりません。
-$ geth --networkid "10" --datadir "/home/test_u/eth_data" --logfile "/home/test_u/eth_data/geth_01.log" --olympic 2>> /home/test_u/eth_data/geth_e01.log &
+$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" 2>> /home/test_u/eth_private_net/geth_err.log &
 $
 $ # attachサブ・コマンドを用いて先に立ち上げたプロセスのコンソールを立ち上げます。
 $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下のgeth.ipcファイル（実際はソケット）のパスを指定します。
-$ geth --datadir "/home/test_u/eth_data" attach ipc:/home/test_u/eth_data/geth.ipc
+$ geth --datadir "/home/test_u/eth_private_net" attach ipc:/home/test_u/eth_data/geth.ipc
 
-instance: Geth/v1.0.1/linux/go1.4.2
+instance: Geth/v1.3.5/linux/go1.5.1
 （実行結果 中略）
 modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
 > 
