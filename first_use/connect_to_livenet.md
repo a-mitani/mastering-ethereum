@@ -11,9 +11,9 @@ $ mkdir /home/test_u/livenet_data
 ```
 以下のコマンドを実行してライブ・ネットに接続します。
 ```bash
-$ geth --datadir "/home/test_u/livenet_data" --logfile "/home/test_u/livenet_data/geth_01.log" 2>> /home/test_u/livenet_data/e01.log &
+$ geth --datadir "/home/test_u/livenet_data" 2>> /home/test_u/livenet_data/e01.log &
 ```
-テスト・ネットに接続した際のコマンドとの違いは、`--networkid "10"` と `--olympic` のオプションを付加していないことになります。
+テスト・ネットに接続した際のコマンドとの違いは、`--networkid`、`--nodiscover` と `--genesis` のオプションを付加していないことになります。
 
 ### 接続状況を確認する
 ライブ・ネットへ接続すると、Ethereumネットワーク内の他のノードと接続されます。Gethのコンソールを立上げ`net.peerCount`コマンドを実行すると、自分のノードが他のいくつのノードと接続されているかを表示することが出来ます。
