@@ -348,8 +348,8 @@ Template.nodeStatusComponent.helpers({
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
-      View this Commit On GitHub (Tag:"Step005")
+    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004" target="_blank">
+      View this Commit On GitHub (Tag:"Step004")
     </a></b></p>
    </div>
 </div>
@@ -357,7 +357,7 @@ Template.nodeStatusComponent.helpers({
 #### 「Account Status」「Block Status」項目の表示
 次に、ノードに登録されているアカウント情報を表示する「Account Status」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
-まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> accountStatusComponent}}`を追加します。
+まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> blockStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
@@ -368,6 +368,7 @@ Template.nodeStatusComponent.helpers({
       <div class="col-md-8 col-md-offset-2">
         {{> nodeStatusComponent}}
         {{> accountStatusComponent}}
+        {{> blockStatusComponent}}
       </div>
     </div>
   </main>
