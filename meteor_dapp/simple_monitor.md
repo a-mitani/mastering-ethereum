@@ -607,11 +607,7 @@ Template.nodeStatusComponent.helpers({
 ※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
 
 ###### ■■ Meteor TIP ■■
-最新バージョンのMeteorではデフォルトではSessionオブジェクトがサポートされなくなりました。そのため上記の手順で「Session is not defined」といったエラーがでる場合は、コンソール上で
-``` bash
-meteor add session
-```
-コマンドを実行し`session`パッケージをプロジェクトに追加してください。
+最新バージョンのMeteorではデフォルトではSessionオブジェクトがサポートされなくなりました。そのため上記の手順で「Session is not defined」といったエラーがでる場合は、コンソール上で`meteor add session`のコマンドを実行し`session`パッケージをプロジェクトに追加してください。
 
 
 
