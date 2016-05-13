@@ -1,5 +1,3 @@
-# 単純なEtherのwalletを作る
-
 ## 簡単なEthereのwalletを作る
 
 ### simple-eth-monitor
