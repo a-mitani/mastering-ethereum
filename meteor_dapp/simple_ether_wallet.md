@@ -7,7 +7,7 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 
 今回作成するsimple-ether-walletはブラウザ上から特定のEthereumノードに接続し、簡単なアカウント情報とEthereumネットワーク情報を表示する「ダッシュボード」とEtherの送金の実行と過去の送金トランザクションの表示を行う「送金」の２つのビューで構成されます。各情報項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
-<img src="00_img/simple-eth-monitor.png" width="650">
+<img src="00_img/dashboard_view.png" width="650">
 
 ### gethの起動（RPCの有効化）
 まず下準備として、simple-eth-monitorからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
