@@ -1,11 +1,11 @@
-## 簡単なEthereのwalletを作る
+## 簡単なEtherのwalletを作る
 
 ### simple-eth-monitor
-MeteorによるDapp開発の第一歩として、Ethereumのノードに接続しEthereumのネットワークの状態をモニターする単純なアプリケーション「simple-eth-monitor」を作るところから始めましょう。Meteorの使い方とEthereum関連のパッケージの使い方に慣れることが本節の目標です。
+MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする単純なアプリケーション「simple-ether-wallet」を作るところをチュートリアル形式で解説します。Meteorの使い方とEthereum関連のパッケージの使い方に慣れることが本節の目標です。
 
-本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-eth-monitor)に公開しています。
+本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
-今回作成するsimple-eth-monitorはブラウザ上から特定のEthereumノードに接続し、下図の画面のような情報を表示する単純なモニターの役割を果たすものです。また各項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+今回作成するsimple-ether-walletはブラウザ上から特定のEthereumノードに接続し、簡単なアカウント情報とEthereumネットワーク情報を表示する「ダッシュボード」とEtherの送金の実行と過去の送金トランザクションの表示を行う「送金」の２つのビューで構成されます。各情報項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
 <img src="00_img/simple-eth-monitor.png" width="650">
 
