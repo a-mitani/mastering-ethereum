@@ -545,7 +545,7 @@ Sessionオブジェクトを利用するには、コンソール上でプロジ�
 ```bash
 $ meteor add session
 ```
-これでSessionオブジェクトを利用できるようになりましたので、まずはSessionオブジェクトを初期化する関数（initSessionVars）を定義し、Wallet起動時にその関数が呼び出されるように`client/lib/init.js`の末尾に関数を呼び出すコードを追記します。
+これでSessionオブジェクトを利用できるようになりましたので、まずはSessionオブジェクトを初期化する関数（`initSessionVars`）を定義します。
 
 > client/lib/modules/init_session_vars.js
 
@@ -561,16 +561,7 @@ Session.setDefault('peerCount', 0);
 };
 ```
 
-> client/lib/init.js
-
-```javascript
-（前略）
-//Session変数の初期化
-initSessionVars();
-
-```
-
-次に、定期的にWeb3 APIから値を取得する下記のコードを`client/lib/observe_node.js`ファイルに記述します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
+次に、定期的にWeb3 APIから値を取得する関数（`observeNode`）を`client/lib/observe_node.js`ファイル内に定義します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせて、APIから返った値を`Session`オブジェクトに格納する処理を行っています。
 
 ```javascript
 var peerCountIntervalId = null;
@@ -600,9 +591,6 @@ var getPeerCount = function(){
 };
 
 observeNode = function(){
-  Session.setDefault('isMining', false);
-  Session.setDefault('hashRate', 0);
-  Session.setDefault('peerCount', 0);
   Meteor.clearInterval(peerCountIntervalId);
   peerCountIntervalId = Meteor.setInterval(function() {
     getIsMining();
@@ -610,11 +598,22 @@ observeNode = function(){
     getPeerCount();
   }, 1000);
 };
+```
 
+次に、上記で定義した`initSessionVars`関数と`observeNode`関数がWallet起動時に呼び出すコードを`client/lib/init.js`の末尾に追記します。
+> client/lib/init.js
+
+```javascript
+（前略）
+//Session変数の初期化
+initSessionVars();
+
+//オブザーバの起動
 observeNode();
 ```
 
-上記のコードを追加することで、ノードの最新の値を定期的に問い合わせて結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
+
+以上で、Walletの起動時からノードの最新の値を定期的に問い合わせて結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
 
 `client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
 
