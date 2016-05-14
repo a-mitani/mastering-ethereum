@@ -167,14 +167,14 @@ EthBlocks.init();
 
 ```html
 <head>
-  <title>Simple Ethereum Status Monitor</title>
+  <title>Simple Ether Wallet</title>
 </head>
 
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Simple Ethereum Status Monitor</a>
+        <a class="navbar-brand" href="/">Simple Ether Wallet</a>
       </div>
     </div>
   </nav>
