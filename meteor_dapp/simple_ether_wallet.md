@@ -615,9 +615,9 @@ observeNode();
 
 以上で、Walletの起動時からノードの最新の値を定期的に問い合わせて結果を`Session`オブジェクトに格納しました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
 
-`client/templates/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
+`client/templates/components/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
 
-> client/templates/node_status_component.js
+> client/templates/components/node_status_component.js
 
 ```javascript
 //テンプレート「nodeStatusComponent」のテンプレートヘルパー
@@ -649,12 +649,6 @@ Template.nodeStatusComponent.helpers({
 ```
 
 以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現していることが確認できるはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるでしょう。
-
-※せっかく「Node Status」の項目もリアクティブな表示をしたので、`client/templates/node_status_component.html`を編集してコンポーネントのタイトルも「Node Status」から「Node Status (Reactive)」と変更しておきましょう。
-
-###### ■■ Meteor TIP ■■
-最新バージョンのMeteorではデフォルトではSessionオブジェクトがサポートされなくなりました。そのため上記の手順で「Session is not defined」といったエラーがでる場合は、コンソール上で`meteor add session`のコマンドを実行し`session`パッケージをプロジェクトに追加してください。
-meteor add session
 
 
 <div class="commit">
