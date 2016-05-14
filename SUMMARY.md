@@ -14,7 +14,7 @@
    * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
 * [Meteorを用いた分散型アプリケーション開発](meteor_dapp/README.md)
    * [Meteorを準備する](meteor_dapp/about_meteor.md)
-   * [簡単なEtherのwalletを作る](meteor_dapp/simple_ether_wallet.md)
+   * [簡単なEtherのwalletを作る（１）](meteor_dapp/simple_ether_wallet.md)
    * [独自通貨を作る](meteor_dapp/original_currency_wallet)
 * [コントラクト指向言語Solidity詳解](solidity/README.md)
    * [基本的な記法](solidity/basic.md)
