@@ -342,8 +342,8 @@ Template.nodeStatusComponent.helpers({
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step004" target="_blank">
-      View this Commit On GitHub (Tag:"Step004")
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step003" target="_blank">
+      View this Commit On GitHub (Tag:"Step003")
     </a></b></p>
    </div>
 </div>
