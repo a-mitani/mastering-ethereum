@@ -611,7 +611,7 @@ Template.nodeStatusComponent.helpers({
 
 ###### ■■ Meteor TIP ■■
 最新バージョンのMeteorではデフォルトではSessionオブジェクトがサポートされなくなりました。そのため上記の手順で「Session is not defined」といったエラーがでる場合は、コンソール上で`meteor add session`のコマンドを実行し`session`パッケージをプロジェクトに追加してください。
-
+meteor add session
 
 
 <div class="commit">
