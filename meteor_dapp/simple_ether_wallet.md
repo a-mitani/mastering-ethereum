@@ -268,25 +268,16 @@ Spacebarには主に3種類のタグが規定されています。
 
 今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step003" target="_blank">
-      View this Commit On GitHub (Tag:"Step003")
-    </a></b></p>
-   </div>
-</div>
-
 #### ソースファイルの分離
 この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
 
 たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
 
-慣習的にテンプレート関連のファイルは`client/templates`ディレクトリ以下に配置され、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`というファイル名がつけられます。この慣習に倣ってそれぞれ`main.html`と`main.js`に記述したコードを一部取り出して、以下のファイルを作成します。
+ここでは各種表示コンポーネントのファイルは`client/templates/components`ディレクトリ以下に配置し、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`というファイル名がつけていくこととします。この慣習に倣ってそれぞれ`main.html`と`main.js`に記述したコードを一部取り出して、以下のファイルを作成します。
 
 【※】`main.html`と`main.js`内の当該コード箇所は削除します。
 
-> client/templates/node_status_component.html
+> client/templates/components/node_status_component.html
 
 ```html
 <template name="nodeStatusComponent">
@@ -318,7 +309,7 @@ Spacebarには主に3種類のタグが規定されています。
 </template>
 ```
 
-> client/templates/node_status_component.js
+> client/templates/components/node_status_component.js
 
 ```javascript
 //テンプレート「nodeStatusComponent」のテンプレートヘルパー
