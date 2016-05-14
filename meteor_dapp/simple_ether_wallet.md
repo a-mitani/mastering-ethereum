@@ -63,17 +63,16 @@ $ meteor
 
 ``` html
 <head>
-  <title>Simple Ethereum Status Monitor</title>
+  <title>Simple Ether Wallet</title>
 </head>
 <body>
   <h1> Hello, world!!</h1>
 </body>
 ```
-
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step001" target="_blank">
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step001" target="_blank">
       View this Commit On GitHub (Tag:"Step001")
     </a></b></p>
    </div>
@@ -81,7 +80,6 @@ $ meteor
 
 この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
 <img src="00_img/hello-world.png" width="500">
-
 
 ###### ■■ Meteor TIP ■■
 Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
