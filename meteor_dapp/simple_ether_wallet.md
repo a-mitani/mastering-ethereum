@@ -543,8 +543,6 @@ MeteorにおいてSessionオブジェクトは、同一セッション内（同�
 
 Sessionオブジェクトを利用するには、コンソール上でプロジェクトROOTに移動し、下記のコマンドを実行して`session`パッケージを追加します。
 
-> コンソール上のプロジェクトROOTにて
-
 ```bash
 $ meteor add session
 ```
