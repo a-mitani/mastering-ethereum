@@ -524,8 +524,8 @@ unix2datetime = function (unixtime){
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step005" target="_blank">
-      View this Commit On GitHub (Tag:"Step005")
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step004" target="_blank">
+      View this Commit On GitHub (Tag:"Step004")
     </a></b></p>
    </div>
 </div>
