@@ -1,6 +1,6 @@
 ## 簡単なEtherのwalletを作る（１）
 
-MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする単純なアプリケーション「simple-ether-wallet」を作るところをチュートリアル形式で解説します。
+MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする簡単なアプリケーション「simple-ether-wallet」の作成をチュートリアル形式で解説します。
 
 本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
@@ -9,9 +9,11 @@ MeteorによるDapp開発の第一歩として、Ethereumのノードに接続�
 本節では「ダッシュボード」ビューの部分を実装することで、Meteorの使い方とEthereum関連のパッケージの使い方に慣れることを目標にします。「送金」ビューについては次節に実装していきます。
 
 <img src="00_img/dashboard_view.png" width="650">
+
 simple-ether-walletのダッシュボードビュー
 
 <img src="00_img/send_view.png" width="650">
+
 simple-ether-walletの送金ビュー
 
 
@@ -47,7 +49,7 @@ Meteorをインストールした環境[^1]で適当なディレクトリに、�
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
 $ meteor create simple-ether-wallet # 新しいMeteorプロジェクトを作成
 ```
-「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-eth-monitor`ディレクトリ（以下、プロジェクトRoot）に移動して
+「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-ether-wallet`ディレクトリ（以下、プロジェクトRoot）に移動して
 ``` bash
 $ meteor
 ```
