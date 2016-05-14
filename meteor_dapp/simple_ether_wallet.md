@@ -1,11 +1,12 @@
 ## 簡単なEtherのwalletを作る（１）
 
-### simple-ether-wallet
-MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする単純なアプリケーション「simple-ether-wallet」を作るところをチュートリアル形式で解説します。Meteorの使い方とEthereum関連のパッケージの使い方に慣れることが本節の目標です。
+MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする単純なアプリケーション「simple-ether-wallet」を作るところをチュートリアル形式で解説します。
 
 本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
 今回作成するsimple-ether-walletはブラウザから特定のEthereumノードに接続し、簡単なアカウント情報とEthereumネットワーク情報を表示する「ダッシュボード」とEtherの送金の実行と過去の送金トランザクションの表示を行う「送金」の２つのビューで構成されます。各情報項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+
+本節では「ダッシュボード」ビューの部分を実装することで、Meteorの使い方とEthereum関連のパッケージの使い方に慣れることを目標にします。「送金」ビューについては次節に実装していきます。
 
 <img src="00_img/dashboard_view.png" width="650">
 simple-ether-walletのダッシュボードビュー
@@ -654,8 +655,8 @@ Template.nodeStatusComponent.helpers({
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-eth-monitor/releases/tag/step006" target="_blank">
-      View this Commit On GitHub (Tag:"Step006")
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step005" target="_blank">
+      View this Commit On GitHub (Tag:"Step005")
     </a></b></p>
    </div>
 </div>
