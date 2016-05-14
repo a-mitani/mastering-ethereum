@@ -1,13 +1,18 @@
 ## 簡単なEtherのwalletを作る
 
-### simple-eth-monitor
+### simple-ether-wallet
 MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み暗号通貨であるEtherの送金を可能にする単純なアプリケーション「simple-ether-wallet」を作るところをチュートリアル形式で解説します。Meteorの使い方とEthereum関連のパッケージの使い方に慣れることが本節の目標です。
 
 本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
-今回作成するsimple-ether-walletはブラウザ上から特定のEthereumノードに接続し、簡単なアカウント情報とEthereumネットワーク情報を表示する「ダッシュボード」とEtherの送金の実行と過去の送金トランザクションの表示を行う「送金」の２つのビューで構成されます。各情報項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
+今回作成するsimple-ether-walletはブラウザから特定のEthereumノードに接続し、簡単なアカウント情報とEthereumネットワーク情報を表示する「ダッシュボード」とEtherの送金の実行と過去の送金トランザクションの表示を行う「送金」の２つのビューで構成されます。各情報項目は、ユーザーがブラウザ上で再読み込み等の特別な操作をすることなくEthereumネットワーク上での最新の情報が自動的に更新されていくリアクティブな動きをします。
 
 <img src="00_img/dashboard_view.png" width="650">
+simple-ether-walletのダッシュボードビュー
+
+<img src="00_img/send_view.png" width="650">
+simple-ether-walletの送金ビュー
+
 
 ### gethの起動（RPCの有効化）
 まず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
@@ -39,7 +44,7 @@ gethのconsoleを利用せずバックグラウンドでgethを起動してお�
 Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-eth-monitorのMeteorプロジェクトを作成します。
 ``` bash
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
-$ meteor create simple-eth-monitor # 新しいMeteorプロジェクトを作成
+$ meteor create simple-ether-wallet # 新しいMeteorプロジェクトを作成
 ```
 「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-eth-monitor`ディレクトリ（以下、プロジェクトRoot）に移動して
 ``` bash
