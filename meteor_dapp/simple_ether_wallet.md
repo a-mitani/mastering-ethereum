@@ -536,9 +536,16 @@ unix2datetime = function (unixtime){
 
 基本方針として、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するということを行います。
 
-MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内で）グローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
+MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内）でグローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
 
-まずは、定期的にWeb3 APIから値を取得する下記のコードを、新規の`client/lib/observe_node.js`ファイルに追加します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
+Sessionオブジェクトを利用するには、コンソール上でプロジェクトROOTに移動し、下記のコマンドを実行して`session`パッケージを追加します。
+> コンソール上のプロジェクトROOTにて
+
+```bash
+$ meteor add session
+```
+
+次に、定期的にWeb3 APIから値を取得する下記のコードを`client/lib/observe_node.js`ファイルに記述します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
 
 ```javascript
 var peerCountIntervalId = null;
