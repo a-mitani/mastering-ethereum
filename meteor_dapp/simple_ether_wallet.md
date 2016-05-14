@@ -539,11 +539,30 @@ unix2datetime = function (unixtime){
 MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内）でグローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
 
 Sessionオブジェクトを利用するには、コンソール上でプロジェクトROOTに移動し、下記のコマンドを実行して`session`パッケージを追加します。
+
 > コンソール上のプロジェクトROOTにて
 
 ```bash
 $ meteor add session
 ```
+Walletの初期起動時にSessionオブジェクトを初期化するコード追加します。
+
+> client/lib/modules/init_session_vars.js
+
+```javascript
+//Session変数の初期化
+initSessionVars = function(){
+
+//Node関連の変数
+Session.setDefault('isMining', false);
+Session.setDefault('hashRate', 0);
+Session.setDefault('peerCount', 0);
+
+};
+```
+
+
+
 
 次に、定期的にWeb3 APIから値を取得する下記のコードを`client/lib/observe_node.js`ファイルに記述します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
 
