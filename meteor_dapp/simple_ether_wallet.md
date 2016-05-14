@@ -348,10 +348,10 @@ Template.nodeStatusComponent.helpers({
    </div>
 </div>
 
-#### 「Account Status」「Block Status」項目の表示
-次に、ノードに登録されているアカウント情報を表示する「Account Status」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
+#### 「Account Balance」「Block Status」項目の表示
+次に、ノードに登録されているアカウント情報を表示する「Account Balance」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
-まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountStatusComponent}}`、`{{> blockStatusComponent}}`を追加します。
+まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountBalanceComponent}}`、`{{> blockStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
@@ -360,8 +360,8 @@ Template.nodeStatusComponent.helpers({
   <main class="container-fluid">
     <div class="row-fluid">
       <div class="col-md-8 col-md-offset-2">
+        {{> accountBalanceComponent}}
         {{> nodeStatusComponent}}
-        {{> accountStatusComponent}}
         {{> blockStatusComponent}}
       </div>
     </div>
@@ -371,13 +371,13 @@ Template.nodeStatusComponent.helpers({
 
 さらにテンプレートとテンプレートヘルパーも追加します。ここでテンプレートのidは今回追加したInclusionタグと同じものにします。
 
-> client/templates/account_status_component.html
+> client/templates/components/account_balance_component.html
 
 ``` html
-<template name="accountStatusComponent">
-  <div class="panel panel-default">
+<template name="accountBalanceComponent">
+  <div class="panel panel-primary">
     <div class="panel-heading">
-      <h4>Account Status (Reactive)</h4>
+      <h4>Account Balance</h4>
     </div>
     <table class="table">
       <thead>
@@ -389,37 +389,58 @@ Template.nodeStatusComponent.helpers({
       </thead>
       <tbody>
         {{#each accounts}}
-          <tr>
-            <td>{{name}}</td>
-            <td>{{address}}</td>
-            <td>{{balance}}</td>
-          </tr>
+          {{> accountBalanceItem}}
         {{/each}}
       </tbody>
     </table>
   </div>
 </template>
+
+<template name="accountBalanceItem">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{address}}</td>
+    <td>{{balance}}</td>
+  </tr>
+</template>
 ```
 
-> client/templates/account_status_component.js
+> client/templates/components/account_status_component.js
 
 ``` javascript
 //テンプレート「accountStatusComponent」のヘルパー
-Template.accountStatusComponent.helpers({
+Template.accountBalanceComponent.helpers({
   //アカウント情報の取得
   accounts: function(){
     return EthAccounts.find({});
   }
 });
+
+//テンプレート「accountBalanceItem」のヘルパー
+Template.accountBalanceItem.helpers({
+  //アカウントの名前の取得
+  name: function(){
+    return this.name;
+  },
+  //アカウントのアドレスの取得
+  address: function(){
+    return this.address;
+  },
+  //アカウントが持つEtherの残高を取得（単位はEtherで、小数点３ケタまで取得）
+  balance: function(){
+    var balanceEth = web3.fromWei(this.balance, "ether");
+    return parseFloat(balanceEth).toFixed(3);
+  }
+});
 ```
 
-> client/templates/block_status_component.html
+> client/templates/components/block_status_component.html
 
 ``` html
 <template name="blockStatusComponent">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Block Status (Reactive)</h4>
+      <h4>Block Status</h4>
     </div>
     <table class="table">
       <tbody>
@@ -445,7 +466,7 @@ Template.accountStatusComponent.helpers({
 </template>
 ```
 
-> client/templates/block_status_component.js
+> client/templates/components/block_status_component.js
 
 ``` javascript
 //テンプレート「blockStatusComponent」のヘルパー
@@ -475,11 +496,11 @@ Template.blockStatusComponent.helpers({
 
 ここで、それぞれのヘルパーは、`nodeStatusComponent`のヘルパとは異なり、情報をweb3オブジェクトから取得するのではなく、そのラッパーである`EthAccounts`や`EthBlocks`から取り出しています。これらのラッパー・オブジェクトを利用することで、状態が変わると自動的に表示が更新されるリアクティブな表示が可能になります。
 
-また、`lient/templates/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーでのaccountsメソッドで取得されるのはアカウントオブジェクトの配列であり、その配列の要素づつ取り出し、それぞれのオブジェクトで`name`や`balance`属性を取得するようにしています。
+また、`lient/templates/components/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーでのaccountsメソッドで取得されるのはアカウントオブジェクトの配列であり、その配列の要素づつ取り出し、それを`accountBalanceItem`テンプレート側で`name`や`balance`属性を取得するようにしています。
 
 最後に、`blockStatusComponent`のヘルパ内で、UNIX時間表記で得られる採掘日時を通常の日時表記で表示されるよう`unix2datetime`関数を呼び出しているので、この関数のコードを追加します。
 
-> client/lib/unix2datetime.js
+> client/lib/modules/time_utils.js
 
 ```javascript
 //UNIX時間を通常の "yyyymmdd hh:mm:ss"フォーマットの文字列に変換
@@ -496,9 +517,9 @@ unix2datetime = function (unixtime){
 };
 ```
 
-これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「Account Status」「Block Status」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
+これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「Account Balance」「Block Status」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
 
-<img src="00_img/simple-eth-monitor.png" width="650">
+<img src="00_img/only_dashboard.png" width="650">
 
 <div class="commit">
   <img src="../00_common_img/tags.png">
