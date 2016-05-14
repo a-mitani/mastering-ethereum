@@ -545,7 +545,7 @@ Sessionオブジェクトを利用するには、コンソール上でプロジ�
 ```bash
 $ meteor add session
 ```
-Walletの初期起動時にSessionオブジェクトを初期化するコード追加します。
+これでSessionオブジェクトを利用できるようになりましたので、まずはSessionオブジェクトを初期化する関数（initSessionVars）を定義し、Wallet起動時にその関数が呼び出されるように`client/lib/init.js`の末尾に関数を呼び出すコードを追記します。
 
 > client/lib/modules/init_session_vars.js
 
@@ -561,8 +561,14 @@ Session.setDefault('peerCount', 0);
 };
 ```
 
+> client/lib/init.js
 
+```javascript
+（前略）
+//Session変数の初期化
+initSessionVars();
 
+```
 
 次に、定期的にWeb3 APIから値を取得する下記のコードを`client/lib/observe_node.js`ファイルに記述します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせる構造になっています。またAPIから返った値を`Session`オブジェクトに格納します。
 
