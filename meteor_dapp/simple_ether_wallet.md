@@ -40,8 +40,8 @@ gethのconsoleを利用せずバックグラウンドでgethを起動してお�
 
 の手順で行えばよいでしょう。
 
-### Meteorプロジェクト作成と整備
-Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-eth-monitorのMeteorプロジェクトを作成します。
+### Meteorプロジェクト作成
+Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-ether-walletのMeteorプロジェクトを作成します。
 ``` bash
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
 $ meteor create simple-ether-wallet # 新しいMeteorプロジェクトを作成
@@ -54,7 +54,28 @@ $ meteor
 
 <img src="00_img/myfirstapp.png" width="500">
 
-起動して画面が表示されることが確認できたら、次にプロジェクトRoot以下の構成を整備します。
+以降、このプロジェクトを修正していくことで、簡単なwallletを作成していきます。
+
+### ルーティング
+#### 必要パッケージの追加
+Meteorでは標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。以降で行っていくURLルーティングや、Ethereumノードへの接続も、拡張機能としてパッケージを導入することで容易に可能になります。ここではまずURLルーティング用とUIデザイン用として以下の２パッケージを追加します。
+
+* **iron:router**: URLルーティング用パッケージ。MeteorでのURLルーティングで最も一般的に用いられる。
+* **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
+
+プロジェクトRootに移動し下記のコマンドを実行します。
+
+``` bash
+$ meteor add iron:router
+$ meteor add twbs:bootstrap
+```
+###### ■■ Meteor TIP ■■
+プロジェクトに追加されたパッケージは隠しディレクトリ`.meteor`以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
+#### URLルーティングの実装
+まず、「ダッシュボード」と「送金」の２つのビューのURLルーティングを整備します。今回作成MeteorではURLルーティングを行うのに iron:routerパッケージを用いるのが最も一般的です。
+
+Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。Ethereumへの接続も、拡張機能としてパッケージを導入することで容易に可能になります。ここでは今後使用する以下の４つのパッケージを追加します。
+* **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
 
 まず、プロジェクトRoot直下の`main.html`、`main.js`、`main.css`を削除します。また、新しく`client`ディレクトリを作成し、そのディレクトリ下に`main.html`、`main.js`ファイルを作成します。ここで`main.html`ファイルには下記のコードを記述、`main.js`は空のままにしておきます。
 
