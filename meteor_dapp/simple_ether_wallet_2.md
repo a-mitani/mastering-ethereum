@@ -8,8 +8,34 @@
 ```bash
 $ meteor add iron:router
 ```
-iron:routerでは、Layoutテンプレートと呼ばれる`{{> yield}}`
-ビューに加えてSendビューを加えることで、それぞれのビューにURLを割り当ててまず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
+iron:routerは、Inclusionsタグの一種`{{> yield}}`が入ったテンプレート（Layoutテンプレート）の`{{> yield}}`部分に、それぞれのURLにマッピングされたテンプレート（Routeテンプレート）を埋め込む動作をします（下図）。
+
+<img src="00_img/Layout-Route.png" width="500">
+
+Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性に指定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは、
+* Layoutテンプレートとして`layout`を指定。
+* URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000のリクエストが来た場合、http://localhost:3000/dashboardにリダイレクトさせる。）
+* 
+
+
+```javascript
+Router.configure({
+  layoutTemplate: 'layout'
+});
+
+Router.route('/', function () {
+  this.redirect('/dashboard');
+});
+
+Router.route('/dashboard', {name: 'dashboard'});
+Router.route('/send', {name: 'send'});
+```
+
+
+
+
+と呼ばれるビューに加えてSendビューを加えることで、それぞれのビューにURLを割
+り当ててまず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
 
 ``` bash
 $ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" console 2>> /home/test_u/eth_private_net/geth_err.log
