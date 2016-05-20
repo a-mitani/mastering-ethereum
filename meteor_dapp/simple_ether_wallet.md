@@ -1,6 +1,6 @@
 ## 簡単なEtherのwalletを作る（１）
 
-MeteorによるDapp開発の第一歩として、Ethereumのノードに接続し、アカウント間でEthereumの組み込み通貨であるEtherの送金を可能にする簡単なwalletアプリを作成してみます。
+MeteorによるDapp開発の第一歩として、Ethereumの組み込み通貨であるEtherをアカウント間で送金する簡単なwalletアプリを作成してみます。
 
 本節で説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
