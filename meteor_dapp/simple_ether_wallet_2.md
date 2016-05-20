@@ -3,7 +3,7 @@
 前節で「simple-ether-wallet」のダッシュボード部分の実装を行ってきました。本節では「Send」ビューを追加しアカウント間でのEtherの送金を可能にしていきます。
 
 ### URLルーティングとSendビューの追加
-まず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトROOTに移動し下記のコマンドを実行することでパッケージがインストールされます。
+まず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトRootに移動し下記のコマンドを実行することでパッケージがインストールされます。
 
 ```bash
 $ meteor add iron:router
@@ -15,7 +15,8 @@ iron:routerは、Inclusionsタグの一種`{{> yield}}`が入ったテンプレ�
 Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性に指定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは、
 * Layoutテンプレートとして`layout`を指定。
 * URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000のリクエストが来た場合、http://localhost:3000/dashboardにリダイレクトさせる。）
-* 
+* URLが'/dashboard'の場合はRouteテンプレートとして`dashboard`テンプレートを割り当てる。
+*  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
 
 
 ```javascript
