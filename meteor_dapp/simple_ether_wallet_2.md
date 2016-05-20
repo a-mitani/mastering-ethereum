@@ -17,7 +17,7 @@ Layoutテンプレートの指定やURLへのテンプレートのマッピン�
 * URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000 のリクエストが来た場合、http://localhost:3000/dashboard にリダイレクトさせる。）
 * URLが'/dashboard'の場合はRouteテンプレートとして`dashboard`テンプレートを割り当てる。
 *  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
-
+というルーティングの動作を記述しています。
 
 ```javascript
 Router.configure({
