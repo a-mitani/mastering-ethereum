@@ -21,13 +21,16 @@ Layoutテンプレートの指定やURLへのテンプレートのマッピン�
 
 ```javascript
 Router.configure({
+  //Layoutテンプレートの指定
   layoutTemplate: 'layout'
 });
 
 Router.route('/', function () {
+  //ルートURL へリクエストは'/dashboard'へリダイレクト
   this.redirect('/dashboard');
 });
 
+//URLとRouteテンプレートのマッピングを指定
 Router.route('/dashboard', {name: 'dashboard'});
 Router.route('/send', {name: 'send'});
 ```
