@@ -10,11 +10,11 @@ MeteorによるDapp開発の第一歩として、Ethereumの組み込み通貨�
 
 <img src="00_img/dashboard_view.png" width="650">
 
-simple-ether-walletのダッシュボードビュー
+【simple-ether-walletのダッシュボードビュー】
 
 <img src="00_img/send_view.png" width="650">
 
-simple-ether-walletの送金ビュー
+【simple-ether-walletの送金ビュー】
 
 
 ### gethの起動（RPCの有効化）
@@ -57,9 +57,8 @@ $ meteor
 
 <img src="00_img/myfirstapp.png" width="500">
 
-起動して画面が表示されることが確認できたら、デモ用の余分なコードを削除しておきます。
 
-まず、プロジェクトRoot直下の`server`ディレクトリを内部のファイルごと削除します。また、`client`ディレクトリ内の`main.js`内の記述を全て削除し空ファイルの状態にします。そして`main.html`ファイルは下記のコードに書き換えます。
+起動して画面が表示されることが確認できたら、デモ用の余分なコードを削除して行きます。まず、プロジェクトRoot直下の`server`ディレクトリを内部のファイルごと削除します。また、`client`ディレクトリ内の`main.js`内の記述を全て削除し空ファイルの状態にします。そして`main.html`ファイルは下記のコードに書き換えます。
 
 
 > main.html
