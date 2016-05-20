@@ -14,7 +14,7 @@ iron:routerは、Inclusionsタグの一種`{{> yield}}`が入ったテンプレ�
 
 Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性に指定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは、
 * Layoutテンプレートとして`layout`を指定。
-* URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000のリクエストが来た場合、http://localhost:3000/dashboardにリダイレクトさせる。）
+* URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000 のリクエストが来た場合、http://localhost:3000/dashboard にリダイレクトさせる。）
 * URLが'/dashboard'の場合はRouteテンプレートとして`dashboard`テンプレートを割り当てる。
 *  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
 
