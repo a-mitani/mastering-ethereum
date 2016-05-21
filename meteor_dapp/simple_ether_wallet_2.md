@@ -53,8 +53,8 @@ client/lib/route.js内で指定した`layout`テンプレートとそのヘル�
         <a class="navbar-brand" href="{{pathFor 'dashboard'}}">Simple Ether Wallet</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="{{activeIfCurrentPage 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
-        <li class="{{activeIfCurrentPage 'send'}}"><a href="{{pathFor 'send'}}">Send Ether</a></li>
+        <li class="{{activeIfCurrent 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
+        <li class="{{activeIfCurrent 'send'}}"><a href="{{pathFor 'send'}}">Send Ether</a></li>
       </ul>
     </div>
   </nav>
@@ -70,7 +70,7 @@ client/lib/route.js内で指定した`layout`テンプレートとそのヘル�
 ```js
 Template.layout.helpers({
   //ナビゲーションバーのアイテムをハイライトするためのヘルパー関数
-  activeIfCurrentPage: function (template) {
+  activeIfCurrent: function (template) {
     var currentRoute = Router.current();
     if(currentRoute && template === Router.current().route.getName()){
       return 'active';
