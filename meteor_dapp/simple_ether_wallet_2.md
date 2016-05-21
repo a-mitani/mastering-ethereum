@@ -185,8 +185,8 @@ Sendビューのテンプレートに既存の`accountBalanceComponent`のInclus
     </div>
     <div class="panel-body">
       <form class="form-horizontal">
-        {{> sendInputTemplate inputId="f-addr" labelStr="From:"        placeholderStr="0x1234abcdef...."}}
-        {{> sendInputTemplate inputId="t-addr" labelStr="To:"          placeholderStr="0x1234abcdef...."}}
+        {{> sendInputTemplate inputId="f-addr" labelStr="From:" placeholderStr="0x1234abcdef...."}}
+        {{> sendInputTemplate inputId="t-addr" labelStr="To:" placeholderStr="0x1234abcdef...."}}
         {{> sendInputTemplate inputId="amount" labelStr="Amount(ETH):" placeholderStr="0.0"}}
         <input type="submit" value="submit" class="btn btn-primary col-md-offset-6"/>
       </form>
@@ -208,11 +208,9 @@ Sendビューのテンプレートに既存の`accountBalanceComponent`のInclus
   <div class="modal fade" id="sendConfirmModal">
     <div class="modal-dialog">
       <div class="modal-content">
-
         <div class="modal-header alert-danger">
           <h4 class="modal-title">Confirmation</h4>
         </div>
-
         <div class="modal-body">
           <h4>Send {{sendAmountInEther}} ETHER</h4>
           <ul>
@@ -223,12 +221,10 @@ Sendビューのテンプレートに既存の`accountBalanceComponent`のInclus
           <br/>
           <h4>Do you really send the Ether?</h4>
         </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-default" id="send">Yes</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
-
       </div>
     </div>
   </div>
