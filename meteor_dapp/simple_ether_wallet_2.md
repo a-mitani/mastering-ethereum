@@ -144,7 +144,7 @@ dashboardビューはこれで完成とします。
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step002" target="_blank">
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step006" target="_blank">
       View this Commit On GitHub (Tag:"Step002")
     </a></b></p>
    </div>
