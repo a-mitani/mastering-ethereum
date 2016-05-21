@@ -39,7 +39,7 @@ Router.route('/send', {name: 'send'});
 ```
 
 
-client/lib/route.js内で指定した`layout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。
+client/lib/route.js内で指定した`layout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。また元々`<body>`タグを記述していた`main.html`からは当該箇所を削除します。
 
 
 > client/templates/layout.html
@@ -79,6 +79,15 @@ Template.layout.helpers({
     }
   }
 });
+```
+
+> client/main.html
+
+
+```html
+<head>
+  <title>Simple Ether Wallet</title>
+</head>
 ```
 
 
