@@ -117,7 +117,20 @@ Dashboardビューは前節で追加していったものと同じ
 dashboardビューはこれで完成とします。
 
 #### Sendビュー
-次に、Sendビューを用意します。以降の節でSendビューの機能を追加していきますが、ここではその土台として「Account Balance」のコンポーネントのみ追加します。
+次に、Sendビューのテンプレートとして下記のコードを追加します。以降の節でSendビューの機能を追加していきますが、ここではその土台として下記のように「Account Balance」のコンポーネントのみ追加しています。
+
+> client/templates/views/send.html
+
+```html
+<template name="send">
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-2">
+      {{> accountBalanceComponent}}
+    </div>
+  </div>
+</template>
+
+以上により、以下のイメージのようにナビゲーションバーからそれぞれのビューに遷移が可能になります。
 
 
 
