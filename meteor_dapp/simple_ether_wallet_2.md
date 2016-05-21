@@ -158,512 +158,101 @@ dashboardビューはこれで完成とします。
 
 
 #### 送金情報入力画面と確認画面の表示
-まずは送金情報を入力する画面と送金の確認を行う画面までを作成していきます。また送金の確認画面では送金に必要なフィーの表示も行います。
+まずは送金情報を入力する画面と送金の確認を行う画面までを作成していきます。また送金の確認画面では送金に必要なFeeの表示も行います。
 
+Sendビューのテンプレートに既存の`accountBalanceComponent`のInclusionsタグの後に`sendEtherComponent`のInclusionsタグを追加します。
 
-
-まずは、`client/main.html`と`client/main.js`ファイルを下記のコードに書き換えます。
-
-> client/main.html
-
-```html
-<head>
-  <title>Simple Ether Wallet</title>
-</head>
-
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Simple Ether Wallet</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-md-8 col-md-offset-2">
-        {{> nodeStatusComponent}}
-      </div>
-    </div>
-  </main>
-</body>
-
-<template name="nodeStatusComponent">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Node Status</h4>
-    </div>
-    <table class="table">
-      <tbody>
-          <tr>
-            <th scope="row">Node</th>
-            <td>{{currentProvider}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Is Mining?</th>
-            <td>{{isMining}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Hashrate</th>
-            <td>{{currentHashrate}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Peer Count</th>
-            <td>{{currentPeerCount}}</td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-```
-
-> client/main.js
-
-```javascript
-//テンプレート「nodeStatusComponent」のテンプレートヘルパー
-//web3オブジェクトのプロパティを取得する各種メソッドを定義。
-Template.nodeStatusComponent.helpers({
-
-  //接続先ノードの取得
-  currentProvider: function(){
-    return web3.currentProvider.host;
-  },
-
-  //接続先ノードのマイニング状態の取得
-  //マイニング中であればtrue、そうでなければfalse
-  isMining: function(){
-    return web3.eth.mining;
-  },
-
-  //接続先ノードのマイニングのハッシュレートを取得
-  currentHashrate: function(){
-    return web3.eth.hashrate;
-  },
-
-  //接続先ノードのピア数の取得
-  currentPeerCount: function(){
-    return web3.net.peerCount;
-  }
-});
-```
-これらのコードを追加することで下図のような、Ethereumノードの状態のテーブルが表示されるはずです。
-
-<img src="00_img/node_status_component.png" width="600">
-
-ここでは大きく２つ、「テンプレート」と「テンプレートヘルパー」を用いてEthereumノードの状態の取得から表示までを行いました。少しこれらのコードを詳しく見ていきます。
-
-#####■ テンプレートエンジン：Spacebar
-`client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
-
-Spacebarには主に3種類のタグが規定されています。
-
-1つめはInclusionsタグと呼ばれるもので、`{{> xxx }}`の構文で用います。このタグが配置された場所に、`xxx`の部分で指定された名前と同じname属性を持つ`<template>`タグの内容を挿入する働きをします。今回の`client/main.html`の例では`{{> nodeStatusComponent}}`が、`<template name="nodeStatusComponent">`と`</template>`に囲まれた部分の内容に置き換わることになります。
-
-2つめは「Expressionsタグ」と呼ばれるもので`{{xxx}}`の構文で用います。現在のオブジェクトの属性値か、またはすぐ後に後述するテンプレートヘルパーの関数の戻り値に置き換わる働きをします。今回の `client/main.html` の例では`{{isMining}}`は `client/main.js` の`isMining`関数の返り値に置き換わることになります。
-
-最後は「block helpersタグ」と呼ばれるもので`{{#each}}…{{/each}}` や `{{#if}}…{{/if}}`のような構文で用いられるタグで、テンプレート内での処理フローを制御する働きをします。
-
-
-##### ■ テンプレートヘルパー
-`client/main.js`にはテンプレートヘルパーが定義されています。Meteorでは表示とロジックを分離する設計がされており、表示はテンプレートが、そして表示のためのデータの取得や加工などのロジックはテンプレートヘルパーがその役割を担います。
-
-テンプレートヘルパーは`Template.<myTemplate>.helpers(helperObject)`の形式で定義し、ここで`<myTemplate>`の部分にヘルパーが対象とするテンプレート名に置きかえます。また`helerObject`はヘルパー関数が連想配列形式で列挙されたオブジェクトになります。
-
-今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
-
-#### ソースファイルの分離
-この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
-
-たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
-
-ここでは各種表示コンポーネントのファイルは`client/templates/components`ディレクトリ以下に配置し、テンプレート名が`templateName`の場合、`template_name.html`と`template_name.js`というファイル名がつけていくこととします。この慣習に倣ってそれぞれ`main.html`と`main.js`に記述したコードを一部取り出して、以下のファイルを作成します。
-
-【※】`main.html`と`main.js`内の当該コード箇所は削除します。
-
-> client/templates/components/node_status_component.html
-
-```html
-<template name="nodeStatusComponent">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Node Status</h4>
-    </div>
-    <table class="table">
-      <tbody>
-          <tr>
-            <th scope="row">Node</th>
-            <td>{{currentProvider}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Is Mining?</th>
-            <td>{{isMining}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Hashrate</th>
-            <td>{{currentHashrate}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Peer Count</th>
-            <td>{{currentPeerCount}}</td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-```
-
-> client/templates/components/node_status_component.js
-
-```javascript
-//テンプレート「nodeStatusComponent」のテンプレートヘルパー
-//web3オブジェクトのプロパティを取得する各種メソッドを定義。
-Template.nodeStatusComponent.helpers({
-
-  //接続先ノードの取得
-  currentProvider: function(){
-    return web3.currentProvider.host;
-  },
-
-  //接続先ノードのマイニング状態の取得
-  //マイニング中であればtrue、そうでなければfalse
-  isMining: function(){
-    return web3.eth.mining;
-  },
-
-  //接続先ノードのマイニングのハッシュレートを取得
-  currentHashrate: function(){
-    return web3.eth.hashrate;
-  },
-
-  //接続先ノードのピア数の取得
-  currentPeerCount: function(){
-    return web3.net.peerCount;
-  }
-});
-
-```
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step003" target="_blank">
-      View this Commit On GitHub (Tag:"Step003")
-    </a></b></p>
-   </div>
-</div>
-
-#### 「Account Balance」「Block Status」項目の表示
-次に、ノードに登録されているアカウント情報を表示する「Account Balance」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
-
-まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountBalanceComponent}}`、`{{> blockStatusComponent}}`を追加します。
-
-> client/main.html （一部抜粋）
+> client/templates/views/send.html
 
 ```html
 （前略）
-  <main class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-md-8 col-md-offset-2">
-        {{> accountBalanceComponent}}
-        {{> nodeStatusComponent}}
-        {{> blockStatusComponent}}
-      </div>
-    </div>
-  </main>
+      {{> accountBalanceComponent}}
+      {{> sendEtherComponent}}
 （後略）
 ```
 
-さらにテンプレートとテンプレートヘルパーも追加します。ここでテンプレートのidは今回追加したInclusionタグと同じものにします。
+そして追加した`sendEtherComponent`テンプレートのコードを下記のように追加します。
 
-> client/templates/components/account_balance_component.html
+> client/templates/components/send_ether_component.html
 
-``` html
-<template name="accountBalanceComponent">
+```html
+<template name="sendEtherComponent">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h4>Account Balance</h4>
+      <h4>Send Ether</h4>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Address</th>
-          <th>Balance</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each accounts}}
-          {{> accountBalanceItem}}
-        {{/each}}
-      </tbody>
-    </table>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        {{> sendInputTemplate inputId="f-addr" labelStr="From:"        placeholderStr="0x1234abcdef...."}}
+        {{> sendInputTemplate inputId="t-addr" labelStr="To:"          placeholderStr="0x1234abcdef...."}}
+        {{> sendInputTemplate inputId="amount" labelStr="Amount(ETH):" placeholderStr="0.0"}}
+        <input type="submit" value="submit" class="btn btn-primary col-md-offset-6"/>
+      </form>
+    </div>
+  </div>
+  {{> sendConfirmModalTemplate}}
+</template>
+
+<template name="sendInputTemplate">
+  <div class="form-group">
+    <label class="control-label col-md-3" for="{{inputId}}">{{labelStr}}</label>
+    <div class="controls col-md-6">
+      <input name="{{inputId}}" id="{{iputId}}" type="text" value="" placeholder="{{placeholderStr}}" class="form-control"/>
+    </div>
   </div>
 </template>
 
-<template name="accountBalanceItem">
-  <tr>
-    <td>{{name}}</td>
-    <td>{{address}}</td>
-    <td>{{balance}}</td>
-  </tr>
-</template>
-```
+<template name="sendConfirmModalTemplate">
+  <div class="modal fade" id="sendConfirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-> client/templates/components/account_status_component.js
+        <div class="modal-header alert-danger">
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
 
-``` javascript
-//テンプレート「accountStatusComponent」のヘルパー
-Template.accountBalanceComponent.helpers({
-  //アカウント情報の取得
-  accounts: function(){
-    return EthAccounts.find({});
-  }
-});
+        <div class="modal-body">
+          <h4>Send {{sendAmountInEther}} ETHER</h4>
+          <ul>
+            <li><b>From:</b> {{fAddr}}</li>
+            <li><b>To:</b> {{tAddr}}</li>
+            <li><b>Estimated Fee:</b> {{fee}} ETHER</li>
+          </ul>
+          <br/>
+          <h4>Do you really send the Ether?</h4>
+        </div>
 
-//テンプレート「accountBalanceItem」のヘルパー
-Template.accountBalanceItem.helpers({
-  //アカウントの名前の取得
-  name: function(){
-    return this.name;
-  },
-  //アカウントのアドレスの取得
-  address: function(){
-    return this.address;
-  },
-  //アカウントが持つEtherの残高を取得（単位はEtherで、小数点３ケタまで取得）
-  balance: function(){
-    var balanceEth = web3.fromWei(this.balance, "ether");
-    return parseFloat(balanceEth).toFixed(3);
-  }
-});
-```
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="send">Yes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
 
-> client/templates/components/block_status_component.html
-
-``` html
-<template name="blockStatusComponent">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Block Status</h4>
+      </div>
     </div>
-    <table class="table">
-      <tbody>
-          <tr>
-            <th scope="row">Block Number</th>
-            <td>{{latestBlockNum}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Block Hash</th>
-            <td>{{latestBlockHash}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Miner</th>
-            <td>{{latestBlockMiner}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Mined Datetime</th>
-            <td>{{latestBlockDatetime}}</td>
-          </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 ```
 
-> client/templates/components/block_status_component.js
-
-``` javascript
-//テンプレート「blockStatusComponent」のヘルパー
-Template.blockStatusComponent.helpers({
-
-  //最新のブロック番号の取得
-  latestBlockNum: function(){
-    return EthBlocks.latest.number;
-  },
-
-  //最新ブロックのハッシュ値を取得
-  latestBlockHash: function(){
-    return EthBlocks.latest.hash;
-  },
-
-  //最新ブロックを採掘した採掘者のアドレスを取得
-  latestBlockMiner: function(){
-    return EthBlocks.latest.miner;
-  },
-
-  //最新ブロックの採掘日時を取得
-  latestBlockDatetime: function(){
-    return unix2datetime(EthBlocks.latest.timestamp);
-  }
-});
-```
-
-ここで、それぞれのヘルパーは、`nodeStatusComponent`のヘルパとは異なり、情報をweb3オブジェクトから取得するのではなく、そのラッパーである`EthAccounts`や`EthBlocks`から取り出しています。これらのラッパー・オブジェクトを利用することで、状態が変わると自動的に表示が更新されるリアクティブな表示が可能になります。
-
-また、`lient/templates/components/account_status_component.html`内で`{{#each accounts}}...{{/each}}`のblock helpersタグが追加されています。これはヘルパーでのaccountsメソッドで取得されるのはアカウントオブジェクトの配列であり、その配列の要素づつ取り出し、それを`accountBalanceItem`テンプレート側で`name`や`balance`属性を取得するようにしています。
-
-最後に、`blockStatusComponent`のヘルパ内で、UNIX時間表記で得られる採掘日時を通常の日時表記で表示されるよう`unix2datetime`関数を呼び出しているので、この関数のコードを追加します。
-
-> client/lib/modules/time_utils.js
-
-```javascript
-//UNIX時間を通常の "yyyymmdd hh:mm:ss"フォーマットの文字列に変換
-unix2datetime = function (unixtime){
-  var date = new Date( unixtime * 1000 );
-  var year  = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day   = date.getDate();
-  var hour  = ( date.getHours()   < 10 ) ? '0' + date.getHours()   : date.getHours();
-  var min   = ( date.getMinutes() < 10 ) ? '0' + date.getMinutes() : date.getMinutes();
-  var sec   = ( date.getSeconds() < 10 ) ? '0' + date.getSeconds() : date.getSeconds();
-  var datetimeString = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec ;
-  return datetimeString;
-};
-```
-
-これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「Account Balance」「Block Status」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
-
-<img src="00_img/only_dashboard.png" width="650">
-
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step004" target="_blank">
-      View this Commit On GitHub (Tag:"Step004")
-    </a></b></p>
-   </div>
-</div>
-
-
-### 「Node Status」項目をリアクティブな動作にする
-最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したために、特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作サポートするようなパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
-
-基本方針として、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するということを行います。
-
-MeteorにおいてSessionオブジェクトは、同一セッション内（同じユーザーかつ同じブラウザ・タブ内）でグローバル、かつ、単一（シングルトン）のオブジェクトです。このオブジェクトにはKey-value形式でデータを格納することが可能で、リアクティブなデータストアとして利用可能です。
-
-Sessionオブジェクトを利用するには、コンソール上でプロジェクトROOTに移動し、下記のコマンドを実行して`session`パッケージを追加します。
-
-```bash
-$ meteor add session
-```
-これでSessionオブジェクトを利用できるようになりましたので、まずはSessionオブジェクトを初期化する関数（`initSessionVars`）を定義します。
+送金情報をSession変数で管理するために、初期化のコードを`initSessionVars`関数内に追記します。
 
 > client/lib/modules/init_session_vars.js
 
 ```javascript
 //Session変数の初期化
 initSessionVars = function(){
-
-//Node関連の変数
-Session.setDefault('isMining', false);
-Session.setDefault('hashRate', 0);
-Session.setDefault('peerCount', 0);
+(中略）
+//送金関連の変数
+var initialFundInfo = {
+  amount:0,
+  fAddr:0x0,
+  tAddr:0x0,
+};
+Session.setDefault("sendEther.fundInfo", initialFundInfo);
+Session.setDefault("sendEther.estimatedGas", 0);
+Session.setDefault("sendEther.currentGasPrice", 0);
 
 };
 ```
-
-次に、定期的にWeb3 APIから値を取得する関数（`observeNode`）を定義します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせて、APIから返った値を`Session`オブジェクトに格納する処理を行っています。
-
-> client/lib/observe_node.js
-
-```javascript
-var peerCountIntervalId = null;
-
-// 採掘状況を非同期で取得
-var getIsMining = function(){
-  web3.eth.getMining(function(e, res){
-    if(!e)
-      Session.set('isMining', res);
-  });
-};
-
-// HashRateを非同期で取得
-var getHashRate = function(){
-  web3.eth.getHashrate(function(e, res){
-    if(!e)
-      Session.set('hashRate', res);
-  });
-};
-
-// PeerCountを非同期で取得
-var getPeerCount = function(){
-  web3.net.getPeerCount(function(e, res){
-    if(!e)
-      Session.set('peerCount', res);
-  });
-};
-
-observeNode = function(){
-  Meteor.clearInterval(peerCountIntervalId);
-  peerCountIntervalId = Meteor.setInterval(function() {
-    getIsMining();
-    getHashRate();
-    getPeerCount();
-  }, 1000);
-};
-```
-
-次に、上記で定義した`initSessionVars`関数と`observeNode`関数がWallet起動時に呼び出すコードを`client/lib/init.js`の末尾に追記します。
-> client/lib/init.js
-
-```javascript
-（前略）
-//Session変数の初期化
-initSessionVars();
-
-//オブザーバの起動
-observeNode();
-```
-
-
-以上で、Walletの起動時から定期的にノードの最新の値を問い合わせて、結果を`Session`オブジェクトに格納する処理が実装されました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
-
-`client/templates/components/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
-
-> client/templates/components/node_status_component.js
-
-```javascript
-//テンプレート「nodeStatusComponent」のテンプレートヘルパー
-//web3オブジェクトのプロパティを取得する各種メソッドを定義。
-Template.nodeStatusComponent.helpers({
-
-  //接続先ノードの取得
-  currentProvider: function(){
-    return web3.currentProvider.host;
-  },
-
-  //接続先ノードのマイニング状態の取得
-  //マイニング中であればtrue、そうでなければfalse
-  isMining: function(){
-    return Session.get('isMining');
-  },
-
-  //接続先ノードのマイニングのハッシュレートを取得
-  currentHashrate: function(){
-    return Session.get('hashRate');
-  },
-
-  //接続先ノードのピア数の取得
-  currentPeerCount: function(){
-    return Session.get('peerCount');
-  }
-});
-
-```
-
-以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現していることが確認できるはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるでしょう。
-
-
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step005" target="_blank">
-      View this Commit On GitHub (Tag:"Step005")
-    </a></b></p>
-   </div>
-</div>
-
 
 
 ###脚注
