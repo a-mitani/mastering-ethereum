@@ -129,79 +129,17 @@ dashboardビューはこれで完成とします。
     </div>
   </div>
 </template>
+```
 
 以上により、以下のイメージのようにナビゲーションバーからそれぞれのビューに遷移が可能になります。
 
+<img src="00_img/dashboard_view.png" width="500">
+【Dashboardビューでの表示】
 
-
-
-のまず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕
-と呼ばれるビューに加えてSendビューを加えることで、それぞれのビューにURLを割
-り当ててまず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
-
-``` bash
-$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" console 2>> /home/test_u/eth_private_net/geth_err.log
-```
-
-上記コマンドは幾つか新しいコマンドオプションを追加しています。今回作成するDappとノードの連携はGethのRPC（Remote Procedure Call）のAPI機能を利用するのでその設定をコマンドオプションで行っています。
-* `--rpc`：gethのRPCサーバとしてのAPIを有効化します。
-* `--rpcaddr "192.168.5.6"`:読者の環境に合わせてgethノードのIPアドレスを指定します。browser solidityとgethを同じPC上で利用するなら "127.0.0.1"か"localhost"を指定します。
-* `--rpcport "8545"`： RCP APIのポート番号を指定します。（特に問題なければデフォルトの8545を指定すればよいです。）
-* `--rpccorsdomain "*"`： クロスドメインアクセスを許可するドメイン。ここでは任意のドメインを許可しています。
-
-また、以下のオプションも加えています。
-* `--mine`：gethの起動と同時に採掘を開始するオプション
-* `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスのアカウントのロックを解除します。読者の環境に合わせて、coinbaseのアドレスを指定してください。（起動時にパスワードが求められます。）
-
-###### ■■ TIP ■■
-gethのconsoleを利用せずバックグラウンドでgethを起動しておくと便利です。その場合は
-1. 上記コマンドの`console`のオプションを外したコマンドを実行
-2. プロンプト上でパスワードを聞かれたら、入力。
-3. ［Ctrl］＋［Z］キーを押下しプロセスを一時停止
-4. `bg`コマンドを実行し、プロセスをバックグラウンド実行に移行
-
-の手順で行えばよいでしょう。
-
-### Wallet用のMeteorプロジェクトを作成
-Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-ether-walletのMeteorプロジェクトを作成します。
-``` bash
-$ cd ~/eth-meteor-proj # 任意のディレクトリに移動
-$ meteor create simple-ether-wallet # 新しいMeteorプロジェクトを作成
-```
-「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-ether-wallet`ディレクトリ（以下、プロジェクトRoot）に移動して
-``` bash
-$ meteor
-```
-コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/ 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
-
-<img src="00_img/myfirstapp.png" width="500">
-
-起動して画面が表示されることが確認できたら、デモ用の余分なコードを削除しておきます。
-
-まず、プロジェクトRoot直下の`server`ディレクトリを内部のファイルごと削除します。また、`client`ディレクトリ内の`main.js`内の記述を全て削除し空ファイルの状態にします。そして`main.html`ファイルは下記のコードに書き換えます。
-
-
-> main.html
-
-``` html
-<head>
-  <title>Simple Ether Wallet</title>
-</head>
-<body>
-  <h1> Hello, world!!</h1>
-</body>
-```
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step001" target="_blank">
-      View this Commit On GitHub (Tag:"Step001")
-    </a></b></p>
-   </div>
-</div>
-
-この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
 <img src="00_img/hello-world.png" width="500">
+【Sendビューでの表示】
+
+
 
 ###### ■■ Meteor TIP ■■
 Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
