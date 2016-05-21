@@ -252,7 +252,7 @@ Session.setDefault("sendEther.currentGasPrice", 0);
 };
 ```
 
-送金入力画面及び確認画面のヘルパとイベント処理のコードを追加します。
+送金入力画面及び確認画面のヘルパと送金入力画面のイベント処理のコードを追加します。送金入力画面
 
 > client/templates/components/send_ether_component.js
 
@@ -327,6 +327,19 @@ Template.sendConfirmModalTemplate.helpers({
   }
 });
 ```
+
+
+### トランザクションの送信
+ここまでで、
+
+* 送金情報の入力
+* 必要なFeeの計算
+* 確認画面の表示
+
+といったEtherの送金の準備に必要な機能が追加されました。次に確認画面で「Yes」ボタンを押下することで、入力内容に沿った送金を行うトランザクションがEthereumネットワーク上に送信する機能を追加します。
+
+この機能は
+
 
 
 
