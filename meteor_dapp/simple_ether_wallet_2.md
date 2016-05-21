@@ -145,16 +145,12 @@ dashboardビューはこれで完成とします。
   <img src="../00_common_img/tags.png">
   <div class="message">
     <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step006" target="_blank">
-      View this Commit On GitHub (Tag:"Step002")
+      View this Commit On GitHub (Tag:"Step006")
     </a></b></p>
    </div>
 </div>
 
-
-###### ■■ Meteor TIP ■■
-`init.js`ファイルを`client/lib`以下に配置したのは、初期化の処理を今後追加されていくその他の処理よりも先に処理したい理由からです。MeteorではプロジェクトRoot以下のファイルをロードする順序として、`lib`という名称のディレクトリ以下のファイルを最初に読み込むというルールがあるため、今回の`init.js`は例えば`main.html`や`main.js`よりも先にMeteorによりロードされる事になります。Meteorがファイルをロードする順序は[公式ドキュメント（英語）の「File Load Order」節](http://docs.meteor.com/#/full/fileloadorder)に詳細が記載されているので参考にしてください。
-
-###コンポーネントを追加する
+###「Send Ether」コンポーネントの追加
 #### 「Node Status」項目の表示
 これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
 
