@@ -141,66 +141,6 @@ dashboardビューはこれで完成とします。
 
 
 
-###### ■■ Meteor TIP ■■
-Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
-* `server` ディレクトリ以下のファイルは、サーバサイドのみで実行されます。（今回作成するwalletでは全てクライアント(ブラウザ）側で処理を行い、サーバ側の処理を行わないため`server`ディレクトリごと削除しました。）
-* `client` ディレクトリ以下のファイルはクライアントサイド（ex.ブラウザ上）のみで実行されます。
-* プロジェクト直下のファイル、および、上記以外のディレクトリ以下のファイルはサーバサイドとクライアントサイドの両方で実行されます。
-
-また、静的なコンテンツ、例えば画像データやフォントデータ等は`public`ディレクトリに配置されるのが慣習です。
-
-### Ethereumノードへの接続
-####パッケージの追加
-Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。Ethereumへの接続も、拡張機能としてパッケージを導入することで容易に可能になります。ここでは今後使用する以下の４つのパッケージを追加します。
-* **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
-* **ethereum:web3**：EthreumノードとRPC接続するためのライブラリが含まれるパッケージ。
-* **ethereum:accounts**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのアカウント関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
-* **ethereum:blocks**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのブロックチェーン関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
-
-プロジェクトRootに移動し下記のコマンドを実行します。
-
-``` bash
-$ meteor add twbs:bootstrap 
-$ meteor add ethereum:web3
-$ meteor add ethereum:accounts
-$ meteor add ethereum:blocks
-```
-###### ■■ Meteor TIP ■■
-プロジェクトに追加されたパッケージは隠しディレクトリ`.meteor`以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
-
-####Ethereumノードへの接続
-今回追加したパッケージを利用しEthereumノードに接続します。
-`client`ディレクトリ以下に`lib`ディレクトリを作成しその下に以下のコードを記述した`init.js`ファイルを配置します。
-
-> client/lib/init.js
-
-``` javascript
-//Web3インスタンスの生成
-web3 = new Web3();
-
-//RPCプロバイダを設定
-//URLの部分は読者の環境に合わせてください。（localhostの部分はIPアドレスにて指定してもかまいません。）
-if(!web3.currentProvider)
-  web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
-
-// EthAccounts初期化
-EthAccounts.init();
-
-//EthBlocksの初期化
-EthBlocks.init();
-```
-この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには今回追加したパッケージ及び`init.js`もロードされているためブラウザからEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動[^2] し、Ethereumノードに対してアカウントリストを問い合わせる
-
-```javascript
-> web3.eth.accounts;
-```
-のコマンドを実行してみます。
-実行結果として
-```javascript
-["0xa7595f153f9ead98dc3ad08abfc5314f596f97e7", "0xf2057b8aefb9093331faf48f30c1ebeab4ff961d"]
-```
-のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
-
 <div class="commit">
   <img src="../00_common_img/tags.png">
   <div class="message">
