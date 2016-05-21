@@ -13,7 +13,7 @@ iron:routerは、Inclusionsタグの一種`{{> yield}}`が入ったテンプレ�
 <img src="00_img/Layout-Route.png" width="500">
 
 Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性に指定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは、
-* Layoutテンプレートとして`layout`を指定。
+* Layoutテンプレートとして`walletLayout`を指定。
 * URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000 のリクエストが来た場合、http://localhost:3000/dashboard にリダイレクトさせる。）
 * URLが'/dashboard'の場合はRouteテンプレートとして`dashboard`テンプレートを割り当てる。
 *  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
@@ -25,7 +25,7 @@ Layoutテンプレートの指定やURLへのテンプレートのマッピン�
 ```javascript
 Router.configure({
   //Layoutテンプレートの指定
-  layoutTemplate: 'layout'
+  layoutTemplate: 'walletLayout'
 });
 
 Router.route('/', function () {
@@ -42,11 +42,11 @@ Router.route('/send', {name: 'send'});
 client/lib/route.js内で指定した`layout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。また元々`<body>`タグを記述していた`main.html`からは当該箇所を削除します。
 
 
-> client/templates/layout.html
+> client/templates/wallet_layout.html
 
 
 ```html
-<template name="layout">
+<template name="walletLayout">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -64,11 +64,11 @@ client/lib/route.js内で指定した`layout`テンプレートとそのヘル�
 </template>
 ```
 
-> client/templates/layout.js
+> client/templates/wallet_layout.js
 
 
 ```js
-Template.layout.helpers({
+Template.walletLayout.helpers({
   //ナビゲーションバーのアイテムをハイライトするためのヘルパー関数
   activeIfCurrent: function (template) {
     var currentRoute = Router.current();
