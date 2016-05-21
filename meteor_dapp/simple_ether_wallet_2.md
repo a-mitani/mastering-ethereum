@@ -19,6 +19,9 @@ Layoutテンプレートの指定やURLへのテンプレートのマッピン�
 *  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
 というルーティングの動作を記述しています。
 
+> client/lib/route.js
+
+
 ```javascript
 Router.configure({
   //Layoutテンプレートの指定
@@ -26,7 +29,7 @@ Router.configure({
 });
 
 Router.route('/', function () {
-  //ルートURL へリクエストは'/dashboard'へリダイレクト
+  //リダイレクト設定
   this.redirect('/dashboard');
 });
 
@@ -35,6 +38,31 @@ Router.route('/dashboard', {name: 'dashboard'});
 Router.route('/send', {name: 'send'});
 ```
 
+
+client/lib/route.js内で指定した`layout`テンプレートを追加します。
+
+> client/templates/layout.html
+
+
+```html
+<template name="layout">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{pathFor 'dashboard'}}">Simple Ether Wallet</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="{{activeIfCurrentPage 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
+        <li class="{{activeIfCurrentPage 'send'}}"><a href="{{pathFor 'send'}}">Send Ether</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container-fluid">
+    {{> yield}}
+  </main>
+</template>
+```
+また、iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。
 
 
 
