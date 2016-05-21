@@ -2,7 +2,7 @@
 
 前節で「simple-ether-wallet」のダッシュボード部分の実装を行ってきました。本節では「Send」ビューを追加しアカウント間でのEtherの送金を可能にしていきます。
 
-### URLルーティングとSendビューの追加
+### URLルーティング
 まず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトRootに移動し下記のコマンドを実行することでパッケージがインストールされます。
 
 ```bash
@@ -39,7 +39,7 @@ Router.route('/send', {name: 'send'});
 ```
 
 
-client/lib/route.js内で指定した`layout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。また元々`<body>`タグを記述していた`main.html`からは当該箇所を削除します。
+client/lib/route.js内で指定した`walletLayout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。また元々`<body>`タグを記述していた`main.html`からは当該箇所を削除します。
 
 
 > client/templates/wallet_layout.html
@@ -90,7 +90,39 @@ Template.walletLayout.helpers({
 </head>
 ```
 
+以上までの手順で、ナビゲーションバーとURLとテンプレートのマッピング機能が追加されました。次にURLにマッピングされた各ビューのテンプレートを追加していきます。
 
+### DashboardとSendビューの追加
+#### Dashboardビュー
+Dashboardビューは前節で追加していったものと同じ
+* Account Balance
+* Node Status
+* Block Status
+
+の３つのコンポーネントで構成することにします。そのためDashbordビューのテンプレートとしてこれらのコンポーネントのテンプレートを呼び出すように下記のコードを追加することで、Dashboardビューの表示が可能になります。
+
+> client/templates/views/dashboard.html
+
+```html
+<template name="dashboard">
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-2">
+      {{> accountBalanceComponent}}
+      {{> nodeStatusComponent}}
+      {{> blockStatusComponent}}
+    </div>
+  </div>
+</template>
+```
+dashboardビューはこれで完成とします。
+
+#### Sendビュー
+次に、Sendビューを用意します。以降の節でSendビューの機能を追加していきますが、ここではその土台として「Account Balance」のコンポーネントのみ追加します。
+
+
+
+
+のまず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕
 と呼ばれるビューに加えてSendビューを加えることで、それぞれのビューにURLを割
 り当ててまず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
 
