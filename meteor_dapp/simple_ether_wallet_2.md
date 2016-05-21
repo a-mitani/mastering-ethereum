@@ -39,7 +39,8 @@ Router.route('/send', {name: 'send'});
 ```
 
 
-client/lib/route.js内で指定した`layout`テンプレートを追加します。
+client/lib/route.js内で指定した`layout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。
+
 
 > client/templates/layout.html
 
@@ -62,8 +63,23 @@ client/lib/route.js内で指定した`layout`テンプレートを追加しま�
   </main>
 </template>
 ```
-また、iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。
 
+> client/templates/layout.js
+
+
+```js
+Template.layout.helpers({
+  //ナビゲーションバーのアイテムをハイライトするためのヘルパー関数
+  activeIfCurrentPage: function (template) {
+    var currentRoute = Router.current();
+    if(currentRoute && template === Router.current().route.getName()){
+      return 'active';
+    }else{
+      return '';
+    }
+  }
+});
+```
 
 
 と呼ばれるビューに加えてSendビューを加えることで、それぞれのビューにURLを割
