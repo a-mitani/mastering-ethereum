@@ -3,16 +3,17 @@
 前節で「simple-ether-wallet」のダッシュボード部分の実装を行ってきました。本節では「Send」ビューを追加しアカウント間でのEtherの送金を可能にしていきます。
 
 ### URLルーティング
-まず、DashboardとSendの２つのビューそれぞれにURLを割り当てて、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトRootに移動し下記のコマンドを実行することでパッケージがインストールされます。
+まず、DashboardとSendの２つのビューそれぞれにURLをマッピングし、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトRootに移動し下記のコマンドを実行することでパッケージがインストールされます。
 
 ```bash
 $ meteor add iron:router
 ```
-iron:routerは、Inclusionsタグの一種`{{> yield}}`が入ったテンプレート（Layoutテンプレート）の`{{> yield}}`部分に、それぞれのURLにマッピングされたテンプレート（Routeテンプレート）を埋め込む動作をします（下図）。
+iron:routerを用いたURLルーティングは、Layoutテンプレートと呼ばれるサイト全体で共通のテンプレートの中にInclusionsタグの一種`{{> yield}}`を埋め込み、iron:routerが自動的にリクエストURLにマッピングされたテンプレート（Routeテンプレート）を`{{> yield}}`部分に埋め込み表示する動作をします。
 
 <img src="00_img/Layout-Route.png" width="500">
 
-Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性に指定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは以下の動作を記述しています。
+#### URLルーティングの設定
+Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性を設定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは以下の動作を記述しています。
 
 * Layoutテンプレートとして`walletLayout`を指定。
 * URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000 のリクエストが来た場合、http://localhost:3000/dashboard にリダイレクトさせる。）
@@ -40,7 +41,8 @@ Router.route('/send', {name: 'send'});
 ```
 
 
-client/lib/route.js内で指定した`walletLayout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的に`<body>`タグ内に展開するように動作するため、この`layout`テンプレートでは`<body>`タグは記述しません。また元々`<body>`タグを記述していた`main.html`からは当該箇所を削除します。
+#### Layoutテンプレートの追加
+Layoutテンプレートとして指定した`walletLayout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的にhtmlファイルの`<body>`タグ内に展開するように動作するため、この`walletLayout`テンプレートでは`<body>`タグの内部に記述されるべきコードのみを記述します。また元々`<body>`タグとその内部を記述していた`main.html`からは当該箇所を削除します。
 
 
 > client/templates/wallet_layout.html
@@ -95,7 +97,7 @@ Template.walletLayout.helpers({
 
 ### DashboardとSendビューの追加
 #### Dashboardビュー
-Dashboardビューは前節で追加していったものと同じ
+Dashboardビュー用のテンプレートを追加していきます。Dashboardビューでは「簡単なEtherのWalletを作る（１）」の節で追加していったものと同じ
 * Account Balance
 * Node Status
 * Block Status
