@@ -254,7 +254,7 @@ Session.setDefault("sendEther.currentGasPrice", 0);
 };
 ```
 
-送金入力画面及び確認画面のヘルパと送金入力画面のイベント処理のコードを追加します。送金入力画面
+送金入力画面及び確認画面のヘルパと送金入力画面のイベント処理のコードを追加します。
 
 > client/templates/components/send_ether_component.js
 
@@ -340,7 +340,31 @@ Template.sendConfirmModalTemplate.helpers({
 
 といったEtherの送金の準備に必要な機能が追加されました。次に確認画面で「Yes」ボタンを押下することで、入力内容に沿った送金を行うトランザクションがEthereumネットワーク上に送信する機能を追加します。
 
-この機能は
+この機能は送金確認画面のイベントリスナーを追加することで実現します。送金画面で「Yes」をクリックした際に、トランザクション送信のための非同期関数[`web3.eth.sendTransaction`](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction)を呼び出します。
+
+```javascript
+//送金確認画面のイベントリスナー
+Template.sendConfirmModalTemplate.events({
+  //送金確認画面で「Yes」をクリックした場合のイベントハンドラー
+  'click #send': function(e) {
+    e.preventDefault();
+    var fundInfo = Session.get("sendEther.fundInfo");
+    //非同期関数「web3.eth.sendTransaction」を呼ぶことでノードにトランザクションを送信
+    web3.eth.sendTransaction({
+      from: fundInfo.fAddr,
+      to: fundInfo.tAddr,
+      value: fundInfo.amount
+    }, function(error, txHash){ //戻り値としてトランザクションハッシュ値が返る
+      console.log("Transaction Hash:", txHash, error);
+      if(!error) {
+        alert("Ether Transfer Succeeded");
+      } else {
+        alert("Ether Transfer Failed");
+      }
+    });
+    $('#sendConfirmModal').modal('hide');
+}});
+```
 
 
 
