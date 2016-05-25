@@ -137,9 +137,11 @@ dashboardビューはこれで完成です。
 以上までで、以下のイメージのようにナビゲーションバーからそれぞれのビューに遷移が可能になります。
 
 <img src="00_img/dashboard_view.png" width="500">
+
 【Dashboardビューでの表示】
 
 <img src="00_img/send_view_only_account_balance.png" width="500">
+
 【Sendビューでの表示】
 
 
