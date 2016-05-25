@@ -369,6 +369,19 @@ Template.sendConfirmModalTemplate.events({
 }});
 ```
 
+これで、Etherの送金が可能になりました。実際に今回追加した機能で送金を行ってみましょう。送金を行い暫くすると送金に基づいてアカウントのEtherの残高が変化するはずです。
+
+ここでアカウントの残高は送金（トランザクション送信）と同時に変化するのではなく採掘者がそのトランザクションをブロックに入れ採掘したタイミングで変化することに注意してください。
+
+
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step007" target="_blank">
+      View this Commit On GitHub (Tag:"Step007")
+    </a></b></p>
+   </div>
+</div>
 
 
 
