@@ -6,11 +6,11 @@ Ethereumがどのように動作するのか、Ethereumを用いてどのよう�
 
 Ethereumプロジェクトは最初の安定版（Homestead）リリースがされましたが、今後仕様が変更になる場合があります。仕様変更に伴い本書も逐次内容を変更していきます。
 
-また本ドキュメントは**2016/05/20 現在、制作中です。**
+また本ドキュメントは**2016/05/26 現在、制作中です。**
 
 本ドキュメントはオープンなプロジェクトであり、そのため協力者を広く求めています。本書のソースコードは[GitHub上](https://github.com/a-mitani/mastering-ethereum)で公開されています。
 
-本書への追記や修正などありましたら、上記[GitHub上のレポジトリ](https://github.com/a-mitani/mastering-ethereum)にIssueの発行、またはPull requestをお願いいたします。
+本書への追記や修正などありましたら、上記[GitHub](https://github.com/a-mitani/mastering-ethereum)にてIssueの発行、またはPull requestをお願いいたします。
 
 本ドキュメントは <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> のもとで公開されています。
 
