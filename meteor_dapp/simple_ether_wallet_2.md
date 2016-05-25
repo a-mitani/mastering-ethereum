@@ -338,11 +338,14 @@ Template.sendConfirmModalTemplate.helpers({
 * 必要なFeeの計算
 * 確認画面の表示
 
-といったEtherの送金の準備に必要な機能が追加されました。次に確認画面で「Yes」ボタンを押下することで、入力内容に沿った送金を行うトランザクションがEthereumネットワーク上に送信する機能を追加します。
+といったEtherの送金の準備に必要な機能が追加されました。次に確認画面で「Yes」ボタンを押下することで、入力内容のトランザクションをEthereumネットワーク上に送信する機能を追加します。
 
-この機能は送金確認画面のイベントリスナーを追加することで実現します。送金画面で「Yes」をクリックした際に、トランザクション送信のための非同期関数[`web3.eth.sendTransaction`](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction)を呼び出します。
+トランザクションの送信は送金確認画面のテンプレートにイベントリスナーを追加することで実現します。以下のコードを`send_ether_component.js`の末尾に追加します。送金画面で「Yes」をクリックした際に、トランザクション送信のための非同期関数[`web3.eth.sendTransaction`](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction)を呼び出す処理を行っています。またそのコールバック関数内でエラーが無ければトランザクションの送信が成功した旨、エラーがあれば失敗した旨をダイアログボックスに表示することを行っています。
+
+> client/templates/components/send_ether_component.js
 
 ```javascript
+（前略）
 //送金確認画面のイベントリスナー
 Template.sendConfirmModalTemplate.events({
   //送金確認画面で「Yes」をクリックした場合のイベントハンドラー
