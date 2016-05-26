@@ -7,5 +7,27 @@
 この節ではwalletが送信したトランザクションの履歴を表示し、それぞれのトランザクションが何回承認（confirmation）されたかを下図のように表示する機能を追加します。
 
 ### Transactionsコレクションの追加
-トランザクションの履歴を管理するために
+トランザクションの履歴を保管し管理するためにMeteorのCollectionオブジェクトを利用します。MeteorのCollectionオブジェクトはサーバサイドやブラウザのローカルストレージ上にデータを格納し永続的にデータを保持することも可能ですが、ここでは簡単のためにはブラウザ上のメモリ上のみに履歴を保存することにします。（そのため、ブラウザのタブを閉じれば履歴はクリアされます。）トランザクション履歴のCollectionオブジェクトとして`Transactions`を定義するコードを`client/lib/init.js`内に追加します。
+
+> client/lib/init.js
+
+```javascript
+（前略）
+//Session変数の初期化
+initSessionVars();
+
+//Transactionsコレクションの初期化
+Transactions = new Mongo.Collection('transactions', {connection: null});
+
+//オブザーバの起動
+observeNode();
+```
+アプリが正しく動作していれば、このコードを追加したあと、ブラウザコンソール上で下記のように`Transactions.find().fetch();`というコマンドを実行してみると`[]`のように空の配列が返されるはずです。
+
+> ブラウザコンソール上
+
+```
+> Transactions.find().fetch();
+  []
+```
 
