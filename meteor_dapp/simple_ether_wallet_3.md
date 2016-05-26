@@ -186,4 +186,23 @@ Template.transactionItem.helpers({
 以上のコードを追加した後、画面から送金操作を行うとSendビューの下部に実際に送金した情報がリスト上に表示されるでしょう。
 
 
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step008" target="_blank">
+      View this Commit On GitHub (Tag:"Step008")
+    </a></b></p>
+   </div>
+</div>
+
+
+### 承認回数をリアルタイム表示
+最後に前節で一時的にゼロ固定にして表示した各トランザクションの承認回数をリアルタイムに表示する機能を付け加えてきましょう。
+
+この機能は大まかに以下の方法で実現していきます。
+* Transactionsコレクションの登録状況を常時ウォッチする機能を追加
+  * トランザクションが新しく追加されたらそのトランザクションを常時ウォッチ
+  * トランザクションが削除されたら、そのトランザクションの常時ウォッチを停止
+* 個々のトランザクションを常時ウォッチし、
+
 
