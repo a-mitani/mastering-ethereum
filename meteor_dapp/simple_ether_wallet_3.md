@@ -85,7 +85,7 @@ getCurrentUnixTime = function(){
 ### トランザクション情報を表示
 次にTransactionsコレクションの情報を画面上に表示する機能をつけ加えていきます。Sendビューに`latestTransactionComponent`テンプレートを付け加え、このテンプレート内でTransactionsコレクションを表示する機能を実装していきます。
 
-まずは、下記のようにSendビューのテンプレートに`latestTransactionComponent`テンプレートを挿入するInclusionsタグを追加します。
+まずは、下記のようにSendビューのテンプレートにInclusionsタグ`{{> latestTransactionComponent}}`を追加します。
 
 ```html
 <template name="send">
@@ -97,4 +97,88 @@ getCurrentUnixTime = function(){
     </div>
   </div>
 </template>
+```
+新しく、`client/templates/components/`以下に`latest_transaction_component.html`と`latest_transaction_component.js`のテンプレートとそのヘルパのファイルを下記のように追加します。ここでTransactionsコレクションに何も登録されていない場合は「No Transactions To Show」と表示し、一つ以上トランザクションが登録されていればTransactionsコレクションから`find`メソッドを用いて
+* トランザクションの発生日時
+* 送金元アドレス
+* 送金先アドレス
+* 送金額
+を取り出し表示することを行っています。また現時点では承認回数をゼロで固定に表示しています。（後程、リアルタイムに承認回数を表示する機能を実装していきます。）
+
+> client/templates/components/latest_transaction_component.html
+
+```html
+<template name="latestTransactionComponent">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Latest Transactions (Limit 5)</h4>
+    </div>
+    <table class="table table-striped" >
+      <tbody>
+        {{#each items}}
+          {{> transactionItem}}
+        {{else}}
+          <tr>
+           <td> No Transactions To Show</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="transactionItem">
+  <tr>
+    <td>
+      <ul>
+        <li><b>Datetime:</b> {{txDateTime}} </li>
+        <li><b>From:</b> {{from}}</li>
+        <li><b>To:</b> {{to}}</li>
+      </ul>
+    </td>
+    <td>
+      <h4>
+        <b>{{amountInEther}}</b> ETHER
+      </h4>
+      <b>{{confirmationCount}}</b> confirmations
+    </td>
+  </tr>
+</template>
+```
+
+> client/templates/components/latest_transaction_component.js
+
+```javascript
+//latestTransactionComponentテンプレートのヘルパー
+Template.latestTransactionComponent.helpers({
+
+  //Transactionsコレクションから最大5件のトランザクション情報を取得
+  //timestamp属性について降順で取り出す。
+  items: function(){
+    selector = {};
+    return Transactions.find(selector, {sort: {timestamp: -1}, limit: 5}).fetch();
+  }
+});
+
+
+//transactionItemテンプレートのヘルパー
+Template.transactionItem.helpers({
+
+  //フォーマット化されたトランザクション時刻の取得
+  txDateTime: function(){
+    return unix2datetime(this.timestamp);
+  },
+
+  //送金額をEtherの単位で取得
+  amountInEther: function(){
+    var amountEth = web3.fromWei(this.amount, "ether");
+    return parseFloat(amountEth).toFixed(3);
+  },
+
+  //承認回数の取得（現時点では固定でゼロを返す関数）
+  confirmationCount: function(){
+    var count = 0;
+    return count;
+  }
+});
 ```
