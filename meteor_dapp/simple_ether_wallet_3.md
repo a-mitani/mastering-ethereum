@@ -82,3 +82,19 @@ getCurrentUnixTime = function(){
 
 以上の修正を行った上で、アプリ上で送金の操作を行い、ブラウザコンソール上で再度、` Transactions.find().fetch();`コマンドを実行してみてください。送金を行った情報がドキュメントとして保存されたのが見て取れるはずです。
 
+### トランザクション情報を表示
+次にTransactionsコレクションの情報を画面上に表示する機能をつけ加えていきます。Sendビューに`latestTransactionComponent`テンプレートを付け加え、このテンプレート内でTransactionsコレクションを表示する機能を実装していきます。
+
+まずは、下記のようにSendビューのテンプレートに`latestTransactionComponent`テンプレートを挿入するInclusionsタグを追加します。
+
+```html
+<template name="send">
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-2">
+      {{> accountStatusComponent}}
+      {{> sendEtherComponent}}
+      {{> latestTransactionComponent}}
+    </div>
+  </div>
+</template>
+```
