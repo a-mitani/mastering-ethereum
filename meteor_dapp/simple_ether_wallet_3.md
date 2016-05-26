@@ -34,13 +34,12 @@ observeNode();
 ### トランザクション情報を登録
 Transactionsコレクションが定義されたので、Etherの送金を実行した際にそのトランザクション情報がTransactionsコレクションに登録されるようにします。
 
-次のように、トランザクションの送信を行う`web3.eth.sendTransaction`関数のコールバック関数内で``
-
-Transactionsコレクションへのドキュメント追加を行う処理を追加します。
+トランザクションの送信を行う`web3.eth.sendTransaction`関数のコールバック関数内で`alert("Ether Transfer Succeeded");`としていた部分の代わりに次のようなTransactionsコレクションへのドキュメント追加を行う処理を追加し下記のようにします。
 
 > client/templates/components/send_ether_component.js
 
 ```javascript
+（中略）
     //非同期関数「web3.eth.sendTransaction」を呼ぶことでノードにトランザクションを送信
     web3.eth.sendTransaction({
       from: fundInfo.fAddr,
@@ -66,3 +65,20 @@ Transactionsコレクションへのドキュメント追加を行う処理を�
 }});
 
 ```
+
+また、上記で追加した部分に現在のUNIX時刻を求める新しい関数を利用しているのでその定義を下記のように追記します。
+
+> client/lib/modules/time_utils.js
+
+```javascript
+（前略：既存コード）
+//現在のUNIX時刻を取得（単位：秒）
+getCurrentUnixTime = function(){
+  var date = new Date() ;
+  var unixTimeSecond = Math.floor( date.getTime() / 1000 ) ;
+  return unixTimeSecond;
+};
+```
+
+以上の修正を行った上で、アプリ上で送金の操作を行い、ブラウザコンソール上で再度、` Transactions.find().fetch();`コマンドを実行してみてください。送金を行った情報がドキュメントとして保存されたのが見て取れるはずです。
+
