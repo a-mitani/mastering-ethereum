@@ -6,7 +6,7 @@
 
 この節ではwalletが送信したトランザクションの履歴を表示し、それぞれのトランザクションが何回承認（confirmation）されたかを下図のように表示する機能を追加します。
 
-### Transactionsコレクションの追加
+### Transactionsコレクションを定義
 トランザクションの履歴を保管し管理するためにMeteorのCollectionオブジェクトを利用します。MeteorのCollectionオブジェクトはサーバサイドやブラウザのローカルストレージ上にデータを格納し永続的にデータを保持することも可能ですが、ここでは簡単のためにはブラウザ上のメモリ上のみに履歴を保存することにします。（そのため、ブラウザのタブを閉じれば履歴はクリアされます。）トランザクション履歴のCollectionオブジェクトとして`Transactions`を定義するコードを`client/lib/init.js`内に追加します。
 
 > client/lib/init.js
@@ -31,3 +31,38 @@ observeNode();
   []
 ```
 
+### トランザクション情報を登録
+Transactionsコレクションが定義されたので、Etherの送金を実行した際にそのトランザクション情報がTransactionsコレクションに登録されるようにします。
+
+次のように、トランザクションの送信を行う`web3.eth.sendTransaction`関数のコールバック関数内で``
+
+Transactionsコレクションへのドキュメント追加を行う処理を追加します。
+
+> client/templates/components/send_ether_component.js
+
+```javascript
+    //非同期関数「web3.eth.sendTransaction」を呼ぶことでノードにトランザクションを送信
+    web3.eth.sendTransaction({
+      from: fundInfo.fAddr,
+      to: fundInfo.tAddr,
+      value: fundInfo.amount
+    }, function(error, txHash){ //戻り値としてトランザクションハッシュ値が返る
+      console.log("Transaction Hash:", txHash, error);
+      if(!error) {
+        //発行したトランザクション情報をTransactionsコレクションに挿入
+        Transactions.upsert(txHash, {$set: {
+          amount: Session.get("sendEther.fundInfo").amount,
+          from: Session.get("sendEther.fundInfo").fAddr,
+          to: Session.get("sendEther.fundInfo").tAddr,
+          timestamp: getCurrentUnixTime(),
+          transactionHash: txHash,
+          fee: estimatedFeeInWei().toString(10),
+        }});
+      } else {
+        alert("Ether Transfer Failed");
+      }
+    });
+    $('#sendConfirmModal').modal('hide');
+}});
+
+```
