@@ -89,6 +89,7 @@ getCurrentUnixTime = function(){
 
 まずは、下記のようにSendビューのテンプレートにInclusionsタグ`{{> latestTransactionComponent}}`を追加します。
 
+> client/templates/views/send.html
 
 ```html
 <template name="send">
