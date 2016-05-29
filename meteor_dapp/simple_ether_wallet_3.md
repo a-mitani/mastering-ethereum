@@ -355,3 +355,13 @@ checkTransactionConfirmations = function(tx){
 （後略）
 ```
 
+
+<div class="commit">
+  <img src="../00_common_img/tags.png">
+  <div class="message">
+    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step009" target="_blank">
+      View this Commit On GitHub (Tag:"Step009")
+    </a></b></p>
+   </div>
+</div>
+
