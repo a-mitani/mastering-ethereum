@@ -8,6 +8,9 @@
 
 <img src="00_img/send_view_transaction_list_red.png" width="500">
 
+※前節に続きここで説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
+
+
 ### Transactionsコレクションを定義
 トランザクションの履歴を保管し管理するためにMeteorのCollectionオブジェクトを利用します。MeteorのCollectionオブジェクトはサーバサイドやブラウザのローカルストレージ上にデータを格納し永続的にデータを保持することも可能ですが、ここでは簡単のためにブラウザ上のメモリ上のみに履歴を保存することにします。（そのため、ブラウザのタブを閉じれば履歴はクリアされます。）トランザクション履歴のCollectionオブジェクトとして`Transactions`を定義するコードを`client/lib/init.js`内に追加します。
 
