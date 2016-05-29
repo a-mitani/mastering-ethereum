@@ -236,7 +236,7 @@ observeTransactions = function(){
     });
 };
 ```
-次に、上記コード内で呼ばれているcheckTransactionConfirmations()メソッドを実装します。
+次に、上記コード内で呼ばれているcheckTransactionConfirmations()メソッドを実装します。処理の内容はソースコード内のコメントを参照してください。
 
 > client/lib/modules/check_transaction_confs.js
 
