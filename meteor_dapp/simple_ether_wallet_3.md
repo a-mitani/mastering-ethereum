@@ -236,6 +236,8 @@ observeTransactions = function(){
     });
 };
 ```
+次に、上記コード内で呼ばれているcheckTransactionConfirmations()メソッドを実装します。
+
 
 
 
