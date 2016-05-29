@@ -216,6 +216,26 @@ Template.transactionItem.helpers({
 observeTransactions();
 ```
 
-また、上記のメソッドを実装していきます。
+また、上記で追加した`observeTransactions()`メソッドを下記のように実装します。
+
+> client/lib/modules/observe_transactions.js
+
+```javascript
+//Transactionsコレクションの状態を監視
+observeTransactions = function(){
+    Transactions.find({}).observe({
+        //Transactionsコレクションにドキュメントが追加された場合
+        added: function(newDocument) {
+          console.log("Added Transaction Document");
+          checkTransactionConfirmations(newDocument);
+        },
+        //Transactionsコレクションからドキュメントが削除された場合
+        removed: function(document) {
+          console.log("Removed Transaction Document", document._id);
+        }
+    });
+};
+```
+
 
 
