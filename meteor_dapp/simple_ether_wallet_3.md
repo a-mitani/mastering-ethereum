@@ -4,7 +4,7 @@
 
 ブロックチェーンを用いた送金では、あるトランザクションが組み込まれたブロックが採掘されることでそのトランザクションが「1回の承認（confirmation）を得た」と考えます。そしてそのブロックの後ろに続くブロックが採掘されればその数に応じて承認の数が増えて、そのトランザクションの信頼が高まります。Ethereumではおおよそ12回の承認を得ることでほぼ間違いなく信頼ができると言われています。
 
-この節ではwalletが送信したトランザクションの履歴を表示し、それぞれのトランザクションが何回承認（confirmation）されたかを下図のように表示する機能を追加します。
+この節では下図の赤枠のようにwalletが送信したトランザクションの履歴とそれらのトランザクションが何回承認（confirmation）されたかを表示する機能を追加します。
 
 <img src="00_img/send_view_transaction_list_red.png" width="500">
 
@@ -88,6 +88,7 @@ getCurrentUnixTime = function(){
 次にTransactionsコレクションの情報を画面上に表示する機能をつけ加えていきます。Sendビューに`latestTransactionComponent`テンプレートを付け加え、このテンプレート内でTransactionsコレクションを表示する機能を実装していきます。
 
 まずは、下記のようにSendビューのテンプレートにInclusionsタグ`{{> latestTransactionComponent}}`を追加します。
+
 
 ```html
 <template name="send">
