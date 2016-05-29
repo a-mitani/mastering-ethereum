@@ -339,5 +339,19 @@ checkTransactionConfirmations = function(tx){
 
 ```
 
+また、最後に承認回数を画面に表示するために、`transactionItem`テンプレートヘルパの承認回数の取得部分をTransactionsコレクションと最新のブロックナンバーの差から表示するように、以下のように修正します。
 
+> client/templates/components/latest_transaction_component.js
+
+```javascript
+（前略）
+  //承認回数の取得
+  confirmationCount: function(){
+    var count = 0;
+    if(this.blockNumber) count = EthBlocks.latest.number - this.blockNumber +1;
+    if(count > 50) count = "50+";
+    return count;
+  }
+（後略）
+```
 
