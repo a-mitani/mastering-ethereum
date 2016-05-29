@@ -212,7 +212,7 @@ Template.transactionItem.helpers({
 > client/lib/init.js
 
 ```javascript
-（後略）
+（前略）
 observeTransactions();
 ```
 
@@ -236,6 +236,7 @@ observeTransactions = function(){
     });
 };
 ```
+
 
 
 
