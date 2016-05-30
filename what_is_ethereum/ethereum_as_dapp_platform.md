@@ -115,13 +115,13 @@ Ethereumはオープンソース・プロジェクトとしてETHDEVチームと
 
 ### 脚注
 
-[^1] ここで先頭の「0x」は16進数を表わすプレフィックスです。
+[^1]: ここで先頭の「0x」は16進数を表わすプレフィックスです。
 
-[^2] [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper) では「Contract Account」という呼び方をしていますが、例えば[このTutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) などのように、最近は単に「Contract」と呼ぶことが多いようです。
+[^2]: [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper) では「Contract Account」という呼び方をしていますが、例えば[このTutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) などのように、最近は単に「Contract」と呼ぶことが多いようです。
 
-[^3] 実際には、状態の遷移はトランザクションだけでなく、「メッセージ」によっても遷移が行われますがここでは説明を省きます。「トランザクション」はEOAにより生成/送信されるのに対して「メッセージ」はContract により生成/送信されます。
+[^3]: 実際には、状態の遷移はトランザクションだけでなく、「メッセージ」によっても遷移が行われますがここでは説明を省きます。「トランザクション」はEOAにより生成/送信されるのに対して「メッセージ」はContract により生成/送信されます。
 
-[^4] ビットコインの場合、ブロックチェーンにはトランザクションのみが記録されましたが、Ethreumではトランザクションによって変化したアカウントの状態もブロックチェーンに記録されます。
+[^4]: ビットコインの場合、ブロックチェーンにはトランザクションのみが記録されましたが、Ethreumではトランザクションによって変化したアカウントの状態もブロックチェーンに記録されます。
 
 ---
 [This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
