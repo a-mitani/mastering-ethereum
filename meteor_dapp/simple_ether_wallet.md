@@ -35,7 +35,7 @@ $ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --
 * `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスのアカウントのロックを解除します。読者の環境に合わせて、coinbaseのアドレスを指定してください。（起動時にパスワードが求められます。）
 
 ###### ■■ TIP ■■
-gethのconsoleを利用せずバックグラウンドでgethを起動しておくと便利です。その場合は
+gethのconsoleを利用せずバックグラウンドでgethを起動しておくと毎度gethを起動する手間が省けて便利です。その場合は
 1. 上記コマンドの`console`のオプションを外したコマンドを実行
 2. プロンプト上でパスワードを聞かれたら、入力。
 3. ［Ctrl］＋［Z］キーを押下しプロセスを一時停止
