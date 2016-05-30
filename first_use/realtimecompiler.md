@@ -69,13 +69,13 @@ AtAddress botann -->
 
 
 #### 脚注
-[^1] gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
+[^1]: gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
 
-[^2]ライブ・ネットに接続することも可能ですが、実験的な作業はテスト・ネットで行うことを推奨します。
+[^2]: ライブ・ネットに接続することも可能ですが、実験的な作業はテスト・ネットで行うことを推奨します。
 
-[^3] <!-- [TODO] chromeの開発ツールでの確認方法を示す。-->
+[^3]: <!-- [TODO] chromeの開発ツールでの確認方法を示す。-->
 
-[^4]今回の例ではテストネットで単独ノードなので、厳密にはEthereumネットワーク上での採掘ではなく、指定したノード上での採掘になります。
+[^4]: 今回の例ではテストネットで単独ノードなので、厳密にはEthereumネットワーク上での採掘ではなく、指定したノード上での採掘になります。
 
 ---
 [This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
