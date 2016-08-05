@@ -96,7 +96,7 @@ Solidity Compiler: /usr/bin/solc
 2. Contractのブロックチェーンへの登録 
     * コンパイル結果を用いて、Contract を生成するトランザクションをEthereumネットワークに送信する。そのトランザクションを受信した採掘者は、トランザクションをブロックチェーンに登録する（＝Contractをブロックチェーンに登録する）。この時Contractのアドレスが発行される。
 2. Contractへアクセス
-    1. Contractを利用するユーザーは、Contract作成者からContractへのアクセス情報の取得する。その情報をもとにContractへアクセスし、コントラクト・コードの実行等を行う。
+    * Contractを利用するユーザーは、Contract作成者からContractへのアクセス情報の取得する。その情報をもとにContractへアクセスし、コントラクト・コードの実行等を行う。
 
 以上の手順を、最も単純なContractを用いて実際に行って行きましょう。
 
