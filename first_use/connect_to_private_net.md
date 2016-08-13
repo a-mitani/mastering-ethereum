@@ -12,7 +12,7 @@ Gethのインストールが完了したら早速Gethを起動します。
 
 Genesisファイルとは、ネットワークでやり取りされるブロックチェーンの最初（Block番号 "0"）のブロックであるGenesisブロックの情報を記述したファイルです。プライベート・ネットでは独自のブロックチェーンをやり取りしていくため、独自のGenesisブロックを定義したGenesisファイルを用意して利用します[^2]。
 
-まず任意の場所にプライベート・ネット用の各種データを格納するディレクトリを作成します[^3]。ここでは、ログイン・ユーザー（今回の例ではtest_u）のhomeディレクトリ直下に作成します。
+まず任意の場所にプライベート・ネットのブロック情報やノード情報など各種データを格納するディレクトリ（データ・ディレクトリ）を作成します[^3]。ここでは、ログイン・ユーザー（今回の例ではtest_u）のhomeディレクトリ直下に作成します。
 
 ``` plain
 $ mkdir /home/test_u/eth_private_net
@@ -36,26 +36,31 @@ $ mkdir /home/test_u/eth_private_net
 
 ### Gethをプライベート・ネットで起動する
 
-データ用ディレクトリを作成したら、以下のコマンドでGethを起動します。
+#### genesisブロックの初期化
+データ・ディレクトリとgenesisファイルを作成したら、以下のコマンドを実行しブロックチェーン情報をgenesisファイルの内容で初期化します。
 ```plain
-$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" console 2>> /home/test_u/eth_private_net/geth_err.log
+$ geth --datadir /home/test_u/eth_private_net init /home/test_u/eth_private_net/myGenesis.json
 ```
-ここで各オプションの意味は以下のとおりです。
+本コマンドを実行すると、`--datadir`で指定したディレクトリ以下に`chaindata`ディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存されます。
+
+#### gethの起動
+次に以下のコマンドを実行することでGethを起動します。
+```plain
+$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" console 2>> /home/test_u/eth_private_net/geth_err.log
+```
+ここで`--datadir`オプションでは、genesisブロックの初期化で指定したディレクトリと同一のものを指定してください。また、その他のオプションの意味は以下のとおりです。
+
 * `--networkid "10"` ：本オプションで任意の正の整数のIDを指定することで、ライブ・ネットとは異なるネットワークを立ち上げることが可能です（ここでは10を指定）。
 * `--nodiscover` ：Gethはデフォルトで自動的に（同じネットワークID）のEthereumネットワークのノード（Peer）を探し接続を試みます。プライベート・ネットでは未知のノードとの接続を避けるため、このオプションで自動Peer探索機能を無効にします。
-* `--datadir "/home/test_u/eth_private_net"`：データ用ディレクトリとして、事前に作成しておいたディレクトリのパスを指定しています。データ用ディレクトリにはブロックチェーン情報やノード情報など各種データが保存されます。
 * `console`：Gethには採掘やトランザクションの生成などを対話的に進めることができるコンソールが用意されています。`console`サブ・コマンドを指定することで、Gethの起動時に同時にコンソール立ち上げることが可能です。なお、`console`サブ・コマンドを付加せずに、Gethのプロセスをバックグラウンドで起動させておき、後からそのプロセスのコンソールを起動する事も可能です（下記TIP参照）。
 
-上記コマンドを実行すると、下記の実行結果のように、幾つかの情報の表示の後に「>」のプロンプトが表示され、コンソールが起動されます。今後、特にことわりのない限り、このように起動したGethプロンプト上で作業していく前提で進めていきます。
+上記コマンドを実行すると、下記の実行結果のように、幾つかの情報の表示の後に「>」のプロンプトが表示され、コンソールが起動されます。今後、特にことわりのない限りこのコマンドで起動したGethプロンプト上で作業していく前提で進めていきます。
 
 ```
-instance: Geth/v1.3.5/linux/go1.5.1
- datadir: /home/test_u/eth_private_net
-coinbase: null
-at block: 0 (Thu, 01 Jan 1970 09:00:00 JST)
-modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
->
+Welcome to the Geth JavaScript console!
 
+instance: Geth/v1.4.10-stable/linux/go1.5.1
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
 ```
 
 実際に今回立ち上げたプライベート・ネットのGenesisブロックが`myGenesis.json`に記載されたものになっているのかを確認してみます。Gethプロンプト上で
