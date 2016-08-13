@@ -41,9 +41,7 @@ $ mkdir /home/test_u/eth_private_net
 ```plain
 $ geth --datadir /home/test_u/eth_private_net init /home/test_u/eth_private_net/myGenesis.json
 ```
-本コマンドを実行すると、`/home/test_u/eth_private_net`のディレクトリ以下に`chaindata`ディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存されます。
-
-ここで、`--datadir /home/test_u/eth_private_net`のオプションを指定しているのは、データ用ディレクトリとして事前に作成しておいたディレクトリのパスを指定するためです。データ用ディレクトリにはブロックチェーン情報やノード情報など各種データが保存されます。
+本コマンドを実行すると、`--datadir`で指定したディレクトリ以下に`chaindata`ディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存されます。
 
 #### genesisブロックの初期化
 次に以下のコマンドを実行することでGethを起動します。
