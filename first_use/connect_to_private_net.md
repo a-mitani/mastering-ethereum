@@ -43,7 +43,7 @@ $ geth --datadir /home/test_u/eth_private_net init /home/test_u/eth_private_net/
 ```
 本コマンドを実行すると、`--datadir`で指定したディレクトリ以下に`chaindata`ディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存されます。
 
-#### genesisブロックの初期化
+#### gethの起動
 次に以下のコマンドを実行することでGethを起動します。
 ```plain
 $ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" console 2>> /home/test_u/eth_private_net/geth_err.log
