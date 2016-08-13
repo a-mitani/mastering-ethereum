@@ -18,7 +18,7 @@ Genesisファイルとは、ネットワークでやり取りされるブロッ�
 $ mkdir /home/test_u/eth_private_net
 ```
 
-次に上記ディレクトリ内にjson形式の下記の内容[^4] を記述した`myGenesis.json`ファイルを配置します（以下、genesisファイルと呼びます）。
+次に上記ディレクトリ内にjson形式の下記の内容[^4] を記述した`myGenesis.json`ファイルを配置します。
 
 ```javascript
 {
