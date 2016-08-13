@@ -1,9 +1,6 @@
 # Summary
 
 * [本書について](README.md)
-* [Ethereumとは何か？](what_is_ethereum/README.md)
-   * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
-   * [Ethereumとは](what_is_ethereum/ethereum_as_dapp_platform.md)
 * [まずは Ethereum に触れてみる](first_use/README.md)
    * [Gethをインストールする](first_use/installing_geth.md)
    * [プライベート・ネットに接続する](first_use/connect_to_private_net.md)
@@ -12,6 +9,9 @@
    * [Contractを作成する](first_use/contract.md)
    * [ライブ・ネットに接続する](first_use/connect_to_livenet.md)
    * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
+* [Ethereumとは何か？](what_is_ethereum/README.md)
+   * [ブロックチェーン革命](what_is_ethereum/blockchainrev_md.md)
+   * [Ethereumとは](what_is_ethereum/ethereum_as_dapp_platform.md)
 * [Meteorを用いた分散型アプリケーション開発](meteor_dapp/README.md)
    * [Meteorを準備する](meteor_dapp/about_meteor.md)
    * [簡単なEtherのwalletを作る（１）](meteor_dapp/simple_ether_wallet.md)
@@ -26,3 +26,4 @@
 * [Ethereumの内部](inside_ethereum/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
 * [（旧URL）](content/README.md)
+
