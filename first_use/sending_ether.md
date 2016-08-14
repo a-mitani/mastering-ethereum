@@ -15,9 +15,14 @@
 ```
 `accounts[0]`のEOAは、725 ether を保有している一方で、もう一方の`accounts[1]`のEOAはetherを保有していないのがわかります。
 
-この状態で`accounts[0]`から、`accounts[1]`へ、5 ether を送金します。送金は以下のコマンドを用います。ここで`from`に送金元アドレス、`to`に宛先アドレス、`value`に送金額を指定します。なお、送金時に送金元のアカウントのパスワードが求められるので指示に従って入力します。
+この状態で`accounts[0]`から、`accounts[1]`へ、5 ether を送金します。送金は`eth.sendTransaction`コマンドを用います。ここで`from`に送金元アドレス、`to`に宛先アドレス、`value`に送金額を指定します。なお、実際には送金時に送金元のアカウントのロックの解除が事前に必要なので解除を行った後に送金を行います[^2]。
 
 ```
+> personal.unlockAccount(eth.accounts[0]) //アカウントのロック解除。パスワードを求められるので、適宜パスワードを入力する。
+Unlock account 24afe6c0c64821349bc1bfa73110512b33fa18e1
+Passphrase:
+true
+
 > eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(5, "ether")}) //送金の実行。アカウントのパスワードの入力を求められるので従う。実行結果としてトランザクションIDが返される。
 Please unlock account 24afe6c0c64821349bc1bfa73110512b33fa18e1.
 Passphrase:
@@ -82,4 +87,4 @@ Account is now unlocked for this session.
 
 ### 脚注
 [^1]: テスト・ネット上での採掘のため、Ethereumの本番ネットワークであるライブ・ネット上では利用できませんのでご注意ください。
-
+[^2]: デフォルトではロック解除のコマンドから300秒経過すると再び自動でアカウントはロックされます。そのため300秒経過後に送金等を行う場合には再度アカウントの解除する必要があります。
