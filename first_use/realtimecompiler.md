@@ -1,8 +1,8 @@
 # Contract開発環境（IDE）の活用
 
-前節までで、gethを用いてコマンドライン上でSolidity言語によるContractの作成からコンパイル、そして実行までを行う手順を見てきました。しかしこれらは見てきたように煩雑な操作が必要で、Solidity言語を用いてContractを実際に試行錯誤でコーディングしていくには不適です。そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[Browser Solidity - Solidity realtime compiler and runtime](https://github.com/chriseth/browser-solidity)」（以下browser-solidity）の使い方を解説します。
+前節までで、gethを用いてコマンドライン上でSolidity言語によるContractの作成からコンパイル、そして実行までを行う手順を見てきました。しかしこれらは見てきたように煩雑な操作が必要で、Solidity言語を用いてContractを実際に試行錯誤でコーディングしていくには不適です。そのため、Contractのコーディングとコンパイル及び実行を助ける幾つかの開発環境が開発され始めています。この節では、これらの中の一つの「[Browser Solidity - Solidity realtime compiler and runtime](https://github.com/ethereum/browser-solidity)」（以下browser-solidity）の使い方を解説します。
 
-[browser-solidity](https://github.com/chriseth/browser-solidity)はSolidity言語の開発者の一人である[chriseth](https://github.com/chriseth)により開発されているSolidity言語用Contract開発環境（IDE）であり、Webブラウザ上で
+[browser-solidity](https://github.com/ethereum/browser-solidity)はSolidity言語の開発者の一人である[chriseth](https://github.com/chriseth)により開発されているSolidity言語用Contract開発環境（IDE）であり、Webブラウザ上で
 
 * Contractのコーディング
 * コンパイル
@@ -13,7 +13,7 @@
 が可能です。
 
 ## browser-solidityのダウンロードと起動
-browser-solidity[はGithubから最新バージョンのzipファイル](https://github.com/chriseth/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
+browser-solidityは[Githubから最新バージョンのzipファイル](https://github.com/ethereum/browser-solidity/archive/gh-pages.zip)をダウンロードし、それを解凍したフォルダ内のindex.htmlをブラウザで開くことで利用可能です[^1]。
 
 実際にindex.htmlをブラウザで開いた画面を下図に示します。画面は大きく左右２つに分かれています。左側はSolidity言語のコードエディタになっており、右側はそのContractの各種情報の表示や実行実行等を行う画面になっています。
 <img src="00_images/browser_solidity_initial_screen.png" width="600">
@@ -61,7 +61,7 @@ $ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --
 
 実際にset関数のテキスト入力エリアに正の整数値、例えば「136」を入力し赤色のいるset関数実行ボタンを押下するとbrouser-solidityはトランザクションを発行しEthereumネットワーク上で採掘されるとトランザクション実行結果が表示されます。またそのあと青色のget関数ボタンを押下すればset関数で設定した正の整数が表示されることになります。
 
-<!-- 
+<!--
 ## Browser Solidity そのほかの機能
 (追記予定）
 コントラクタの引数
@@ -69,7 +69,7 @@ AtAddress botann -->
 
 
 #### 脚注
-[^1]: gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://chriseth.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
+[^1]: gitに慣れている方はもちろんgithubリポジトリをcloneしてもいいですし、[browser-solidityのサイト](https://ethereum.github.io/browser-solidity/)も公開されているのでそこにアクセスして利用することも可能です。
 
 [^2]: ライブ・ネットに接続することも可能ですが、実験的な作業はテスト・ネットで行うことを推奨します。
 
@@ -79,5 +79,3 @@ AtAddress botann -->
 
 ---
 [This work](http://book.ethereum-jp.net/) is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
-
