@@ -563,7 +563,7 @@ Session.setDefault('peerCount', 0);
 
 次に、定期的にWeb3 APIから値を取得する関数（`observeNode`）を定義します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせて、APIから返った値を`Session`オブジェクトに格納する処理を行っています。
 
-> client/lib/observe_node.js
+> client/lib/modules/observe_node.js
 
 ```javascript
 var peerCountIntervalId = null;
