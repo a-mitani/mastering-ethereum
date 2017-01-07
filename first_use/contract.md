@@ -54,6 +54,7 @@ $ which solc
 ```bash
 $ brew install cpp-ethereum
 $ brew linkapps cpp-ethereum
+$ brew install solidity
 ```
 以下のコマンドでsolcのバージョン情報が表示されれば問題なくインストールされています。
 ```bash
@@ -93,7 +94,7 @@ Solidity Compiler: /usr/bin/solc
 コンパイラの導入が完了し、最初のContractを作成する準備が整いました。Contractを作成し、それにアクセスして利用するまでの流れは次のようになります。
 1. Contractの作成
     * Solidity言語でコントラクト・コードをプログラミングする。そしてプログラムしたコントラクト・コードを、solcを使ってコードをコンパイルする。
-2. Contractのブロックチェーンへの登録 
+2. Contractのブロックチェーンへの登録
     * コンパイル結果を用いて、Contract を生成するトランザクションをEthereumネットワークに送信する。そのトランザクションを受信した採掘者は、トランザクションをブロックチェーンに登録する（＝Contractをブロックチェーンに登録する）。この時Contractのアドレスが発行される。
 2. Contractへアクセス
     * Contractを利用するユーザーは、Contract作成者からContractへのアクセス情報の取得する。その情報をもとにContractへアクセスし、コントラクト・コードの実行等を行う。
