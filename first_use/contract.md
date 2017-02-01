@@ -134,8 +134,8 @@ Solidityの言語仕様の詳細は後の「コントラクト・プログラミ
 Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^4]。
 
 ```
-> source = "contract SingleNumRegister { uint storedData; function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; }}"
-> sourceCompiled = eth.compile.solidity(source)//ソースファイルをコンパイル
+> var source = "contract SingleNumRegister { uint storedData; function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; }}"
+> var sourceCompiled = eth.compile.solidity(source)//ソースファイルをコンパイル
 ```
 これで、sourceCompiledという変数にコンパイル済みのContract情報が格納されました。
 
@@ -145,9 +145,9 @@ Gethコンソール上で以下のコマンドを実行し上記のソースコ�
 EOAからトランザクションを生成し送信することで、作成したContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
 
 ```javascript
-> contractAbiDefinition = sourceCompiled.SingleNumRegister.info.abiDefinition
-> sourceCompiledContract = eth.contract(contractAbiDefinition)
-> contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.SingleNumRegister.code})
+> var contractAbiDefinition = sourceCompiled.SingleNumRegister.info.abiDefinition
+> var sourceCompiledContract = eth.contract(contractAbiDefinition)
+> var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.SingleNumRegister.code})
 ```
 
 詳細は「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->で解説しますが、上記のコマンドの1行目でContractのオブジェクトを生成し、2行目で、そのオブジェクト情報を含んだトランザクションをEthereumネットワークに送信しています。
@@ -210,7 +210,7 @@ eth.contract(ABI_DEF).at(ADDRESS);
 ここで、`ABI_DEF`、`ADDRESS`を今回のContractのものに置きかえ、変数`cnt`に代入します。ABIは改行を取り除いたものを入れます。
 
 ```
- cnt = eth.contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
+ var cnt = eth.contract([{ constant: false, inputs: [{ name: 'x', type: 'uint256' } ], name: 'set', outputs: [ ], type: 'function' }, { constant: true, inputs: [ ], name: 'get', outputs: [{ name: 'retVal', type: 'uint256' } ], type: 'function' } ]).at('0x8ea277dfe4195daf7b8c101d79da35d1eb4c4aeb');
 ```
 このオブジェクト`cnt`を用いてContractにアクセスをします。Contractの状態を変更する場合、つまり今回のContractでset関数でContractに登録された整数値を変更する場合は、トランザクションを生成することでアクセスします。このトランザクションは採掘者によりブロックチェーンに登録されることで、トランザクションの発生と、それによるContractの状態の変化についてEthereumネットワーク内で合意形成されることになります。
 
