@@ -22,6 +22,12 @@ $ mkdir /home/test_u/eth_private_net
 
 ```javascript
 {
+  "config": {
+    "chainId": 0,
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
   "nonce": "0x0000000000000042",
   "timestamp": "0x0",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
