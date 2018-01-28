@@ -16,7 +16,7 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 ### UbuntuへのGethのインストール
 
-Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます \[^1\]。
+Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます \[^2\] 。
 
 ```
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -84,5 +84,7 @@ Windows環境へのインストールはUnix系統のOSへのインストール�
 
 ### 脚注
 
-\[^1:\] `sudo add-apt-repository` コマンドの実行時に`Command Not Found`エラーが出る場合があります。その場合は例えば[ここ](http://data-hacker.blogspot.jp/2018/01/add-apt-repository.html)などの情報を参考に適宜対応してください。
+\[^1\]: [cpp-ethereum](https://github.com/ethereum/cpp-ethereum/) など
+
+\[^2\]: `sudo add-apt-repository` コマンドの実行時に`Command Not Found`エラーが出る場合があります。その場合は例えば[ここ](http://data-hacker.blogspot.jp/2018/01/add-apt-repository.html)などの情報を参考に適宜対応してください。
 
