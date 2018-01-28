@@ -3,6 +3,7 @@
 Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参加する必要があります。ネットワークへの参加はEthereumクライアントをインストールし起動することで参加が可能になります。
 
 Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが[^1]、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装されたCUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
+
 * etherの採掘
 * etherの送金
 * スマート・コントラクトの生成
@@ -13,89 +14,37 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 本節では、Gethのインストール手順を解説します。
 
-### Ubuntu、Debian へのGethのインストール
+### UbuntuへのGethのインストール
 
-Unix系であるUbuntu、Debian、Mac OS X のOSを使用している場合、Gethのインストールは極めて容易です。
-コンソールを立ち上げ、
-```
-$ bash <(curl -L https://install-geth.ethereum.org)
-```
-のコマンドを実行するだけで、最新の安定バージョンのGethがインストールされます。
-
-このコマンドは、指定されたURL（https://install-geth.ethereum.org） からGethのインストール用bashスクリプトをダウンロードし、それを実行するものです。bashスクリプトには、実行環境（OS）の判定、依存パッケージ有無の判定とインストール、Gethのインストールまでを自動で行うスクリプトが記述されているため、ほぼ自動のインストールが可能になっています。
-
-以下に、Ubuntu（14.04 LTS）での上記コマンドの実行結果を記載します。
-
+Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます [^2] 。
 
 ```
-$ bash <(curl -L https://install-geth.ethereum.org)
-
-↓↓↓ 以下コマンドの実行結果↓↓↓
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 10797  100 10797    0     0   9073      0  0:00:01  0:00:01 --:--:--  9073
-
- ∷  WELCOME TO THE FRONTIER  ∷
-==> Looking for geth
-    Geth is missing 
-==> Checking dependencies
-    apt-get
-apt 1.0.1ubuntu2 for amd64 compiled on Aug  1 2015 19:20:48
-Supported modules:
-*Ver: Standard .deb
-（中略）
-==> This script will install:
-==> Ethereum:\n -> /usr/bin/geth\n
-
-==> Before installing Geth (ethereum CLI) read this:
-
- -> Frontier is a live testnet, it is not the 'main release' of Ethereum, but rather an initial beta pr                                                         erelease;
- -> You'd be mad to use this for anything approaching important or valuable. Expect dragons;
- -> If you're in any doubt, stand back and enjoy the show. It's so unstable, even Chuck Norris would ru                                                         n away and hide from it;
- -> We fully expect instability and consensus flaws in the client, some of which may be exploitable;
-
-==> I understand, I want to install Geth (ethereum CLI) (Y/n) 
-
+$ sudo add-apt-repository -y ppa:ethereum/ethereum
+$ sudo apt-get update
+$ sudo apt-get install ethereum
 ```
 
-Ethereumはまだテスト段階であり、非常に不安定である旨の警告が表示され、それを理解したうえでインストールを望むか、と質問されるので、
-「Y」とコンソールに入力すると、以下のように、実行環境に合わせたインストールが開始されます。
-また、sudoコマンドの実行のためにパスワードが求められる場合があるので、その場合はパスワードを入力します。
+また、sudoコマンドの実行のためにパスワードが求められる場合があるので、その場合は適宜パスワードを入力します。
+
+コマンド実行が完了した後、実際にgethがインストールされたかを確認するために、
 
 ```
-==> Installing ethereum
-==> Installing common software properties
-$ sudo apt-get install -q -y software-properties-common
-Reading package lists...
-Building dependency tree...
-Reading state information...
-
-（中略）
-
-==> Verifying installation
- Found geth: /usr/bin/geth
-Geth
-Version: 1.0.1
-Protocol Versions: [61 60]
-Network Id: 1
-Go Version: go1.4.2
-OS: linux
-GOPATH=
-GOROOT=/usr/lib/go
-
-==> Installation successful!
-==> Next steps
-==> Run `geth help` to get started.
+$ geth --help
 ```
 
-「Install successful!」のように、インストールが成功した旨が表示されれば、インストール完了です。
-
-実際にgethがインストールされたかを確認するために、
-```
-$ geth help
-```
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
+#### Gethのアップデート
+
+Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。  
+Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
+
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+### 
 
 ### Mac OS へのGethのインストール
 
@@ -106,8 +55,8 @@ Homebrewを用いたインストールとソースからインストールする
 Homebrewをインストールがされてあれば、次のコマンドだけでインストールできます。
 
 ```
-brew tap ethereum/ethereum
-brew install ethereum
+$ brew tap ethereum/ethereum
+$ brew install ethereum
 ```
 
 #### ソースからGethをビルドする
@@ -115,28 +64,27 @@ brew install ethereum
 go-ethereumのレポジトリをクローン
 
 ```
-git clone https://github.com/ethereum/go-ethereum
+$ git clone https://github.com/ethereum/go-ethereum
 ```
 
-そして、次のコマンドを実行することでGethをビルドできます。(ビルドにはGoが必要になります)
+そして、次のコマンドを実行することでGethをビルドできます。\(ビルドにはGoが必要になります\)
 
 ```
-cd go-ethereum
-make geth
+$ cd go-ethereum
+$ make geth
 ```
+
+### 
 
 ### Windows へのGethのインストール
+
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
-
-### Gethのアップデート
-Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。
-Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
-```
-$ sudo apt-get update
-$ sudo apt-get upgrade
-```
+### 
 
 ### 脚注
-[^1]: C++で実装された[cpp-ethereum](https://github.com/ethereum/cpp-ethereum)、Pythonで実装された[pyethereum](https://github.com/ethereum/pyethereum)、Javaで実装された[ethereumj](http://ethereumj.io/)などが存在します。
+
+[^1]: [cpp-ethereum](https://github.com/ethereum/cpp-ethereum/) など
+
+[^2]: `sudo add-apt-repository` コマンドの実行時に`Command Not Found`エラーが出る場合があります。その場合は例えば[ここ](http://data-hacker.blogspot.jp/2018/01/add-apt-repository.html)などの情報を参考に適宜対応してください。
 
