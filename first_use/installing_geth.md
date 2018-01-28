@@ -5,7 +5,7 @@ Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参�
 Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが[^1]、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装されたCUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
 
 * etherの採掘
-* etherの送金a
+* etherの送金
 * スマート・コントラクトの生成
 * トランザクションの生成
 * ブロックチェーンの確認
@@ -16,7 +16,7 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 ### UbuntuへのGethのインストール
 
-Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます\(\*1\)。
+Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます\[^1\]。
 
 ```
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -78,5 +78,5 @@ $ sudo apt-get upgrade
 
 ### 脚注
 
-
+\[^1\] `sudo add-apt-repository` コマンドの実行時に`Command Not Found`エラーが出る場合があります。その場合は例えば[ここ](http://data-hacker.blogspot.jp/2018/01/add-apt-repository.html)などの情報を参考に適宜対応してください。
 
