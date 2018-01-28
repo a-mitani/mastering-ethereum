@@ -55,8 +55,8 @@ Homebrewを用いたインストールとソースからインストールする
 Homebrewをインストールがされてあれば、次のコマンドだけでインストールできます。
 
 ```
-brew tap ethereum/ethereum
-brew install ethereum
+$ brew tap ethereum/ethereum
+$ brew install ethereum
 ```
 
 #### ソースからGethをビルドする
@@ -64,14 +64,14 @@ brew install ethereum
 go-ethereumのレポジトリをクローン
 
 ```
-git clone https://github.com/ethereum/go-ethereum
+$ git clone https://github.com/ethereum/go-ethereum
 ```
 
 そして、次のコマンドを実行することでGethをビルドできます。\(ビルドにはGoが必要になります\)
 
 ```
-cd go-ethereum
-make geth
+$ cd go-ethereum
+$ make geth
 ```
 
 ### 
