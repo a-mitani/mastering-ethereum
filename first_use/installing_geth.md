@@ -16,7 +16,7 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 ### UbuntuへのGethのインストール
 
-Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます\[^1\]。
+Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます \[^1\]。
 
 ```
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -33,6 +33,18 @@ $ geth --help
 ```
 
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
+
+#### Gethのアップデート
+
+Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。  
+Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
+
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+### 
 
 ### Mac OS へのGethのインストール
 
@@ -62,19 +74,13 @@ cd go-ethereum
 make geth
 ```
 
+### 
+
 ### Windows へのGethのインストール
 
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
-### Gethのアップデート
-
-Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。  
-Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
-
-```
-$ sudo apt-get update
-$ sudo apt-get upgrade
-```
+### 
 
 ### 脚注
 
