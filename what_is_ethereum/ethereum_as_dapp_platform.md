@@ -28,9 +28,9 @@ Ethereumでは、「ether」という独自の内部通貨が規定されてい�
 
 内部通貨etherの単位は通貨名と同じでether（またはETH）ですが、米国の通貨で 1 doller = 100 cent と規定されているように、etherも利便性のために、より少額のetherに対して下記のように単位名が決められています。
 
-* 1 ether $$=$$ 10[^3] finney
-* 1 ether $$=$$ 10[^6] szabo
-* 1 ether $$=$$ 10[^18] wei
+* 1 ether = 1,000 finney
+* 1 ether = 1,000,000 szabo
+* 1 ether = 1,000,000,000,000,000,000 wei
 
 
 #### アカウント
