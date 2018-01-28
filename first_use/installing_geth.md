@@ -13,7 +13,7 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 本節では、Gethのインストール手順を解説します。
 
-### Ubuntu、Debian、Mac OS X へのGethのインストール
+### Ubuntu、Debian へのGethのインストール
 
 Unix系であるUbuntu、Debian、Mac OS X のOSを使用している場合、Gethのインストールは極めて容易です。
 コンソールを立ち上げ、
@@ -95,6 +95,35 @@ GOROOT=/usr/lib/go
 $ geth help
 ```
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
+
+
+### Mac OS へのGethのインストール
+
+Homebrewを用いたインストールとソースからインストールする方法があります。
+
+#### Homebrew を用いたGethのインストール
+
+Homebrewをインストールがされてあれば、次のコマンドだけでインストールできます。
+
+```
+brew tap ethereum/ethereum
+brew install ethereum
+```
+
+#### ソースからGethをビルドする
+
+go-ethereumのレポジトリをクローン
+
+```
+git clone https://github.com/ethereum/go-ethereum
+```
+
+そして、次のコマンドを実行することでGethをビルドできます。(ビルドにはGoが必要になります)
+
+```
+cd go-ethereum
+make geth
+```
 
 ### Windows へのGethのインストール
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
