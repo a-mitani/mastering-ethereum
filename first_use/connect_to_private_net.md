@@ -67,7 +67,7 @@ WARN [02-04|09:03:55] No etherbase set and no accounts found as default
 $ geth --networkid "15" --nodiscover --datadir "/home/test_u/eth_private_net" console 2>> /home/test_u/eth_private_net/geth_err.log
 ```
 
-ここで各オプションの意味は以下の通りです。`--datadir`オプションでは、genesisブロックの初期化で指定したディレクトリと同一のものを指定してください。また、その他のオプションの意味は以下のとおりです。
+ここで各オプションの意味は以下の通りです。
 
 * `--datadir` :本オプションはgethの動作時のブロックチェーンデータや各種ログの出力先を指定します。genesisブロックの初期化で指定したディレクトリと同一のものを指定してください。
 * `--networkid "15"` ：本オプションで任意の正の整数のIDを指定することで、ライブ・ネットとは異なるネットワークを立ち上げることが可能です（ここでは15を指定）。genesisブロックの初期化で指定した`chainid`と同一の値を指定する必要があります。
