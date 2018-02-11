@@ -183,4 +183,7 @@ true
 
 [^3]: 環境によって採掘の速度は異なります。最初の採掘開始後は、最初の10分～30分の間、DAGの生成（「Ethereumの内部」の章を参照<!--[REF]-->）が行われ、その間はブロックは採掘されません。DAGの生成が完了次第、ブロックの採掘が自動的に開始されます。
 
-[^4]: 1 ether $$=$$ 10^18 wei 
+[^4]: 1 ether = 1,000,000,000,000,000,000 wei 
+
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
