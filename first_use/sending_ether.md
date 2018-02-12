@@ -41,7 +41,7 @@ Account is now unlocked for this session.
 ### トランザクション手数料
 同じように今度は逆に、'0x59c44...'のアカウントから、'0x24afe...'に 3 ether 送金してみましょう。
 ```
-> eth.getBalance(eth.accounts[1]),"ether" //保有額を確認。最初に送金された 5 ether を保有している。
+> eth.getBalance(eth.accounts[1]) //保有額を確認。最初に送金された 5 ether を保有している。
 '5000000000000000000'
 > 
 > eth.sendTransaction({from: eth.accounts[1], to: eth.accounts[0], value: web3.toWei(3, "ether")}) // 3 ether を'0x24afe...'に送金。
