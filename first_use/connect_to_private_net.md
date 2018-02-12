@@ -16,10 +16,10 @@ Ethereumでは以下の３つの形態のP2Pネットワークを構築しブロ
 
 Genesisファイルとは、ネットワークでやり取りされるブロックチェーンの最初（Block番号 "0"）のブロックであるGenesisブロックの情報を記述したファイルです。プライベート・ネットでは独自のブロックチェーンをやり取りしていくため、独自のGenesisブロックを定義したGenesisファイルを用意して利用します[^2]。
 
-まず任意の場所にプライベート・ネットのブロック情報やノード情報など各種データを格納するディレクトリ（データ・ディレクトリ）を作成します。ここでは、ログイン・ユーザー（今回の例ではtest\_u）のhomeディレクトリ直下に作成します[^3]。
+まず任意の場所にプライベート・ネットのブロック情報やノード情報など各種データを格納するディレクトリ（データ・ディレクトリ）を作成します。ここでは、ログイン・ユーザー（今回の例ではubuntu）のhomeディレクトリ直下に作成します[^3]。
 
 ```plain
-$ mkdir /home/test_u/eth_private_net
+$ mkdir /home/ubuntu/eth_private_net
 ```
 
 次に上記ディレクトリ内にjson形式の下記の内容[^4] を記述した`myGenesis.json`ファイルを配置します。
@@ -48,7 +48,7 @@ $ mkdir /home/test_u/eth_private_net
 データ・ディレクトリとgenesisファイルを作成したら、以下のコマンドを実行しブロックチェーン情報をgenesisファイルの内容で初期化します。
 
 ```plain
-$ geth --datadir /home/test_u/eth_private_net init /home/test_u/eth_private_net/myGenesis.json
+$ geth --datadir /home/ubuntu/eth_private_net init /home/ubuntu/eth_private_net/myGenesis.json
 ```
 
 本コマンドを実行すると、`--datadir`で指定したディレクトリ以下にディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存されます。ここで実行時に
@@ -64,7 +64,7 @@ WARN [02-04|09:03:55] No etherbase set and no accounts found as default
 次に以下のコマンドを実行することでGethを起動します。
 
 ```plain
-$ geth --networkid "15" --nodiscover --datadir "/home/test_u/eth_private_net" console 2>> /home/test_u/eth_private_net/geth_err.log
+$ geth --networkid "15" --nodiscover --datadir "/home/ubuntu/eth_private_net" console 2>> /home/ubuntu/eth_private_net/geth_err.log
 ```
 
 ここで各オプションの意味は以下の通りです。
@@ -113,11 +113,11 @@ instance: Geth/v1.4.10-stable/linux/go1.5.1
 ```
 $ # gethプロセスをconsoleサブ・コマンドを付加せず、かつ最後に"&"を付加することで、バックグラウンドで起動します。
 $ # この場合、起動時にはコンソールは立ち上がりません。
-$ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --genesis "/home/test_u/eth_private_net/myGenesis.json" 2>> /home/test_u/eth_private_net/geth_err.log &
+$ geth --networkid "15" --nodiscover --datadir "/home/ubuntu/eth_private_net" --genesis "/home/ubuntu/eth_private_net/myGenesis.json" 2>> /home/ubuntu/eth_private_net/geth_err.log &
 $
 $ # attachサブ・コマンドを用いて先に立ち上げたプロセスのコンソールを立ち上げます。
 $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下のgeth.ipcファイル（実際はソケット）のパスを指定します。
-$ geth --datadir "/home/test_u/eth_private_net" attach ipc:/home/test_u/eth_data/geth.ipc
+$ geth --datadir "/home/ubuntu/eth_private_net" attach ipc:/home/ubuntu/eth_data/geth.ipc
 
 instance: Geth/v1.3.5/linux/go1.5.1
 （実行結果 中略）
