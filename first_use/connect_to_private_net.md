@@ -79,9 +79,9 @@ $ geth --networkid "15" --nodiscover --datadir "/home/ubuntu/eth_private_net" co
 ```
 Welcome to the Geth JavaScript console!
 
-instance: Geth/v1.4.10-stable/linux/go1.5.1
+instance: Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
  modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
-```
+ ```
 
 実際に今回立ち上げたプライベート・ネットのGenesisブロックが`myGenesis.json`に記載されたものになっているのかを確認してみます。Gethプロンプト上で
 
