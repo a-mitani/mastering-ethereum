@@ -86,13 +86,13 @@ instance: Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
 実際に今回立ち上げたプライベート・ネットのGenesisブロックが`myGenesis.json`に記載されたものになっているのかを確認してみます。Gethプロンプト上で
 
 ```
-> web3.eth.getBlock(0)
+> eth.getBlock(0)
 ```
 
 のコマンドを実行してみます。このコマンドは指定したブロック番号のブロック情報を表示するもので、今回はブロック番号"0"を指定してGenesisブロックの情報を表示します。下の結果のように例えば`difficulty`が`myGenesis.json`に指定したものになっているはずです。（ただし16進表記から10進表記に変換されています。）
 
 ```
-> web3.eth.getBlock(0)
+> eth.getBlock(0)
 {
   difficulty: 16384,
   extraData: "0x00",
