@@ -86,13 +86,13 @@ instance: Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
 実際に今回立ち上げたプライベート・ネットのGenesisブロックが`myGenesis.json`に記載されたものになっているのかを確認してみます。Gethプロンプト上で
 
 ```
-> eth.getBlock(0)
+> web3.eth.getBlock(0)
 ```
 
 のコマンドを実行してみます。このコマンドは指定したブロック番号のブロック情報を表示するもので、今回はブロック番号"0"を指定してGenesisブロックの情報を表示します。下の結果のように例えば`difficulty`が`myGenesis.json`に指定したものになっているはずです。（ただし16進表記から10進表記に変換されています。）
 
 ```
-> eth.getBlock(0)
+> web3.eth.getBlock(0)
 {
   difficulty: 16384,
   extraData: "0x00",
@@ -124,6 +124,12 @@ instance: Geth/v1.3.5/linux/go1.5.1
 modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1.0 txpool:1.0 web3:1.0
 >
 ```
+
+###### ■■ TIP ■■
+
+以降の説では`geth`の様々な内部コマンドを利用してEthereumの動作を見ていきますが、内部コマンドの一覧と用途についてはEthreumのJavascript APIであるweb3APIである[web3.jsのリファレンスサイト](http://web3js.readthedocs.io/en/1.0/)が参考になります。
+
+
 
 ### 脚注
 
