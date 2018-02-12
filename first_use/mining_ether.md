@@ -58,7 +58,7 @@ etherbaseはデフォルトではプライマリーのアカウント（`eth.acc
 etherの採掘は`miner.start(thread_num)`コマンドで開始します。ここでthread_num は採掘を何本のスレッドで同時実行するかを指定するパラメータです[^2]。指定しない場合は動作環境でのCPUコア数に設定されます。ここではthread_numは指定せず、以下のコマンドで採掘を開始します。
 ```
 > miner.start()
-true
+null
 
 ```
 また、採掘を停止したい場合は `miner.stop()`コマンドを実行すれば停止できます。
@@ -83,7 +83,7 @@ true
 
 ```
 > miner.start()
-true
+null
 > eth.hashrate  //採掘処理実行時
 445445
 > miner.stop()
