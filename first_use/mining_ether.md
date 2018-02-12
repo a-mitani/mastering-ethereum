@@ -48,7 +48,7 @@ EOAの作成は`personal.newAccount("passwd")`コマンドで行います。こ�
 ```
 etherbaseはデフォルトではプライマリーのアカウント（`eth.accounts[0]`コマンドを実行して表示されるアドレスのEOA）が設定されますが、下記のように`miner.setEtherbase(new_adress)`コマンドで変更することも可能です。
 ```
-> miner.setEtherbase(web3.eth.accounts[1])
+> miner.setEtherbase(eth.accounts[1])
 > eth.coinbase
 '0x59c444d6c4f4187d1dd1875ad74a558a2a3e20b6'
 ```
