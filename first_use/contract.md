@@ -118,7 +118,7 @@ contract SingleNumRegister {
         storedData = x;
     }
     function get() constant returns (uint retVal) {
-    return storedData;
+        return storedData;
     }
 }
 ```
