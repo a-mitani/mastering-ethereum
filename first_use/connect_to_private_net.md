@@ -141,5 +141,5 @@ modules: admin:1.0 db:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 shh:1
 
 [^4]: 特にgenesisファイルの内容については詳しくはここでは述べませんが、興味があるかたはgethのソースを参考にしてみてください［[ココ](https://github.com/ethereum/go-ethereum/blob/4bb3c89d44e372e6a9ab85a8be0c9345265c763a/params/config.go#L103)と[ココ](https://github.com/ethereum/go-ethereum/blob/4bb3c89d44e372e6a9ab85a8be0c9345265c763a/core/genesis.go)］。
 
-<br />
+---
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
