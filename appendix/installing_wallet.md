@@ -1,6 +1,4 @@
-## Ethereum ウォレットのインストールと使い方
-
-
+## Ethereum ウォレットのインストールと使い方（Metamask）
 
 
 
