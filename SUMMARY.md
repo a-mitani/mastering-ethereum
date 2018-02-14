@@ -26,7 +26,7 @@
 * [Ethereumの内部](inside_ethereum/README.md)
 * [さらに詳しく知るために](further_reading/README.md)
 * [Appendix](/appendix/README.md)
-  * 
+  * [Ethereum ウォレットのインストールと使い方（Metamask）](/appendix/using_wallet.md)
 * [（旧URL）](content/README.md)
 
 
