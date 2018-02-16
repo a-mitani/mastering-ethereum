@@ -12,3 +12,8 @@ Ethereum（イーサリアム）を利用する最も簡易な方法はウォレ
 
 [公式サイト](https://metamask.io/)の「Get Chrome Extension」のリンクからChromeウェブストアに移動します。（追記）
 
+
+
+
+---
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
