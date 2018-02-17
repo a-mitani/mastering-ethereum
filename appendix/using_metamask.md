@@ -52,7 +52,7 @@ MetaMaskはデフォルトでは本番のネットワーク（Main Network）に
 
 
 <div style="text-align:center">
-<img src="/assets/rostpen_test_faucet.png" width="300">
+<img src="/assets/rostpen_test_faucet.png" width="700">
 </div>
 
 
