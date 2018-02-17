@@ -46,7 +46,7 @@ MetaMaskはデフォルトでは本番のネットワーク（Main Network）に
 </div>
 
 #### テスト用のEtherを受け取る
-　　他者からEtherを受け取る場合、自分で何かすることは特にありません。送金元に自分のアドレスを教え、送金してもらうことで、Etherを受け取ることができます。今回は、Rostpen Test Network上でテスト用のEtherを発行してくれる「Rostpen Test Faucet」というサービスがあるので、それを利用することにします。
+　　今回は、Rostpen Test Network上でテスト用のEtherを無料で発行してくれる「Rostpen Test Faucet」というサービスがあるので、それを利用することにします。
 
 　　MetaMask上の「Buy」ボタンを押下すると「Rostpen Test Faucet」へのリンクが表示されるので、リンクを押下し「Rostpen Test Faucet」サイトへ移動します。そこで「Request 1 Ether」のボタンを押下すると「Test Faucet」のアドレスから、自分のアドレスに送金されます（下図）。
 
@@ -93,6 +93,8 @@ Amountは送金額で今回は0.5ethとなっています。また、「Max Tran
 </div>
 
 送金の手数料や送金時の動作は[「Ethereumとは」節](/what_is_ethereum/ethereum_as_dapp_platform.md)に詳しく記しているためそちらを参照ください。
+
+### 脚注
 
 
 ---
