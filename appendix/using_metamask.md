@@ -42,7 +42,7 @@ URL横の狐マークを押下すると最初にいくつかのプライバシ�
 MetaMaskはデフォルトでは本番のネットワーク（Main Network）に接続されるため、まず、テスト用のネットワークに切り替えます。切り替えは、画面左上の「Main Network」と表示されている部分のプルダウンからテストネットワークを選択します。ここでは「Ropsten Test Network」を選択します（下図）。
 
 <div style="text-align:center">
-<img src="/assets/metamask_rostpen.png" width="700">
+<img src="/assets/metamask_rostpen.png" width="300">
 </div>
 
 #### テスト用のEtherを受け取る
