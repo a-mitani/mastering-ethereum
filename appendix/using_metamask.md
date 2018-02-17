@@ -10,9 +10,7 @@ Ethereum（イーサリアム）を利用する最も簡易な方法はウォレ
   本節ではMetaMaskのイントールからEtherを送金する方法について記載します。
 
 ### MetaMaskのインストール
-　　MetaMaskはChromeブラウザの拡張機能として動作するウォレットです。そのため
-Chromeブラウザで、[公式サイト](https://metamask.io/)の「Get Chrome Extension」のリンクから下図のようなChromeウェブストアに移動します。
-　　次にウェブストアの右上にある「Chromeに追加」ボタンを押下すると、MetaMaskがchromeにインストールされ、URLバーの右に狐のマークが表示されます。これでインストールは完了です。
+　　MetaMaskはChromeブラウザの拡張機能として動作するウォレットです。そのためChromeブラウザで、[公式サイト](https://metamask.io/)の「Get Chrome Extension」のリンクから下図のようなChromeウェブストアに移動します。次にウェブストアの右上にある「Chromeに追加」ボタンを押下すると、MetaMaskがchromeにインストールされ、URLバーの右に狐のマークが表示されます。これでインストールは完了です。
 
 **【注意】**Chromeウェブストアには偽のMetaMaskのアプリ（フィッシングアプリ）も公開されている場合があるため、そのようなフィッシングのアプリでないことに十分気をつけてください。完全ではなく保証するものではないですがフィッシングに引っかからないためにここで書いたように公式サイト「 https://metamask.io/ 」のURLのリンクをたどってChromeウェブストア画面に移動すること。またそのサイトのURLが下図のように
 「nkbihfbeogaeaoehlefnkodbefgpgknn」
