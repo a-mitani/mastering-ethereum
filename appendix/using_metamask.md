@@ -21,8 +21,9 @@ Ethereum（イーサリアム）を利用する最も簡易な方法はウォレ
 
 ### アカウントの作成
 URL横の狐マークを押下すると最初にいくつかのプライバシー関連の確認事項が表示され、それを承諾するとパスワードを入力する画面が表示されます。任意の8文字以上のパスワードを入力すると、下図のように「VAULT CREATED」と表示され、12個の英単語が表示されます。これがMetaMaskのウォレットの復元のパスワードになるため、絶対に他人から見れないように大切に保管してください（図の単語はダミーです）。
-
-<img src="/assets/metamask_vault_created.png" width="100">
+<div style="text-align:center">
+<img src="/assets/metamask_vault_created.png" width="300">
+</div>
 
 ここで「I'VE COPIED...」のボタンを押下すると、ウォレットの作製が完了です。下図のような画面が表示されるはずです。
 
