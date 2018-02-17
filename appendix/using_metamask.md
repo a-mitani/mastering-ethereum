@@ -92,7 +92,7 @@ Amountは送金額で今回は0.5ethとなっています。また、「Max Tran
 <img src="/assets/metamask_after_send_1.png" width="300">
 </div>
 
-送金の手数料や送金時の動作はXXX章に詳しく記しているためそちらを参照ください。
+送金の手数料や送金時の動作は[「Ethereumとは」節](/what_is_ethereum/ethereum_as_dapp_platform.md)に詳しく記しているためそちらを参照ください。
 
 
 ---
