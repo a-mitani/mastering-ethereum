@@ -42,7 +42,7 @@ URL横の狐マークを押下すると最初にいくつかのプライバシ�
 MetaMaskはデフォルトでは本番のネットワーク（Main Network）に接続されるため、まず、テスト用のネットワークに切り替えます。切り替えは、画面左上の「Main Network」と表示されている部分のプルダウンからテストネットワークを選択します。ここでは「Ropsten Test Network」を選択します（下図）。
 
 <div style="text-align:center">
-<img src="/assets/metamask_rostpen.png" width="300">
+<img src="/assets/metamask_rostpen.png" width="700">
 </div>
 
 #### テスト用のEtherを受け取る
@@ -63,10 +63,11 @@ MetaMaskはデフォルトでは本番のネットワーク（Main Network）に
 </div>
 
 #### Etherを送金する
-　　Faucetから受け取ったEtherを、別のアドレスに送金する動きを試すために、送信先のアドレスを作製しておきます。MetaMaskのウォレットは複数のアドレスを作成し保持することができます。
-　　作製は非常に簡単で画面右上の人のマークを押下しプルダウンから「Create Account」を選択すると「Account 2」が作製されます。アカウントは再び画面右上の人のマークを押下しプルダウンからアカウントを洗濯することでアカウントの切り替えが可能です。
-　ここではMetaMask上で作製したAccount 1 から　Account 2へ0.5Ether送金してみます。
-　　送金を行うためには送金元のアカウント（ここではAccount 1）の画面で「send」ボタンを押下します。すると送金に必要な情報を入力する画面に切り替わるので（下図）、「Recipient　Address」には送金先（ここでは　Account 2）のアドレスを入力し、「Amount」には0.5を入力します。
+　　Faucetから受け取ったEtherを、別のアドレスに送金してみましょう。そのためにまず送信先のアドレスを作製しておきます。
+
+　　MetaMaskのウォレットは複数のアドレスを作成し保持することができます。作製は非常に簡単で画面右上の人のマークを押下しプルダウンから「Create Account」を選択すると「Account 2」が作製されます。アカウントは再び画面右上の人のマークを押下しプルダウンからアカウントを洗濯することでアカウントの切り替えが可能です。
+
+　ここではMetaMask上で作製したAccount1 から　Account2へ0.5Ether送金してみます。送金を行うためには送金元のアカウント（ここではAccount 1）の画面で「send」ボタンを押下します。すると送金に必要な情報を入力する画面に切り替わるので（下図）、「Recipient　Address」には送金先（ここでは　Account 2）のアドレスを入力し、「Amount」には0.5を入力します。
 
 <div style="text-align:center">
 <img src="/assets/metamask_send.png" width="300">
@@ -82,7 +83,7 @@ Amountは送金額で今回は0.5ethとなっています。また、「Max Tran
 </div>
 
 問題なければ「SUBMIT」ボタンを押下し送金を確定させます。
-するとしばらくすると、ウォレット上のAccount2に0.5eth入金されます（下図）。また、Account1の残高は送金額に加え手数料も差し引かれ残高がXXXとなります。
+するとしばらくすると、ウォレット上のAccount2に0.5eth入金されます（下図）。また、Account1の残高は送金額に加え手数料も差し引かれ残高が0.499979ethとなります。
 
 <div style="text-align:center">
 <img src="/assets/metamask_after_send_2.png" width="300">
