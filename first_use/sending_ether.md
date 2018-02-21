@@ -88,3 +88,7 @@ Account is now unlocked for this session.
 ### 脚注
 [^1]: テスト・ネット上での採掘のため、Ethereumの本番ネットワークであるライブ・ネット上では利用できませんのでご注意ください。
 [^2]: デフォルトではロック解除のコマンドから300秒経過すると再び自動でアカウントはロックされます。そのため300秒経過後に送金等を行う場合には再度アカウントの解除する必要があります。
+
+<br/>
+---
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
