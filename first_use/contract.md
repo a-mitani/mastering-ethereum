@@ -23,15 +23,8 @@ Ethereumは、分散アプリケーション・プラットフォームです。
 
 ここでは、ContractをこのSolidityを使って開発していくものとして、まずは、Solidityのコンパイラである「solc」を準備しましょう。
 
-### Solidityコンパイラ（solc）の導入
-まずは、Gethにsolcが導入されているかを確認するために、Gethのコンソール上で、Gethにリンクされているコンパイラのリストを表示する`eth.getCompilers()`コマンドを実行してみましょう。
-solc等のコンパイラがリンクされていない場合は、以下のような結果になります。（Solcがリンクされていると結果に`['Solidity' ]`と表示されます。）
-```javascript
-> eth.getCompilers()
-['' ]
-```
-#### solcのインストール
-Gethにsolcが導入されていないことが分かれば、まずはシステムへsolcのインストールを行います。solcのインストールは、Gethのコンソールから抜けてそれぞれのプラットフォーム（OS）のコンソール上で行います。
+### Solidityコンパイラ（solc）のインストール
+まず、システムへsolcのインストールを行います。solcのインストールは、Gethのコンソールから抜けてそれぞれのプラットフォーム（OS）のコンソール上で行います。
 
 ##### Ubuntuへのインストール
 以下のコマンドを実行してください。
@@ -52,9 +45,11 @@ $ which solc
 ##### Mac OS Xへのインストール
 以下のコマンドを実行し、cpp-ethereumをインストールしてください[^1] 。Mac OS Xへのインストールには、[Homebrew](http://brew.sh/) が事前にインストールされている必要があります。
 ```bash
-$ brew install cpp-ethereum
-$ brew linkapps cpp-ethereum
-$ brew install solidity
+brew update
+brew upgrade
+brew tap ethereum/ethereum
+brew install solidity
+brew linkapps solidity
 ```
 以下のコマンドでsolcのバージョン情報が表示されれば問題なくインストールされています。
 ```bash
@@ -68,7 +63,7 @@ $ which solc
 [このページ](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)の手順を参考にcpp-ethereumをインストールしてください。
 <!-- [TODO]もうすこし詳しく記述 -->
 
-#### Gethへsolcをリンクする
+#### Gethへsolcをリンクする（
 solcのシステムのインストールが完了したら、次にGethとsolcのリンクを行います。これにより、Gethから直接solcによるコンパイルを行うことが可能になります。
 
 Gethのコンソールを開き[^2]、以下のコマンドを実行します。ここでパラメーターの「path_to_your_solc」の部分は各人のsolcインストール時の`which`コマンドの実行結果に書き換えてください。
