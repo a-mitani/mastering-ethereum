@@ -36,10 +36,6 @@ $ sudo apt-get install solc
 ```bash
 $ solc --version
 ```
-また、以下のコマンドを実行し、その結果に表示されるsolcへのパスをメモしておいてください。Gethとsolcをリンクさせるために後ほど利用します。
-```bash
-$ which solc
-```
 ##### Mac OS Xへのインストール
 以下のコマンドを実行し、cpp-ethereumをインストールしてください[^1] 。Mac OS Xへのインストールには、[Homebrew](http://brew.sh/) が事前にインストールされている必要があります。
 ```bash
