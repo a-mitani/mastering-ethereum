@@ -86,47 +86,55 @@ $ which solc
 -->
 最も簡単なスマートコントラクトとして、複数のユーザーで１つの整数値を登録・更新するスマートコントラクトを作成してみましょう。例えば、ある利用者が「3」を登録すると他の利用者が登録情報を参照した時には「3」が表示され、また別の利用者がその整数値を「10」と更新すれば、他の利用者が登録情報を参照した時には新しい登録内容の「10」が表示されるものです[^3]。
 
-非常にシンプルな機能ですが、このようなものも以前までは何らかの登録情報を管理する中央機関やシステムが必要でした。従来ではデータの整合性を保つために中央管理が必要だったアプリケーションをEthreumはP2Pのシステムで行う事を可能にするのです。
+非常にシンプルな機能ですが、この登録内容とその更新の整合性を担保するために、通常は何らかの管理のための中央機関やシステムが必要です。しかしEthreumはブロックチェーンの特性を利用することで中央機関の存在しないP2Pのシステムでこの整合性を保つことが可能になるのです。
 
-#####Contractのコード
+#####コントラクト・コード
 さて、上記のようなContract（SingleNumRegisterと名付けます）は、Solidity言語を使って記述すると以下のコードになります。
 ```javascript
+pragma solidity ^0.4.0;
 contract SingleNumRegister {
     uint storedData;
-    function set(uint x) {
+    function set(uint x) public{
         storedData = x;
     }
-    function get() constant returns (uint retVal) {
+    function get() public constant returns (uint retVal){
         return storedData;
     }
 }
 ```
 Solidityの言語仕様の詳細は後の「コントラクト・プログラミング言語：Solidity」の章<!--[REF]-->で解説します。そのため、今ここで、このコードの意味を全て把握する必要はありません。しかしコードを眺めると大きく以下の特徴があることが見て取れると思います。
 
-* Contractの名前はcontractの宣言で規定されること。
-* storedDataというuint型の変数が定義されており、この変数に登録数値が格納されること。
-* setとgetの２つの関数が定義されていること。
+* スマートコントラクトの名前は`contract`の宣言で規定されること。
+* `storedData`という`uint`型の変数が定義されており、この変数に登録数値が格納されること。
+* `set`と`get`の２つの関数が定義されていること。
     * setという名前の関数は、引き渡されたパラメータの内容で、storedData変数が更新すること。
     * getという名前の関数は、登録されているstoredData変数の内容を返却すること。
 
-#####solcによるコンパイル
-Gethコンソール上で以下のコマンドを実行し上記のソースコードをsolcでコンパイルします。source変数に入れる文字列は上記のソースコードから改行を抜いた文字列を代入します[^4]。
+このコードを記載したファイルを適当なディレクトリ上で「SingleNumRegister.sol」の名前で保存します。
+
+####コントラクト・コードのコンパイル
+上記のソースコードを先にインストールしたsolcコマンドを用いて下記のようにコンパイルします。実行結果としてプロンプト上に`Binary`と`Contract JSON ABI`が表示されます [^4] 。
 
 ```
-> var source = "contract SingleNumRegister { uint storedData; function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; }}"
-> var sourceCompiled = eth.compile.solidity(source)//ソースファイルをコンパイル
+$ solc --abi --bin SingleNumRegister.sol　//ソースコードをコンパイル
+
+======= SingleNumRegister.sol:SingleNumRegister =======
+Binary:
+6060604052341561000f57600080fd5b60d38061001d6000396000f3006060604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c14606e575b600080fd5b3415605857600080fd5b606c60048080359060200190919050506094565b005b3415607857600080fd5b607e609e565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a72305820bdd0549ef41e9c70cc944a6c19e54da47ecda63a1c5edfc7024125b5c49b4acb0029
+Contract JSON ABI
+[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"retVal","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
+
+
 ```
-これで、sourceCompiledという変数にコンパイル済みのContract情報が格納されました。
 
 #### Contractのブロックチェーンへの登録
 コントラクト・コードのコンパイルは完了しましたが、コンパイルしたコードはContract作成者のノード上にあるだけで、まだEthereumネットワーク内の誰もこのContractにアクセスできません。このコンパイル済みコードをEthereumネットワークに送信し、採掘者によってブロックチェーンに登録してもらって初めて他のユーザーがこのContractにアクセス出来るようになります。
 
-EOAからトランザクションを生成し送信することで、作成したContractをEthereumネットワークに送信できます。先ほどのコンパイルのコマンドに続いて、以下のコマンドを実行します。
+EOAからトランザクションを生成し送信することで、作成したContractをEthereumネットワークに送信できます。gethを起動し、geth上のプロンプトでまず、先ほどのコンパイル結果を適当な変数に格納します。
 
 ```javascript
-> var contractAbiDefinition = sourceCompiled.SingleNumRegister.info.abiDefinition
-> var sourceCompiledContract = eth.contract(contractAbiDefinition)
-> var contract = sourceCompiledContract.new({from:eth.accounts[0], data: sourceCompiled.SingleNumRegister.code})
+> var bin = "0x6060604052341561000f57600080fd5b60d38061001d6000396000f3006060604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c14606e575b600080fd5b3415605857600080fd5b606c60048080359060200190919050506094565b005b3415607857600080fd5b607e609e565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a72305820bdd0549ef41e9c70cc944a6c19e54da47ecda63a1c5edfc7024125b5c49b4acb0029"
+> var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"retVal","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
 ```
 
 詳細は「コントラクト・プログラミング言語：Solidity」の章<!-- [REF] -->で解説しますが、上記のコマンドの1行目でContractのオブジェクトを生成し、2行目で、そのオブジェクト情報を含んだトランザクションをEthereumネットワークに送信しています。
@@ -217,7 +225,7 @@ Contractの登録値を「6」に変更するトランザクションは以下�
 
 [^3]: あまり実用的ではないコントラクトですが・・・
 
-[^4]: javascriptの文字列変数に格納するための制限に起因するものです。
+[^4]:（追記）
 
 [^5]: 表示の都合上、一部整形しています。
 
