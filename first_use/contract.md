@@ -63,7 +63,7 @@ $ which solc
 [このページ](http://solidity.readthedocs.io/en/latest/installing-solidity.html)の手順を参考にインストールしてください。
 <!-- [TODO]もうすこし詳しく記述 -->
 
-#### Gethへsolcをリンクする（
+#### Gethへsolcをリンクする
 solcのシステムのインストールが完了したら、次にGethとsolcのリンクを行います。これにより、Gethから直接solcによるコンパイルを行うことが可能になります。
 
 Gethのコンソールを開き[^2]、以下のコマンドを実行します。ここでパラメーターの「path_to_your_solc」の部分は各人のsolcインストール時の`which`コマンドの実行結果に書き換えてください。
