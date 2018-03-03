@@ -60,7 +60,7 @@ $ solc --version
 $ which solc
 ```
 ##### Windowsへのインストール
-[このページ](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)の手順を参考にcpp-ethereumをインストールしてください。
+[このページ](http://solidity.readthedocs.io/en/latest/installing-solidity.html)の手順を参考にインストールしてください。
 <!-- [TODO]もうすこし詳しく記述 -->
 
 #### Gethへsolcをリンクする（
