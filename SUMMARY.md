@@ -10,7 +10,7 @@
   * [etherを採掘する](first_use/mining_ether.md)
   * [etherを送金する](first_use/sending_ether.md)
   * [スマートコントラクトを作成し実行する](first_use/contract.md)
-  * [ライブ・ネットに接続する](first_use/connect_to_livenet.md)
+  * [メインネットに接続する](first_use/connect_to_livenet.md)
   * [Contract開発環境（IDE）の活用](first_use/realtimecompiler.md)
 * [Meteorを用いた分散型アプリケーション開発](meteor_dapp/README.md)
   * [Meteorを準備する](meteor_dapp/about_meteor.md)
