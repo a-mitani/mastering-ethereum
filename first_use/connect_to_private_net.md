@@ -113,7 +113,7 @@ instance: Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
 ```
 $ # gethプロセスをconsoleサブ・コマンドを付加せず、かつ最後に"&"を付加することで、バックグラウンドで起動します。
 $ # この場合、起動時にはコンソールは立ち上がりません。
-$ geth --networkid "15" --nodiscover --datadir "/home/ubuntu/eth_private_net" --genesis "/home/ubuntu/eth_private_net/myGenesis.json" 2>> /home/ubuntu/eth_private_net/geth_err.log &
+$ geth --networkid "15" --nodiscover --datadir "/home/ubuntu/eth_private_net" 2>> /home/ubuntu/eth_private_net/geth_err.log &
 $
 $ # attachサブ・コマンドを用いて先に立ち上げたプロセスのコンソールを立ち上げます。
 $ # ここで、ipc:以降に先に立ち上げたgethプロセスのデータ用ディレクトリ以下のgeth.ipcファイル（実際はソケット）のパスを指定します。
