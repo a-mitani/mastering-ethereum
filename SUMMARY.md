@@ -27,6 +27,7 @@
 * [さらに詳しく知るために](further_reading/README.md)
 * [Appendix](/appendix/README.md)
   * [Ethereum ウォレットの使い方（Metamask）](/appendix/using_metamask.md)
+* [【参考】IPFS入門](https://ipfs-book.decentralized-web.jp/)
 * [（旧URL）](content/README.md)
 
 
