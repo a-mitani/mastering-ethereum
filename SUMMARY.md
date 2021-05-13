@@ -29,5 +29,5 @@
   * [Ethereum ウォレットの使い方（Metamask）](appendix/using_metamask.md)
 * [【参考】IPFS入門](https://ipfs-book.decentralized-web.jp/)
 * [（旧URL）](content.md)
-* [Pyroで実践するベイズ機械学習](https://pyro-book.data-hacker.net/)
+* [【参考】Pyroで実践するベイズ機械学習](https://pyro-book.data-hacker.net/)
 
