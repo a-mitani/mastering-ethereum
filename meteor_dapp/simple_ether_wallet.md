@@ -1,4 +1,4 @@
-## 簡単なEtherのwalletを作る（１）
+# 簡単なEtherのwalletを作る（１）
 
 MeteorによるDapp開発の第一歩として、Ethereumの組み込み通貨であるEtherをアカウント間で送金することができる簡単なwalletアプリ「simple-ether-wallet」を作成してみます。
 
@@ -8,62 +8,64 @@ MeteorによるDapp開発の第一歩として、Ethereumの組み込み通貨�
 
 本節では「ダッシュボード」ビューの部分を実装することで、Meteorの使い方とEthereum関連のパッケージの使い方に慣れることを目標にします。「送金」ビューについては次節以降で実装していきます。
 
-<img src="00_img/dashboard_view.png" width="650">
+![](../.gitbook/assets/dashboard_view.png)
 
 【simple-ether-walletのダッシュボードビュー】
 
-<img src="00_img/send_view.png" width="650">
+![](../.gitbook/assets/send_view.png)
 
 【simple-ether-walletの送金ビュー】
 
+## gethの起動（RPCの有効化）
 
-### gethの起動（RPCの有効化）
 まず下準備として、今回作成するwalletからの接続を受けるように下記のコマンドでgethを起動しておきます。ここではネットワークIDが10のテストネットに接続しています。本格的にDappを公開するまではテストネットにて動作を確認するほうが良いでしょう。
 
-``` bash
+```bash
 $ geth --networkid "10" --nodiscover --datadir "/home/test_u/eth_private_net" --mine --unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6 --rpc --rpcaddr "192.168.5.6" --rpcport "8545" --rpccorsdomain "*" console 2>> /home/test_u/eth_private_net/geth_err.log
 ```
 
 上記コマンドは幾つか新しいコマンドオプションを追加しています。今回作成するDappとノードの連携はGethのRPC（Remote Procedure Call）のAPI機能を利用するのでその設定をコマンドオプションで行っています。
+
 * `--rpc`：gethのRPCサーバとしてのAPIを有効化します。
 * `--rpcaddr "192.168.5.6"`:読者の環境に合わせてgethノードのIPアドレスを指定します。ローカル環境で試験を行うなら、"127.0.0.1"か"localhost"を指定することも可能です。
 * `--rpcport "8545"`： RCP APIのポート番号を指定します。（特に問題なければデフォルトの8545を指定すればよいです。）
 * `--rpccorsdomain "*"`： クロスドメインアクセスを許可するドメイン。ここでは任意のドメインを許可しています。
 
 また、以下のオプションも加えています。
+
 * `--mine`：gethの起動と同時に採掘を開始するオプション
 * `--unlock 0xa7653f153f9ead98dc3be08abfc5314f596f97c6"`: 指定されたアドレスのアカウントのロックを解除します。読者の環境に合わせて、coinbaseのアドレスを指定してください。（起動時にパスワードが求められます。）
 
-###### ■■ TIP ■■
-gethのconsoleを利用せずバックグラウンドでgethを起動しておくと毎度gethを起動する手間が省けて便利です。その場合は
-1. 上記コマンドの`console`のオプションを外したコマンドを実行
-2. プロンプト上でパスワードを聞かれたら、入力。
-3. ［Ctrl］＋［Z］キーを押下しプロセスを一時停止
-4. `bg`コマンドを実行し、プロセスをバックグラウンド実行に移行
+**■■ TIP ■■**
+
+gethのconsoleを利用せずバックグラウンドでgethを起動しておくと毎度gethを起動する手間が省けて便利です。その場合は 1. 上記コマンドの`console`のオプションを外したコマンドを実行 2. プロンプト上でパスワードを聞かれたら、入力。 3. ［Ctrl］＋［Z］キーを押下しプロセスを一時停止 4. `bg`コマンドを実行し、プロセスをバックグラウンド実行に移行
 
 の手順で行えばよいでしょう。
 
-### Wallet用のMeteorプロジェクトを作成
-Meteorをインストールした環境[^1]で適当なディレクトリに、今回作成するsimple-ether-walletのMeteorプロジェクトを作成します。
-``` bash
+## Wallet用のMeteorプロジェクトを作成
+
+Meteorをインストールした環境で適当なディレクトリに、今回作成するsimple-ether-walletのMeteorプロジェクトを作成します。
+
+```bash
 $ cd ~/eth-meteor-proj # 任意のディレクトリに移動
 $ meteor create simple-ether-wallet # 新しいMeteorプロジェクトを作成
 ```
+
 「Meteorを使ってみる」節と同様に、この初期状態のWebアプリで念のためアクセス可能かを確認してみます。上記コマンドを実行して新しく作成された`simple-ether-wallet`ディレクトリ（以下、プロジェクトRoot）に移動して
-``` bash
+
+```bash
 $ meteor
 ```
-コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「http://localhost:3000/ 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
 
-<img src="00_img/myfirstapp.png" width="500">
+コマンドを実行します。実行するとしばらくしてコンソールに`=> App running at: http://localhost:3000/`と表示されるのでWebブラウザでアドレスに「[http://localhost:3000/](http://localhost:3000/) 」と入力しアクセスします。すると下図のような（単純な）Webアプリケーションが表示されます。
 
+![](../.gitbook/assets/myfirstapp.png)
 
 起動して画面が表示されることが確認できたら、デモ用の余分なコードを削除して行きます。まず、プロジェクトRoot直下の`server`ディレクトリを内部のファイルごと削除します。また、`client`ディレクトリ内の`main.js`内の記述を全て削除し空ファイルの状態にします。そして`main.html`ファイルは下記のコードに書き換えます。
 
-
 > main.html
 
-``` html
+```markup
 <head>
   <title>Simple Ether Wallet</title>
 </head>
@@ -71,29 +73,29 @@ $ meteor
   <h1> Hello, world!!</h1>
 </body>
 ```
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step001" target="_blank">
-      View this Commit On GitHub (Tag:"Step001")
-    </a></b></p>
-   </div>
-</div>
 
-この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。
-<img src="00_img/hello-world.png" width="500">
+![](../.gitbook/assets/tags.png)
 
-###### ■■ Meteor TIP ■■
+ [**View this Commit On GitHub \(Tag:"Step001"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step001)
+
+この状態でWebアプリケーションにアクセスすると、下図のような画面が表示されるはずです。 ![](../.gitbook/assets/hello-world.png)
+
+**■■ Meteor TIP ■■**
+
 Meteorにはプロジェクト内のディレクトリ名には下記のルールがあります。
-* `server` ディレクトリ以下のファイルは、サーバサイドのみで実行されます。（今回作成するwalletでは全てクライアント(ブラウザ）側で処理を行い、サーバ側の処理を行わないため`server`ディレクトリごと削除しました。）
+
+* `server` ディレクトリ以下のファイルは、サーバサイドのみで実行されます。（今回作成するwalletでは全てクライアント\(ブラウザ）側で処理を行い、サーバ側の処理を行わないため`server`ディレクトリごと削除しました。）
 * `client` ディレクトリ以下のファイルはクライアントサイド（ex.ブラウザ上）のみで実行されます。
 * プロジェクト直下のファイル、および、上記以外のディレクトリ以下のファイルはサーバサイドとクライアントサイドの両方で実行されます。
 
 また、静的なコンテンツ、例えば画像データやフォントデータ等は`public`ディレクトリに配置されるのが慣習です。
 
-### Ethereumノードへの接続
-####パッケージの追加
+## Ethereumノードへの接続
+
+### パッケージの追加
+
 Meteorには標準の機能以外の拡張機能をパッケージとしてインストールすることで様々な機能が追加可能です。Ethereumへの接続も、拡張機能としてパッケージを導入することで容易に可能になります。ここでは今後使用する以下の４つのパッケージを追加します。
+
 * **twbs:bootstrap**: CSSフレームワーク「bootstrap」のパッケージ。
 * **ethereum:web3**：EthreumノードとRPC接続するためのライブラリが含まれるパッケージ。
 * **ethereum:accounts**：ethereum:web3パッケージのラッパーパッケージで、Ethereumのアカウント関連の情報をmeteor上でリアクティブに取得可能にするパッケージ。
@@ -101,22 +103,24 @@ Meteorには標準の機能以外の拡張機能をパッケージとしてイ�
 
 プロジェクトRootに移動し下記のコマンドを実行します。
 
-``` bash
+```bash
 $ meteor add twbs:bootstrap 
 $ meteor add ethereum:web3
 $ meteor add ethereum:accounts
 $ meteor add ethereum:blocks
 ```
-###### ■■ Meteor TIP ■■
+
+**■■ Meteor TIP ■■**
+
 プロジェクトに追加されたパッケージは隠しディレクトリ`.meteor`以下の`packages`ファイルに自動的に記載されます。実際に今回追加した4つのパッケージが`packages`ファイルの末尾に追記されているのを確認してみてください。
 
-####Ethereumノードへの接続
-今回追加したパッケージを利用しEthereumノードに接続します。
-`client`ディレクトリ以下に`lib`ディレクトリを作成しその下に以下のコードを記述した`init.js`ファイルを配置します。
+### Ethereumノードへの接続
+
+今回追加したパッケージを利用しEthereumノードに接続します。 `client`ディレクトリ以下に`lib`ディレクトリを作成しその下に以下のコードを記述した`init.js`ファイルを配置します。
 
 > client/lib/init.js
 
-``` javascript
+```javascript
 //Web3インスタンスの生成
 web3 = new Web3();
 
@@ -131,40 +135,40 @@ EthAccounts.init();
 //EthBlocksの初期化
 EthBlocks.init();
 ```
-この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには今回追加したパッケージ及び`init.js`もロードされているためブラウザからEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動[^2] し、Ethereumノードに対してアカウントリストを問い合わせる
+
+この状態でWebアプリケーションを起動してアクセスしてみます。表示される画面は変わらず「Hello, world!!」が表示されますが、アクセス時にブラウザには今回追加したパッケージ及び`init.js`もロードされているためブラウザからEthereumノードにRPCでアクセスが可能になっています。Chromeの開発者ツールのConsoleを起動 し、Ethereumノードに対してアカウントリストを問い合わせる
 
 ```javascript
 > web3.eth.accounts;
 ```
-のコマンドを実行してみます。
-実行結果として
+
+のコマンドを実行してみます。 実行結果として
+
 ```javascript
 ["0xa7595f153f9ead98dc3ad08abfc5314f596f97e7", "0xf2057b8aefb9093331faf48f30c1ebeab4ff961d"]
 ```
+
 のようなアカウントの配列が返されれば、ブラウザからEthereumノードへのアクセスが成功しています。もしこのような結果が返らない場合はgethの起動とそのオプション、アドレスなどを再度確認してください。
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step002" target="_blank">
-      View this Commit On GitHub (Tag:"Step002")
-    </a></b></p>
-   </div>
-</div>
+![](../.gitbook/assets/tags.png)
 
+ [**View this Commit On GitHub \(Tag:"Step002"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step002)
 
-###### ■■ Meteor TIP ■■
+**■■ Meteor TIP ■■**
+
 `init.js`ファイルを`client/lib`以下に配置したのは、初期化の処理を今後追加されていくその他の処理よりも先に処理したい理由からです。MeteorではプロジェクトRoot以下のファイルをロードする順序として、`lib`という名称のディレクトリ以下のファイルを最初に読み込むというルールがあるため、今回の`init.js`は例えば`main.html`や`main.js`よりも先にMeteorによりロードされる事になります。Meteorがファイルをロードする順序は[公式ドキュメント（英語）の「File Load Order」節](http://docs.meteor.com/#/full/fileloadorder)に詳細が記載されているので参考にしてください。
 
-###コンポーネントを追加する
-#### 「Node Status」項目の表示
+## コンポーネントを追加する
+
+### 「Node Status」項目の表示
+
 これまでの作業でブラウザからEthereumノードへの接続が可能になりました。これを利用して画面に「Node Status」項目を表示するようにしていきます。
 
 まずは、`client/main.html`と`client/main.js`ファイルを下記のコードに書き換えます。
 
 > client/main.html
 
-```html
+```markup
 <head>
   <title>Simple Ether Wallet</title>
 </head>
@@ -245,13 +249,15 @@ Template.nodeStatusComponent.helpers({
   }
 });
 ```
+
 これらのコードを追加することで下図のような、Ethereumノードの状態のテーブルが表示されるはずです。
 
-<img src="00_img/node_status_component.png" width="600">
+![](../.gitbook/assets/node_status_component.png)
 
 ここでは大きく２つ、「テンプレート」と「テンプレートヘルパー」を用いてEthereumノードの状態の取得から表示までを行いました。少しこれらのコードを詳しく見ていきます。
 
-#####■ テンプレートエンジン：Spacebar
+#### ■ テンプレートエンジン：Spacebar
+
 `client/main.html`はおおよそ通常のHTMLファイルの構造と同様ですが、幾つかの部分でMeteor独特の記述が現れています。これはMeteorがテンプレートエンジンとして独自の「[Spacebar](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)」を採用しており、その構文が含まれていることによります。
 
 Spacebarには主に3種類のタグが規定されています。
@@ -262,15 +268,16 @@ Spacebarには主に3種類のタグが規定されています。
 
 最後は「block helpersタグ」と呼ばれるもので`{{#each}}…{{/each}}` や `{{#if}}…{{/if}}`のような構文で用いられるタグで、テンプレート内での処理フローを制御する働きをします。
 
+#### ■ テンプレートヘルパー
 
-##### ■ テンプレートヘルパー
 `client/main.js`にはテンプレートヘルパーが定義されています。Meteorでは表示とロジックを分離する設計がされており、表示はテンプレートが、そして表示のためのデータの取得や加工などのロジックはテンプレートヘルパーがその役割を担います。
 
 テンプレートヘルパーは`Template.<myTemplate>.helpers(helperObject)`の形式で定義し、ここで`<myTemplate>`の部分にヘルパーが対象とするテンプレート名に置きかえます。また`helerObject`はヘルパー関数が連想配列形式で列挙されたオブジェクトになります。
 
 今回の`client/main.js`の例では対象とするテンプレート名から`Template.nodeStatusComponent.helpers(...)`として定義され引数として、`web3`オブジェクトからノード状態のプロパティを返するため幾つかの関数が定義されています。
 
-#### ソースファイルの分離
+### ソースファイルの分離
+
 この後、アカウント情報とブロック情報を表示する2つのコンポーネント（accountStatusComponentとblockStatusComponent）を追加していきます。これらも先のnodeStatusComponentと同様にテンプレートとそのヘルパーをそれぞれ`main.html`、`main.js`に追記しても問題ありませが、ここではコンポーネント毎にソースファイルを分けて管理することで見通しを良くします。
 
 たとえソースファイルを分けても、Meteorは自動的にclientディレクトリ以下のファイルをロードの順序の規則に則って読み込み、それらを連結して1つのソースファイルと同様に扱うため、動作には影響ありません。
@@ -279,9 +286,9 @@ Spacebarには主に3種類のタグが規定されています。
 
 【※】`main.html`と`main.js`内の当該コード箇所は削除します。
 
-> client/templates/components/node_status_component.html
+> client/templates/components/node\_status\_component.html
 
-```html
+```markup
 <template name="nodeStatusComponent">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -311,7 +318,7 @@ Spacebarには主に3種類のタグが規定されています。
 </template>
 ```
 
-> client/templates/components/node_status_component.js
+> client/templates/components/node\_status\_component.js
 
 ```javascript
 //テンプレート「nodeStatusComponent」のテンプレートヘルパー
@@ -339,25 +346,21 @@ Template.nodeStatusComponent.helpers({
     return web3.net.peerCount;
   }
 });
-
 ```
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step003" target="_blank">
-      View this Commit On GitHub (Tag:"Step003")
-    </a></b></p>
-   </div>
-</div>
 
-#### 「Account Balance」「Block Status」項目の表示
+![](../.gitbook/assets/tags.png)
+
+ [**View this Commit On GitHub \(Tag:"Step003"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step003)
+
+### 「Account Balance」「Block Status」項目の表示
+
 次に、ノードに登録されているアカウント情報を表示する「Account Balance」と、Ethereumネットワーク内のブロックチェーンの情報を表示する「Block Status」の２つのコンポーネントを追加します。
 
 まず`client/main.html`にこれらのコンポーネントのテンプレートを呼び出し表示するためのInclusionsタグ`{{> accountBalanceComponent}}`、`{{> blockStatusComponent}}`を追加します。
 
 > client/main.html （一部抜粋）
 
-```html
+```markup
 （前略）
   <main class="container-fluid">
     <div class="row-fluid">
@@ -373,9 +376,9 @@ Template.nodeStatusComponent.helpers({
 
 さらにテンプレートとテンプレートヘルパーも追加します。ここでテンプレートのidは今回追加したInclusionタグと同じものにします。
 
-> client/templates/components/account_balance_component.html
+> client/templates/components/account\_balance\_component.html
 
-``` html
+```markup
 <template name="accountBalanceComponent">
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -407,9 +410,9 @@ Template.nodeStatusComponent.helpers({
 </template>
 ```
 
-> client/templates/components/account_status_component.js
+> client/templates/components/account\_status\_component.js
 
-``` javascript
+```javascript
 //テンプレート「accountStatusComponent」のヘルパー
 Template.accountBalanceComponent.helpers({
   //アカウント情報の取得
@@ -436,9 +439,9 @@ Template.accountBalanceItem.helpers({
 });
 ```
 
-> client/templates/components/block_status_component.html
+> client/templates/components/block\_status\_component.html
 
-``` html
+```markup
 <template name="blockStatusComponent">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -468,9 +471,9 @@ Template.accountBalanceItem.helpers({
 </template>
 ```
 
-> client/templates/components/block_status_component.js
+> client/templates/components/block\_status\_component.js
 
-``` javascript
+```javascript
 //テンプレート「blockStatusComponent」のヘルパー
 Template.blockStatusComponent.helpers({
 
@@ -502,7 +505,7 @@ Template.blockStatusComponent.helpers({
 
 最後に、`blockStatusComponent`のヘルパ内で、UNIX時間表記で得られる採掘日時を通常の日時表記で表示されるよう`unix2datetime`関数を呼び出しているので、この関数のコードを追加します。
 
-> client/lib/modules/time_utils.js
+> client/lib/modules/time\_utils.js
 
 ```javascript
 //UNIX時間を通常の "yyyymmdd hh:mm:ss"フォーマットの文字列に変換
@@ -521,19 +524,14 @@ unix2datetime = function (unixtime){
 
 これらが正しく記述されたら、下図のような画面が表示されます。ここで、今回追加した「Account Balance」「Block Status」の項目はリアクティブな表示になっていることを実際に確かめてみてください。採掘が成功するたびにEtherebaseのbalance値やブロック情報の項目が、特に手動でリロードをすることなく自動的に更新されるのが見て取れるはずです。また、ノードに新しいアカウントを作成した際も自動的にアカウント情報が追加更新されることになります。
 
-<img src="00_img/only_dashboard.png" width="650">
+![](../.gitbook/assets/only_dashboard.png)
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step004" target="_blank">
-      View this Commit On GitHub (Tag:"Step004")
-    </a></b></p>
-   </div>
-</div>
+![](../.gitbook/assets/tags.png)
 
+ [**View this Commit On GitHub \(Tag:"Step004"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step004)
 
-### 「Node Status」項目をリアクティブな動作にする
+## 「Node Status」項目をリアクティブな動作にする
+
 最後に「Node Status」の項目をリアクティブな動作をするようにしましょう。Account StatusとBlock Statusは、それぞれ`ethereum:accounts`、`ethereum:blocks`のパッケージを利用したために、特別なことをしなくてもパッケージ側でリアクティブな動作をしてくれました。残念ながら「Node Status」項目で表示するHashrate等はこのようなリアクティブな動作サポートするようなパッケージが用意されていません。そのため自分自身でそのような動作をするよう実装していきます。
 
 基本方針として、「Is Mining?」「Hashrate」「Peer Count」の項目の値を Web3 APIから定期的（1秒間隔）に取得し、取得した値をMeteorのSessionオブジェクトに格納し、画面にはそのSessionオブジェクトの値を表示するということを行います。
@@ -545,9 +543,10 @@ Sessionオブジェクトを利用するには、コンソール上でプロジ�
 ```bash
 $ meteor add session
 ```
+
 これでSessionオブジェクトを利用できるようになりましたので、まずはSessionオブジェクトを初期化する関数（`initSessionVars`）を定義します。
 
-> client/lib/modules/init_session_vars.js
+> client/lib/modules/init\_session\_vars.js
 
 ```javascript
 //Session変数の初期化
@@ -563,7 +562,7 @@ Session.setDefault('peerCount', 0);
 
 次に、定期的にWeb3 APIから値を取得する関数（`observeNode`）を定義します。`Meteor.setInterval`関数を利用して1秒に1回、Web3 APIの非同期関数で求める値を問い合わせて、APIから返った値を`Session`オブジェクトに格納する処理を行っています。
 
-> client/lib/modules/observe_node.js
+> client/lib/modules/observe\_node.js
 
 ```javascript
 var peerCountIntervalId = null;
@@ -603,6 +602,7 @@ observeNode = function(){
 ```
 
 次に、上記で定義した`initSessionVars`関数と`observeNode`関数がWallet起動時に呼び出すコードを`client/lib/init.js`の末尾に追記します。
+
 > client/lib/init.js
 
 ```javascript
@@ -614,12 +614,11 @@ initSessionVars();
 observeNode();
 ```
 
-
 以上で、Walletの起動時から定期的にノードの最新の値を問い合わせて、結果を`Session`オブジェクトに格納する処理が実装されました。次にこれをリアクティブに画面に表示します。これは`nodeStatusComponent`のテンプレートヘルパ内でそれぞれの値の取得先を`Session`オブジェクトからKeyを指定して取得するように変更するだけです。先述の通り`Session`はリアクティブなデータソースであるため、Sessionオブジェクトの値が更新されれば自動的にブラウザ上の表示も更新されるようMeteor側で制御してくれます。
 
 `client/templates/components/node_status_component.js`を下記のコードに書き換えます。（先のコードからの変更点はそれぞれの`return`で返す値だけです。）
 
-> client/templates/components/node_status_component.js
+> client/templates/components/node\_status\_component.js
 
 ```javascript
 //テンプレート「nodeStatusComponent」のテンプレートヘルパー
@@ -647,27 +646,13 @@ Template.nodeStatusComponent.helpers({
     return Session.get('peerCount');
   }
 });
-
 ```
 
 以上の変更を行った上で再度Webアプリの動作を確認すると、「Node Status」の部分もリアクティブな表示が実現していることが確認できるはずです。特に「Hashrate」項目は１秒ごとにめまぐるしく変わっていくのが見て取れるでしょう。
 
+![](../.gitbook/assets/tags.png)
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step005" target="_blank">
-      View this Commit On GitHub (Tag:"Step005")
-    </a></b></p>
-   </div>
-</div>
+ [**View this Commit On GitHub \(Tag:"Step005"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step005)
 
-
-
-###脚注
-[^1]: gethが起動しているサーバと同じ環境でも構いませんし、別サーバでも構いません。ここではgethが起動しているサーバと同じサーバ上で作っていく前提で解説していきます。
-
-[^2]: Chromeブラウザの開発者ツールは「F12」キー、または「Ctrl+Shift＋I」キーで起動できます。またConsoleは開発者ツール内のConsoleタブを押下すれば表示されます。
-
-
+## 脚注
 

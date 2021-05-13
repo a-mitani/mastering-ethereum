@@ -1,8 +1,6 @@
-Ethereum入門
-=============
+# 本書について
 
-[Ethereum入門](http://book.ethereum-jp.net)は、分散アプリケーションプラットフォーム「Ethereum（イーサリアム）」の技術入門書です。
-Ethereumがどのように動作するのか、Ethereumを用いてどのように分散アプリケーションを開発していくか、について解説していきます。
+[Ethereum入門](http://book.ethereum-jp.net)は、分散アプリケーションプラットフォーム「Ethereum（イーサリアム）」の技術入門書です。 Ethereumがどのように動作するのか、Ethereumを用いてどのように分散アプリケーションを開発していくか、について解説していきます。
 
 Ethereumプロジェクトは最初の安定版（Homestead）リリースがされましたが、今後仕様が変更になる場合があります。仕様変更に伴い本書も逐次内容を変更していきます。
 
@@ -12,6 +10,5 @@ Ethereumプロジェクトは最初の安定版（Homestead）リリースがさ
 
 本書への追記や修正などありましたら、上記[GitHub](https://github.com/a-mitani/mastering-ethereum)にてIssueの発行、またはPull requestをお願いいたします。
 
-本ドキュメントは <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> のもとで公開されています。
+本ドキュメントは [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) のもとで公開されています。
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />

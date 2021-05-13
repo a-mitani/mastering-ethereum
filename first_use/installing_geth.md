@@ -1,8 +1,8 @@
-## Gethをインストールする。
+# Gethをインストールする
 
 Ethereumを利用する場合、まずはEthereumのP2Pネットワークに参加する必要があります。ネットワークへの参加はEthereumクライアントをインストールし起動することで参加が可能になります。
 
-Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが[^1]、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装されたCUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
+Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライアントが存在しますが、現在のところ推奨されているクライアントは「Geth」です。Gethはプログラミング言語[Go](http://golang.org/)により実装されたCUIクライアントであり、GethをインストールすることでEthereumネットワークにフル・ノードとして参加し、
 
 * etherの採掘
 * etherの送金
@@ -14,11 +14,11 @@ Ethereumでは、Ethereumの仕様を実装した幾つかのEthereumクライ�
 
 本節では、Gethのインストール手順を解説します。
 
-### UbuntuへのGethのインストール
+## UbuntuへのGethのインストール
 
-Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます [^2] 。
+Ubuntu OSを使用している場合、下記の一連のコマンドを実行するとでGethがインストールされます  。
 
-```
+```text
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
 $ sudo apt-get update
 $ sudo apt-get install ethereum
@@ -28,63 +28,53 @@ $ sudo apt-get install ethereum
 
 コマンド実行が完了した後、実際にgethがインストールされたかを確認するために、
 
-```
+```text
 $ geth --help
 ```
 
 のコマンドを実行してみましょう。gethコマンドのオプション情報が表示されれば、正しくインストールされています。
 
-#### Gethのアップデート
+### Gethのアップデート
 
 Ethereumの開発は現在Proof of Concept の第9フェーズであり、正式リリースではありません。そのため、クライアント・ソフトにおいても頻繁にアップデートが行われております。  
 Gethをアップデートする際には`apt-get`コマンドにより、以下の手順で行います。
 
-```
+```text
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
 
-### 
-
-### Mac OS へのGethのインストール
+## Mac OS へのGethのインストール
 
 Homebrewを用いたインストールとソースからインストールする方法があります。
 
-#### Homebrew を用いたGethのインストール
+### Homebrew を用いたGethのインストール
 
 Homebrewをインストールがされてあれば、次のコマンドだけでインストールできます。
 
-```
+```text
 $ brew tap ethereum/ethereum
 $ brew install ethereum
 ```
 
-#### ソースからGethをビルドする
+### ソースからGethをビルドする
 
 go-ethereumのレポジトリをクローン
 
-```
+```text
 $ git clone https://github.com/ethereum/go-ethereum
 ```
 
 そして、次のコマンドを実行することでGethをビルドできます。\(ビルドにはGoが必要になります\)
 
-```
+```text
 $ cd go-ethereum
 $ make geth
 ```
 
-### 
-
-### Windows へのGethのインストール
+## Windows へのGethのインストール
 
 Windows環境へのインストールはUnix系統のOSへのインストールと異なり、若干手順が煩雑です。Windows環境へのインストールは[こちら](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows)に詳しく記載されているので、参考ください。
 
-### 
-
-### 脚注
-
-[^1]: [cpp-ethereum](https://github.com/ethereum/cpp-ethereum/) など
-
-[^2]: `sudo add-apt-repository` コマンドの実行時に`Command Not Found`エラーが出る場合があります。その場合は例えば[ここ](http://data-hacker.blogspot.jp/2018/01/add-apt-repository.html)などの情報を参考に適宜対応してください。
+## 脚注
 

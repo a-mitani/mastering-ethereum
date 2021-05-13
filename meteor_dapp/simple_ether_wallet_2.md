@@ -1,32 +1,31 @@
-## 簡単なEtherのwalletを作る（２）
+# 簡単なEtherのwalletを作る（２）
 
 前節で「simple-ether-wallet」のダッシュボード部分の実装を行ってきました。本節では「Send」ビューを追加しアカウント間でのEtherの送金を可能にしていきます。
 
 ※前節に続きここで説明するアプリケーションのソースコードは[GitHub上](https://github.com/a-mitani/simple-ether-wallet)に公開しています。
 
+## URLルーティング
 
-
-### URLルーティング
 まず、DashboardとSendの２つのビューそれぞれにURLをマッピングし、リクエストされたURLに応じてどのビューを表示するかをコントロールするURLルーティングの仕組みを導入します。MeteorではURLルーティングに「iron:router」パッケージを利用するのが最も一般的のため、ここでもそれに倣います。コンソール上でプロジェクトRootに移動し下記のコマンドを実行することでパッケージがインストールされます。
 
 ```bash
 $ meteor add iron:router
 ```
+
 iron:routerを用いたURLルーティングは、Layoutテンプレートと呼ばれるサイト全体で共通のテンプレートの中にInclusionsタグの一種`{{> yield}}`を埋め込み、iron:routerが自動的にリクエストURLにマッピングされたテンプレート（Routeテンプレート）を`{{> yield}}`部分に埋め込み表示する動作をします。
 
-<img src="00_img/Layout-Route.png" width="500">
+![](../.gitbook/assets/Layout-Route.png)
 
-#### URLルーティングの設定
+### URLルーティングの設定
+
 Layoutテンプレートの指定やURLへのテンプレートのマッピングは`Router`オブジェクトの属性を設定することで行います。そこで下記のコードを記述した`route.js`を`client/lib`以下に作成します。ここでは以下の動作を記述しています。
 
 * Layoutテンプレートとして`walletLayout`を指定。
-* URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、http://localhost:3000 のリクエストが来た場合、http://localhost:3000/dashboard にリダイレクトさせる。）
+* URLが'/'の場合は'/dashboard'にリダイレクトさせる。（例えば、[http://localhost:3000](http://localhost:3000) のリクエストが来た場合、[http://localhost:3000/dashboard](http://localhost:3000/dashboard) にリダイレクトさせる。）
 * URLが'/dashboard'の場合はRouteテンプレートとして`dashboard`テンプレートを割り当てる。
-*  URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
-
+* URLが'/send'の場合はRouteテンプレートとして`send`テンプレートを割り当てる。
 
 > client/lib/route.js
-
 
 ```javascript
 Router.configure({
@@ -44,15 +43,13 @@ Router.route('/dashboard', {name: 'dashboard'});
 Router.route('/send', {name: 'send'});
 ```
 
+### Layoutテンプレートの追加
 
-#### Layoutテンプレートの追加
 Layoutテンプレートとして指定した`walletLayout`テンプレートとそのヘルパー関数を追加します。iron:routerはLayoutテンプレートを自動的にhtmlファイルの`<body>`タグ内に展開するように動作するため、この`walletLayout`テンプレートでは`<body>`タグの内部に記述されるべきコードのみを記述します。また元々`<body>`タグとその内部を記述していた`main.html`からは当該箇所を削除します。
 
+> client/templates/wallet\_layout.html
 
-> client/templates/wallet_layout.html
-
-
-```html
+```markup
 <template name="walletLayout">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -71,10 +68,9 @@ Layoutテンプレートとして指定した`walletLayout`テンプレートと
 </template>
 ```
 
-> client/templates/wallet_layout.js
+> client/templates/wallet\_layout.js
 
-
-```js
+```javascript
 Template.walletLayout.helpers({
   //ナビゲーションバーのアイテムをハイライトするためのヘルパー関数
   activeIfCurrent: function (template) {
@@ -90,8 +86,7 @@ Template.walletLayout.helpers({
 
 > client/main.html
 
-
-```html
+```markup
 <head>
   <title>Simple Ether Wallet</title>
 </head>
@@ -99,9 +94,12 @@ Template.walletLayout.helpers({
 
 以上までの手順で、ナビゲーションバーとURLとテンプレートのマッピング機能が追加されました。次にURLにマッピングされた各ビューのテンプレートを追加していきます。
 
-### DashboardとSendビューの追加
-#### Dashboardビュー
+## DashboardとSendビューの追加
+
+### Dashboardビュー
+
 Dashboardビュー用のテンプレートを追加していきます。Dashboardビューでは「簡単なEtherのWalletを作る（１）」の節で追加していったものと同じ
+
 * Account Balance
 * Node Status
 * Block Status
@@ -110,7 +108,7 @@ Dashboardビュー用のテンプレートを追加していきます。Dashboar
 
 > client/templates/views/dashboard.html
 
-```html
+```markup
 <template name="dashboard">
   <div class="row-fluid">
     <div class="col-md-8 col-md-offset-2">
@@ -121,14 +119,16 @@ Dashboardビュー用のテンプレートを追加していきます。Dashboar
   </div>
 </template>
 ```
+
 dashboardビューはこれで完成です。
 
-#### Sendビュー
+### Sendビュー
+
 次に、Sendビューのテンプレートとして下記のコードを追加します。以降の節でSendビューの機能を追加していきますが、ここではその土台として下記のように「Account Balance」のコンポーネントのみ追加しています。
 
 > client/templates/views/send.html
 
-```html
+```markup
 <template name="send">
   <div class="row-fluid">
     <div class="col-md-8 col-md-offset-2">
@@ -140,41 +140,35 @@ dashboardビューはこれで完成です。
 
 以上までで、以下のイメージのようにナビゲーションバーからそれぞれのビューに遷移が可能になります。
 
-<img src="00_img/dashboard_view.png" width="500">
+![](../.gitbook/assets/dashboard_view.png)
 
 【Dashboardビューでの表示】
 
-<img src="00_img/send_view_only_account_balance.png" width="500">
+![](../.gitbook/assets/send_view_only_account_balance.png)
 
 【Sendビューでの表示】
 
+![](../.gitbook/assets/tags.png)
 
+ [**View this Commit On GitHub \(Tag:"Step006"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step006)
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step006" target="_blank">
-      View this Commit On GitHub (Tag:"Step006")
-    </a></b></p>
-   </div>
-</div>
+## 送金機能の追加
 
-### 送金機能の追加
 Sendビューに「Send Ether」コンポーネントを追加しEtherを送金する機能を実装していきます。下図のように送金元アドレスと送金先アドレス、および送金するEtherの額を入力し「Submit」ボタンを押下することで送金を確認するモーダルウィンドウが表示され、そこで「Yes」を押下するとEthereumのノードにトランザクションが送信される動きをします。
 
-<img src="00_img/submit_then_confirm.png" width="400">
+![](../.gitbook/assets/submit_then_confirm.png)
 
 【Submitボタンを押下するとモーダルの確認画面が表示される】
 
+### 送金情報入力画面と確認画面の表示
 
-#### 送金情報入力画面と確認画面の表示
 まずは送金情報を入力する画面と送金の確認を行う画面までを作成していきます。また送金の確認画面では送金に必要なFeeの表示も行います。
 
 Sendビューのテンプレートに既存の`accountBalanceComponent`のInclusionsタグの後に`sendEtherComponent`のInclusionsタグを追加します。
 
 > client/templates/views/send.html
 
-```html
+```markup
 （前略）
       {{> accountBalanceComponent}}
       {{> sendEtherComponent}}
@@ -183,9 +177,9 @@ Sendビューのテンプレートに既存の`accountBalanceComponent`のInclus
 
 そして追加した`sendEtherComponent`テンプレートのコードを下記のように追加します。
 
-> client/templates/components/send_ether_component.html
+> client/templates/components/send\_ether\_component.html
 
-```html
+```markup
 <template name="sendEtherComponent">
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -241,7 +235,7 @@ Sendビューのテンプレートに既存の`accountBalanceComponent`のInclus
 
 送金情報をSession変数で管理するために、初期化のコードを`initSessionVars`関数内に追記します。
 
-> client/lib/modules/init_session_vars.js
+> client/lib/modules/init\_session\_vars.js
 
 ```javascript
 //Session変数の初期化
@@ -262,7 +256,7 @@ Session.setDefault("sendEther.currentGasPrice", 0);
 
 送金入力画面及び確認画面のヘルパと送金入力画面のイベント処理のコードを追加します。
 
-> client/templates/components/send_ether_component.js
+> client/templates/components/send\_ether\_component.js
 
 ```javascript
 //送金に必要なFeeの計算。
@@ -336,8 +330,8 @@ Template.sendConfirmModalTemplate.helpers({
 });
 ```
 
+## トランザクションの送信
 
-### トランザクションの送信
 ここまでで、
 
 * 送金情報の入力
@@ -348,7 +342,7 @@ Template.sendConfirmModalTemplate.helpers({
 
 トランザクションの送信は送金確認画面のテンプレートにイベントリスナーを追加することで実現します。以下のコードを`send_ether_component.js`の末尾に追加します。送金画面で「Yes」をクリックした際に、トランザクション送信のための非同期関数[`web3.eth.sendTransaction`](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction)を呼び出す処理を行っています。またそのコールバック関数内でエラーが無ければトランザクションの送信が成功した旨、エラーがあれば失敗した旨をダイアログボックスに表示することを行っています。
 
-> client/templates/components/send_ether_component.js
+> client/templates/components/send\_ether\_component.js
 
 ```javascript
 （前略）
@@ -379,13 +373,7 @@ Template.sendConfirmModalTemplate.events({
 
 ここでアカウントの残高は送金（トランザクション送信）と同時に変化するのではなく採掘者がそのトランザクションをブロックに入れ採掘したタイミングで変化することに注意してください。
 
+![](../.gitbook/assets/tags.png)
 
-<div class="commit">
-  <img src="../00_common_img/tags.png">
-  <div class="message">
-    <p><b><a href="https://github.com/a-mitani/simple-ether-wallet/releases/tag/step007" target="_blank">
-      View this Commit On GitHub (Tag:"Step007")
-    </a></b></p>
-   </div>
-</div>
+ [**View this Commit On GitHub \(Tag:"Step007"\)**](https://github.com/a-mitani/simple-ether-wallet/releases/tag/step007)
 
