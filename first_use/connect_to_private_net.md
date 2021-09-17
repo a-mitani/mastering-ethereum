@@ -27,7 +27,16 @@ $ mkdir /home/ubuntu/eth_private_net
 ```javascript
 {
   "config": {
-    "chainId": 15
+    "chainId": 15,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "berlinBlock": 0
   },
   "nonce": "0x0000000000000042",
   "timestamp": "0x0",
